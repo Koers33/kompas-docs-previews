@@ -1,0 +1,120 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/3tu3evk21cikw.js"
+5:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+11:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T91f,---
+title: Product Instrument — Planned Entity Relationship Diagram
+audience: [all]
+domains: [product-instrument]
+lastVerified: 2026-10
+sourceSpec: docs/erds/planned/product-instrument.mmd
+---
+
+# Product Instrument — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% PRODUCT INSTRUMENT
+
+    ProductFamily {
+        uuid id PK
+        string familyCode UK "FX | MM | BOND | DERIVATIVE | COMMODITY | etc"
+        string name
+    }
+    GlobalInstrumentCatalogue {
+        uuid id PK
+        string instrumentCode UK
+        uuid productFamilyId FK
+        string instrumentType
+        string lifecycleTemplateCode
+        boolean isActiveForSelection
+    }
+    CompanyInstrumentActivation {
+        uuid id PK
+        uuid companyId FK
+        uuid instrumentId FK
+        date activatedAt
+        date deactivatedAt
+    }
+    ProductLifecycleTemplate {
+        uuid id PK
+        string lifecycleCode UK
+        string name
+        json stateMachine "states, transitions, guards"
+    }
+    BehaviourPack {
+        uuid id PK
+        string behaviourCode UK
+        string pricingMethod
+        string accountingMethod
+        string settlementMethod
+        string riskMethod
+        json effectFlags
+    }
+    TemplateOverride {
+        uuid id PK
+        uuid companyId FK
+        uuid instrumentId FK
+        uuid behaviourPackId FK
+        json overrideConfig
+    }
+    RateIndex {
+        uuid id PK
+        string indexCode UK "SOFR | EURIBOR | JIBAR | etc"
+        string fallbackMethod
+        string fallbackSpread
+    }
+    RateIndexTransition {
+        uuid id PK
+        uuid rateIndexId FK
+        uuid newIndexId FK
+        date transitionDate
+        string approvalStatus
+    }
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: foundation <<<
+%%   Company o{--|| CompanyInstrumentActivation : "activates"
+
+%% >>> Connected to: deal-execution <<<
+%%   Deal ||--|| GlobalInstrumentCatalogue : "is typed as"
+
+%% >>> Connected to: execution-effects <<<
+%%   CompanyInstrumentEffectMatrix ||--|| GlobalInstrumentCatalogue : "configures"
+
+%% >>> Connected to: market-data <<<
+%%   PricingHierarchy ||--|| GlobalInstrumentCatalogue : "for"
+
+```12:T859,erDiagram\n%% PRODUCT INSTRUMENT\n\n    ProductFamily {\n        uuid id PK\n        string familyCode UK "FX | MM | BOND | DERIVATIVE | COMMODITY | etc"\n        string name\n    }\n    GlobalInstrumentCatalogue {\n        uuid id PK\n        string instrumentCode UK\n        uuid productFamilyId FK\n        string instrumentType\n        string lifecycleTemplateCode\n        boolean isActiveForSelection\n    }\n    CompanyInstrumentActivation {\n        uuid id PK\n        uuid companyId FK\n        uuid instrumentId FK\n        date activatedAt\n        date deactivatedAt\n    }\n    ProductLifecycleTemplate {\n        uuid id PK\n        string lifecycleCode UK\n        string name\n        json stateMachine "states, transitions, guards"\n    }\n    BehaviourPack {\n        uuid id PK\n        string behaviourCode UK\n        string pricingMethod\n        string accountingMethod\n        string settlementMethod\n        string riskMethod\n        json effectFlags\n    }\n    TemplateOverride {\n        uuid id PK\n        uuid companyId FK\n        uuid instrumentId FK\n        uuid behaviourPackId FK\n        json overrideConfig\n    }\n    RateIndex {\n        uuid id PK\n        string indexCode UK "SOFR | EURIBOR | JIBAR | etc"\n        string fallbackMethod\n        string fallbackSpread\n    }\n    RateIndexTransition {\n        uuid id PK\n        uuid rateIndexId FK\n        uuid newIndexId FK\n        date transitionDate\n        string approvalStatus\n    }\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: foundation <<<\n%%   Company o{--|| CompanyInstrumentActivation : "activates"\n\n%% >>> Connected to: deal-execution <<<\n%%   Deal ||--|| GlobalInstrumentCatalogue : "is typed as"\n\n%% >>> Connected to: execution-effects <<<\n%%   CompanyInstrumentEffectMatrix ||--|| GlobalInstrumentCatalogue : "configures"\n\n%% >>> Connected to: market-data <<<\n%%   PricingHierarchy ||--|| GlobalInstrumentCatalogue : "for"\nc:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Product Instrument — Planned Entity Relationship Diagram","audience":["all"],"domains":["product-instrument"],"lastVerified":"2026-10","sourceSpec":"docs/erds/planned/product-instrument.mmd","filePath":"content/reference/data-model/planned/product-instrument.md","timestamp":1792882843000},"sourceCode":"$10","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Product Instrument — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L11",null,{"chart":"$12"}]]}]]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/product-instrument","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Product Instrument — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-448/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"s2_Ce5o3o5gzNjtMhF8E_"}
+1e:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+13:["$","$L1e",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@1f"}]}]
+1d:true
+b:300
+1f:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

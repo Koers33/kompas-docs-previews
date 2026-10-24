@@ -1,0 +1,185 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/3tu3evk21cikw.js"
+5:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T1276,---
+title: Regulatory Compliance — Planned Entity Relationship Diagram
+audience: [all]
+domains: [regulatory-compliance]
+lastVerified: 2026-10
+sourceSpec: docs/erds/planned/regulatory-compliance.mmd
+---
+
+# Regulatory Compliance — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% REGULATORY COMPLIANCE
+
+    RegulatoryObligation {
+        uuid id PK
+        string obligationCode UK
+        string regulationRef
+        string obligationType "REPORTING | SCREENING | CAPITAL | DISCLOSURE | APPROVAL"
+        string jurisdictionCode FK
+        uuid policyDefinitionId FK
+        string status "ACTIVE | PENDING | RETIRED"
+    }
+    PolicyDefinition {
+        uuid id PK
+        string policyCode UK
+        string policyType "MANDATORY | CONFIGURABLE | CONDITIONAL"
+        uuid regulatoryObligationId FK
+        boolean isActive
+        uuid approvalMatrixId FK
+    }
+    ControlEvaluation {
+        uuid id PK
+        uuid policyDefinitionId FK
+        uuid executionEventId FK
+        string result "PASS | FAIL | WARNING | NOT_APPLICABLE"
+        string explanation
+        uuid evidencePackId FK
+    }
+    ComplianceCase {
+        uuid id PK
+        string caseType "AML | SANCTIONS | BREACH | DSAR | DATA_BREACH | EMIR_DISPUTE | PRODUCT_GOVERNANCE | EXCEPTION"
+        string severity
+        string status "OPEN | INVESTIGATING | ESCALATED | RESOLVED | CLOSED"
+        uuid ownerId FK
+        date openDate
+        date slaDeadline
+        json relatedEntityRefs
+        uuid evidencePackId FK
+    }
+    ExceptionOverride {
+        uuid id PK
+        uuid obligationId FK
+        string justification
+        string riskAssessment
+        date expiryDate
+        json compensatingControls
+        uuid approvedByUserId FK
+        uuid reviewScheduleId FK
+        uuid evidencePackId FK
+    }
+    BreachNotification {
+        uuid id PK
+        uuid complianceCaseId FK
+        string notificationType "SECURITY_INCIDENT | REGULATORY | DATA_BREACH"
+        date detectedAt
+        date confirmedAt
+        date notificationDeadline
+        string notificationStatus "PENDING | SENT | ACKNOWLEDGED"
+        uuid regulatorId FK
+    }
+    DataSubjectRequest {
+        uuid id PK
+        string requestType "ACCESS | CORRECTION | ERASURE | PORTABILITY"
+        uuid dataSubjectId FK
+        date receivedAt
+        date statutoryDeadline
+        string status "VERIFYING | PROCESSING | COMPLETE | EXEMPTED"
+        json assembledData
+    }
+    InformationOfficerRecord {
+        uuid id PK
+        uuid companyId FK
+        string officerName
+        string designation
+        date registeredAt
+        string jurisdictionCode
+    }
+    AMLAlert {
+        uuid id PK
+        uuid counterpartyId FK
+        string alertType "THRESHOLD | STRUCTURING | RAPID_MOVEMENT | UNUSUAL_BEHAVIOR"
+        string severity
+        string status "OPEN | INVESTIGATED | REPORTED | CLOSED"
+        uuid complianceCaseId FK
+    }
+    SuspiciousTransactionReport {
+        uuid id PK
+        uuid complianceCaseId FK
+        date suspicionDate
+        date filingDeadline
+        string status "DRAFT | FILED | OVERDUE"
+        uuid filedByUserId FK
+    }
+    ITRequirementsRegister {
+        uuid id PK
+        string requirementCode UK
+        string domainCode
+        string status "COVERED | PARTIAL | GAP | NOT_APPLICABLE"
+        string assessmentTier "1 | 2 | 3"
+        uuid ownerRoleId FK
+        string assessmentFrequency
+        json remediationPlan
+    }
+    ProductGovernanceRecord {
+        uuid id PK
+        uuid productId FK
+        uuid clientCategoryId FK
+        string governanceDecision "APPROVED | NOT_APPROVED | RESTRICTED"
+        uuid assessmentId FK
+        date assessedAt
+    }
+    EMIRPortfolioReconciliation {
+        uuid id PK
+        uuid counterpartyId FK
+        int contractCount
+        string portfolioSize "SMALL | MEDIUM | LARGE"
+        string reconciliationFrequency "DAILY | MONTHLY | QUARTERLY"
+        date lastReconciliationDate
+        date nextDueDate
+    }
+
+%% --- Internal Relationships ---
+    RegulatoryObligation ||--|| PolicyDefinition : "drives"
+    PolicyDefinition ||--o{ ControlEvaluation : "evaluated by"
+    ComplianceCase ||--o{ AMLAlert : "contains"
+    ComplianceCase ||--o{ BreachNotification : "triggers"
+    SuspiciousTransactionReport ||--|| ComplianceCase : "reports"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: execution-effects <<<
+%%   ControlEvaluation ||--|| ExecutionRequest : "at"
+
+%% >>> Connected to: foundation <<<
+%%   DataSubjectRequest ||--|| Company : "submitted to"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Regulatory Compliance — Planned Entity Relationship Diagram","audience":["all"],"domains":["regulatory-compliance"],"lastVerified":"2026-10","sourceSpec":"docs/erds/planned/regulatory-compliance.mmd","filePath":"content/reference/data-model/planned/regulatory-compliance.md","timestamp":1792882843000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/regulatory-compliance","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Regulatory Compliance — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-448/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"s2_Ce5o3o5gzNjtMhF8E_"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:T11e3,erDiagram\n%% REGULATORY COMPLIANCE\n\n    RegulatoryObligation {\n        uuid id PK\n        string obligationCode UK\n        string regulationRef\n        string obligationType "REPORTING | SCREENING | CAPITAL | DISCLOSURE | APPROVAL"\n        string jurisdictionCode FK\n        uuid policyDefinitionId FK\n        string status "ACTIVE | PENDING | RETIRED"\n    }\n    PolicyDefinition {\n        uuid id PK\n        string policyCode UK\n        string policyType "MANDATORY | CONFIGURABLE | CONDITIONAL"\n        uuid regulatoryObligationId FK\n        boolean isActive\n        uuid approvalMatrixId FK\n    }\n    ControlEvaluation {\n        uuid id PK\n        uuid policyDefinitionId FK\n        uuid executionEventId FK\n        string result "PASS | FAIL | WARNING | NOT_APPLICABLE"\n        string explanation\n        uuid evidencePackId FK\n    }\n    ComplianceCase {\n        uuid id PK\n        string caseType "AML | SANCTIONS | BREACH | DSAR | DATA_BREACH | EMIR_DISPUTE | PRODUCT_GOVERNANCE | EXCEPTION"\n        string severity\n        string status "OPEN | INVESTIGATING | ESCALATED | RESOLVED | CLOSED"\n        uuid ownerId FK\n        date openDate\n        date slaDeadline\n        json relatedEntityRefs\n        uuid evidencePackId FK\n    }\n    ExceptionOverride {\n        uuid id PK\n        uuid obligationId FK\n        string justification\n        string riskAssessment\n        date expiryDate\n        json compensatingControls\n        uuid approvedByUserId FK\n        uuid reviewScheduleId FK\n        uuid evidencePackId FK\n    }\n    BreachNotification {\n        uuid id PK\n        uuid complianceCaseId FK\n        string notificationType "SECURITY_INCIDENT | REGULATORY | DATA_BREACH"\n        date detectedAt\n        date confirmedAt\n        date notificationDeadline\n        string notificationStatus "PENDING | SENT | ACKNOWLEDGED"\n        uuid regulatorId FK\n    }\n    DataSubjectRequest {\n        uuid id PK\n        string requestType "ACCESS | CORRECTION | ERASURE | PORTABILITY"\n        uuid dataSubjectId FK\n        date receivedAt\n        date statutoryDeadline\n        string status "VERIFYING | PROCESSING | COMPLETE | EXEMPTED"\n        json assembledData\n    }\n    InformationOfficerRecord {\n        uuid id PK\n        uuid companyId FK\n        string officerName\n        string designation\n        date registeredAt\n        string jurisdictionCode\n    }\n    AMLAlert {\n        uuid id PK\n        uuid counterpartyId FK\n        string alertType "THRESHOLD | STRUCTURING | RAPID_MOVEMENT | UNUSUAL_BEHAVIOR"\n        string severity\n        string status "OPEN | INVESTIGATED | REPORTED | CLOSED"\n        uuid complianceCaseId FK\n    }\n    SuspiciousTransactionReport {\n        uuid id PK\n        uuid complianceCaseId FK\n        date suspicionDate\n        date filingDeadline\n        string status "DRAFT | FILED | OVERDUE"\n        uuid filedByUserId FK\n    }\n    ITRequirementsRegister {\n        uuid id PK\n        string requirementCode UK\n        string domainCode\n        string status "COVERED | PARTIAL | GAP | NOT_APPLICABLE"\n        string assessmentTier "1 | 2 | 3"\n        uuid ownerRoleId FK\n        string assessmentFrequency\n        json remediationPlan\n    }\n    ProductGovernanceRecord {\n        uuid id PK\n        uuid productId FK\n        uuid clientCategoryId FK\n        string governanceDecision "APPROVED | NOT_APPROVED | RESTRICTED"\n        uuid assessmentId FK\n        date assessedAt\n    }\n    EMIRPortfolioReconciliation {\n        uuid id PK\n        uuid counterpartyId FK\n        int contractCount\n        string portfolioSize "SMALL | MEDIUM | LARGE"\n        string reconciliationFrequency "DAILY | MONTHLY | QUARTERLY"\n        date lastReconciliationDate\n        date nextDueDate\n    }\n\n%% --- Internal Relationships ---\n    RegulatoryObligation ||--|| PolicyDefinition : "drives"\n    PolicyDefinition ||--o{ ControlEvaluation : "evaluated by"\n    ComplianceCase ||--o{ AMLAlert : "contains"\n    ComplianceCase ||--o{ BreachNotification : "triggers"\n    SuspiciousTransactionReport ||--|| ComplianceCase : "reports"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: execution-effects <<<\n%%   ControlEvaluation ||--|| ExecutionRequest : "at"\n\n%% >>> Connected to: foundation <<<\n%%   DataSubjectRequest ||--|| Company : "submitted to"\n12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Regulatory Compliance — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"
