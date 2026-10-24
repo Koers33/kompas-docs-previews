@@ -1,0 +1,137 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-447/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-447/_next/static/chunks/3ho6x70957qi8.js"
+5:"/kompas-docs-previews/pr-preview/pr-447/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-447/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Tc7b,---
+title: Payments Settlement — Planned Entity Relationship Diagram
+audience: [all]
+domains: [payments-settlement]
+lastVerified: 2026-10
+sourceSpec: docs/erds/planned/payments-settlement.mmd
+---
+
+# Payments Settlement — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% PAYMENTS SETTLEMENT
+
+    SettlementInstruction {
+        uuid id PK
+        uuid dealId FK
+        uuid companyId FK
+        string instructionType "PAYMENT | RECEIPT"
+        string status "CREATED | SCREENED | AUTHORISED | SUBMITTED | CONFIRMED | FAILED | CANCELLED"
+        uuid ssiId FK
+        decimal amount
+        string currencyCode FK
+        date valueDate
+        string paymentRail "SWIFT | SEPA | ZAR | CLS | TARGET2"
+        string uetr UK
+        string settlementIdempotencyKey UK
+        string failureReason
+    }
+    RepairRecord {
+        uuid id PK
+        uuid settlementInstructionId FK
+        string repairType "RESUBMIT | AMEND | CANCEL | ESCALATE"
+        string beforeState
+        string afterState
+        uuid approvedByUserId FK
+        string justification
+        uuid evidencePackId FK
+    }
+    PaymentPrioritization {
+        uuid id PK
+        uuid companyId FK
+        string priorityTier "TIER1_REGULATORY | TIER2_SURVIVAL | TIER3_FIDUCIARY | TIER4_FUNDING | TIER5_OPERATIONAL | TIER6_NON_CRITICAL"
+        uuid settlementInstructionId FK
+        int priorityRank
+        date assignedAt
+        boolean isCrisisOverride
+    }
+    SSIRecord {
+        uuid id PK
+        uuid counterpartyId FK
+        string currencyCode FK
+        string paymentType "BENEFICIARY | INTERMEDIARY | CORRESPONDENT"
+        string bankBic
+        string accountNumber
+        string accountName
+        string routingCode
+        string status "ACTIVE | PENDING | EXPIRED"
+        uuid lastApprovedByUserId FK
+        date effectiveFrom
+        date effectiveTo
+    }
+    SettlementObligation {
+        uuid id PK
+        uuid dealId FK
+        uuid companyId FK
+        decimal amount
+        string currencyCode FK
+        date settlementDate
+        string settlementMechanism "DVP | PVP | FOP | CLS"
+        string status "PENDING | SETTLED | FAILED | PARTIAL"
+        decimal settledAmount
+        decimal residualAmount
+    }
+    NettingSet {
+        uuid id PK
+        string nettingAgreementRef
+        uuid counterpartyId FK
+        uuid legalAgreementId FK
+        string nettingType "BILATERAL | MULTILATERAL"
+        json memberDealIds
+        decimal netAmount
+        date calculationDate
+    }
+
+%% --- Internal Relationships ---
+    SettlementInstruction ||--o{ SSIRecord : "uses"
+    SettlementInstruction ||--o{ RepairRecord : "may have"
+    SettlementInstruction ||--|| SettlementObligation : "creates"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: deal-execution <<<
+%%   SettlementInstruction ||--|| Deal : "instructed for"
+%%   Deal o{--|| SettlementInstruction : "instructs payment"
+
+%% >>> Connected to: cash-management <<<
+%%   SettlementInstruction ||--|| SanctionsCheck : "screened by"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Payments Settlement — Planned Entity Relationship Diagram","audience":["all"],"domains":["payments-settlement"],"lastVerified":"2026-10","sourceSpec":"docs/erds/planned/payments-settlement.mmd","filePath":"content/reference/data-model/planned/payments-settlement.md","timestamp":1792877416000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/payments-settlement","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Payments Settlement — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-447/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"epVY7IzkP1-nAhOJh_7fs"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:Tbc0,erDiagram\n%% PAYMENTS SETTLEMENT\n\n    SettlementInstruction {\n        uuid id PK\n        uuid dealId FK\n        uuid companyId FK\n        string instructionType "PAYMENT | RECEIPT"\n        string status "CREATED | SCREENED | AUTHORISED | SUBMITTED | CONFIRMED | FAILED | CANCELLED"\n        uuid ssiId FK\n        decimal amount\n        string currencyCode FK\n        date valueDate\n        string paymentRail "SWIFT | SEPA | ZAR | CLS | TARGET2"\n        string uetr UK\n        string settlementIdempotencyKey UK\n        string failureReason\n    }\n    RepairRecord {\n        uuid id PK\n        uuid settlementInstructionId FK\n        string repairType "RESUBMIT | AMEND | CANCEL | ESCALATE"\n        string beforeState\n        string afterState\n        uuid approvedByUserId FK\n        string justification\n        uuid evidencePackId FK\n    }\n    PaymentPrioritization {\n        uuid id PK\n        uuid companyId FK\n        string priorityTier "TIER1_REGULATORY | TIER2_SURVIVAL | TIER3_FIDUCIARY | TIER4_FUNDING | TIER5_OPERATIONAL | TIER6_NON_CRITICAL"\n        uuid settlementInstructionId FK\n        int priorityRank\n        date assignedAt\n        boolean isCrisisOverride\n    }\n    SSIRecord {\n        uuid id PK\n        uuid counterpartyId FK\n        string currencyCode FK\n        string paymentType "BENEFICIARY | INTERMEDIARY | CORRESPONDENT"\n        string bankBic\n        string accountNumber\n        string accountName\n        string routingCode\n        string status "ACTIVE | PENDING | EXPIRED"\n        uuid lastApprovedByUserId FK\n        date effectiveFrom\n        date effectiveTo\n    }\n    SettlementObligation {\n        uuid id PK\n        uuid dealId FK\n        uuid companyId FK\n        decimal amount\n        string currencyCode FK\n        date settlementDate\n        string settlementMechanism "DVP | PVP | FOP | CLS"\n        string status "PENDING | SETTLED | FAILED | PARTIAL"\n        decimal settledAmount\n        decimal residualAmount\n    }\n    NettingSet {\n        uuid id PK\n        string nettingAgreementRef\n        uuid counterpartyId FK\n        uuid legalAgreementId FK\n        string nettingType "BILATERAL | MULTILATERAL"\n        json memberDealIds\n        decimal netAmount\n        date calculationDate\n    }\n\n%% --- Internal Relationships ---\n    SettlementInstruction ||--o{ SSIRecord : "uses"\n    SettlementInstruction ||--o{ RepairRecord : "may have"\n    SettlementInstruction ||--|| SettlementObligation : "creates"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: deal-execution <<<\n%%   SettlementInstruction ||--|| Deal : "instructed for"\n%%   Deal o{--|| SettlementInstruction : "instructs payment"\n\n%% >>> Connected to: cash-management <<<\n%%   SettlementInstruction ||--|| SanctionsCheck : "screened by"\n12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Payments Settlement — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"
