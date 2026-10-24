@@ -1,0 +1,535 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2ztgcyvc9q7ss.js"
+5:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T4273,---
+title: Phase 1 — Core Transactional (Deal Execution)
+audience: [all]
+domains: [deal-execution]
+lastVerified: 2026-10
+sourceSpec: docs/erds/phases/phase-1-core-transactional.mmd
+---
+
+# Phase 1 — Core Transactional (Deal Execution)
+
+```mermaid
+erDiagram
+%% ============================================================
+%% PHASE 1 — CORE TRANSACTIONAL (DEAL EXECUTION)
+%% ============================================================
+
+    Deals {
+        uuid id PK
+        string dealNumber UK
+        uuid companyId FK
+        uuid instrumentId FK
+        uuid counterpartyId FK
+        uuid clientId FK
+        string direction "BUY | SELL | BORROW | LEND"
+        decimal notional
+        string currencyCode FK
+        date valueDate
+        date maturityDate
+        string lifecycleStatus "DRAFT | VALIDATED | PENDING_APPROVAL | ACTIVE | CONFIRMED | SETTLED | MATURED | CANCELLED | ROLLED"
+        string businessRationale
+        string businessPurposeCode
+        string actingCapacity "OWN | ON_BEHALF"
+        uuid idempotencyKey UK
+        string dealingCapacity "PRINCIPAL | AGENT"
+        uuid createdByUserId FK
+        date createdAt
+    }
+    DealsInstrumentExtensions_FX {
+        uuid dealId PK
+        decimal spotRate
+        decimal forwardPoints
+        decimal allInRate
+        string currencyPair
+        string tenor
+        date farValueDate
+    }
+    DealsInstrumentExtensions_MM {
+        uuid dealId PK
+        string depositType "CALL | FIXED | NCD"
+        decimal interestRate
+        string dayCountConvention
+    }
+    DealsInstrumentExtensions_Derivative {
+        uuid dealId PK
+        string derivativeType "IRS | FRA | OIS | CDS | OPTION"
+        decimal strikeRate
+        string payLegType
+        string receiveLegType
+        decimal notional
+        date effectiveDate
+    }
+    DealLifecycleTransitions {
+        uuid id PK
+        uuid dealId FK
+        string fromStatus
+        string toStatus
+        uuid userId FK
+        date transitionedAt
+        string reason
+        uuid evidencePackId FK
+    }
+    DealAmendments {
+        uuid id PK
+        uuid dealId FK
+        uuid amendedByUserId FK
+        date amendedAt
+        json beforeState
+        json afterState
+        string justification
+    }
+    DealRolls {
+        uuid id PK
+        uuid originalDealId FK
+        uuid newDealId FK
+        date rolledAt
+        string rollType "EXTEND | TENOR_CHANGE | RATE_RESET"
+        uuid approvalId FK
+    }
+    BlockTradeAllocations {
+        uuid id PK
+        uuid blockDealId FK
+        uuid subAccountId FK
+        decimal allocatedNotional
+        string allocationStatus "PENDING | COMPLETE"
+    }
+
+%% --- Internal Relationships ---
+    Deals ||--o{ DealLifecycleTransitions : "traces"
+    Deals ||--o{ DealAmendments : "amends"
+    Deals ||--o{ DealRolls : "rolled by"
+    Deals ||--|| DealsInstrumentExtensions_FX : "extends with FX"
+    Deals ||--|| DealsInstrumentExtensions_MM : "extends with MM"
+    Deals ||--|| DealsInstrumentExtensions_Derivative : "extends with Derivative"
+    Deals ||--o{ BlockTradeAllocations : "allocated by"
+
+%% ============================================================
+%% PHASE 1 — CORE TRANSACTIONAL (ACCOUNTING)
+%% ============================================================
+
+    StandardFinancialNodes {
+        uuid id PK
+        string nodeCode UK
+        string nodeName
+        string nodeCategory "ASSET | LIABILITY | EQUITY | INCOME | EXPENSE"
+        string cashClassification "CASH | NEAR_CASH | NON_CASH"
+        string ifrs9Classification
+        boolean isTreasuryAllowed
+    }
+    CompanyStandardFinancialNodes {
+        uuid id PK
+        uuid companyId FK
+        uuid nodeId FK
+        string mappingStatus
+        boolean isActive
+    }
+    ClientStandardFinancialNodes {
+        uuid id PK
+        uuid clientId FK
+        uuid companyNodeId FK
+        string overlayMode "REFINE | EXTEND"
+        string nodeClassification
+    }
+    GLAccounts {
+        uuid id PK
+        string glCode UK
+        string glName
+        string ledgerType "LOCAL_GAAP | IFRS | MANAGEMENT | REGULATORY"
+        string cashClassification
+        boolean isTreasuryAllowed
+    }
+    GLMappings {
+        uuid id PK
+        uuid companyId FK
+        string nodeCode
+        string accountingEventType
+        uuid glAccountId FK
+        string debitCredit "DEBIT | CREDIT"
+        string cashFlowCategory "OPERATING | INVESTING | FINANCING"
+        uuid effectiveFrom
+        uuid effectiveTo
+        string validationStatus "VALID | WARNING | ERROR"
+    }
+    CompanyGLOverlays {
+        uuid id PK
+        uuid companyId FK
+        uuid baseMappingId FK
+        uuid overrideGlAccountId FK
+        string justification
+    }
+    ClientGLOverlayRecords {
+        uuid id PK
+        uuid clientId FK
+        uuid baseMappingId FK
+        uuid overrideGlAccountId FK
+    }
+    TreasuryUniversalJournals {
+        uuid id PK
+        uuid dealId FK
+        uuid accountingEventId FK
+        uuid companyId FK
+        uuid standardFinancialNodeId FK
+        uuid glAccountId FK
+        string ledgerType
+        string debitCredit
+        decimal amount
+        string currencyCode FK
+        string cashFlowCategory
+        date postingDate
+        string description
+        uuid sourceEventId FK
+        uuid evidencePackId FK
+        string status "DRAFT | POSTED | REVERSED"
+        uuid reversalPairId FK
+        string reversalReason
+        boolean isSealed
+    }
+    AccountingEvents {
+        uuid id PK
+        uuid dealId FK
+        string eventType "CAPTURE | AMEND | SETTLE | MTM | CLOSE | REVERSE | HEDGE"
+        string accountingBasis "IFRS | GAAP | MANAGEMENT | REGULATORY"
+        uuid effectRunId FK
+        uuid eventPayloadHash
+    }
+    GLExportBatches {
+        uuid id PK
+        uuid companyId FK
+        string status "DRAFT | SUBMITTED | ACKNOWLEDGED | REJECTED"
+        uuid targetSystemId FK
+        date exportedAt
+        string acknowledgementRef
+        uuid rejectionEvidencePackId FK
+    }
+
+%% --- Internal Relationships ---
+    StandardFinancialNodes ||--o{ CompanyStandardFinancialNodes : "specialised by"
+    CompanyStandardFinancialNodes ||--o{ ClientStandardFinancialNodes : "overlaid by"
+    StandardFinancialNodes ||--o{ GLMappings : "maps to"
+    GLMappings ||--|| GLAccounts : "targets"
+    GLMappings ||--o{ CompanyGLOverlays : "overridden by"
+    GLMappings ||--o{ ClientGLOverlayRecords : "overridden by"
+    TreasuryUniversalJournals ||--|| AccountingEvents : "created by"
+    TreasuryUniversalJournals ||--|| StandardFinancialNodes : "classifies"
+    TreasuryUniversalJournals ||--|| GLAccounts : "posts to"
+    GLExportBatches ||--o{ TreasuryUniversalJournals : "exports"
+
+%% ============================================================
+%% PHASE 1 — CORE TRANSACTIONAL (PAYMENTS SETTLEMENT)
+%% ============================================================
+
+    SettlementInstructions {
+        uuid id PK
+        uuid dealId FK
+        uuid companyId FK
+        string instructionType "PAYMENT | RECEIPT"
+        string status "CREATED | SCREENED | AUTHORISED | SUBMITTED | CONFIRMED | FAILED | CANCELLED"
+        uuid ssiId FK
+        decimal amount
+        string currencyCode FK
+        date valueDate
+        string paymentRail "SWIFT | SEPA | ZAR | CLS | TARGET2"
+        string uetr UK
+        string settlementIdempotencyKey UK
+        string failureReason
+    }
+    RepairRecords {
+        uuid id PK
+        uuid settlementInstructionId FK
+        string repairType "RESUBMIT | AMEND | CANCEL | ESCALATE"
+        string beforeState
+        string afterState
+        uuid approvedByUserId FK
+        string justification
+        uuid evidencePackId FK
+    }
+    PaymentPrioritizations {
+        uuid id PK
+        uuid companyId FK
+        string priorityTier "TIER1_REGULATORY | TIER2_SURVIVAL | TIER3_FIDUCIARY | TIER4_FUNDING | TIER5_OPERATIONAL | TIER6_NON_CRITICAL"
+        uuid settlementInstructionId FK
+        int priorityRank
+        date assignedAt
+        boolean isCrisisOverride
+    }
+    SSIRecords {
+        uuid id PK
+        uuid counterpartyId FK
+        string currencyCode FK
+        string paymentType "BENEFICIARY | INTERMEDIARY | CORRESPONDENT"
+        string bankBic
+        string accountNumber
+        string accountName
+        string routingCode
+        string status "ACTIVE | PENDING | EXPIRED"
+        uuid lastApprovedByUserId FK
+        date effectiveFrom
+        date effectiveTo
+    }
+    SettlementObligations {
+        uuid id PK
+        uuid dealId FK
+        uuid companyId FK
+        decimal amount
+        string currencyCode FK
+        date settlementDate
+        string settlementMechanism "DVP | PVP | FOP | CLS"
+        string status "PENDING | SETTLED | FAILED | PARTIAL"
+        decimal settledAmount
+        decimal residualAmount
+    }
+    NettingSets {
+        uuid id PK
+        string nettingAgreementRef
+        uuid counterpartyId FK
+        uuid legalAgreementId FK
+        string nettingType "BILATERAL | MULTILATERAL"
+        json memberDealIds
+        decimal netAmount
+        date calculationDate
+    }
+
+%% --- Internal Relationships ---
+    SettlementInstructions ||--o{ SSIRecords : "uses"
+    SettlementInstructions ||--o{ RepairRecords : "may have"
+    SettlementInstructions ||--|| SettlementObligations : "creates"
+    SettlementInstructions ||--o{ PaymentPrioritizations : "prioritised by"
+    NettingSets ||--o{ SettlementObligations : "nets"
+
+%% ============================================================
+%% PHASE 1 — CORE TRANSACTIONAL (CASH MANAGEMENT)
+%% ============================================================
+
+    ProjectedCashflows {
+        uuid id PK
+        uuid dealId FK
+        uuid companyId FK
+        string cashDirection "INFLOW | OUTFLOW"
+        decimal amount
+        string currencyCode FK
+        date expectedSettlementDate
+        string cashType "PRINCIPAL | INTEREST | FEE | MARGIN"
+        int sequenceNumber
+        uuid idempotencyKey UK
+        uuid evidencePackId FK
+    }
+    ActualCashflows {
+        uuid id PK
+        uuid projectedCashflowId FK
+        uuid dealId FK
+        uuid companyId FK
+        string cashDirection
+        decimal amount
+        string currencyCode FK
+        date settlementDate
+        string cashType
+        string bankReference
+        uuid settlementInstructionId FK
+        uuid evidencePackId FK
+    }
+    CompanyCashLedgers {
+        uuid id PK
+        uuid companyId FK
+        string currencyCode FK
+        uuid nostroAccountId FK
+        decimal currentBalance
+        decimal availableBalance
+        decimal reconciledBalance
+        date asOfDate
+        decimal projectedEndOfDayBalance
+    }
+    CashflowMatchRecords {
+        uuid id PK
+        uuid companyId FK
+        date matchDate
+        string status "MATCHED | UNMATCHED_CREDIT | UNMATCHED_DEBIT | AMOUNT_MISMATCH | PARTIAL_MATCH"
+        uuid internalCashflowId FK
+        uuid externalCashflowId FK
+        string bankStatementReference
+        decimal internalAmount
+        decimal externalAmount
+        decimal varianceAmount
+        string breakType "TIMING | AMOUNT | MISSING | DUPLICATE"
+        string severity "LOW | MEDIUM | HIGH | CRITICAL"
+        date firstDetectedAt
+        date slaDeadline
+    }
+    InboundCashDataRecords {
+        uuid id PK
+        uuid companyId FK
+        string sourceType "SWIFT_MT940 | CAMT_053 | API | MANUAL"
+        string bankBic
+        string accountNumber
+        string currencyCode FK
+        decimal amount
+        string direction "CREDIT | DEBIT"
+        date valueDate
+        string bankReference
+        string counterpartyBic
+        string rawPayloadHash
+        uuid stagingStatus "PENDING | RECONCILED | EXCEPTION"
+    }
+    NostroBalances {
+        uuid id PK
+        uuid companyId FK
+        string bankBic
+        string accountNumber
+        string currencyCode FK
+        decimal openingBalance
+        decimal closingBalance
+        decimal availableBalance
+        decimal overdraftLimit
+        date asOfDate
+        string source "BANK_STATEMENT | INTERNAL"
+    }
+    BalanceSnapshots {
+        uuid id PK
+        uuid companyId FK
+        uuid nostroAccountId FK
+        string balanceType "EXTERNAL_REPORTED | INTERNAL_RECOGNISED | RECONCILED | USABLE"
+        decimal amount
+        date snapshotAt
+    }
+    SanctionsChecks {
+        uuid id PK
+        uuid paymentInstructionId FK
+        uuid screenedEntityId FK
+        string entityType "BENEFICIARY | ORDERING_PARTY | INTERMEDIARY"
+        string result "CLEAR | HIT | PENDING_REVIEW"
+        string matchType "EXACT | FUZZY | ALIAS | OWNERSHIP"
+        uuid complianceCaseId FK
+    }
+
+%% --- Internal Relationships ---
+    ActualCashflows ||--o{ ProjectedCashflows : "fulfils"
+    CashflowMatchRecords ||--|| ActualCashflows : "matches"
+    CashflowMatchRecords ||--o{ InboundCashDataRecords : "reconciles"
+    CompanyCashLedgers ||--o{ BalanceSnapshots : "snapshotted by"
+    NostroBalances ||--o{ CompanyCashLedgers : "feeds"
+    InboundCashDataRecords ||--o{ NostroBalances : "reflects"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES — PHASE 0 (FOUNDATION)
+%% ============================================================
+
+%% >>> Phase 0: foundation <<<
+%%   Deals ||--|| Companies : "belongs to"
+%%   Deals ||--|| Currencies : "denominated in"
+%%   Deals ||--|| GlobalInstrumentCatalogues : "is typed as"
+%%   Deals ||--|| Counterparties : "trades with"
+%%   Deals ||--o{ Clients : "may be for"
+%%   Deals ||--|| ApplicationUsers : "created by"
+%%   Companies o{--|| CompanyStandardFinancialNodes : "maps"
+%%   CompanyCashLedgers ||--|| Companies : "owned by"
+%%   Companies o{--|| CompanyCashLedgers : "owns"
+%%   SettlementInstructions ||--|| Companies : "belongs to"
+%%   SettlementInstructions ||--|| Counterparties : "settles with"
+%%   SSIRecords ||--|| Counterparties : "belongs to"
+%%   SSIRecords ||--|| Currencies : "denominated in"
+%%   BlockTradeAllocations ||--|| Companies : "allocated to"
+%%   NostroBalances ||--|| Companies : "owned by"
+
+%% >>> Phase 0: evidence-replay <<<
+%%   TreasuryUniversalJournals ||--|| EvidencePacks : "sealed by"
+%%   DealLifecycleTransitions ||--|| EvidencePacks : "evidenced by"
+%%   RepairRecords ||--|| EvidencePacks : "evidenced by"
+%%   ProjectedCashflows ||--|| EvidencePacks : "evidenced by"
+%%   ActualCashflows ||--|| EvidencePacks : "evidenced by"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES — PHASE 1 (INTRA-PHASE)
+%% ============================================================
+
+%% >>> deal-execution ↔ accounting <<<
+%%   Deals ||--o{ TreasuryUniversalJournals : "generates"
+%%   TreasuryUniversalJournals ||--|| Deals : "generated by"
+%%   AccountingEvents ||--|| Deals : "triggered by"
+
+%% >>> deal-execution ↔ cash-management <<<
+%%   Deals ||--o{ ProjectedCashflows : "projects cash"
+%%   ProjectedCashflows ||--|| Deals : "derived from"
+%%   Deals ||--o{ ActualCashflows : "settles cash"
+%%   ActualCashflows ||--|| Deals : "settles for"
+
+%% >>> deal-execution ↔ payments-settlement <<<
+%%   Deals ||--o{ SettlementInstructions : "instructs payment"
+%%   SettlementInstructions ||--|| Deals : "instructed for"
+%%   Deals ||--o{ SettlementObligations : "obligates"
+%%   SettlementObligations ||--|| Deals : "obligated by"
+
+%% >>> cash-management ↔ payments-settlement <<<
+%%   SettlementInstructions ||--|| SanctionsChecks : "screened by"
+%%   ActualCashflows ||--|| SettlementInstructions : "settled by"
+
+%% >>> accounting ↔ cash-management <<<
+%%   TreasuryUniversalJournals ||--o{ ActualCashflows : "journalised from"
+%%   TreasuryUniversalJournals ||--o{ ProjectedCashflows : "journalised from"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES — PHASE 2+ (DOWNSTREAM)
+%% ============================================================
+
+%% >>> Phase 2+: execution-effects <<<
+%%   Deals ||--o{ AtomicEffects : "triggers effects"
+%%   AtomicEffects ||--|| Deals : "originates from"
+%%   Deals ||--o{ LimitReservations : "reserves limits"
+
+%% >>> Phase 2+: profitability-cost <<<
+%%   Deals ||--o{ ProfitabilityRecords : "contributes to"
+%%   CostAllocations ||--|| Deals : "charges"
+%%   ProfitabilityRecords ||--|| Deals : "measures"
+%%   TransferPricingRecords ||--|| Deals : "prices"
+
+%% >>> Phase 2+: risk-limits <<<
+%%   Deals ||--o{ Exposures : "creates exposure"
+%%   LimitBreaches ||--|| Deals : "triggered by"
+%%   Exposures ||--|| Deals : "created by"
+
+%% >>> Phase 2+: hedge-accounting <<<
+%%   Deals ||--o{ HedgeAllocations : "is hedged by"
+%%   HedgeDesignations ||--|| Deals : "hedges"
+%%   HedgeDesignations ||--|| Deals : "hedged by"
+
+%% >>> Phase 2+: valuation <<<
+%%   CloseOutValuations ||--|| Deals : "values"
+
+%% >>> Phase 2+: tax <<<
+%%   TaxCalculations ||--|| Deals : "on"
+
+%% >>> Phase 2+: scenario-simulation <<<
+%%   WhatIfAnalyses ||--|| Deals : "modifies"
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Phase 1 — Core Transactional (Deal Execution)","audience":["all"],"domains":["deal-execution"],"lastVerified":"2026-10","sourceSpec":"docs/erds/phases/phase-1-core-transactional.mmd","filePath":"content/reference/data-model/phases/phase-1-core-transactional.md","timestamp":1792876206000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/phases/phase-1-core-transactional","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Phase 1 — Core Transactional (Deal Execution)"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-446/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"OivtBRnrH9qkiJTeyn4Xm"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:T435d,erDiagram\n%% ============================================================\n%% PHASE 1 — CORE TRANSACTIONAL (DEAL EXECUTION)\n%% ============================================================\n\n    Deals {\n        uuid id PK\n        string dealNumber UK\n        uuid companyId FK\n        uuid instrumentId FK\n        uuid counterpartyId FK\n        uuid clientId FK\n        string direction "BUY | SELL | BORROW | LEND"\n        decimal notional\n        string currencyCode FK\n        date valueDate\n        date maturityDate\n        string lifecycleStatus "DRAFT | VALIDATED | PENDING_APPROVAL | ACTIVE | CONFIRMED | SETTLED | MATURED | CANCELLED | ROLLED"\n        string businessRationale\n        string businessPurposeCode\n        string actingCapacity "OWN | ON_BEHALF"\n        uuid idempotencyKey UK\n        string dealingCapacity "PRINCIPAL | AGENT"\n        uuid createdByUserId FK\n        date createdAt\n    }\n    DealsInstrumentExtensions_FX {\n        uuid dealId PK\n        decimal spotRate\n        decimal forwardPoints\n        decimal allInRate\n        string currencyPair\n        string tenor\n        date farValueDate\n    }\n    DealsInstrumentExtensions_MM {\n        uuid dealId PK\n        string depositType "CALL | FIXED | NCD"\n        decimal interestRate\n        string dayCountConvention\n    }\n    DealsInstrumentExtensions_Derivative {\n        uuid dealId PK\n        string derivativeType "IRS | FRA | OIS | CDS | OPTION"\n        decimal strikeRate\n        string payLegType\n        string receiveLegType\n        decimal notional\n        date effectiveDate\n    }\n    DealLifecycleTransitions {\n        uuid id PK\n        uuid dealId FK\n        string fromStatus\n        string toStatus\n        uuid userId FK\n        date transitionedAt\n        string reason\n        uuid evidencePackId FK\n    }\n    DealAmendments {\n        uuid id PK\n        uuid dealId FK\n        uuid amendedByUserId FK\n        date amendedAt\n        json beforeState\n        json afterState\n        string justification\n    }\n    DealRolls {\n        uuid id PK\n        uuid originalDealId FK\n        uuid newDealId FK\n        date rolledAt\n        string rollType "EXTEND | TENOR_CHANGE | RATE_RESET"\n        uuid approvalId FK\n    }\n    BlockTradeAllocations {\n        uuid id PK\n        uuid blockDealId FK\n        uuid subAccountId FK\n        decimal allocatedNotional\n        string allocationStatus "PENDING | COMPLETE"\n    }\n\n%% --- Internal Relationships ---\n    Deals ||--o{ DealLifecycleTransitions : "traces"\n    Deals ||--o{ DealAmendments : "amends"\n    Deals ||--o{ DealRolls : "rolled by"\n    Deals ||--|| DealsInstrumentExtensions_FX : "extends with FX"\n    Deals ||--|| DealsInstrumentExtensions_MM : "extends with MM"\n    Deals ||--|| DealsInstrumentExtensions_Derivative : "extends with Derivative"\n    Deals ||--o{ BlockTradeAllocations : "allocated by"\n\n%% ============================================================\n%% PHASE 1 — CORE TRANSACTIONAL (ACCOUNTING)\n%% ============================================================\n\n    StandardFinancialNodes {\n        uuid id PK\n        string nodeCode UK\n        string nodeName\n        string nodeCategory "ASSET | LIABILITY | EQUITY | INCOME | EXPENSE"\n        string cashClassification "CASH | NEAR_CASH | NON_CASH"\n        string ifrs9Classification\n        boolean isTreasuryAllowed\n    }\n    CompanyStandardFinancialNodes {\n        uuid id PK\n        uuid companyId FK\n        uuid nodeId FK\n        string mappingStatus\n        boolean isActive\n    }\n    ClientStandardFinancialNodes {\n        uuid id PK\n        uuid clientId FK\n        uuid companyNodeId FK\n        string overlayMode "REFINE | EXTEND"\n        string nodeClassification\n    }\n    GLAccounts {\n        uuid id PK\n        string glCode UK\n        string glName\n        string ledgerType "LOCAL_GAAP | IFRS | MANAGEMENT | REGULATORY"\n        string cashClassification\n        boolean isTreasuryAllowed\n    }\n    GLMappings {\n        uuid id PK\n        uuid companyId FK\n        string nodeCode\n        string accountingEventType\n        uuid glAccountId FK\n        string debitCredit "DEBIT | CREDIT"\n        string cashFlowCategory "OPERATING | INVESTING | FINANCING"\n        uuid effectiveFrom\n        uuid effectiveTo\n        string validationStatus "VALID | WARNING | ERROR"\n    }\n    CompanyGLOverlays {\n        uuid id PK\n        uuid companyId FK\n        uuid baseMappingId FK\n        uuid overrideGlAccountId FK\n        string justification\n    }\n    ClientGLOverlayRecords {\n        uuid id PK\n        uuid clientId FK\n        uuid baseMappingId FK\n        uuid overrideGlAccountId FK\n    }\n    TreasuryUniversalJournals {\n        uuid id PK\n        uuid dealId FK\n        uuid accountingEventId FK\n        uuid companyId FK\n        uuid standardFinancialNodeId FK\n        uuid glAccountId FK\n        string ledgerType\n        string debitCredit\n        decimal amount\n        string currencyCode FK\n        string cashFlowCategory\n        date postingDate\n        string description\n        uuid sourceEventId FK\n        uuid evidencePackId FK\n        string status "DRAFT | POSTED | REVERSED"\n        uuid reversalPairId FK\n        string reversalReason\n        boolean isSealed\n    }\n    AccountingEvents {\n        uuid id PK\n        uuid dealId FK\n        string eventType "CAPTURE | AMEND | SETTLE | MTM | CLOSE | REVERSE | HEDGE"\n        string accountingBasis "IFRS | GAAP | MANAGEMENT | REGULATORY"\n        uuid effectRunId FK\n        uuid eventPayloadHash\n    }\n    GLExportBatches {\n        uuid id PK\n        uuid companyId FK\n        string status "DRAFT | SUBMITTED | ACKNOWLEDGED | REJECTED"\n        uuid targetSystemId FK\n        date exportedAt\n        string acknowledgementRef\n        uuid rejectionEvidencePackId FK\n    }\n\n%% --- Internal Relationships ---\n    StandardFinancialNodes ||--o{ CompanyStandardFinancialNodes : "specialised by"\n    CompanyStandardFinancialNodes ||--o{ ClientStandardFinancialNodes : "overlaid by"\n    StandardFinancialNodes ||--o{ GLMappings : "maps to"\n    GLMappings ||--|| GLAccounts : "targets"\n    GLMappings ||--o{ CompanyGLOverlays : "overridden by"\n    GLMappings ||--o{ ClientGLOverlayRecords : "overridden by"\n    TreasuryUniversalJournals ||--|| AccountingEvents : "created by"\n    TreasuryUniversalJournals ||--|| StandardFinancialNodes : "classifies"\n    TreasuryUniversalJournals ||--|| GLAccounts : "posts to"\n    GLExportBatches ||--o{ TreasuryUniversalJournals : "exports"\n\n%% ============================================================\n%% PHASE 1 — CORE TRANSACTIONAL (PAYMENTS SETTLEMENT)\n%% ============================================================\n\n    SettlementInstructions {\n        uuid id PK\n        uuid dealId FK\n        uuid companyId FK\n        string instructionType "PAYMENT | RECEIPT"\n        string status "CREATED | SCREENED | AUTHORISED | SUBMITTED | CONFIRMED | FAILED | CANCELLED"\n        uuid ssiId FK\n        decimal amount\n        string currencyCode FK\n        date valueDate\n        string paymentRail "SWIFT | SEPA | ZAR | CLS | TARGET2"\n        string uetr UK\n        string settlementIdempotencyKey UK\n        string failureReason\n    }\n    RepairRecords {\n        uuid id PK\n        uuid settlementInstructionId FK\n        string repairType "RESUBMIT | AMEND | CANCEL | ESCALATE"\n        string beforeState\n        string afterState\n        uuid approvedByUserId FK\n        string justification\n        uuid evidencePackId FK\n    }\n    PaymentPrioritizations {\n        uuid id PK\n        uuid companyId FK\n        string priorityTier "TIER1_REGULATORY | TIER2_SURVIVAL | TIER3_FIDUCIARY | TIER4_FUNDING | TIER5_OPERATIONAL | TIER6_NON_CRITICAL"\n        uuid settlementInstructionId FK\n        int priorityRank\n        date assignedAt\n        boolean isCrisisOverride\n    }\n    SSIRecords {\n        uuid id PK\n        uuid counterpartyId FK\n        string currencyCode FK\n        string paymentType "BENEFICIARY | INTERMEDIARY | CORRESPONDENT"\n        string bankBic\n        string accountNumber\n        string accountName\n        string routingCode\n        string status "ACTIVE | PENDING | EXPIRED"\n        uuid lastApprovedByUserId FK\n        date effectiveFrom\n        date effectiveTo\n    }\n    SettlementObligations {\n        uuid id PK\n        uuid dealId FK\n        uuid companyId FK\n        decimal amount\n        string currencyCode FK\n        date settlementDate\n        string settlementMechanism "DVP | PVP | FOP | CLS"\n        string status "PENDING | SETTLED | FAILED | PARTIAL"\n        decimal settledAmount\n        decimal residualAmount\n    }\n    NettingSets {\n        uuid id PK\n        string nettingAgreementRef\n        uuid counterpartyId FK\n        uuid legalAgreementId FK\n        string nettingType "BILATERAL | MULTILATERAL"\n        json memberDealIds\n        decimal netAmount\n        date calculationDate\n    }\n\n%% --- Internal Relationships ---\n    SettlementInstructions ||--o{ SSIRecords : "uses"\n    SettlementInstructions ||--o{ RepairRecords : "may have"\n    SettlementInstructions ||--|| SettlementObligations : "creates"\n    SettlementInstructions ||--o{ PaymentPrioritizations : "prioritised by"\n    NettingSets ||--o{ SettlementObligations : "nets"\n\n%% ============================================================\n%% PHASE 1 — CORE TRANSACTIONAL (CASH MANAGEMENT)\n%% ============================================================\n\n    ProjectedCashflows {\n        uuid id PK\n        uuid dealId FK\n        uuid companyId FK\n        string cashDirection "INFLOW | OUTFLOW"\n        decimal amount\n        string currencyCode FK\n        date expectedSettlementDate\n        string cashType "PRINCIPAL | INTEREST | FEE | MARGIN"\n        int sequenceNumber\n        uuid idempotencyKey UK\n        uuid evidencePackId FK\n    }\n    ActualCashflows {\n        uuid id PK\n        uuid projectedCashflowId FK\n        uuid dealId FK\n        uuid companyId FK\n        string cashDirection\n        decimal amount\n        string currencyCode FK\n        date settlementDate\n        string cashType\n        string bankReference\n        uuid settlementInstructionId FK\n        uuid evidencePackId FK\n    }\n    CompanyCashLedgers {\n        uuid id PK\n        uuid companyId FK\n        string currencyCode FK\n        uuid nostroAccountId FK\n        decimal currentBalance\n        decimal availableBalance\n        decimal reconciledBalance\n        date asOfDate\n        decimal projectedEndOfDayBalance\n    }\n    CashflowMatchRecords {\n        uuid id PK\n        uuid companyId FK\n        date matchDate\n        string status "MATCHED | UNMATCHED_CREDIT | UNMATCHED_DEBIT | AMOUNT_MISMATCH | PARTIAL_MATCH"\n        uuid internalCashflowId FK\n        uuid externalCashflowId FK\n        string bankStatementReference\n        decimal internalAmount\n        decimal externalAmount\n        decimal varianceAmount\n        string breakType "TIMING | AMOUNT | MISSING | DUPLICATE"\n        string severity "LOW | MEDIUM | HIGH | CRITICAL"\n        date firstDetectedAt\n        date slaDeadline\n    }\n    InboundCashDataRecords {\n        uuid id PK\n        uuid companyId FK\n        string sourceType "SWIFT_MT940 | CAMT_053 | API | MANUAL"\n        string bankBic\n        string accountNumber\n        string currencyCode FK\n        decimal amount\n        string direction "CREDIT | DEBIT"\n        date valueDate\n        string bankReference\n        string counterpartyBic\n        string rawPayloadHash\n        uuid stagingStatus "PENDING | RECONCILED | EXCEPTION"\n    }\n    NostroBalances {\n        uuid id PK\n        uuid companyId FK\n        string bankBic\n        string accountNumber\n        string currencyCode FK\n        decimal openingBalance\n        decimal closingBalance\n        decimal availableBalance\n        decimal overdraftLimit\n        date asOfDate\n        string source "BANK_STATEMENT | INTERNAL"\n    }\n    BalanceSnapshots {\n        uuid id PK\n        uuid companyId FK\n        uuid nostroAccountId FK\n        string balanceType "EXTERNAL_REPORTED | INTERNAL_RECOGNISED | RECONCILED | USABLE"\n        decimal amount\n        date snapshotAt\n    }\n    SanctionsChecks {\n        uuid id PK\n        uuid paymentInstructionId FK\n        uuid screenedEntityId FK\n        string entityType "BENEFICIARY | ORDERING_PARTY | INTERMEDIARY"\n        string result "CLEAR | HIT | PENDING_REVIEW"\n        string matchType "EXACT | FUZZY | ALIAS | OWNERSHIP"\n        uuid complianceCaseId FK\n    }\n\n%% --- Internal Relationships ---\n    ActualCashflows ||--o{ ProjectedCashflows : "fulfils"\n    CashflowMatchRecords ||--|| ActualCashflows : "matches"\n    CashflowMatchRecords ||--o{ InboundCashDataRecords : "reconciles"\n    CompanyCashLedgers ||--o{ BalanceSnapshots : "snapshotted by"\n    NostroBalances ||--o{ CompanyCashLedgers : "feeds"\n    InboundCashDataRecords ||--o{ NostroBalances : "reflects"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES — PHASE 0 (FOUNDATION)\n%% ============================================================\n\n%% >>> Phase 0: foundation <<<\n%%   Deals ||--|| Companies : "belongs to"\n%%   Deals ||--|| Currencies : "denominated in"\n%%   Deals ||--|| GlobalInstrumentCatalogues : "is typed as"\n%%   Deals ||--|| Counterparties : "trades with"\n%%   Deals ||--o{ Clients : "may be for"\n%%   Deals ||--|| ApplicationUsers : "created by"\n%%   Companies o{--|| CompanyStandardFinancialNodes : "maps"\n%%   CompanyCashLedgers ||--|| Companies : "owned by"\n%%   Companies o{--|| CompanyCashLedgers : "owns"\n%%   SettlementInstructions ||--|| Companies : "belongs to"\n%%   SettlementInstructions ||--|| Counterparties : "settles with"\n%%   SSIRecords ||--|| Counterparties : "belongs to"\n%%   SSIRecords ||--|| Currencies : "denominated in"\n%%   BlockTradeAllocations ||--|| Companies : "allocated to"\n%%   NostroBalances ||--|| Companies : "owned by"\n\n%% >>> Phase 0: evidence-replay <<<\n%%   TreasuryUniversalJournals ||--|| EvidencePacks : "sealed by"\n%%   DealLifecycleTransitions ||--|| EvidencePacks : "evidenced by"\n%%   RepairRecords ||--|| EvidencePacks : "evidenced by"\n%%   ProjectedCashflows ||--|| EvidencePacks : "evidenced by"\n%%   ActualCashflows ||--|| EvidencePacks : "evidenced by"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES — PHASE 1 (INTRA-PHASE)\n%% ============================================================\n\n%% >>> deal-execution ↔ accounting <<<\n%%   Deals ||--o{ TreasuryUniversalJournals : "generates"\n%%   TreasuryUniversalJournals ||--|| Deals : "generated by"\n%%   AccountingEvents ||--|| Deals : "triggered by"\n\n%% >>> deal-execution ↔ cash-management <<<\n%%   Deals ||--o{ ProjectedCashflows : "projects cash"\n%%   ProjectedCashflows ||--|| Deals : "derived from"\n%%   Deals ||--o{ ActualCashflows : "settles cash"\n%%   ActualCashflows ||--|| Deals : "settles for"\n\n%% >>> deal-execution ↔ payments-settlement <<<\n%%   Deals ||--o{ SettlementInstructions : "instructs payment"\n%%   SettlementInstructions ||--|| Deals : "instructed for"\n%%   Deals ||--o{ SettlementObligations : "obligates"\n%%   SettlementObligations ||--|| Deals : "obligated by"\n\n%% >>> cash-management ↔ payments-settlement <<<\n%%   SettlementInstructions ||--|| SanctionsChecks : "screened by"\n%%   ActualCashflows ||--|| SettlementInstructions : "settled by"\n\n%% >>> accounting ↔ cash-management <<<\n%%   TreasuryUniversalJournals ||--o{ ActualCashflows : "journalised from"\n%%   TreasuryUniversalJournals ||--o{ ProjectedCashflows : "journalised from"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES — PHASE 2+ (DOWNSTREAM)\n%% ============================================================\n\n%% >>> Phase 2+: execution-effects <<<\n%%   Deals ||--o{ AtomicEffects : "triggers effects"\n%%   AtomicEffects ||--|| Deals : "originates from"\n%%   Deals ||--o{ LimitReservations : "reserves limits"\n\n%% >>> Phase 2+: profitability-cost <<<\n%%   Deals ||--o{ ProfitabilityRecords : "contributes to"\n%%   CostAllocations ||--|| Deals : "charges"\n%%   ProfitabilityRecords ||--|| Deals : "measures"\n%%   TransferPricingRecords ||--|| Deals : "prices"\n\n%% >>> Phase 2+: risk-limits <<<\n%%   Deals ||--o{ Exposures : "creates exposure"\n%%   LimitBreaches ||--|| Deals : "triggered by"\n%%   Exposures ||--|| Deals : "created by"\n\n%% >>> Phase 2+: hedge-accounting <<<\n%%   Deals ||--o{ HedgeAllocations : "is hedged by"\n%%   HedgeDesignations ||--|| Deals : "hedges"\n%%   HedgeDesignations ||--|| Deals : "hedged by"\n\n%% >>> Phase 2+: valuation <<<\n%%   CloseOutValuations ||--|| Deals : "values"\n\n%% >>> Phase 2+: tax <<<\n%%   TaxCalculations ||--|| Deals : "on"\n\n%% >>> Phase 2+: scenario-simulation <<<\n%%   WhatIfAnalyses ||--|| Deals : "modifies"12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Phase 1 — Core Transactional (Deal Execution)","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

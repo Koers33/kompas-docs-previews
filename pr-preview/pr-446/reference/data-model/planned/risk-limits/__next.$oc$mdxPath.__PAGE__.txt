@@ -1,0 +1,175 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2ztgcyvc9q7ss.js"
+5:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T1074,---
+title: Risk Limits — Planned Entity Relationship Diagram
+audience: [all]
+domains: [risk-limits]
+lastVerified: 2026-10
+sourceSpec: docs/erds/planned/risk-limits.mmd
+---
+
+# Risk Limits — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% RISK LIMITS
+
+    LimitDefinition {
+        uuid id PK
+        uuid companyId FK
+        string limitCode UK
+        string limitType "COUNTERPARTY | PRODUCT | CURRENCY | SECTOR | LIQUIDITY | STOP_LOSS | VAR | CONCENTRATION"
+        decimal hardLimit
+        decimal softWarningThreshold
+        boolean allowOverride
+        int maxOverrideDays
+        string overrideAuthority
+        date lastReviewDate
+        int overdueReviewDays
+        string reviewFrequency "DAILY | WEEKLY | MONTHLY | QUARTERLY"
+    }
+    LimitUtilization {
+        uuid id PK
+        uuid limitDefinitionId FK
+        uuid companyId FK
+        uuid counterpartyId FK
+        decimal currentUtilization
+        decimal pendingUtilization
+        decimal availableCapacity
+        date asOfDate
+        date nextReviewDate
+    }
+    LimitBreach {
+        uuid id PK
+        uuid limitDefinitionId FK
+        uuid dealId FK
+        decimal breachedAmount
+        decimal limitAmount
+        string breachType "SOFT | HARD | STRESS | REGULATORY"
+        string severity "INFO | LOW | MEDIUM | HIGH | CRITICAL"
+        string status "OPEN | INVESTIGATING | RESOLVED | ESCALATED"
+        uuid escalationId FK
+    }
+    LimitOverride {
+        uuid id PK
+        uuid limitBreachId FK
+        string justification
+        decimal approvedAmount
+        date expiryDate
+        uuid approvedByUserId FK
+        boolean postEventReviewRequired
+        uuid evidencePackId FK
+    }
+    Exposure {
+        uuid id PK
+        uuid companyId FK
+        uuid counterpartyId FK
+        uuid dealId FK
+        uuid riskPoolId FK
+        string exposureType "GROSS | NET | HEDGED | RESIDUAL | POOL_ADJUSTED | STRESSED | COLLATERAL_ADJUSTED"
+        decimal amount
+        string currencyCode FK
+        date calculatedAt
+    }
+    ExposureAggregation {
+        uuid id PK
+        uuid companyId FK
+        string aggregationDimension "COUNTERPARTY | SECTOR | CURRENCY | PRODUCT | REGION"
+        string exposureType
+        decimal totalExposure
+        decimal concentrationPercentage
+    }
+    ConcentrationThreshold {
+        uuid id PK
+        uuid companyId FK
+        string concentrationType "COUNTERPARTY | FUNDING | LIQUIDITY | CURRENCY | SECTOR"
+        decimal thresholdValue
+        string dimensionValue
+    }
+    RiskPool {
+        uuid id PK
+        uuid companyId FK
+        string poolCode
+        string poolType "INDIVIDUAL | POOL | HYBRID"
+        boolean isActive
+        boolean isCrisisPool
+    }
+    RiskPoolMembership {
+        uuid id PK
+        uuid riskPoolId FK
+        uuid dealId FK
+        string allocationMethod
+        decimal allocationBasis
+        string membershipType "INDIVIDUAL_ONLY | POOL_ONLY | BOTH | EXCLUDED"
+    }
+    NettingAgreement {
+        uuid id PK
+        uuid counterpartyId FK
+        uuid legalAgreementId FK
+        string agreementType "ISDA | GMRA | GMSLA"
+        boolean isEnforceable
+        date signedDate
+        json coveredProductTypes
+    }
+    ContagionModel {
+        uuid id PK
+        uuid scenarioId FK
+        uuid companyId FK
+        string contagionType "LIQUIDITY | CAPITAL | EXPOSURE | OPERATIONAL"
+        json propagationPaths
+        decimal severityScore
+    }
+
+%% --- Internal Relationships ---
+    LimitDefinition ||--o{ LimitUtilization : "tracks"
+    LimitDefinition ||--o{ LimitBreach : "breached by"
+    LimitBreach ||--o{ LimitOverride : "overridden by"
+    Exposure ||--o{ RiskPool : "pooled in"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: foundation <<<
+%%   LimitDefinition ||--|| Company : "belongs to"
+%%   User o{--|| LimitOverride : "approves"
+
+%% >>> Connected to: deal-execution <<<
+%%   LimitBreach ||--|| Deal : "triggered by"
+%%   Exposure ||--|| Deal : "created by"
+%%   Deal o{--|| Exposure : "creates exposure"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Risk Limits — Planned Entity Relationship Diagram","audience":["all"],"domains":["risk-limits"],"lastVerified":"2026-10","sourceSpec":"docs/erds/planned/risk-limits.mmd","filePath":"content/reference/data-model/planned/risk-limits.md","timestamp":1792876206000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/risk-limits","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Risk Limits — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-446/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"OivtBRnrH9qkiJTeyn4Xm"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:Tfff,erDiagram\n%% RISK LIMITS\n\n    LimitDefinition {\n        uuid id PK\n        uuid companyId FK\n        string limitCode UK\n        string limitType "COUNTERPARTY | PRODUCT | CURRENCY | SECTOR | LIQUIDITY | STOP_LOSS | VAR | CONCENTRATION"\n        decimal hardLimit\n        decimal softWarningThreshold\n        boolean allowOverride\n        int maxOverrideDays\n        string overrideAuthority\n        date lastReviewDate\n        int overdueReviewDays\n        string reviewFrequency "DAILY | WEEKLY | MONTHLY | QUARTERLY"\n    }\n    LimitUtilization {\n        uuid id PK\n        uuid limitDefinitionId FK\n        uuid companyId FK\n        uuid counterpartyId FK\n        decimal currentUtilization\n        decimal pendingUtilization\n        decimal availableCapacity\n        date asOfDate\n        date nextReviewDate\n    }\n    LimitBreach {\n        uuid id PK\n        uuid limitDefinitionId FK\n        uuid dealId FK\n        decimal breachedAmount\n        decimal limitAmount\n        string breachType "SOFT | HARD | STRESS | REGULATORY"\n        string severity "INFO | LOW | MEDIUM | HIGH | CRITICAL"\n        string status "OPEN | INVESTIGATING | RESOLVED | ESCALATED"\n        uuid escalationId FK\n    }\n    LimitOverride {\n        uuid id PK\n        uuid limitBreachId FK\n        string justification\n        decimal approvedAmount\n        date expiryDate\n        uuid approvedByUserId FK\n        boolean postEventReviewRequired\n        uuid evidencePackId FK\n    }\n    Exposure {\n        uuid id PK\n        uuid companyId FK\n        uuid counterpartyId FK\n        uuid dealId FK\n        uuid riskPoolId FK\n        string exposureType "GROSS | NET | HEDGED | RESIDUAL | POOL_ADJUSTED | STRESSED | COLLATERAL_ADJUSTED"\n        decimal amount\n        string currencyCode FK\n        date calculatedAt\n    }\n    ExposureAggregation {\n        uuid id PK\n        uuid companyId FK\n        string aggregationDimension "COUNTERPARTY | SECTOR | CURRENCY | PRODUCT | REGION"\n        string exposureType\n        decimal totalExposure\n        decimal concentrationPercentage\n    }\n    ConcentrationThreshold {\n        uuid id PK\n        uuid companyId FK\n        string concentrationType "COUNTERPARTY | FUNDING | LIQUIDITY | CURRENCY | SECTOR"\n        decimal thresholdValue\n        string dimensionValue\n    }\n    RiskPool {\n        uuid id PK\n        uuid companyId FK\n        string poolCode\n        string poolType "INDIVIDUAL | POOL | HYBRID"\n        boolean isActive\n        boolean isCrisisPool\n    }\n    RiskPoolMembership {\n        uuid id PK\n        uuid riskPoolId FK\n        uuid dealId FK\n        string allocationMethod\n        decimal allocationBasis\n        string membershipType "INDIVIDUAL_ONLY | POOL_ONLY | BOTH | EXCLUDED"\n    }\n    NettingAgreement {\n        uuid id PK\n        uuid counterpartyId FK\n        uuid legalAgreementId FK\n        string agreementType "ISDA | GMRA | GMSLA"\n        boolean isEnforceable\n        date signedDate\n        json coveredProductTypes\n    }\n    ContagionModel {\n        uuid id PK\n        uuid scenarioId FK\n        uuid companyId FK\n        string contagionType "LIQUIDITY | CAPITAL | EXPOSURE | OPERATIONAL"\n        json propagationPaths\n        decimal severityScore\n    }\n\n%% --- Internal Relationships ---\n    LimitDefinition ||--o{ LimitUtilization : "tracks"\n    LimitDefinition ||--o{ LimitBreach : "breached by"\n    LimitBreach ||--o{ LimitOverride : "overridden by"\n    Exposure ||--o{ RiskPool : "pooled in"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: foundation <<<\n%%   LimitDefinition ||--|| Company : "belongs to"\n%%   User o{--|| LimitOverride : "approves"\n\n%% >>> Connected to: deal-execution <<<\n%%   LimitBreach ||--|| Deal : "triggered by"\n%%   Exposure ||--|| Deal : "created by"\n%%   Deal o{--|| Exposure : "creates exposure"\n12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Risk Limits — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

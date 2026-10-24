@@ -1,0 +1,232 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2ztgcyvc9q7ss.js"
+5:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T1733,---
+title: Foundation — Planned Entity Relationship Diagram
+audience: [all]
+domains: [foundation]
+lastVerified: 2026-10
+sourceSpec: docs/erds/planned/foundation.mmd
+---
+
+# Foundation — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% FOUNDATION
+
+    Company {
+        uuid id PK
+        string companyCode UK
+        string legalName
+        string institutionType "BANK | TREASURY | BROKER | CORPORATE"
+        string jurisdictionCode
+        string operatingModel
+        string riskStructureModel "INDIVIDUAL | POOL | HYBRID"
+        string accountingBasis "IFRS | GAAP"
+        string complexityLevel
+        string onboardingStatus
+        date goLiveDate
+        json boardApprovalRef
+    }
+    User {
+        uuid id PK
+        string username UK
+        string email
+        string identityProviderRef
+        boolean mfaEnabled
+        boolean active
+    }
+    Role {
+        uuid id PK
+        string roleCode UK "TREASURY_DEALER | TREASURY_MO | TREASURY_BO | FINANCE | COMPLIANCE | etc"
+        string displayName
+    }
+    UserRoleAssignment {
+        uuid userId FK
+        uuid roleId FK
+        uuid companyId FK
+        date validFrom
+        date validTo
+    }
+    AuthorityMatrix {
+        uuid id PK
+        uuid roleId FK
+        uuid companyId FK
+        string productScope
+        decimal maxNotional
+        string currencyScope
+        string jurisdictionScope
+        string timeWindow
+        boolean requiresMfa
+        string authorityTier
+    }
+    SoDConflictMatrix {
+        uuid id PK
+        string roleA
+        string roleB
+        string conflictType "ABSOLUTE_BLOCK | WARNING | REVIEW"
+    }
+    Calendar {
+        uuid id PK
+        string calendarCode UK
+        string jurisdictionCode
+        string currencyCode
+        boolean isBusinessDay
+        date holidayDate
+    }
+    Currency {
+        string currencyCode PK "USD | EUR | ZAR | GBP | etc"
+        string name
+        int decimals
+    }
+    Jurisdiction {
+        uuid id PK
+        string countryCode UK
+        string regulatoryBody
+        boolean requiresIO
+        boolean requiresDPO
+        json privacyRegulations "POPIA | GDPR | CCPA"
+    }
+    DelegationRule {
+        uuid id PK
+        uuid delegatorUserId FK
+        uuid delegateUserId FK
+        uuid roleId FK
+        uuid authorityMatrixId FK
+        date validFrom
+        date validTo
+        boolean preserveSoD
+    }
+
+%% --- Internal Relationships ---
+    Company ||--o{ UserRoleAssignment : "assigns"
+    Company ||--o{ AuthorityMatrix : "defines"
+    User ||--o{ UserRoleAssignment : "has"
+    User ||--o{ DelegationRule : "delegates"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: onboarding <<<
+%%   Company ||--o{ CompanyOnboardingProfile : "has"
+
+%% >>> Connected to: product-instrument <<<
+%%   Company ||--o{ CompanyInstrumentActivation : "activates"
+
+%% >>> Connected to: accounting <<<
+%%   Company ||--o{ CompanyStandardFinNode : "maps"
+
+%% >>> Connected to: cash-management <<<
+%%   Company ||--o{ CompanyCashLedger : "owns"
+%%   CompanyCashLedger ||--|| Company : "owned by"
+
+%% >>> Connected to: period-close <<<
+%%   Company ||--o{ ClosePeriod : "closes"
+
+%% >>> Connected to: capital-adequacy <<<
+%%   Company ||--o{ CapitalAdequacyCalculation : "calculates"
+%%   CapitalAdequacyCalculation ||--|| Company : "for"
+%%   CapitalBuffer ||--|| Company : "maintains"
+%%   OperationalRiskLossData ||--|| Company : "recorded by"
+
+%% >>> Connected to: liquidity-alm <<<
+%%   Company ||--o{ LCRCalculation : "calculates"
+%%   Company ||--o{ NSFRCalculation : "calculates"
+%%   LCRCalculation ||--|| Company : "for"
+%%   NSFRCalculation ||--|| Company : "for"
+%%   LiquidityBuffer ||--|| Company : "held by"
+%%   FundingGap ||--|| Company : "monitored by"
+%%   SurvivalHorizon ||--|| Company : "for"
+%%   ContingencyFundingPlan ||--|| Company : "owned by"
+%%   NearCashAsset ||--|| Company : "held by"
+%%   StatutoryReserve ||--|| Company : "required by"
+
+%% >>> Connected to: regulatory-reporting <<<
+%%   Company ||--o{ RegulatorySubmission : "submits"
+%%   RegulatorySubmission ||--|| Company : "filed by"
+%%   Pillar3Disclosure ||--|| Company : "published by"
+%%   ICAAPDocument ||--|| Company : "assesses"
+
+%% >>> Connected to: risk-limits <<<
+%%   User ||--o{ LimitOverride : "approves"
+%%   LimitDefinition ||--|| Company : "belongs to"
+
+%% >>> Connected to: workflow-approvals <<<
+%%   User ||--o{ ApprovalRequest : "acts on"
+%%   ApprovalRequest ||--|| User : "created by"
+%%   QueueItem ||--|| Company : "belongs to"
+
+%% >>> Connected to: deal-execution <<<
+%%   Deal ||--|| Company : "belongs to"
+
+%% >>> Connected to: execution-effects <<<
+%%   CompanyInstrumentEffectMatrix ||--|| Company : "belongs to"
+
+%% >>> Connected to: collateral <<<
+%%   CollateralInventory ||--|| Company : "held by"
+
+%% >>> Connected to: evidence-replay <<<
+%%   SnapshotBinding ||--|| Company : "captures"
+
+%% >>> Connected to: regulatory-compliance <<<
+%%   DataSubjectRequest ||--|| Company : "submitted to"
+
+%% >>> Connected to: tax <<<
+%%   DeferredTaxPosition ||--|| Company : "held by"
+
+%% >>> Connected to: scenario-simulation <<<
+%%   ForecastRecord ||--|| Company : "forecasts"
+%%   OptimizationResult ||--|| Company : "optimises"
+
+%% >>> Connected to: notifications-tasks <<<
+%%   Notification ||--|| User : "sent to"
+%%   Task ||--|| User : "assigned to"
+
+%% >>> Connected to: platform-resilience <<<
+%%   HealthMetric ||--|| Company : "monitored for"
+
+%% >>> Connected to: knowledge-graph <<<
+%%   InstitutionalMemoryRecord ||--|| User : "recorded by"
+
+%% >>> Connected to: workspaces-ui <<<
+%%   WorkspaceDefinition ||--|| Role : "for"
+%%   ByteManifest ||--|| Company : "audits"
+
+%% >>> Connected to: scheduler <<<
+%%   CutoffTime ||--|| Company : "configured by"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Foundation — Planned Entity Relationship Diagram","audience":["all"],"domains":["foundation"],"lastVerified":"2026-10","sourceSpec":"docs/erds/planned/foundation.mmd","filePath":"content/reference/data-model/planned/foundation.md","timestamp":1792876206000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/foundation","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Foundation — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-446/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"OivtBRnrH9qkiJTeyn4Xm"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:T16fb,erDiagram\n%% FOUNDATION\n\n    Company {\n        uuid id PK\n        string companyCode UK\n        string legalName\n        string institutionType "BANK | TREASURY | BROKER | CORPORATE"\n        string jurisdictionCode\n        string operatingModel\n        string riskStructureModel "INDIVIDUAL | POOL | HYBRID"\n        string accountingBasis "IFRS | GAAP"\n        string complexityLevel\n        string onboardingStatus\n        date goLiveDate\n        json boardApprovalRef\n    }\n    User {\n        uuid id PK\n        string username UK\n        string email\n        string identityProviderRef\n        boolean mfaEnabled\n        boolean active\n    }\n    Role {\n        uuid id PK\n        string roleCode UK "TREASURY_DEALER | TREASURY_MO | TREASURY_BO | FINANCE | COMPLIANCE | etc"\n        string displayName\n    }\n    UserRoleAssignment {\n        uuid userId FK\n        uuid roleId FK\n        uuid companyId FK\n        date validFrom\n        date validTo\n    }\n    AuthorityMatrix {\n        uuid id PK\n        uuid roleId FK\n        uuid companyId FK\n        string productScope\n        decimal maxNotional\n        string currencyScope\n        string jurisdictionScope\n        string timeWindow\n        boolean requiresMfa\n        string authorityTier\n    }\n    SoDConflictMatrix {\n        uuid id PK\n        string roleA\n        string roleB\n        string conflictType "ABSOLUTE_BLOCK | WARNING | REVIEW"\n    }\n    Calendar {\n        uuid id PK\n        string calendarCode UK\n        string jurisdictionCode\n        string currencyCode\n        boolean isBusinessDay\n        date holidayDate\n    }\n    Currency {\n        string currencyCode PK "USD | EUR | ZAR | GBP | etc"\n        string name\n        int decimals\n    }\n    Jurisdiction {\n        uuid id PK\n        string countryCode UK\n        string regulatoryBody\n        boolean requiresIO\n        boolean requiresDPO\n        json privacyRegulations "POPIA | GDPR | CCPA"\n    }\n    DelegationRule {\n        uuid id PK\n        uuid delegatorUserId FK\n        uuid delegateUserId FK\n        uuid roleId FK\n        uuid authorityMatrixId FK\n        date validFrom\n        date validTo\n        boolean preserveSoD\n    }\n\n%% --- Internal Relationships ---\n    Company ||--o{ UserRoleAssignment : "assigns"\n    Company ||--o{ AuthorityMatrix : "defines"\n    User ||--o{ UserRoleAssignment : "has"\n    User ||--o{ DelegationRule : "delegates"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: onboarding <<<\n%%   Company ||--o{ CompanyOnboardingProfile : "has"\n\n%% >>> Connected to: product-instrument <<<\n%%   Company ||--o{ CompanyInstrumentActivation : "activates"\n\n%% >>> Connected to: accounting <<<\n%%   Company ||--o{ CompanyStandardFinNode : "maps"\n\n%% >>> Connected to: cash-management <<<\n%%   Company ||--o{ CompanyCashLedger : "owns"\n%%   CompanyCashLedger ||--|| Company : "owned by"\n\n%% >>> Connected to: period-close <<<\n%%   Company ||--o{ ClosePeriod : "closes"\n\n%% >>> Connected to: capital-adequacy <<<\n%%   Company ||--o{ CapitalAdequacyCalculation : "calculates"\n%%   CapitalAdequacyCalculation ||--|| Company : "for"\n%%   CapitalBuffer ||--|| Company : "maintains"\n%%   OperationalRiskLossData ||--|| Company : "recorded by"\n\n%% >>> Connected to: liquidity-alm <<<\n%%   Company ||--o{ LCRCalculation : "calculates"\n%%   Company ||--o{ NSFRCalculation : "calculates"\n%%   LCRCalculation ||--|| Company : "for"\n%%   NSFRCalculation ||--|| Company : "for"\n%%   LiquidityBuffer ||--|| Company : "held by"\n%%   FundingGap ||--|| Company : "monitored by"\n%%   SurvivalHorizon ||--|| Company : "for"\n%%   ContingencyFundingPlan ||--|| Company : "owned by"\n%%   NearCashAsset ||--|| Company : "held by"\n%%   StatutoryReserve ||--|| Company : "required by"\n\n%% >>> Connected to: regulatory-reporting <<<\n%%   Company ||--o{ RegulatorySubmission : "submits"\n%%   RegulatorySubmission ||--|| Company : "filed by"\n%%   Pillar3Disclosure ||--|| Company : "published by"\n%%   ICAAPDocument ||--|| Company : "assesses"\n\n%% >>> Connected to: risk-limits <<<\n%%   User ||--o{ LimitOverride : "approves"\n%%   LimitDefinition ||--|| Company : "belongs to"\n\n%% >>> Connected to: workflow-approvals <<<\n%%   User ||--o{ ApprovalRequest : "acts on"\n%%   ApprovalRequest ||--|| User : "created by"\n%%   QueueItem ||--|| Company : "belongs to"\n\n%% >>> Connected to: deal-execution <<<\n%%   Deal ||--|| Company : "belongs to"\n\n%% >>> Connected to: execution-effects <<<\n%%   CompanyInstrumentEffectMatrix ||--|| Company : "belongs to"\n\n%% >>> Connected to: collateral <<<\n%%   CollateralInventory ||--|| Company : "held by"\n\n%% >>> Connected to: evidence-replay <<<\n%%   SnapshotBinding ||--|| Company : "captures"\n\n%% >>> Connected to: regulatory-compliance <<<\n%%   DataSubjectRequest ||--|| Company : "submitted to"\n\n%% >>> Connected to: tax <<<\n%%   DeferredTaxPosition ||--|| Company : "held by"\n\n%% >>> Connected to: scenario-simulation <<<\n%%   ForecastRecord ||--|| Company : "forecasts"\n%%   OptimizationResult ||--|| Company : "optimises"\n\n%% >>> Connected to: notifications-tasks <<<\n%%   Notification ||--|| User : "sent to"\n%%   Task ||--|| User : "assigned to"\n\n%% >>> Connected to: platform-resilience <<<\n%%   HealthMetric ||--|| Company : "monitored for"\n\n%% >>> Connected to: knowledge-graph <<<\n%%   InstitutionalMemoryRecord ||--|| User : "recorded by"\n\n%% >>> Connected to: workspaces-ui <<<\n%%   WorkspaceDefinition ||--|| Role : "for"\n%%   ByteManifest ||--|| Company : "audits"\n\n%% >>> Connected to: scheduler <<<\n%%   CutoffTime ||--|| Company : "configured by"\n12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Foundation — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

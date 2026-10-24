@@ -1,0 +1,88 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2ztgcyvc9q7ss.js"
+5:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+11:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T555,---
+title: Scheduler — Planned Entity Relationship Diagram
+audience: [all]
+domains: [scheduler]
+lastVerified: 2026-10
+sourceSpec: docs/erds/planned/scheduler.mmd
+---
+
+# Scheduler — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% SCHEDULER
+
+    SchedulerJob {
+        uuid id PK
+        string jobCode UK
+        string domainCode
+        string cronExpression
+        json upstreamDependencies
+        json downstreamDependencies
+        boolean isBlocking
+        int maxRetries
+        string escalationThreshold
+        string status "ACTIVE | PAUSED | DISABLED"
+    }
+    SchedulerRun {
+        uuid id PK
+        uuid jobId FK
+        date scheduledAt
+        date startedAt
+        date completedAt
+        string status "SUCCESS | FAILED | SKIPPED | OVERRUN"
+        string errorDetail
+    }
+    CutoffTime {
+        uuid id PK
+        uuid companyId FK
+        string paymentRail
+        string currencyCode FK
+        time localCutoff
+        string timezone
+    }
+
+%% --- Internal Relationships ---
+    SchedulerJob ||--o{ SchedulerRun : "executes as"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: foundation <<<
+%%   CutoffTime ||--|| Company : "configured by"
+
+```12:T493,erDiagram\n%% SCHEDULER\n\n    SchedulerJob {\n        uuid id PK\n        string jobCode UK\n        string domainCode\n        string cronExpression\n        json upstreamDependencies\n        json downstreamDependencies\n        boolean isBlocking\n        int maxRetries\n        string escalationThreshold\n        string status "ACTIVE | PAUSED | DISABLED"\n    }\n    SchedulerRun {\n        uuid id PK\n        uuid jobId FK\n        date scheduledAt\n        date startedAt\n        date completedAt\n        string status "SUCCESS | FAILED | SKIPPED | OVERRUN"\n        string errorDetail\n    }\n    CutoffTime {\n        uuid id PK\n        uuid companyId FK\n        string paymentRail\n        string currencyCode FK\n        time localCutoff\n        string timezone\n    }\n\n%% --- Internal Relationships ---\n    SchedulerJob ||--o{ SchedulerRun : "executes as"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: foundation <<<\n%%   CutoffTime ||--|| Company : "configured by"\nc:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Scheduler — Planned Entity Relationship Diagram","audience":["all"],"domains":["scheduler"],"lastVerified":"2026-10","sourceSpec":"docs/erds/planned/scheduler.mmd","filePath":"content/reference/data-model/planned/scheduler.md","timestamp":1792876206000},"sourceCode":"$10","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Scheduler — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L11",null,{"chart":"$12"}]]}]]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/scheduler","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Scheduler — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-446/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"OivtBRnrH9qkiJTeyn4Xm"}
+1e:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+13:["$","$L1e",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@1f"}]}]
+1d:true
+b:300
+1f:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

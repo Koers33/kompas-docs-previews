@@ -1,0 +1,147 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2ztgcyvc9q7ss.js"
+5:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Tc60,---
+title: Profitability Cost — Planned Entity Relationship Diagram
+audience: [all]
+domains: [profitability-cost]
+lastVerified: 2026-10
+sourceSpec: docs/erds/planned/profitability-cost.mmd
+---
+
+# Profitability Cost — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% PROFITABILITY COST
+
+    CostPool {
+        uuid id PK
+        uuid companyId FK
+        string poolCode
+        string allocationMethod "DIRECT | PROPORTIONAL | ACTIVITY_BASED | FIXED"
+        boolean isActive
+    }
+    CostAllocation {
+        uuid id PK
+        uuid costPoolId FK
+        uuid dealId FK
+        uuid instrumentId FK
+        uuid companyId FK
+        string costType "FUNDING | LIQUIDITY | OPERATIONAL | CAPITAL | COMPLIANCE | SETTLEMENT"
+        decimal amount
+        string currencyCode FK
+        string allocationBasis
+        date allocatedAt
+    }
+    ProfitabilityRecord {
+        uuid id PK
+        uuid companyId FK
+        uuid dealId FK
+        uuid instrumentId FK
+        uuid costPoolId FK
+        uuid counterpartyId FK
+        uuid dealerId FK
+        decimal revenue
+        decimal totalCost
+        decimal netContribution
+        decimal raroc
+        decimal hurdleRate
+        string currencyCode FK
+        date calculatedAt
+    }
+    BudgetRecord {
+        uuid id PK
+        uuid companyId FK
+        uuid instrumentFamilyId FK
+        string periodCode
+        decimal budgetedRevenue
+        decimal budgetedCost
+        decimal budgetedNetContribution
+        string status "DRAFT | APPROVED | LOCKED"
+    }
+    BudgetVariance {
+        uuid id PK
+        uuid budgetRecordId FK
+        uuid profitabilityRecordId FK
+        decimal actualAmount
+        decimal budgetedAmount
+        decimal varianceAmount
+        string varianceType "FAVOURABLE | ADVERSE"
+    }
+    LeagueTable {
+        uuid id PK
+        uuid companyId FK
+        string rankingDimension "DEALER | PRODUCT | COUNTERPARTY | COST_POOL | INSTRUMENT"
+        string periodCode
+        json rankedEntries
+        date refreshedAt
+    }
+    TransferPricingRecord {
+        uuid id PK
+        uuid dealId FK
+        string pricingType "FUNDING | LIQUIDITY | CAPITAL | TREASURY_INTERNAL"
+        decimal rate
+        decimal amount
+        string currencyCode FK
+        date effectiveAt
+    }
+    CollaborationNote {
+        uuid id PK
+        uuid entityId FK
+        string entityType
+        string noteType "COMMENTARY | DECISION | INSTRUCTION | ESCALATION"
+        string content
+        uuid authorId FK
+        uuid priorNoteId FK
+        date createdAt
+        boolean isImmutable
+    }
+
+%% --- Internal Relationships ---
+    CostPool ||--o{ CostAllocation : "distributes"
+    BudgetRecord ||--o{ BudgetVariance : "compares"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: deal-execution <<<
+%%   CostAllocation ||--|| Deal : "charges"
+%%   ProfitabilityRecord ||--|| Deal : "measures"
+%%   TransferPricingRecord ||--|| Deal : "prices"
+%%   Deal o{--|| ProfitabilityRecord : "contributes to"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Profitability Cost — Planned Entity Relationship Diagram","audience":["all"],"domains":["profitability-cost"],"lastVerified":"2026-10","sourceSpec":"docs/erds/planned/profitability-cost.mmd","filePath":"content/reference/data-model/planned/profitability-cost.md","timestamp":1792876206000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/profitability-cost","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Profitability Cost — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-446/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"OivtBRnrH9qkiJTeyn4Xm"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:Tbb3,erDiagram\n%% PROFITABILITY COST\n\n    CostPool {\n        uuid id PK\n        uuid companyId FK\n        string poolCode\n        string allocationMethod "DIRECT | PROPORTIONAL | ACTIVITY_BASED | FIXED"\n        boolean isActive\n    }\n    CostAllocation {\n        uuid id PK\n        uuid costPoolId FK\n        uuid dealId FK\n        uuid instrumentId FK\n        uuid companyId FK\n        string costType "FUNDING | LIQUIDITY | OPERATIONAL | CAPITAL | COMPLIANCE | SETTLEMENT"\n        decimal amount\n        string currencyCode FK\n        string allocationBasis\n        date allocatedAt\n    }\n    ProfitabilityRecord {\n        uuid id PK\n        uuid companyId FK\n        uuid dealId FK\n        uuid instrumentId FK\n        uuid costPoolId FK\n        uuid counterpartyId FK\n        uuid dealerId FK\n        decimal revenue\n        decimal totalCost\n        decimal netContribution\n        decimal raroc\n        decimal hurdleRate\n        string currencyCode FK\n        date calculatedAt\n    }\n    BudgetRecord {\n        uuid id PK\n        uuid companyId FK\n        uuid instrumentFamilyId FK\n        string periodCode\n        decimal budgetedRevenue\n        decimal budgetedCost\n        decimal budgetedNetContribution\n        string status "DRAFT | APPROVED | LOCKED"\n    }\n    BudgetVariance {\n        uuid id PK\n        uuid budgetRecordId FK\n        uuid profitabilityRecordId FK\n        decimal actualAmount\n        decimal budgetedAmount\n        decimal varianceAmount\n        string varianceType "FAVOURABLE | ADVERSE"\n    }\n    LeagueTable {\n        uuid id PK\n        uuid companyId FK\n        string rankingDimension "DEALER | PRODUCT | COUNTERPARTY | COST_POOL | INSTRUMENT"\n        string periodCode\n        json rankedEntries\n        date refreshedAt\n    }\n    TransferPricingRecord {\n        uuid id PK\n        uuid dealId FK\n        string pricingType "FUNDING | LIQUIDITY | CAPITAL | TREASURY_INTERNAL"\n        decimal rate\n        decimal amount\n        string currencyCode FK\n        date effectiveAt\n    }\n    CollaborationNote {\n        uuid id PK\n        uuid entityId FK\n        string entityType\n        string noteType "COMMENTARY | DECISION | INSTRUCTION | ESCALATION"\n        string content\n        uuid authorId FK\n        uuid priorNoteId FK\n        date createdAt\n        boolean isImmutable\n    }\n\n%% --- Internal Relationships ---\n    CostPool ||--o{ CostAllocation : "distributes"\n    BudgetRecord ||--o{ BudgetVariance : "compares"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: deal-execution <<<\n%%   CostAllocation ||--|| Deal : "charges"\n%%   ProfitabilityRecord ||--|| Deal : "measures"\n%%   TransferPricingRecord ||--|| Deal : "prices"\n%%   Deal o{--|| ProfitabilityRecord : "contributes to"\n12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Profitability Cost — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

@@ -1,0 +1,193 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/2ztgcyvc9q7ss.js"
+5:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-446/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T113d,---
+title: Evidence Replay — Planned Entity Relationship Diagram
+audience: [all]
+domains: [evidence-replay]
+lastVerified: 2026-10
+sourceSpec: docs/erds/planned/evidence-replay.mmd
+---
+
+# Evidence Replay — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% EVIDENCE REPLAY
+
+    EvidencePack {
+        uuid id PK
+        uuid idempotencyKey UK
+        string evidenceType "EXECUTION | ACCOUNTING | COMPLIANCE | LEGAL | REGULATORY"
+        string status "OPEN | SEALED"
+        string sha256hash
+        date sealedAt
+        uuid sealedByUserId FK
+    }
+    EvidenceItem {
+        uuid id PK
+        uuid evidencePackId FK
+        string itemType
+        string itemHash
+        json payload
+        string chainOfCustody
+        uuid addedByUserId FK
+    }
+    AuditLogEntry {
+        uuid id PK
+        string entityType
+        uuid entityId FK
+        string action "CREATE | AMEND | APPROVE | REJECT | VIEW | EXPORT | DELETE"
+        uuid userId FK
+        date timestamp
+        json beforeState
+        json afterState
+        uuid evidencePackId FK
+        string ipAddress
+        string sessionId
+    }
+    SnapshotBinding {
+        uuid id PK
+        uuid companyId FK
+        string mappingVersion
+        string policyConfigVersion
+        uuid riskSnapshotRef FK
+        uuid cashSnapshotRef FK
+        json selectedEngines
+        json selectedMethods
+        date boundAt
+    }
+    DeterministicHashRecord {
+        uuid id PK
+        uuid executionRequestId FK
+        string inputHash
+        string outputHash
+        string tupleK
+        string sha256Hash
+    }
+    ForensicsInvestigation {
+        uuid id PK
+        string caseRef
+        string investigationType "OPERATIONAL | FRAUD | COMPLIANCE | REGULATORY | CYBER"
+        json timelineEvents
+        uuid evidencePackId FK
+        string status "OPEN | CLOSED | SUBMITTED"
+        uuid evidenceSealId FK
+    }
+    ReplaySession {
+        uuid id PK
+        uuid snapshotBindingId FK
+        uuid eventId FK
+        string replayMode "STRICT | CONTEXTUAL"
+        string status "RUNNING | COMPLETED | DIVERGED | FAILED"
+        json outputHash
+        string divergenceReason
+        date replayedAt
+    }
+    ImmutableLedgerEntity {
+        uuid id PK
+        string entityType
+        uuid entityId FK
+        string previousHash
+        string entryHash
+        boolean isSealed
+        date createdAt
+    }
+    LegalHoldRecord {
+        uuid id PK
+        uuid evidencePackId FK
+        string holdReason
+        date appliedAt
+        date releasedAt
+        string caseRef
+    }
+    DataRetentionPolicy {
+        uuid id PK
+        string categoryCode
+        string retentionPeriod
+        int retentionDays
+        string archivalStrategy
+        boolean legalHoldApplicable
+    }
+    ReplayVarianceRecord {
+        uuid id PK
+        uuid replaySessionId FK
+        string fieldPath
+        string expectedValue
+        string actualValue
+        string reason
+        string severity "INFO | WARNING | CRITICAL"
+    }
+    ReplayCertification {
+        uuid id PK
+        uuid companyId FK
+        uuid snapshotBindingId FK
+        string certificationType "PERIODIC | EVENT_DRIVEN | REGULATORY"
+        string status "CERTIFIED | FAILED | IN_PROGRESS"
+        date certifiedAt
+        date nextCertificationDue
+    }
+    ChainOfCustodyRecord {
+        uuid id PK
+        uuid evidencePackId FK
+        string action "VIEWED | EXPORTED | SEALED | PRESENTED | SUBPOENAED"
+        uuid userId FK
+        string purpose
+        date timestamp
+        string ipAddress
+    }
+
+%% --- Internal Relationships ---
+    EvidencePack ||--o{ EvidenceItem : "contains"
+    EvidencePack ||--o{ ChainOfCustodyRecord : "traced by"
+    EvidencePack ||--o{ LegalHoldRecord : "held by"
+    ReplaySession ||--|| SnapshotBinding : "uses"
+    ReplaySession ||--o{ ReplayVarianceRecord : "detects"
+    ForensicsInvestigation ||--|| EvidencePack : "produces"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: foundation <<<
+%%   SnapshotBinding ||--|| Company : "captures"
+
+%% >>> Connected to: execution-effects <<<
+%%   DeterministicHashRecord ||--|| ExecutionRequest : "hashes"
+
+%% >>> Connected to: accounting <<<
+%%   TUJEntry ||--|| EvidencePack : "sealed by"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Evidence Replay — Planned Entity Relationship Diagram","audience":["all"],"domains":["evidence-replay"],"lastVerified":"2026-10","sourceSpec":"docs/erds/planned/evidence-replay.mmd","filePath":"content/reference/data-model/planned/evidence-replay.md","timestamp":1792876206000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/evidence-replay","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Evidence Replay — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-446/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"OivtBRnrH9qkiJTeyn4Xm"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:T10ca,erDiagram\n%% EVIDENCE REPLAY\n\n    EvidencePack {\n        uuid id PK\n        uuid idempotencyKey UK\n        string evidenceType "EXECUTION | ACCOUNTING | COMPLIANCE | LEGAL | REGULATORY"\n        string status "OPEN | SEALED"\n        string sha256hash\n        date sealedAt\n        uuid sealedByUserId FK\n    }\n    EvidenceItem {\n        uuid id PK\n        uuid evidencePackId FK\n        string itemType\n        string itemHash\n        json payload\n        string chainOfCustody\n        uuid addedByUserId FK\n    }\n    AuditLogEntry {\n        uuid id PK\n        string entityType\n        uuid entityId FK\n        string action "CREATE | AMEND | APPROVE | REJECT | VIEW | EXPORT | DELETE"\n        uuid userId FK\n        date timestamp\n        json beforeState\n        json afterState\n        uuid evidencePackId FK\n        string ipAddress\n        string sessionId\n    }\n    SnapshotBinding {\n        uuid id PK\n        uuid companyId FK\n        string mappingVersion\n        string policyConfigVersion\n        uuid riskSnapshotRef FK\n        uuid cashSnapshotRef FK\n        json selectedEngines\n        json selectedMethods\n        date boundAt\n    }\n    DeterministicHashRecord {\n        uuid id PK\n        uuid executionRequestId FK\n        string inputHash\n        string outputHash\n        string tupleK\n        string sha256Hash\n    }\n    ForensicsInvestigation {\n        uuid id PK\n        string caseRef\n        string investigationType "OPERATIONAL | FRAUD | COMPLIANCE | REGULATORY | CYBER"\n        json timelineEvents\n        uuid evidencePackId FK\n        string status "OPEN | CLOSED | SUBMITTED"\n        uuid evidenceSealId FK\n    }\n    ReplaySession {\n        uuid id PK\n        uuid snapshotBindingId FK\n        uuid eventId FK\n        string replayMode "STRICT | CONTEXTUAL"\n        string status "RUNNING | COMPLETED | DIVERGED | FAILED"\n        json outputHash\n        string divergenceReason\n        date replayedAt\n    }\n    ImmutableLedgerEntity {\n        uuid id PK\n        string entityType\n        uuid entityId FK\n        string previousHash\n        string entryHash\n        boolean isSealed\n        date createdAt\n    }\n    LegalHoldRecord {\n        uuid id PK\n        uuid evidencePackId FK\n        string holdReason\n        date appliedAt\n        date releasedAt\n        string caseRef\n    }\n    DataRetentionPolicy {\n        uuid id PK\n        string categoryCode\n        string retentionPeriod\n        int retentionDays\n        string archivalStrategy\n        boolean legalHoldApplicable\n    }\n    ReplayVarianceRecord {\n        uuid id PK\n        uuid replaySessionId FK\n        string fieldPath\n        string expectedValue\n        string actualValue\n        string reason\n        string severity "INFO | WARNING | CRITICAL"\n    }\n    ReplayCertification {\n        uuid id PK\n        uuid companyId FK\n        uuid snapshotBindingId FK\n        string certificationType "PERIODIC | EVENT_DRIVEN | REGULATORY"\n        string status "CERTIFIED | FAILED | IN_PROGRESS"\n        date certifiedAt\n        date nextCertificationDue\n    }\n    ChainOfCustodyRecord {\n        uuid id PK\n        uuid evidencePackId FK\n        string action "VIEWED | EXPORTED | SEALED | PRESENTED | SUBPOENAED"\n        uuid userId FK\n        string purpose\n        date timestamp\n        string ipAddress\n    }\n\n%% --- Internal Relationships ---\n    EvidencePack ||--o{ EvidenceItem : "contains"\n    EvidencePack ||--o{ ChainOfCustodyRecord : "traced by"\n    EvidencePack ||--o{ LegalHoldRecord : "held by"\n    ReplaySession ||--|| SnapshotBinding : "uses"\n    ReplaySession ||--o{ ReplayVarianceRecord : "detects"\n    ForensicsInvestigation ||--|| EvidencePack : "produces"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: foundation <<<\n%%   SnapshotBinding ||--|| Company : "captures"\n\n%% >>> Connected to: execution-effects <<<\n%%   DeterministicHashRecord ||--|| ExecutionRequest : "hashes"\n\n%% >>> Connected to: accounting <<<\n%%   TUJEntry ||--|| EvidencePack : "sealed by"\n12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Evidence Replay — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"
