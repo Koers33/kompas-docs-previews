@@ -1,0 +1,172 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-444/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-444/_next/static/chunks/208apj0mfw459.js"
+5:"/kompas-docs-previews/pr-preview/pr-444/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-444/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Tfda,---
+title: Liquidity ALM — Planned Entity Relationship Diagram
+audience: [all]
+domains: [liquidity-alm]
+lastVerified: 2026-10
+sourceSpec: docs/erds/planned/liquidity-alm.mmd
+---
+
+# Liquidity ALM — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% LIQUIDITY ALM
+
+    LCRCalculation {
+        uuid id PK
+        uuid companyId FK
+        date calculationDate
+        decimal highQualityLiquidAssets
+        decimal totalNetCashOutflows
+        decimal lcrRatio
+        string status "COMPLIANT | BREACHED | WARNING"
+    }
+    NSFRCalculation {
+        uuid id PK
+        uuid companyId FK
+        date calculationDate
+        decimal availableStableFunding
+        decimal requiredStableFunding
+        decimal nsfrRatio
+        string status
+    }
+    LiquidityBuffer {
+        uuid id PK
+        uuid companyId FK
+        string bufferType "OPERATIONAL | REGULATORY | SURVIVAL | STRESS | COLLATERAL"
+        decimal targetAmount
+        decimal currentAmount
+        decimal minimumLevel
+        string currencyCode FK
+    }
+    FundingGap {
+        uuid id PK
+        uuid companyId FK
+        string gapType "LIQUIDITY | FUNDING | TENOR"
+        string severity "GREEN | AMBER | RED"
+        date gapDate
+        decimal gapAmount
+        string currencyCode FK
+        int hoursRemainingBeforeEscalation
+    }
+    SurvivalHorizon {
+        uuid id PK
+        uuid companyId FK
+        string scenarioType "BASE | ADVERSE | SEVERE"
+        int survivalDays
+        decimal liquidityDepletionRate
+        date calculatedAt
+    }
+    ContingencyFundingPlan {
+        uuid id PK
+        uuid companyId FK
+        string planStatus "DRAFT | APPROVED | ACTIVATED | COMPLETED"
+        json triggerConditions
+        json fundingLevers
+        date boardApprovedAt
+        date activatedAt
+    }
+    NearCashAsset {
+        uuid id PK
+        uuid companyId FK
+        string assetType "GOVT_BOND | TREASURY_BILL | CORP_BOND | EQUITY | MMF"
+        string currencyCode FK
+        decimal faceValue
+        decimal marketValue
+        decimal haircutPercentage
+        decimal monetizableValue
+        string encumbranceStatus "UNENCUMBERED | PARTIAL | FULL | RESTRICTED"
+        date maturityDate
+        decimal currentHaircut
+    }
+    HaircutSchedule {
+        uuid id PK
+        string collateralType
+        decimal baseHaircut
+        decimal stressHaircut
+        string currencyCode FK
+        date effectiveFrom
+    }
+    StatutoryReserve {
+        uuid id PK
+        uuid companyId FK
+        string currencyCode FK
+        decimal requiredReserve
+        decimal actualBalance
+        string complianceStatus "COMPLIANT | BREACHED"
+    }
+    IRRBBResult {
+        uuid id PK
+        uuid companyId FK
+        string scenario "PARALLEL_UP | PARALLEL_DOWN | STEEPNER | FLATTENER | SHORT_UP | SHORT_DOWN"
+        decimal eveChange
+        decimal niiChange
+        decimal eveChangePercentage
+        boolean outlierTestTriggered
+        date calculatedAt
+    }
+    BehaviouralAssumption {
+        uuid id PK
+        uuid companyId FK
+        string assumptionType "NMD_CORE | NMD_NON_MATURITY | EARLY_REDEMPTION | PREPAYMENT"
+        json parameters
+        date alcoApprovedAt
+        date validFrom
+        date validTo
+    }
+
+%% --- Internal Relationships ---
+    HaircutSchedule ||--|| NearCashAsset : "applies to"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: foundation <<<
+%%   LCRCalculation ||--|| Company : "for"
+%%   NSFRCalculation ||--|| Company : "for"
+%%   LiquidityBuffer ||--|| Company : "held by"
+%%   FundingGap ||--|| Company : "monitored by"
+%%   SurvivalHorizon ||--|| Company : "for"
+%%   ContingencyFundingPlan ||--|| Company : "owned by"
+%%   NearCashAsset ||--|| Company : "held by"
+%%   StatutoryReserve ||--|| Company : "required by"
+%%   Company o{--|| LCRCalculation : "calculates"
+%%   Company o{--|| NSFRCalculation : "calculates"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Liquidity ALM — Planned Entity Relationship Diagram","audience":["all"],"domains":["liquidity-alm"],"lastVerified":"2026-10","sourceSpec":"docs/erds/planned/liquidity-alm.mmd","filePath":"content/reference/data-model/planned/liquidity-alm.md","timestamp":1792853120000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/liquidity-alm","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Liquidity ALM — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-444/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"DhiBsWPgg5nGXIWbGy2Zp"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:Tf5a,erDiagram\n%% LIQUIDITY ALM\n\n    LCRCalculation {\n        uuid id PK\n        uuid companyId FK\n        date calculationDate\n        decimal highQualityLiquidAssets\n        decimal totalNetCashOutflows\n        decimal lcrRatio\n        string status "COMPLIANT | BREACHED | WARNING"\n    }\n    NSFRCalculation {\n        uuid id PK\n        uuid companyId FK\n        date calculationDate\n        decimal availableStableFunding\n        decimal requiredStableFunding\n        decimal nsfrRatio\n        string status\n    }\n    LiquidityBuffer {\n        uuid id PK\n        uuid companyId FK\n        string bufferType "OPERATIONAL | REGULATORY | SURVIVAL | STRESS | COLLATERAL"\n        decimal targetAmount\n        decimal currentAmount\n        decimal minimumLevel\n        string currencyCode FK\n    }\n    FundingGap {\n        uuid id PK\n        uuid companyId FK\n        string gapType "LIQUIDITY | FUNDING | TENOR"\n        string severity "GREEN | AMBER | RED"\n        date gapDate\n        decimal gapAmount\n        string currencyCode FK\n        int hoursRemainingBeforeEscalation\n    }\n    SurvivalHorizon {\n        uuid id PK\n        uuid companyId FK\n        string scenarioType "BASE | ADVERSE | SEVERE"\n        int survivalDays\n        decimal liquidityDepletionRate\n        date calculatedAt\n    }\n    ContingencyFundingPlan {\n        uuid id PK\n        uuid companyId FK\n        string planStatus "DRAFT | APPROVED | ACTIVATED | COMPLETED"\n        json triggerConditions\n        json fundingLevers\n        date boardApprovedAt\n        date activatedAt\n    }\n    NearCashAsset {\n        uuid id PK\n        uuid companyId FK\n        string assetType "GOVT_BOND | TREASURY_BILL | CORP_BOND | EQUITY | MMF"\n        string currencyCode FK\n        decimal faceValue\n        decimal marketValue\n        decimal haircutPercentage\n        decimal monetizableValue\n        string encumbranceStatus "UNENCUMBERED | PARTIAL | FULL | RESTRICTED"\n        date maturityDate\n        decimal currentHaircut\n    }\n    HaircutSchedule {\n        uuid id PK\n        string collateralType\n        decimal baseHaircut\n        decimal stressHaircut\n        string currencyCode FK\n        date effectiveFrom\n    }\n    StatutoryReserve {\n        uuid id PK\n        uuid companyId FK\n        string currencyCode FK\n        decimal requiredReserve\n        decimal actualBalance\n        string complianceStatus "COMPLIANT | BREACHED"\n    }\n    IRRBBResult {\n        uuid id PK\n        uuid companyId FK\n        string scenario "PARALLEL_UP | PARALLEL_DOWN | STEEPNER | FLATTENER | SHORT_UP | SHORT_DOWN"\n        decimal eveChange\n        decimal niiChange\n        decimal eveChangePercentage\n        boolean outlierTestTriggered\n        date calculatedAt\n    }\n    BehaviouralAssumption {\n        uuid id PK\n        uuid companyId FK\n        string assumptionType "NMD_CORE | NMD_NON_MATURITY | EARLY_REDEMPTION | PREPAYMENT"\n        json parameters\n        date alcoApprovedAt\n        date validFrom\n        date validTo\n    }\n\n%% --- Internal Relationships ---\n    HaircutSchedule ||--|| NearCashAsset : "applies to"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: foundation <<<\n%%   LCRCalculation ||--|| Company : "for"\n%%   NSFRCalculation ||--|| Company : "for"\n%%   LiquidityBuffer ||--|| Company : "held by"\n%%   FundingGap ||--|| Company : "monitored by"\n%%   SurvivalHorizon ||--|| Company : "for"\n%%   ContingencyFundingPlan ||--|| Company : "owned by"\n%%   NearCashAsset ||--|| Company : "held by"\n%%   StatutoryReserve ||--|| Company : "required by"\n%%   Company o{--|| LCRCalculation : "calculates"\n%%   Company o{--|| NSFRCalculation : "calculates"\n12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Liquidity ALM — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

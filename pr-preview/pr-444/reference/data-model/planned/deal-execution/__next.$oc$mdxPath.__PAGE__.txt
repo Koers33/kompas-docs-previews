@@ -1,0 +1,190 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-444/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-444/_next/static/chunks/208apj0mfw459.js"
+5:"/kompas-docs-previews/pr-preview/pr-444/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-444/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T11ec,---
+title: Deal Execution — Planned Entity Relationship Diagram
+audience: [all]
+domains: [deal-execution]
+lastVerified: 2026-10
+sourceSpec: docs/erds/planned/deal-execution.mmd
+---
+
+# Deal Execution — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% DEAL EXECUTION
+
+    Deal {
+        uuid id PK
+        string dealNumber UK
+        uuid companyId FK
+        uuid instrumentId FK
+        uuid counterpartyId FK
+        uuid clientId FK
+        string direction "BUY | SELL | BORROW | LEND"
+        decimal notional
+        string currencyCode FK
+        date valueDate
+        date maturityDate
+        string lifecycleStatus "DRAFT | VALIDATED | PENDING_APPROVAL | ACTIVE | CONFIRMED | SETTLED | MATURED | CANCELLED | ROLLED"
+        string businessRationale
+        string businessPurposeCode
+        string actingCapacity "OWN | ON_BEHALF"
+        uuid idempotencyKey UK
+        string dealingCapacity "PRINCIPAL | AGENT"
+        uuid createdByUserId FK
+        date createdAt
+    }
+    DealExtension_FX {
+        uuid dealId PK
+        decimal spotRate
+        decimal forwardPoints
+        decimal allInRate
+        string currencyPair
+        string tenor
+        date farValueDate
+    }
+    DealExtension_MM {
+        uuid dealId PK
+        string depositType "CALL | FIXED | NCD"
+        decimal interestRate
+        string dayCountConvention
+    }
+    DealExtension_Derivative {
+        uuid dealId PK
+        string derivativeType "IRS | FRA | OIS | CDS | OPTION"
+        decimal strikeRate
+        string payLegType
+        string receiveLegType
+        decimal notional
+        date effectiveDate
+    }
+    DealLifecycleTransition {
+        uuid id PK
+        uuid dealId FK
+        string fromStatus
+        string toStatus
+        uuid userId FK
+        date transitionedAt
+        string reason
+        uuid evidencePackId FK
+    }
+    DealAmendment {
+        uuid id PK
+        uuid dealId FK
+        uuid amendedByUserId FK
+        date amendedAt
+        json beforeState
+        json afterState
+        string justification
+    }
+    DealRoll {
+        uuid id PK
+        uuid originalDealId FK
+        uuid newDealId FK
+        date rolledAt
+        string rollType "EXTEND | TENOR_CHANGE | RATE_RESET"
+        uuid approvalId FK
+    }
+    BlockTradeAllocation {
+        uuid id PK
+        uuid blockDealId FK
+        uuid subAccountId FK
+        decimal allocatedNotional
+        string allocationStatus "PENDING | COMPLETE"
+    }
+
+%% --- Internal Relationships ---
+    Deal ||--o{ DealLifecycleTransition : "traces"
+    Deal ||--o{ DealAmendment : "amends"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: foundation <<<
+%%   Deal ||--|| Company : "belongs to"
+
+%% >>> Connected to: product-instrument <<<
+%%   Deal ||--|| GlobalInstrumentCatalogue : "is typed as"
+
+%% >>> Connected to: counterparty-client <<<
+%%   Deal ||--|| Counterparty : "trades with"
+%%   Deal ||--o{ Client : "may be for"
+
+%% >>> Connected to: accounting <<<
+%%   Deal ||--o{ TUJEntry : "generates"
+
+%% >>> Connected to: cash-management <<<
+%%   Deal ||--o{ ProjectedCashflow : "projects cash"
+%%   Deal ||--o{ ActualCashflow : "settles cash"
+%%   ProjectedCashflow ||--|| Deal : "derived from"
+
+%% >>> Connected to: payments-settlement <<<
+%%   Deal ||--o{ SettlementInstruction : "instructs payment"
+%%   SettlementInstruction ||--|| Deal : "instructed for"
+
+%% >>> Connected to: execution-effects <<<
+%%   Deal ||--o{ AtomicEffect : "triggers effects"
+%%   Deal ||--o{ LimitReservation : "reserves limits"
+%%   AtomicEffect ||--|| Deal : "originates from"
+
+%% >>> Connected to: profitability-cost <<<
+%%   Deal ||--o{ ProfitabilityRecord : "contributes to"
+%%   CostAllocation ||--|| Deal : "charges"
+%%   ProfitabilityRecord ||--|| Deal : "measures"
+%%   TransferPricingRecord ||--|| Deal : "prices"
+
+%% >>> Connected to: risk-limits <<<
+%%   Deal ||--o{ Exposure : "creates exposure"
+%%   LimitBreach ||--|| Deal : "triggered by"
+%%   Exposure ||--|| Deal : "created by"
+
+%% >>> Connected to: hedge-accounting <<<
+%%   Deal ||--o{ HedgeAllocation : "is hedged by"
+%%   HedgeDesignation ||--|| Deal : "hedges"
+%%   HedgeDesignation ||--|| Deal : "hedged by"
+
+%% >>> Connected to: valuation <<<
+%%   CloseOutValuation ||--|| Deal : "values"
+
+%% >>> Connected to: tax <<<
+%%   TaxCalculation ||--|| Deal : "on"
+
+%% >>> Connected to: scenario-simulation <<<
+%%   WhatIfAnalysis ||--|| Deal : "modifies"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Deal Execution — Planned Entity Relationship Diagram","audience":["all"],"domains":["deal-execution"],"lastVerified":"2026-10","sourceSpec":"docs/erds/planned/deal-execution.mmd","filePath":"content/reference/data-model/planned/deal-execution.md","timestamp":1792853120000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/deal-execution","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Deal Execution — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-444/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"DhiBsWPgg5nGXIWbGy2Zp"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:T117a,erDiagram\n%% DEAL EXECUTION\n\n    Deal {\n        uuid id PK\n        string dealNumber UK\n        uuid companyId FK\n        uuid instrumentId FK\n        uuid counterpartyId FK\n        uuid clientId FK\n        string direction "BUY | SELL | BORROW | LEND"\n        decimal notional\n        string currencyCode FK\n        date valueDate\n        date maturityDate\n        string lifecycleStatus "DRAFT | VALIDATED | PENDING_APPROVAL | ACTIVE | CONFIRMED | SETTLED | MATURED | CANCELLED | ROLLED"\n        string businessRationale\n        string businessPurposeCode\n        string actingCapacity "OWN | ON_BEHALF"\n        uuid idempotencyKey UK\n        string dealingCapacity "PRINCIPAL | AGENT"\n        uuid createdByUserId FK\n        date createdAt\n    }\n    DealExtension_FX {\n        uuid dealId PK\n        decimal spotRate\n        decimal forwardPoints\n        decimal allInRate\n        string currencyPair\n        string tenor\n        date farValueDate\n    }\n    DealExtension_MM {\n        uuid dealId PK\n        string depositType "CALL | FIXED | NCD"\n        decimal interestRate\n        string dayCountConvention\n    }\n    DealExtension_Derivative {\n        uuid dealId PK\n        string derivativeType "IRS | FRA | OIS | CDS | OPTION"\n        decimal strikeRate\n        string payLegType\n        string receiveLegType\n        decimal notional\n        date effectiveDate\n    }\n    DealLifecycleTransition {\n        uuid id PK\n        uuid dealId FK\n        string fromStatus\n        string toStatus\n        uuid userId FK\n        date transitionedAt\n        string reason\n        uuid evidencePackId FK\n    }\n    DealAmendment {\n        uuid id PK\n        uuid dealId FK\n        uuid amendedByUserId FK\n        date amendedAt\n        json beforeState\n        json afterState\n        string justification\n    }\n    DealRoll {\n        uuid id PK\n        uuid originalDealId FK\n        uuid newDealId FK\n        date rolledAt\n        string rollType "EXTEND | TENOR_CHANGE | RATE_RESET"\n        uuid approvalId FK\n    }\n    BlockTradeAllocation {\n        uuid id PK\n        uuid blockDealId FK\n        uuid subAccountId FK\n        decimal allocatedNotional\n        string allocationStatus "PENDING | COMPLETE"\n    }\n\n%% --- Internal Relationships ---\n    Deal ||--o{ DealLifecycleTransition : "traces"\n    Deal ||--o{ DealAmendment : "amends"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: foundation <<<\n%%   Deal ||--|| Company : "belongs to"\n\n%% >>> Connected to: product-instrument <<<\n%%   Deal ||--|| GlobalInstrumentCatalogue : "is typed as"\n\n%% >>> Connected to: counterparty-client <<<\n%%   Deal ||--|| Counterparty : "trades with"\n%%   Deal ||--o{ Client : "may be for"\n\n%% >>> Connected to: accounting <<<\n%%   Deal ||--o{ TUJEntry : "generates"\n\n%% >>> Connected to: cash-management <<<\n%%   Deal ||--o{ ProjectedCashflow : "projects cash"\n%%   Deal ||--o{ ActualCashflow : "settles cash"\n%%   ProjectedCashflow ||--|| Deal : "derived from"\n\n%% >>> Connected to: payments-settlement <<<\n%%   Deal ||--o{ SettlementInstruction : "instructs payment"\n%%   SettlementInstruction ||--|| Deal : "instructed for"\n\n%% >>> Connected to: execution-effects <<<\n%%   Deal ||--o{ AtomicEffect : "triggers effects"\n%%   Deal ||--o{ LimitReservation : "reserves limits"\n%%   AtomicEffect ||--|| Deal : "originates from"\n\n%% >>> Connected to: profitability-cost <<<\n%%   Deal ||--o{ ProfitabilityRecord : "contributes to"\n%%   CostAllocation ||--|| Deal : "charges"\n%%   ProfitabilityRecord ||--|| Deal : "measures"\n%%   TransferPricingRecord ||--|| Deal : "prices"\n\n%% >>> Connected to: risk-limits <<<\n%%   Deal ||--o{ Exposure : "creates exposure"\n%%   LimitBreach ||--|| Deal : "triggered by"\n%%   Exposure ||--|| Deal : "created by"\n\n%% >>> Connected to: hedge-accounting <<<\n%%   Deal ||--o{ HedgeAllocation : "is hedged by"\n%%   HedgeDesignation ||--|| Deal : "hedges"\n%%   HedgeDesignation ||--|| Deal : "hedged by"\n\n%% >>> Connected to: valuation <<<\n%%   CloseOutValuation ||--|| Deal : "values"\n\n%% >>> Connected to: tax <<<\n%%   TaxCalculation ||--|| Deal : "on"\n\n%% >>> Connected to: scenario-simulation <<<\n%%   WhatIfAnalysis ||--|| Deal : "modifies"\n12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Deal Execution — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"
