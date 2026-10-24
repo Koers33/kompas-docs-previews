@@ -1,4 +1,4 @@
 :HL["/kompas-docs-previews/pr-preview/pr-444/_next/static/chunks/2xdxvesoqq_er.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/regulatory-compliance","s":[]},"h":64,"c":"$Q2"}]]
-0:{"b":"fR53HlUbEs326Jf4Nj2W3","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"issvwBVtpRg232WIimql-","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
