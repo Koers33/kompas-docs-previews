@@ -1,0 +1,115 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/2gsajyz-q0yvb.js"
+5:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+14:"ViewportBoundary"
+15:I[97367,["$3","$4","$5","$6"],"$14"]
+16:"MetadataBoundary"
+17:I[97367,["$3","$4","$5","$6"],"$16"]
+18:"$Sreact.suspense"
+19:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Ta2c,---
+title: Hedge Accounting — Planned Entity Relationship Diagram
+audience: [all]
+domains: [hedge-accounting]
+sourceSpec: docs/erds/planned/hedge-accounting.mmd
+---
+
+# Hedge Accounting — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% HEDGE ACCOUNTING
+
+    HedgeDesignation {
+        uuid id PK
+        uuid companyId FK
+        uuid hedgingInstrumentId FK
+        uuid hedgedItemId FK
+        string hedgeType "FAIR_VALUE | CASH_FLOW | NET_INVESTMENT"
+        string status "DESIGNATED | EFFECTIVE | DISCONTINUED | REPLACED"
+        string riskCategory "INTEREST_RATE | FX | COMMODITY | CREDIT | EQUITY"
+        uuid hedgeDocumentId FK
+        date designatedAt
+        uuid designatedByUserId FK
+    }
+    HedgeEffectivenessTest {
+        uuid id PK
+        uuid hedgeDesignationId FK
+        date testDate
+        decimal effectivenessRatio
+        boolean isEffective
+        string method "REGRESSION | DOLLAR_OFFSET | HYPOTHETICAL_DERIVATIVE"
+        string result "PASS | FAIL | OUT_OF_RANGE"
+    }
+    OCIReserveRecord {
+        uuid id PK
+        uuid hedgeDesignationId FK
+        uuid companyId FK
+        decimal accumulatedOci
+        decimal recycledToPnl
+        decimal remainingReserve
+        string currencyCode FK
+        date asOfDate
+        string status "ACTIVE | FROZEN | FULLY_RECYCLED"
+    }
+    HedgeAllocation {
+        uuid id PK
+        uuid hedgeDesignationId FK
+        uuid hedgeInstrumentId FK
+        uuid riskPoolId FK
+        uuid individualRiskId FK
+        decimal allocatedAmount
+        decimal residualExposure
+        decimal residualCapacity
+        decimal overHedgeAmount
+        decimal hedgeEffectiveness
+        string allocationType "MANY_TO_MANY | ONE_TO_ONE | ONE_TO_MANY"
+    }
+    OverHedgeDetection {
+        uuid id PK
+        uuid hedgeAllocationId FK
+        string dimension "AMOUNT | MATURITY | CURRENCY | CLIENT | ACCOUNTING | REGULATORY"
+        decimal overHedgeAmount
+        string severity "WARNING | BLOCKING"
+    }
+
+%% --- Internal Relationships ---
+    HedgeDesignation ||--o{ HedgeEffectivenessTest : "tested by"
+    HedgeDesignation ||--o{ OCIReserveRecord : "accumulates"
+    HedgeDesignation ||--o{ HedgeAllocation : "allocates"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: deal-execution <<<
+%%   HedgeDesignation ||--|| Deal : "hedges"
+%%   HedgeDesignation ||--|| Deal : "hedged by"
+%%   Deal o{--|| HedgeAllocation : "is hedged by"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Hedge Accounting — Planned Entity Relationship Diagram","audience":["all"],"domains":["hedge-accounting"],"sourceSpec":"docs/erds/planned/hedge-accounting.mmd","filePath":"content/reference/data-model/planned/hedge-accounting.md","timestamp":1792922812000},"sourceCode":"$10","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Hedge Accounting — Planned Entity Relationship Diagram","$undefined"]}],"\n","$L11"]}]]}]]}]}],null,"$L12"]}],"p":"$@13","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/hedge-accounting","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L15",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L17",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$18",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Hedge Accounting — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-449/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L19","3",{}]]}]}],null]}],null]}],"p":"$@1a","v":null,"s":"$b"}},"a":"$@1b","u":"$@1c","b":"Rzx3WdE0gUHwajeDpYNNt"}
+1d:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+1f:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+1e:T97f,erDiagram\n%% HEDGE ACCOUNTING\n\n    HedgeDesignation {\n        uuid id PK\n        uuid companyId FK\n        uuid hedgingInstrumentId FK\n        uuid hedgedItemId FK\n        string hedgeType "FAIR_VALUE | CASH_FLOW | NET_INVESTMENT"\n        string status "DESIGNATED | EFFECTIVE | DISCONTINUED | REPLACED"\n        string riskCategory "INTEREST_RATE | FX | COMMODITY | CREDIT | EQUITY"\n        uuid hedgeDocumentId FK\n        date designatedAt\n        uuid designatedByUserId FK\n    }\n    HedgeEffectivenessTest {\n        uuid id PK\n        uuid hedgeDesignationId FK\n        date testDate\n        decimal effectivenessRatio\n        boolean isEffective\n        string method "REGRESSION | DOLLAR_OFFSET | HYPOTHETICAL_DERIVATIVE"\n        string result "PASS | FAIL | OUT_OF_RANGE"\n    }\n    OCIReserveRecord {\n        uuid id PK\n        uuid hedgeDesignationId FK\n        uuid companyId FK\n        decimal accumulatedOci\n        decimal recycledToPnl\n        decimal remainingReserve\n        string currencyCode FK\n        date asOfDate\n        string status "ACTIVE | FROZEN | FULLY_RECYCLED"\n    }\n    HedgeAllocation {\n        uuid id PK\n        uuid hedgeDesignationId FK\n        uuid hedgeInstrumentId FK\n        uuid riskPoolId FK\n        uuid individualRiskId FK\n        decimal allocatedAmount\n        decimal residualExposure\n        decimal residualCapacity\n        decimal overHedgeAmount\n        decimal hedgeEffectiveness\n        string allocationType "MANY_TO_MANY | ONE_TO_ONE | ONE_TO_MANY"\n    }\n    OverHedgeDetection {\n        uuid id PK\n        uuid hedgeAllocationId FK\n        string dimension "AMOUNT | MATURITY | CURRENCY | CLIENT | ACCOUNTING | REGULATORY"\n        decimal overHedgeAmount\n        string severity "WARNING | BLOCKING"\n    }\n\n%% --- Internal Relationships ---\n    HedgeDesignation ||--o{ HedgeEffectivenessTest : "tested by"\n    HedgeDesignation ||--o{ OCIReserveRecord : "accumulates"\n    HedgeDesignation ||--o{ HedgeAllocation : "allocates"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: deal-execution <<<\n%%   HedgeDesignation ||--|| Deal : "hedges"\n%%   HedgeDesignation ||--|| Deal : "hedged by"\n%%   Deal o{--|| HedgeAllocation : "is hedged by"\n11:["$","$L1d",null,{"chart":"$1e"}]
+12:["$","$L1f",null,{"children":["$","$18",null,{"name":"Next.MetadataOutlet","children":"$@20"}]}]
+1c:true
+b:300
+20:null
+b:C
+1b:0
+9:"$undefined"
+1a:"$undefined"
+13:"$undefined"

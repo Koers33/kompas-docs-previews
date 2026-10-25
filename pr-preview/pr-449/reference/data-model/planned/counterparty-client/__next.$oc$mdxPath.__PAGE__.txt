@@ -1,0 +1,131 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/2gsajyz-q0yvb.js"
+5:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+14:"ViewportBoundary"
+15:I[97367,["$3","$4","$5","$6"],"$14"]
+16:"MetadataBoundary"
+17:I[97367,["$3","$4","$5","$6"],"$16"]
+18:"$Sreact.suspense"
+19:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Ta6e,---
+title: Counterparty Client — Planned Entity Relationship Diagram
+audience: [all]
+domains: [counterparty-client]
+sourceSpec: docs/erds/planned/counterparty-client.mmd
+---
+
+# Counterparty Client — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% COUNTERPARTY CLIENT
+
+    Counterparty {
+        uuid id PK
+        string counterpartyCode UK
+        string legalName
+        string status "ACTIVE | PENDING_KYC | SUSPENDED | PROHIBITED"
+        uuid jurisdictionId FK
+        string lei
+        date kycLastRefreshed
+        date amlLastRefreshed
+    }
+    Client {
+        uuid id PK
+        uuid companyId FK
+        string clientCode UK
+        string clientType
+        uuid counterpartyId FK
+        uuid mandateId FK
+        boolean isFiduciary
+    }
+    Mandate {
+        uuid id PK
+        uuid clientId FK
+        string mandateType
+        json instrumentScope
+        json authorityLimits
+        boolean isActive
+        date validFrom
+        date validTo
+    }
+    StandardSettlementInstruction {
+        uuid id PK
+        uuid counterpartyId FK
+        string currencyCode FK
+        string bankBic
+        string accountNumber
+        string accountName
+        string status "ACTIVE | PENDING | SUSPENDED"
+    }
+    KYCStatus {
+        uuid id PK
+        uuid counterpartyId FK
+        string screeningType "ONBOARDING | PERIODIC | TRANSACTION | MANUAL"
+        string result "CLEAR | PENDING | HIT"
+        date screenedAt
+        uuid evidencePackId FK
+    }
+    AMLStatus {
+        uuid id PK
+        uuid counterpartyId FK
+        string screeningType
+        string result
+        date screenedAt
+        uuid evidencePackId FK
+    }
+    ReferenceDataRecord {
+        uuid id PK
+        string catalogueType "CURRENCY | COUNTRY | BANK | CODE_LIST"
+        string code
+        string displayValue
+        uuid globalFoundationId FK
+        boolean isCertified
+    }
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: deal-execution <<<
+%%   Deal ||--|| Counterparty : "trades with"
+%%   Deal o{--|| Client : "may be for"
+
+%% >>> Connected to: collateral <<<
+%%   CollateralAgreement ||--|| Counterparty : "signed with"
+
+%% >>> Connected to: legal-contracts <<<
+%%   LegalAgreement ||--|| Counterparty : "governs"
+%%   CreditEventRecord ||--|| Counterparty : "for"
+%%   RepresentationAuthority ||--|| Client : "empowers"
+
+%% >>> Connected to: capital-adequacy <<<
+%%   SACCRCalculation ||--|| Counterparty : "for"
+%%   XvaCalculation ||--|| Counterparty : "for"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Counterparty Client — Planned Entity Relationship Diagram","audience":["all"],"domains":["counterparty-client"],"sourceSpec":"docs/erds/planned/counterparty-client.mmd","filePath":"content/reference/data-model/planned/counterparty-client.md","timestamp":1792922812000},"sourceCode":"$10","children":[["$","div",null,{"id":"nextra-skip-nav"}],"$L11"]}]]}]}],null,"$L12"]}],"p":"$@13","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/counterparty-client","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L15",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L17",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$18",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Counterparty Client — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-449/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L19","3",{}]]}]}],null]}],null]}],"p":"$@1a","v":null,"s":"$b"}},"a":"$@1b","u":"$@1c","b":"Rzx3WdE0gUHwajeDpYNNt"}
+1d:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+1f:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+1e:T9c5,erDiagram\n%% COUNTERPARTY CLIENT\n\n    Counterparty {\n        uuid id PK\n        string counterpartyCode UK\n        string legalName\n        string status "ACTIVE | PENDING_KYC | SUSPENDED | PROHIBITED"\n        uuid jurisdictionId FK\n        string lei\n        date kycLastRefreshed\n        date amlLastRefreshed\n    }\n    Client {\n        uuid id PK\n        uuid companyId FK\n        string clientCode UK\n        string clientType\n        uuid counterpartyId FK\n        uuid mandateId FK\n        boolean isFiduciary\n    }\n    Mandate {\n        uuid id PK\n        uuid clientId FK\n        string mandateType\n        json instrumentScope\n        json authorityLimits\n        boolean isActive\n        date validFrom\n        date validTo\n    }\n    StandardSettlementInstruction {\n        uuid id PK\n        uuid counterpartyId FK\n        string currencyCode FK\n        string bankBic\n        string accountNumber\n        string accountName\n        string status "ACTIVE | PENDING | SUSPENDED"\n    }\n    KYCStatus {\n        uuid id PK\n        uuid counterpartyId FK\n        string screeningType "ONBOARDING | PERIODIC | TRANSACTION | MANUAL"\n        string result "CLEAR | PENDING | HIT"\n        date screenedAt\n        uuid evidencePackId FK\n    }\n    AMLStatus {\n        uuid id PK\n        uuid counterpartyId FK\n        string screeningType\n        string result\n        date screenedAt\n        uuid evidencePackId FK\n    }\n    ReferenceDataRecord {\n        uuid id PK\n        string catalogueType "CURRENCY | COUNTRY | BANK | CODE_LIST"\n        string code\n        string displayValue\n        uuid globalFoundationId FK\n        boolean isCertified\n    }\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: deal-execution <<<\n%%   Deal ||--|| Counterparty : "trades with"\n%%   Deal o{--|| Client : "may be for"\n\n%% >>> Connected to: collateral <<<\n%%   CollateralAgreement ||--|| Counterparty : "signed with"\n\n%% >>> Connected to: legal-contracts <<<\n%%   LegalAgreement ||--|| Counterparty : "governs"\n%%   CreditEventRecord ||--|| Counterparty : "for"\n%%   RepresentationAuthority ||--|| Client : "empowers"\n\n%% >>> Connected to: capital-adequacy <<<\n%%   SACCRCalculation ||--|| Counterparty : "for"\n%%   XvaCalculation ||--|| Counterparty : "for"\n11:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Counterparty Client — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L1d",null,{"chart":"$1e"}]]}]
+12:["$","$L1f",null,{"children":["$","$18",null,{"name":"Next.MetadataOutlet","children":"$@20"}]}]
+1c:true
+b:300
+20:null
+b:C
+1b:0
+9:"$undefined"
+1a:"$undefined"
+13:"$undefined"

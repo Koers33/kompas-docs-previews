@@ -1,0 +1,132 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/2gsajyz-q0yvb.js"
+5:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+14:"ViewportBoundary"
+15:I[97367,["$3","$4","$5","$6"],"$14"]
+16:"MetadataBoundary"
+17:I[97367,["$3","$4","$5","$6"],"$16"]
+18:"$Sreact.suspense"
+19:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Ta38,---
+title: Workspaces UI — Planned Entity Relationship Diagram
+audience: [all]
+domains: [workspaces-ui]
+sourceSpec: docs/erds/planned/workspaces-ui.mmd
+---
+
+# Workspaces UI — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% WORKSPACES UI
+
+    WorkspaceDefinition {
+        uuid id PK
+        string workspaceCode UK
+        uuid roleId FK
+        string title
+        json tiles
+        json navigationPaths
+        boolean isReadOnly
+    }
+    CockpitDefinition {
+        uuid id PK
+        string cockpitCode UK
+        uuid roleId FK
+        string title
+        json charts
+        json kpis
+        json quickActions
+    }
+    TileDefinition {
+        uuid id PK
+        uuid workspaceId FK
+        string tileCode
+        string metricLabel
+        string metricValueExpression
+        string semanticColorRule
+        string sparklineDataExpression
+        uuid actionButtonId FK
+    }
+    ScreenDefinition {
+        uuid id PK
+        string screenCode UK
+        string screenType "LP | OP | OVERVIEW | WIZARD | COCKPIT"
+        uuid entitySetId FK
+        json annotations
+        string helpContentRef
+        boolean isActive
+    }
+    ScreenNavigation {
+        uuid id PK
+        uuid sourceScreenId FK
+        uuid targetScreenId FK
+        string navigationIntent
+        string allowedRoles
+        boolean preserveContext
+    }
+    HelpContent {
+        uuid id PK
+        string contentCode UK
+        string contentType "FIELD_HELP | GLOSSARY | PROCESS_GUIDE | REGULATORY_NOTE"
+        string content
+        string status "ACTIVE | PENDING_APPROVAL | DRAFT"
+    }
+    GlossaryEntry {
+        uuid id PK
+        string term UK
+        string definition
+        string aiGeneratedStatus "DRAFT | PENDING_APPROVAL | APPROVED | REJECTED"
+        date reviewedByDeadline
+        uuid approvedByUserId FK
+    }
+    ByteManifest {
+        uuid id PK
+        string appCode UK
+        uuid companyId FK
+        string appName
+        json buttonInventory
+        json authorityLayers
+        json evidenceProduced
+        string helpContentRef
+    }
+
+%% --- Internal Relationships ---
+    WorkspaceDefinition ||--o{ TileDefinition : "contains"
+    ScreenNavigation ||--|| ScreenDefinition : "navigates between"
+    HelpContent ||--|| ScreenDefinition : "helps"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: foundation <<<
+%%   WorkspaceDefinition ||--|| Role : "for"
+%%   ByteManifest ||--|| Company : "audits"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Workspaces UI — Planned Entity Relationship Diagram","audience":["all"],"domains":["workspaces-ui"],"sourceSpec":"docs/erds/planned/workspaces-ui.mmd","filePath":"content/reference/data-model/planned/workspaces-ui.md","timestamp":1792922812000},"sourceCode":"$10","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Workspaces UI — Planned Entity Relationship Diagram","$undefined"]}],"\n","$L11"]}]]}]]}]}],null,"$L12"]}],"p":"$@13","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/workspaces-ui","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L15",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L17",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$18",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Workspaces UI — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-449/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L19","3",{}]]}]}],null]}],null]}],"p":"$@1a","v":null,"s":"$b"}},"a":"$@1b","u":"$@1c","b":"Rzx3WdE0gUHwajeDpYNNt"}
+1d:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+1f:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+1e:T9a8,erDiagram\n%% WORKSPACES UI\n\n    WorkspaceDefinition {\n        uuid id PK\n        string workspaceCode UK\n        uuid roleId FK\n        string title\n        json tiles\n        json navigationPaths\n        boolean isReadOnly\n    }\n    CockpitDefinition {\n        uuid id PK\n        string cockpitCode UK\n        uuid roleId FK\n        string title\n        json charts\n        json kpis\n        json quickActions\n    }\n    TileDefinition {\n        uuid id PK\n        uuid workspaceId FK\n        string tileCode\n        string metricLabel\n        string metricValueExpression\n        string semanticColorRule\n        string sparklineDataExpression\n        uuid actionButtonId FK\n    }\n    ScreenDefinition {\n        uuid id PK\n        string screenCode UK\n        string screenType "LP | OP | OVERVIEW | WIZARD | COCKPIT"\n        uuid entitySetId FK\n        json annotations\n        string helpContentRef\n        boolean isActive\n    }\n    ScreenNavigation {\n        uuid id PK\n        uuid sourceScreenId FK\n        uuid targetScreenId FK\n        string navigationIntent\n        string allowedRoles\n        boolean preserveContext\n    }\n    HelpContent {\n        uuid id PK\n        string contentCode UK\n        string contentType "FIELD_HELP | GLOSSARY | PROCESS_GUIDE | REGULATORY_NOTE"\n        string content\n        string status "ACTIVE | PENDING_APPROVAL | DRAFT"\n    }\n    GlossaryEntry {\n        uuid id PK\n        string term UK\n        string definition\n        string aiGeneratedStatus "DRAFT | PENDING_APPROVAL | APPROVED | REJECTED"\n        date reviewedByDeadline\n        uuid approvedByUserId FK\n    }\n    ByteManifest {\n        uuid id PK\n        string appCode UK\n        uuid companyId FK\n        string appName\n        json buttonInventory\n        json authorityLayers\n        json evidenceProduced\n        string helpContentRef\n    }\n\n%% --- Internal Relationships ---\n    WorkspaceDefinition ||--o{ TileDefinition : "contains"\n    ScreenNavigation ||--|| ScreenDefinition : "navigates between"\n    HelpContent ||--|| ScreenDefinition : "helps"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: foundation <<<\n%%   WorkspaceDefinition ||--|| Role : "for"\n%%   ByteManifest ||--|| Company : "audits"\n11:["$","$L1d",null,{"chart":"$1e"}]
+12:["$","$L1f",null,{"children":["$","$18",null,{"name":"Next.MetadataOutlet","children":"$@20"}]}]
+1c:true
+b:300
+20:null
+b:C
+1b:0
+9:"$undefined"
+1a:"$undefined"
+13:"$undefined"

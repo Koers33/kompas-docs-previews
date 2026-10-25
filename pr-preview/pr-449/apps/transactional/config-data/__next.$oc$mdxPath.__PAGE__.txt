@@ -1,0 +1,115 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/2gsajyz-q0yvb.js"
+5:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T14e6,---
+title: "Config Data app"
+audience: [all]
+domains: [foundation]
+apps: [config-data]
+entities: [ConfigurationRegisterCatalog]
+pageType: app-overview
+sourceSpec: app/config-data/webapp/manifest.json
+---
+
+# Config Data app
+
+Config Data is the catalog of a company's governed configuration registers. Each register row names one area of configuration the platform treats as controlled — a **Register Code** and **Register Name**, a short description, the **Register Category** it belongs to, the **Approval Level** changes to it require, how many days pass between reviews (**Review Cycle (Days)**), and whether the register is currently **Is Active**. The catalog is the index: it says which configuration areas exist and how they are governed, not the values inside them.
+
+## What is this app for?
+
+The catalog exists so configuration governance has one visible home. The **Register Category** places a register in a business area — categories include **Hedge Accounting**, **Regulatory**, **Accounting**, **Security**, **Platform**, **Data Governance**, **Workflow** and **Notification** — and the **Approval Level** records how much sign-off a change to that area needs, from **Treasury Manager Required** through **Dual Approval** and **Compliance Required** up to **Board Required**. **Review Cycle (Days)** states how often the register should be revisited; it starts at 365 days.
+
+## When should I use this app?
+
+Use it when a new area of configuration needs to be registered, when the approval level or review cycle for an existing area changes, or when you need to confirm which registers a company treats as governed and which are still active. This app maintains the registers themselves — the day-to-day activity each register describes belongs in the apps for that work.
+
+## Who can access this app?
+
+The app is reached through portal access plus the roles your administrator has assigned you — see [Roles and Access](/getting-started/roles-and-access). At the service level, reading, creating and updating these records is granted to portal access, with no further role restriction, so everyone who can open the app sees the same catalog and the same editing controls. Registers cannot be deleted: switch **Is Active** off to retire one.
+
+## How does work progress in this app?
+
+1. Open a register to review or correct it, or select **Create** to register a new configuration area.
+2. Complete the mandatory fields — **Register Code**, **Register Name**, **Register Category** and **Approval Level**. The app marks them mandatory and refuses a save that leaves one blank.
+3. Add the description, set **Review Cycle (Days)** and leave **Is Active** on while the register is in use.
+4. Save. The register code has to be unique for the company, so a second register cannot reuse one that already exists.
+5. When an area is no longer governed as a register, switch **Is Active** off rather than deleting it.
+
+There is no approval step inside this app: the **Approval Level** recorded on the register describes what approval the governed area requires elsewhere.
+
+## What can change what I see or do?
+
+- **Register Category** and **Approval Level:** both are chosen from fixed lists, so only the categories and approval levels your configuration offers can be selected.
+- **Is Active:** it filters the list and tells you whether a register is currently in use; retired registers stay on file.
+- **Review Cycle (Days):** the interval the register is reviewed on; it is stored on the register and shown in the list and on the record.
+- **Deleting:** registers cannot be deleted from this app.
+- **A blank or duplicate field:** saving checks the mandatory fields and the uniqueness of the register code, and the message names what to fix.
+
+## Where can I review the results?
+
+The list carries the catalog itself: **Register Code**, **Register Name**, **Register Category**, **Approval Level**, **Review Cycle (Days)** and **Is Active** for every register, filterable by category, approval level and active state. The record shows the same fields plus the description, so you can confirm what a register covers and how it is governed without opening anything else.
+
+Because the catalog is an index rather than a transaction list, the proof that a register is correct is the catalog itself — there is no downstream record this app produces.
+
+## What should I check if I can't continue?
+
+- A save is refused with a blank-field message: **Register Code**, **Register Name**, **Register Category** and **Approval Level** are all mandatory.
+- You are told the register code already exists: choose a different code — codes are unique per company.
+- A delete command is refused: registers are retained by design.
+- The registered messages for this app are listed in the [block 19xx error reference](/reference/error-codes/block-19xx-cfg).
+- An edit control is missing: check your roles in [Roles and Access](/getting-started/roles-and-access).
+
+## Which task guides are available?
+
+No task guide is published for this app yet; creating a register, correcting one and retiring it are covered on this page.
+
+## What should I do next?
+
+New to the platform's apps? Start with [Using Fiori apps](/getting-started/using-fiori-apps), and see the [Companies app](/apps/transactional/companies) for the company records these registers belong to.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Config Data app","audience":["all"],"domains":["foundation"],"apps":["config-data"],"entities":["ConfigurationRegisterCatalog"],"pageType":"app-overview","sourceSpec":"app/config-data/webapp/manifest.json","filePath":"content/apps/transactional/config-data/index.md","timestamp":1792922812000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/config-data","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Config Data app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-449/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"Rzx3WdE0gUHwajeDpYNNt"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+2f:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Config Data app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Config Data is the catalog of a company’s governed configuration registers. Each register row names one area of configuration the platform treats as controlled — a ",["$","strong",null,{"children":"Register Code"}]," and ",["$","strong",null,{"children":"Register Name"}],", a short description, the ",["$","strong",null,{"children":"Register Category"}]," it belongs to, the ",["$","strong",null,{"children":"Approval Level"}]," changes to it require, how many days pass between reviews (",["$","strong",null,{"children":"Review Cycle (Days)"}],"), and whether the register is currently ",["$","strong",null,{"children":"Is Active"}],". The catalog is the index: it says which configuration areas exist and how they are governed, not the values inside them."]}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The catalog exists so configuration governance has one visible home. The ",["$","strong",null,{"children":"Register Category"}]," places a register in a business area — categories include ",["$","strong",null,{"children":"Hedge Accounting"}],", ",["$","strong",null,{"children":"Regulatory"}],", ",["$","strong",null,{"children":"Accounting"}],", ",["$","strong",null,{"children":"Security"}],", ",["$","strong",null,{"children":"Platform"}],", ",["$","strong",null,{"children":"Data Governance"}],", ",["$","strong",null,{"children":"Workflow"}]," and ",["$","strong",null,{"children":"Notification"}]," — and the ",["$","strong",null,{"children":"Approval Level"}]," records how much sign-off a change to that area needs, from ",["$","strong",null,{"children":"Treasury Manager Required"}]," through ",["$","strong",null,{"children":"Dual Approval"}]," and ",["$","strong",null,{"children":"Compliance Required"}]," up to ",["$","strong",null,{"children":"Board Required"}],". ",["$","strong",null,{"children":"Review Cycle (Days)"}]," states how often the register should be revisited; it starts at 365 days."]}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Use it when a new area of configuration needs to be registered, when the approval level or review cycle for an existing area changes, or when you need to confirm which registers a company treats as governed and which are still active. This app maintains the registers themselves — the day-to-day activity each register describes belongs in the apps for that work."}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is reached through portal access plus the roles your administrator has assigned you — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],". At the service level, reading, creating and updating these records is granted to portal access, with no further role restriction, so everyone who can open the app sees the same catalog and the same editing controls. Registers cannot be deleted: switch ","$L20"," off to retire one."]}],"\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d","\n","$L2e"]}]
+13:["$","$L2f",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@30"}]}]
+1d:true
+b:300
+20:["$","strong",null,{"children":"Is Active"}]
+21:["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?",["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]]}]
+22:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open a register to review or correct it, or select ",["$","strong",null,{"children":"Create"}]," to register a new configuration area."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Complete the mandatory fields — ",["$","strong",null,{"children":"Register Code"}],", ",["$","strong",null,{"children":"Register Name"}],", ",["$","strong",null,{"children":"Register Category"}]," and ",["$","strong",null,{"children":"Approval Level"}],". The app marks them mandatory and refuses a save that leaves one blank."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Add the description, set ",["$","strong",null,{"children":"Review Cycle (Days)"}]," and leave ",["$","strong",null,{"children":"Is Active"}]," on while the register is in use."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Save. The register code has to be unique for the company, so a second register cannot reuse one that already exists."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["When an area is no longer governed as a register, switch ",["$","strong",null,{"children":"Is Active"}]," off rather than deleting it."]}],"\n"]}]
+23:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["There is no approval step inside this app: the ",["$","strong",null,{"children":"Approval Level"}]," recorded on the register describes what approval the governed area requires elsewhere."]}]
+24:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+25:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Register Category"}]," and ",["$","strong",null,{"children":"Approval Level:"}]," both are chosen from fixed lists, so only the categories and approval levels your configuration offers can be selected."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Is Active:"}]," it filters the list and tells you whether a register is currently in use; retired registers stay on file."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Review Cycle (Days):"}]," the interval the register is reviewed on; it is stored on the register and shown in the list and on the record."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Deleting:"}]," registers cannot be deleted from this app."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"A blank or duplicate field:"}]," saving checks the mandatory fields and the uniqueness of the register code, and the message names what to fix."]}],"\n"]}]
+26:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+27:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The list carries the catalog itself: ",["$","strong",null,{"children":"Register Code"}],", ",["$","strong",null,{"children":"Register Name"}],", ",["$","strong",null,{"children":"Register Category"}],", ",["$","strong",null,{"children":"Approval Level"}],", ",["$","strong",null,{"children":"Review Cycle (Days)"}]," and ",["$","strong",null,{"children":"Is Active"}]," for every register, filterable by category, approval level and active state. The record shows the same fields plus the description, so you can confirm what a register covers and how it is governed without opening anything else."]}]
+28:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Because the catalog is an index rather than a transaction list, the proof that a register is correct is the catalog itself — there is no downstream record this app produces."}]
+29:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+2a:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["A save is refused with a blank-field message: ",["$","strong",null,{"children":"Register Code"}],", ",["$","strong",null,{"children":"Register Name"}],", ",["$","strong",null,{"children":"Register Category"}]," and ",["$","strong",null,{"children":"Approval Level"}]," are all mandatory."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"You are told the register code already exists: choose a different code — codes are unique per company."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"A delete command is refused: registers are retained by design."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The registered messages for this app are listed in the ",["$","$L1f",null,{"href":"/reference/error-codes/block-19xx-cfg","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"block 19xx error reference"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["An edit control is missing: check your roles in ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"."]}],"\n"]}]
+2b:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+2c:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"No task guide is published for this app yet; creating a register, correcting one and retiring it are covered on this page."}]
+2d:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+2e:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["New to the platform’s apps? Start with ",["$","$L1f",null,{"href":"/getting-started/using-fiori-apps","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Using Fiori apps"}],", and see the ",["$","$L1f",null,{"href":"/apps/transactional/companies","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Companies app"}]," for the company records these registers belong to."]}]
+30:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

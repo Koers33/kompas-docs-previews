@@ -1,0 +1,140 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/2gsajyz-q0yvb.js"
+5:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-449/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Tc2e,---
+title: Capital Adequacy — Planned Entity Relationship Diagram
+audience: [all]
+domains: [capital-adequacy]
+sourceSpec: docs/erds/planned/capital-adequacy.mmd
+---
+
+# Capital Adequacy — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% CAPITAL ADEQUACY
+
+    CapitalAdequacyCalculation {
+        uuid id PK
+        uuid companyId FK
+        date calculationDate
+        decimal cet1Capital
+        decimal tier1Capital
+        decimal totalCapital
+        decimal creditRwa
+        decimal marketRwa
+        decimal operationalRwa
+        decimal totalRwa
+        decimal cet1Ratio
+        decimal tier1Ratio
+        decimal totalCapitalRatio
+        decimal capitalConservationBuffer
+        string overallStatus "ADEQUATE | BUFFER_BREACHED | MINIMUM_BREACHED"
+    }
+    RWACalculation {
+        uuid id PK
+        uuid companyId FK
+        string approach "SA_CCR | IRB | SA_OR | BIA | IMA"
+        string riskType "CREDIT | MARKET | OPERATIONAL"
+        decimal calculatedRwa
+        json methodologyParams
+    }
+    CET1Calculation {
+        uuid id PK
+        uuid capitalCalculationId FK
+        decimal shareCapital
+        decimal retainedEarnings
+        decimal accumulatedOci
+        decimal regulatoryAdjustments
+        decimal cet1Amount
+    }
+    CapitalBuffer {
+        uuid id PK
+        uuid companyId FK
+        string bufferType "CONSERVATION | COUNTER_CYCLICAL | SYSTEMIC | GLOBAL_SIFI"
+        decimal requiredPercentage
+        decimal actualPercentage
+        string status "COMPLIANT | BREACHED"
+    }
+    XvaCalculation {
+        uuid id PK
+        uuid counterpartyId FK
+        uuid nettingSetId FK
+        decimal cva
+        decimal dva
+        decimal fva
+        decimal colva
+        decimal mva
+        string methodology
+        date calculatedAt
+    }
+    SACCRCalculation {
+        uuid id PK
+        uuid counterpartyId FK
+        uuid nettingSetId FK
+        decimal replacementCost
+        decimal potentialFutureExposure
+        decimal multiplier
+        decimal ead
+        uuid collateralId FK
+    }
+    OperationalRiskLossData {
+        uuid id PK
+        uuid companyId FK
+        string eventType "INTERNAL_FRAUD | EXTERNAL_FRAUD | EMPLOYMENT | CLIENTS | DAMAGE | BUSINESS_DISRUPTION | EXECUTION"
+        decimal grossLossAmount
+        date eventDate
+        date discoveryDate
+        string status "RECORDED | VERIFIED | FORECAST_ADJUSTED"
+    }
+
+%% --- Internal Relationships ---
+    CET1Calculation ||--|| CapitalAdequacyCalculation : "part of"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: foundation <<<
+%%   CapitalAdequacyCalculation ||--|| Company : "for"
+%%   CapitalBuffer ||--|| Company : "maintains"
+%%   OperationalRiskLossData ||--|| Company : "recorded by"
+%%   Company o{--|| CapitalAdequacyCalculation : "calculates"
+
+%% >>> Connected to: counterparty-client <<<
+%%   SACCRCalculation ||--|| Counterparty : "for"
+%%   XvaCalculation ||--|| Counterparty : "for"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Capital Adequacy — Planned Entity Relationship Diagram","audience":["all"],"domains":["capital-adequacy"],"sourceSpec":"docs/erds/planned/capital-adequacy.mmd","filePath":"content/reference/data-model/planned/capital-adequacy.md","timestamp":1792922812000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/capital-adequacy","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Capital Adequacy — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-449/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"Rzx3WdE0gUHwajeDpYNNt"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:Tb99,erDiagram\n%% CAPITAL ADEQUACY\n\n    CapitalAdequacyCalculation {\n        uuid id PK\n        uuid companyId FK\n        date calculationDate\n        decimal cet1Capital\n        decimal tier1Capital\n        decimal totalCapital\n        decimal creditRwa\n        decimal marketRwa\n        decimal operationalRwa\n        decimal totalRwa\n        decimal cet1Ratio\n        decimal tier1Ratio\n        decimal totalCapitalRatio\n        decimal capitalConservationBuffer\n        string overallStatus "ADEQUATE | BUFFER_BREACHED | MINIMUM_BREACHED"\n    }\n    RWACalculation {\n        uuid id PK\n        uuid companyId FK\n        string approach "SA_CCR | IRB | SA_OR | BIA | IMA"\n        string riskType "CREDIT | MARKET | OPERATIONAL"\n        decimal calculatedRwa\n        json methodologyParams\n    }\n    CET1Calculation {\n        uuid id PK\n        uuid capitalCalculationId FK\n        decimal shareCapital\n        decimal retainedEarnings\n        decimal accumulatedOci\n        decimal regulatoryAdjustments\n        decimal cet1Amount\n    }\n    CapitalBuffer {\n        uuid id PK\n        uuid companyId FK\n        string bufferType "CONSERVATION | COUNTER_CYCLICAL | SYSTEMIC | GLOBAL_SIFI"\n        decimal requiredPercentage\n        decimal actualPercentage\n        string status "COMPLIANT | BREACHED"\n    }\n    XvaCalculation {\n        uuid id PK\n        uuid counterpartyId FK\n        uuid nettingSetId FK\n        decimal cva\n        decimal dva\n        decimal fva\n        decimal colva\n        decimal mva\n        string methodology\n        date calculatedAt\n    }\n    SACCRCalculation {\n        uuid id PK\n        uuid counterpartyId FK\n        uuid nettingSetId FK\n        decimal replacementCost\n        decimal potentialFutureExposure\n        decimal multiplier\n        decimal ead\n        uuid collateralId FK\n    }\n    OperationalRiskLossData {\n        uuid id PK\n        uuid companyId FK\n        string eventType "INTERNAL_FRAUD | EXTERNAL_FRAUD | EMPLOYMENT | CLIENTS | DAMAGE | BUSINESS_DISRUPTION | EXECUTION"\n        decimal grossLossAmount\n        date eventDate\n        date discoveryDate\n        string status "RECORDED | VERIFIED | FORECAST_ADJUSTED"\n    }\n\n%% --- Internal Relationships ---\n    CET1Calculation ||--|| CapitalAdequacyCalculation : "part of"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: foundation <<<\n%%   CapitalAdequacyCalculation ||--|| Company : "for"\n%%   CapitalBuffer ||--|| Company : "maintains"\n%%   OperationalRiskLossData ||--|| Company : "recorded by"\n%%   Company o{--|| CapitalAdequacyCalculation : "calculates"\n\n%% >>> Connected to: counterparty-client <<<\n%%   SACCRCalculation ||--|| Counterparty : "for"\n%%   XvaCalculation ||--|| Counterparty : "for"\n12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Capital Adequacy — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"
