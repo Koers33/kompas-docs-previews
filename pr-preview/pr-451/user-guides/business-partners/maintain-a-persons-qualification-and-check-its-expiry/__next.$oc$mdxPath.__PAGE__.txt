@@ -1,0 +1,85 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Taee,---
+title: "Maintain a person’s qualification and check its expiry"
+audience: [all]
+domains: [business-partners]
+apps: [business-partners]
+entities: [BusinessPartners]
+pageType: task-guide
+sourceSpec: app/business-partners/webapp/manifest.json
+---
+
+# Maintain a person’s qualification and check its expiry
+
+Record or update a natural person’s qualification and use its calculated expiry status to see whether it is current, nearing expiry or expired.
+
+## Who can do this?
+
+Treasury users can maintain qualification records. Client users can read qualifications only where their own record or an authorized relationship grants access; they cannot add or update a qualification.
+
+## What do I need before I start?
+
+- A saved **Natural Person** business partner. The **Qualifications** section appears on person records after the business partner has been saved.
+- The qualification type, name, date obtained and issuing institution, plus an expiry date if the qualification expires.
+- Supporting evidence for any verification or renewal you record.
+
+## How do I complete the task?
+
+1. Open **Business Partners** and open the saved person’s record.
+2. Go to **Qualifications**. Select **Create** to add a qualification, or open the existing qualification you need to update.
+3. Select the **Qualification Type** and enter the **Qualification Name**, **Issuing Institution** and **Date Obtained**. Enter **Expiry Date** when the qualification has one.
+4. If you are recording verification, enter **Verified At**; when saved, the app fills **Verified By** from your account if it is not already set.
+5. Save the qualification, then refresh or reopen the record to review **Expiry Status**.
+
+## How do I know it worked?
+
+The qualification appears in the person’s **Qualifications** table. **Expiry Status** is calculated from the expiry date: **Expired** when the date has passed, **Expiring Soon** when it is within 30 days, **Valid** when it is more than 30 days away, or **No Expiry** when no expiry date is set. You do not enter this status yourself.
+
+## What if I can’t complete it?
+
+- If **Qualifications** is not shown, confirm that the record is a saved **Natural Person**; the section is not available on every partner category.
+- If you can view qualifications but cannot edit them, you are likely signed in with the **Client** role. Ask a Treasury user to maintain the record.
+- If **Expiry Status** does not match the evidence, check the saved **Expiry Date** and refresh the record; the status is calculated when the qualification is read.
+
+## What should I do next?
+
+Keep the qualification details and expiry date aligned with the current supporting evidence. If the qualification supports a regulatory or compliance process, follow that process’s review requirements as well.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Maintain a person’s qualification and check its expiry","audience":["all"],"domains":["business-partners"],"apps":["business-partners"],"entities":["BusinessPartners"],"pageType":"task-guide","sourceSpec":"app/business-partners/webapp/manifest.json","filePath":"content/user-guides/business-partners/maintain-a-persons-qualification-and-check-its-expiry.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/business-partners/maintain-a-persons-qualification-and-check-its-expiry","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Maintain a person’s qualification and check its expiry"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+25:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Maintain a person’s qualification and check its expiry","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Record or update a natural person’s qualification and use its calculated expiry status to see whether it is current, nearing expiry or expired."}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Treasury users can maintain qualification records. Client users can read qualifications only where their own record or an authorized relationship grants access; they cannot add or update a qualification."}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["A saved ",["$","strong",null,{"children":"Natural Person"}]," business partner. The ",["$","strong",null,{"children":"Qualifications"}]," section appears on person records after the business partner has been saved."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"The qualification type, name, date obtained and issuing institution, plus an expiry date if the qualification expires."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Supporting evidence for any verification or renewal you record."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Business Partners"}]," and open the saved person’s record."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Go to ",["$","strong",null,{"children":"Qualifications"}],". Select ",["$","strong",null,{"children":"Create"}]," to add a qualification, or open the existing qualification you need to update."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Select the ",["$","strong",null,{"children":"Qualification Type"}]," and enter the ",["$","strong",null,{"children":"Qualification Name"}],", ",["$","strong",null,{"children":"Issuing Institution"}]," and ",["$","strong",null,{"children":"Date Obtained"}],". Enter ",["$","strong",null,{"children":"Expiry Date"}]," when the qualification has one."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If you are recording verification, enter ",["$","strong",null,{"children":"Verified At"}],"; when saved, the app fills ",["$","strong",null,{"children":"Verified By"}]," from your account if it is not already set."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Save the qualification, then refresh or reopen the record to review ",["$","strong",null,{"children":"Expiry Status"}],"."]}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?","$L1f"]}],"\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24"]}]
+13:["$","$L25",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@26"}]}]
+1d:true
+b:300
+1f:["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]
+20:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The qualification appears in the person’s ",["$","strong",null,{"children":"Qualifications"}]," table. ",["$","strong",null,{"children":"Expiry Status"}]," is calculated from the expiry date: ",["$","strong",null,{"children":"Expired"}]," when the date has passed, ",["$","strong",null,{"children":"Expiring Soon"}]," when it is within 30 days, ",["$","strong",null,{"children":"Valid"}]," when it is more than 30 days away, or ",["$","strong",null,{"children":"No Expiry"}]," when no expiry date is set. You do not enter this status yourself."]}]
+21:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+22:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["If ",["$","strong",null,{"children":"Qualifications"}]," is not shown, confirm that the record is a saved ",["$","strong",null,{"children":"Natural Person"}],"; the section is not available on every partner category."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If you can view qualifications but cannot edit them, you are likely signed in with the ",["$","strong",null,{"children":"Client"}]," role. Ask a Treasury user to maintain the record."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If ",["$","strong",null,{"children":"Expiry Status"}]," does not match the evidence, check the saved ",["$","strong",null,{"children":"Expiry Date"}]," and refresh the record; the status is calculated when the qualification is read."]}],"\n"]}]
+23:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+24:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Keep the qualification details and expiry date aligned with the current supporting evidence. If the qualification supports a regulatory or compliance process, follow that process’s review requirements as well."}]
+26:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

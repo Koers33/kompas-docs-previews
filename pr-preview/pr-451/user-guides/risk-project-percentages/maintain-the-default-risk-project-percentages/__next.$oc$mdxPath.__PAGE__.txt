@@ -1,0 +1,85 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T9bd,---
+title: "Adjust the default risk percentage bands"
+audience: [treasury-manager]
+domains: [foundation, risk]
+apps: [risk-project-percentages]
+entities: [RiskProjectPercentages]
+pageType: task-guide
+sourceSpec: app/risk-project-percentages/webapp/manifest.json
+---
+
+# Adjust the default risk percentage bands
+
+Change the platform's default percentage bands that will be copied to a client when its first project is created and it has no risk bands yet.
+
+## Who can do this?
+
+The **Treasury** role is required. Review the impact of a default change with the risk-policy owner before saving it.
+
+## What do I need before I start?
+
+- The approved default minimum, maximum and risk percentages.
+- Confirmation that the change is intended for future client setups; existing client-specific bands are not updated by changing defaults.
+- The current bands in the **Default Risk Percentages** view, so you can preserve complete and non-overlapping coverage as required by your policy.
+
+## How do I complete the task?
+
+1. Open **Risk Project Percentages** and switch to **Default Risk Percentages**.
+2. Review the existing default rows. Open the band to adjust; default rows are separate from client-specific bands.
+3. Update **Minimum Percentage**, **Maximum Percentage** or **Risk Percentage** as approved. Keep each value between 0 and 100.
+4. Save and activate the draft. Do not delete or repurpose a default band that has a different meaning.
+5. Reopen **Default Risk Percentages** and verify the saved values and active state.
+
+## How do I know it worked?
+
+The updated values appear in the **Default Risk Percentages** view. When a client with no existing bands has its first project created, these defaults are copied into client-specific rows.
+
+## What if I can’t complete it?
+
+- If the view is empty, confirm you selected **Default Risk Percentages**, not the **Active** or **Inactive** client-band view.
+- If a value is outside 0–100, correct it and save again.
+- Existing client bands are not retroactively changed by default edits. Update those client rows separately using [Maintain risk percentage bands for a client](./maintain-risk-project-percentages-for-a-client).
+- The app does not validate whether ranges overlap or leave gaps; review the full default set before saving.
+
+## What should I do next?
+
+Verify the intended default values, then review client-specific bands in [Risk Project Percentages](/user-guides/risk-project-percentages) after new client projects are created.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Adjust the default risk percentage bands","audience":["treasury-manager"],"domains":["foundation","risk"],"apps":["risk-project-percentages"],"entities":["RiskProjectPercentages"],"pageType":"task-guide","sourceSpec":"app/risk-project-percentages/webapp/manifest.json","filePath":"content/user-guides/risk-project-percentages/maintain-the-default-risk-project-percentages.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/risk-project-percentages/maintain-the-default-risk-project-percentages","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Adjust the default risk percentage bands"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+23:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Adjust the default risk percentage bands","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Change the platform’s default percentage bands that will be copied to a client when its first project is created and it has no risk bands yet."}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The ",["$","strong",null,{"children":"Treasury"}]," role is required. Review the impact of a default change with the risk-policy owner before saving it."]}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"The approved default minimum, maximum and risk percentages."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Confirmation that the change is intended for future client setups; existing client-specific bands are not updated by changing defaults."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The current bands in the ",["$","strong",null,{"children":"Default Risk Percentages"}]," view, so you can preserve complete and non-overlapping coverage as required by your policy."]}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Risk Project Percentages"}]," and switch to ",["$","strong",null,{"children":"Default Risk Percentages"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Review the existing default rows. Open the band to adjust; default rows are separate from client-specific bands."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Update ",["$","strong",null,{"children":"Minimum Percentage"}],", ",["$","strong",null,{"children":"Maximum Percentage"}]," or ",["$","strong",null,{"children":"Risk Percentage"}]," as approved. Keep each value between 0 and 100."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Save and activate the draft. Do not delete or repurpose a default band that has a different meaning."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Reopen ",["$","strong",null,{"children":"Default Risk Percentages"}]," and verify the saved values and active state."]}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The updated values appear in the ",["$","strong",null,{"children":"Default Risk Percentages"}]," view. When a client with no existing bands has its first project created, these defaults are copied into client-specific rows."]}],"\n","$L1f","\n","$L20","\n","$L21","\n","$L22"]}]
+13:["$","$L23",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@24"}]}]
+1d:true
+25:I[22016,["$3","$4","$5","$6"],""]
+b:300
+1f:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+20:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["If the view is empty, confirm you selected ",["$","strong",null,{"children":"Default Risk Percentages"}],", not the ",["$","strong",null,{"children":"Active"}]," or ",["$","strong",null,{"children":"Inactive"}]," client-band view."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If a value is outside 0–100, correct it and save again."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Existing client bands are not retroactively changed by default edits. Update those client rows separately using ",["$","$L25",null,{"href":"./maintain-risk-project-percentages-for-a-client","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Maintain risk percentage bands for a client"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"The app does not validate whether ranges overlap or leave gaps; review the full default set before saving."}],"\n"]}]
+21:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+22:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Verify the intended default values, then review client-specific bands in ",["$","$L25",null,{"href":"/user-guides/risk-project-percentages","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Risk Project Percentages"}]," after new client projects are created."]}]
+24:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

@@ -1,0 +1,91 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+20:"ViewportBoundary"
+21:I[97367,["$3","$4","$5","$6"],"$20"]
+22:"MetadataBoundary"
+23:I[97367,["$3","$4","$5","$6"],"$22"]
+24:"$Sreact.suspense"
+25:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T85b,---
+title: "Change how often a scheduled job runs"
+audience: [all]
+domains: [foundation]
+apps: [schedule-configurations]
+entities: [ScheduleConfigurations]
+pageType: task-guide
+sourceSpec: app/schedule-configurations/webapp/manifest.json
+---
+
+# Change how often a scheduled job runs
+
+Update the interval used by an existing recurring job and its human-readable interval label.
+
+## Who can do this?
+
+Users with portal access can read and update schedule rows; the app declares no additional role restriction. Confirm the intended cadence with the owner of the job before saving.
+
+## What do I need before I start?
+
+- The job's **Name**, **Technical Name** or **App List** so you can identify the correct row.
+- The approved **Interval (Minutes)** and matching **Interval Label**.
+
+## How do I complete the task?
+
+1. Open **Schedule Configurations** and find the job by name, app or technical name.
+2. Open the row and check its **Is Active** state; this field is read-only here.
+3. Update **Interval (Minutes)** to a positive whole number. Update **Interval Label** if its readable description should match.
+4. Save and activate the draft using the app's normal save flow.
+5. Reopen the row and verify the interval and label.
+
+## How do I know it worked?
+
+The row shows the new **Interval (Minutes)** and **Interval Label**. The platform uses the new interval the next time it plans that job's run; the label is descriptive only.
+
+## What if I can’t complete it?
+
+- If the interval is missing or not positive, enter a positive number of minutes.
+- If **Name**, **Technical Name**, **App List** or **Is Active** is read-only, that is expected; only interval and interval label are maintained here.
+- If the job is missing, jobs are platform-configured and cannot be created in this app. Contact the platform administrator.
+- This app changes cadence; it does not run a job immediately. Use the owning app's on-demand action where one exists.
+
+## What should I do next?
+
+Check the next run in the app that owns the job. For the SendGrid sync schedule, review **Data Sync History** in [SendGrid Monitoring](/user-guides/sendgrid-monitoring).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Change how often a scheduled job runs","audience":["all"],"domains":["foundation"],"apps":["schedule-configurations"],"entities":["ScheduleConfigurations"],"pageType":"task-guide","sourceSpec":"app/schedule-configurations/webapp/manifest.json","filePath":"content/user-guides/schedule-configurations/change-how-often-a-scheduled-job-runs.md","timestamp":1792963475000},"sourceCode":"$10","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Change how often a scheduled job runs","$undefined"]}],"\n","$L11","\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d"]}]]}]]}]}],null,"$L1e"]}],"p":"$@1f","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/schedule-configurations/change-how-often-a-scheduled-job-runs","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L21",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L23",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$24",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Change how often a scheduled job runs"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L25","3",{}]]}]}],null]}],null]}],"p":"$@26","v":null,"s":"$b"}},"a":"$@27","u":"$@28","b":"PA3r732GgoFQxPkVLUKX2"}
+29:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+2a:I[22016,["$3","$4","$5","$6"],""]
+2b:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Update the interval used by an existing recurring job and its human-readable interval label."}]
+12:["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L29",null,{"id":"who-can-do-this"}]]}]
+13:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Users with portal access can read and update schedule rows; the app declares no additional role restriction. Confirm the intended cadence with the owner of the job before saving."}]
+14:["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L29",null,{"id":"what-do-i-need-before-i-start"}]]}]
+15:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["The job’s ",["$","strong",null,{"children":"Name"}],", ",["$","strong",null,{"children":"Technical Name"}]," or ",["$","strong",null,{"children":"App List"}]," so you can identify the correct row."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The approved ",["$","strong",null,{"children":"Interval (Minutes)"}]," and matching ",["$","strong",null,{"children":"Interval Label"}],"."]}],"\n"]}]
+16:["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L29",null,{"id":"how-do-i-complete-the-task"}]]}]
+17:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Schedule Configurations"}]," and find the job by name, app or technical name."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open the row and check its ",["$","strong",null,{"children":"Is Active"}]," state; this field is read-only here."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Update ",["$","strong",null,{"children":"Interval (Minutes)"}]," to a positive whole number. Update ",["$","strong",null,{"children":"Interval Label"}]," if its readable description should match."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Save and activate the draft using the app’s normal save flow."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Reopen the row and verify the interval and label."}],"\n"]}]
+18:["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L29",null,{"id":"how-do-i-know-it-worked"}]]}]
+19:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The row shows the new ",["$","strong",null,{"children":"Interval (Minutes)"}]," and ",["$","strong",null,{"children":"Interval Label"}],". The platform uses the new interval the next time it plans that job’s run; the label is descriptive only."]}]
+1a:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L29",null,{"id":"what-if-i-cant-complete-it"}]]}]
+1b:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the interval is missing or not positive, enter a positive number of minutes."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If ",["$","strong",null,{"children":"Name"}],", ",["$","strong",null,{"children":"Technical Name"}],", ",["$","strong",null,{"children":"App List"}]," or ",["$","strong",null,{"children":"Is Active"}]," is read-only, that is expected; only interval and interval label are maintained here."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the job is missing, jobs are platform-configured and cannot be created in this app. Contact the platform administrator."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"This app changes cadence; it does not run a job immediately. Use the owning app’s on-demand action where one exists."}],"\n"]}]
+1c:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L29",null,{"id":"what-should-i-do-next"}]]}]
+1d:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Check the next run in the app that owns the job. For the SendGrid sync schedule, review ",["$","strong",null,{"children":"Data Sync History"}]," in ",["$","$L2a",null,{"href":"/user-guides/sendgrid-monitoring","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"SendGrid Monitoring"}],"."]}]
+1e:["$","$L2b",null,{"children":["$","$24",null,{"name":"Next.MetadataOutlet","children":"$@2c"}]}]
+28:true
+b:300
+2c:null
+b:C
+27:0
+9:"$undefined"
+26:"$undefined"
+1f:"$undefined"

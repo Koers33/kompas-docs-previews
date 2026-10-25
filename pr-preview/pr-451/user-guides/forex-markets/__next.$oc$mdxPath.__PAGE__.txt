@@ -1,0 +1,105 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T107a,---
+title: "Forex Markets app"
+audience: [all]
+domains: [foundation]
+apps: [forex-markets]
+entities: [Markets]
+pageType: app-overview
+sourceSpec: app/forex-markets/webapp/manifest.json
+---
+
+# Forex Markets app
+
+Forex Markets is where the platform's forex markets are maintained. Each market record carries a **Market Name**, a **Market Type** and the **Trading Partner** it belongs to, and beneath it the **Traded Symbols** table lists the currency pairs linked to that market and whether each link is active.
+
+## What is this app for?
+
+A market row is the anchor: it names the market, classifies it by type and ties it to a trading partner. The **Traded Symbols** rows are the working part — each one connects a currency pair to the market and can be switched on or off. The base and quote currencies shown on those rows come from the symbol record itself, so they are read-only here.
+
+## When should I use this app?
+
+Come here when a market is new, when its **Trading Partner** or **Market Type** needs correcting, or when a pair should start or stop being traded on a market. Defining a currency pair belongs in the [Forex Symbols app](/user-guides/forex-symbols) and recording price observations belongs in the [Forex Price Data app](/user-guides/forex-price-data) — this app is the link between the pair and the market.
+
+## Who can access this app?
+
+The app is reached through portal access plus the roles your administrator has assigned you — see [Roles and Access](/getting-started/roles-and-access). The market records carry an additional service-level grant to the **Treasury** role, so working with them needs that grant as well; the app's own metadata records no narrower launchpad audience.
+
+## How does work progress in this app?
+
+1. Select **Create** and complete the draft: give the market a **Market Name**, choose a **Market Type** and pick the **Trading Partner**, then save.
+2. With the market saved, add rows in **Traded Symbols**: choose the symbol to link and keep the link active. The currencies shown are filled in from the symbol.
+3. To stop a pair trading on that market, switch the link off rather than removing it — neither markets nor their symbol links are deleted from this app.
+4. Correcting a market later is the same flow: open it, edit, save. Draft handling means you can leave a half-finished record and come back to it.
+
+## What can change what I see or do?
+
+- **Trading Partner:** the value help only offers business partners that hold an active **Bank** relationship. If a partner is missing from the list, that relationship is what needs attention — maintain it in the [Business Partners app](/user-guides/business-partners).
+- **Market Type:** chosen from a fixed list of market types, not free text.
+- **One link per pair:** changing a link to a pair the market already trades is refused with a message naming the pair, so open the existing row instead of repointing a new one at it.
+- **No deletes:** market records and their symbol rows are retained by design — change the record instead.
+
+## Where can I review the results?
+
+Reopen the market and check **General** for the name, type and trading partner, then **Traded Symbols** for the linked pairs and their active flags. Downstream, the same market is what price records point at — the [Forex Price Data app](/user-guides/forex-price-data) shows the observations recorded against its symbols.
+
+## What should I check if I can’t continue?
+
+- A message about a duplicate trading pair: that market already links the pair — open the existing row and undo the change you made.
+- A trading partner you expect is not offered: only partners with an active **Bank** relationship appear.
+- An edit control is missing: check your roles in [Roles and Access](/getting-started/roles-and-access).
+
+## Which task guides are available?
+
+- [Create or update a forex market](./create-or-update-a-forex-market)
+- [Link or unlink a currency pair on a market](./link-or-unlink-a-currency-pair-on-a-market)
+
+## What should I do next?
+
+Define the pairs you need in the [Forex Symbols app](/user-guides/forex-symbols) first, then link them here, then review quotes in the [Forex Price Data app](/user-guides/forex-price-data).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Forex Markets app","audience":["all"],"domains":["foundation"],"apps":["forex-markets"],"entities":["Markets"],"pageType":"app-overview","sourceSpec":"app/forex-markets/webapp/manifest.json","filePath":"content/user-guides/forex-markets/index.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/forex-markets","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Forex Markets app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+2c:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Forex Markets app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Forex Markets is where the platform’s forex markets are maintained. Each market record carries a ",["$","strong",null,{"children":"Market Name"}],", a ",["$","strong",null,{"children":"Market Type"}]," and the ",["$","strong",null,{"children":"Trading Partner"}]," it belongs to, and beneath it the ",["$","strong",null,{"children":"Traded Symbols"}]," table lists the currency pairs linked to that market and whether each link is active."]}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["A market row is the anchor: it names the market, classifies it by type and ties it to a trading partner. The ",["$","strong",null,{"children":"Traded Symbols"}]," rows are the working part — each one connects a currency pair to the market and can be switched on or off. The base and quote currencies shown on those rows come from the symbol record itself, so they are read-only here."]}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Come here when a market is new, when its ",["$","strong",null,{"children":"Trading Partner"}]," or ",["$","strong",null,{"children":"Market Type"}]," needs correcting, or when a pair should start or stop being traded on a market. Defining a currency pair belongs in the ",["$","$L1f",null,{"href":"/user-guides/forex-symbols","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Forex Symbols app"}]," and recording price observations belongs in the ",["$","$L1f",null,{"href":"/user-guides/forex-price-data","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Forex Price Data app"}]," — this app is the link between the pair and the market."]}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is reached through portal access plus the roles your administrator has assigned you — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],". The market records carry an additional service-level grant to the ",["$","strong",null,{"children":"Treasury"}]," role, so working with them needs that grant as well; the app’s own metadata records no narrower launchpad audience."]}],"\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b"]}]
+13:["$","$L2c",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@2d"}]}]
+1d:true
+b:300
+20:["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?",["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]]}]
+21:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Select ",["$","strong",null,{"children":"Create"}]," and complete the draft: give the market a ",["$","strong",null,{"children":"Market Name"}],", choose a ",["$","strong",null,{"children":"Market Type"}]," and pick the ",["$","strong",null,{"children":"Trading Partner"}],", then save."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["With the market saved, add rows in ",["$","strong",null,{"children":"Traded Symbols"}],": choose the symbol to link and keep the link active. The currencies shown are filled in from the symbol."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"To stop a pair trading on that market, switch the link off rather than removing it — neither markets nor their symbol links are deleted from this app."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Correcting a market later is the same flow: open it, edit, save. Draft handling means you can leave a half-finished record and come back to it."}],"\n"]}]
+22:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+23:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Trading Partner:"}]," the value help only offers business partners that hold an active ",["$","strong",null,{"children":"Bank"}]," relationship. If a partner is missing from the list, that relationship is what needs attention — maintain it in the ",["$","$L1f",null,{"href":"/user-guides/business-partners","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Business Partners app"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Market Type:"}]," chosen from a fixed list of market types, not free text."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"One link per pair:"}]," changing a link to a pair the market already trades is refused with a message naming the pair, so open the existing row instead of repointing a new one at it."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"No deletes:"}]," market records and their symbol rows are retained by design — change the record instead."]}],"\n"]}]
+24:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Reopen the market and check ",["$","strong",null,{"children":"General"}]," for the name, type and trading partner, then ",["$","strong",null,{"children":"Traded Symbols"}]," for the linked pairs and their active flags. Downstream, the same market is what price records point at — the ",["$","$L1f",null,{"href":"/user-guides/forex-price-data","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Forex Price Data app"}]," shows the observations recorded against its symbols."]}]
+26:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+27:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"A message about a duplicate trading pair: that market already links the pair — open the existing row and undo the change you made."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["A trading partner you expect is not offered: only partners with an active ",["$","strong",null,{"children":"Bank"}]," relationship appear."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["An edit control is missing: check your roles in ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"."]}],"\n"]}]
+28:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+29:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./create-or-update-a-forex-market","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Create or update a forex market"}]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./link-or-unlink-a-currency-pair-on-a-market","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Link or unlink a currency pair on a market"}]}],"\n"]}]
+2a:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+2b:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Define the pairs you need in the ",["$","$L1f",null,{"href":"/user-guides/forex-symbols","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Forex Symbols app"}]," first, then link them here, then review quotes in the ",["$","$L1f",null,{"href":"/user-guides/forex-price-data","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Forex Price Data app"}],"."]}]
+2d:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

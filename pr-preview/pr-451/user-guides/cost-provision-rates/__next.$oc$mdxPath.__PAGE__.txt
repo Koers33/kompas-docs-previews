@@ -1,0 +1,105 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T118a,---
+title: "Cost Provision Rates app"
+audience: [all]
+domains: [foundation]
+apps: [cost-provision-rates]
+entities: [ButtonLists]
+pageType: app-overview
+sourceSpec: app/cost-provision-rates/webapp/manifest.json
+---
+
+# Cost Provision Rates app
+
+Cost Provision Rates is where the cost provision held against a platform action is maintained. Every named action the platform exposes — confirming a deal, closing a period, approving a mapping — has a row here, identified by its **App Code**, **Button Name** and **Button Technical Name**, and each row carries the two editable settings: a **Cost Provision Classification** and a **Cost Provision Value**. When the platform raises a cost provision entry for an action, it copies the classification and value from that action's row.
+
+## What is this app for?
+
+The app keeps those two settings current as the platform's cost provisioning rules change. The rest of the row — **Code**, **Button Name**, **Button Technical Name** and **App Code** — identifies the action and is fixed, so what you are maintaining here is the rate side of each action, not the action itself.
+
+## When should I use this app?
+
+Use it when a classification or value for an action needs to change, or when you want to check what the platform holds for a particular action before reviewing the entries it produced. Use the row's **App Code**, **Button Name** and **Button Technical Name** to identify the action; use the apps themselves to perform the work rather than reading about it here.
+
+## Who can access this app?
+
+The app is reached through portal access plus the roles your administrator has assigned you — see [Roles and Access](/getting-started/roles-and-access). The register applies no role restriction of its own beyond portal access, so everyone who can open the app sees the same rows and the same two editable fields. Rows cannot be added or deleted here — they come with the platform's action register.
+
+## How does work progress in this app?
+
+There is no lifecycle to progress. Open a row, choose the **Cost Provision Classification** from its list, enter the **Cost Provision Value** you want the platform to use for that action, and save. The row is edited as a draft until you save it, so a value you typed and did not save has no effect.
+
+## What can change what I see or do?
+
+- **Only two fields are editable:** **Cost Provision Classification** and **Cost Provision Value**. The code, button name, technical name and app are read-only for everyone.
+- **Fixed value list:** the classification is chosen from the platform's classification list rather than typed in.
+- **No new rows:** rows cannot be created or deleted in this app, so an action that has no row cannot be given a rate here.
+- **Already-created entries:** a cost provision entry stores its own copy of the classification and value, so changing a value on this page does not rewrite entries the platform has already raised.
+
+## Where can I review the results?
+
+Compare this page against the entries it produced: the **Cost Provisions** app holds one entry per raised cost provision, showing the classification, the value, the **Provision Date/Time**, the **Username** and the **Button Code** behind it. The **Button Code** on an entry points back to the row here, so any difference between an entry and the rate you expected is visible from either side.
+
+The list itself is also the quickest check: filter to the action you are investigating and read its classification and value without opening the record.
+
+## What should I check if I can't continue?
+
+- A field will not accept input: only **Cost Provision Classification** and **Cost Provision Value** are editable; everything else is fixed with the action register.
+- A row you expect is missing: rows come from the platform's configuration and cannot be added in this app — note the action and its app and raise it with your platform administrator.
+- An entry still shows an old value: entries keep the values they were created with; check when the entry was raised against the value set at the time.
+- The app itself does not open: check your access first — see [Roles and Access](/getting-started/roles-and-access).
+
+## Which task guides are available?
+
+- [Update the cost provision settings for an action](./update-the-cost-provision-settings-for-an-action)
+
+## What should I do next?
+
+Check the row's **App Code** and action name before changing its rate, and review the resulting entries in **Cost Provisions**.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Cost Provision Rates app","audience":["all"],"domains":["foundation"],"apps":["cost-provision-rates"],"entities":["ButtonLists"],"pageType":"app-overview","sourceSpec":"app/cost-provision-rates/webapp/manifest.json","filePath":"content/user-guides/cost-provision-rates/index.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/cost-provision-rates","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Cost Provision Rates app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+2d:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Cost Provision Rates app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Cost Provision Rates is where the cost provision held against a platform action is maintained. Every named action the platform exposes — confirming a deal, closing a period, approving a mapping — has a row here, identified by its ",["$","strong",null,{"children":"App Code"}],", ",["$","strong",null,{"children":"Button Name"}]," and ",["$","strong",null,{"children":"Button Technical Name"}],", and each row carries the two editable settings: a ",["$","strong",null,{"children":"Cost Provision Classification"}]," and a ",["$","strong",null,{"children":"Cost Provision Value"}],". When the platform raises a cost provision entry for an action, it copies the classification and value from that action’s row."]}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app keeps those two settings current as the platform’s cost provisioning rules change. The rest of the row — ",["$","strong",null,{"children":"Code"}],", ",["$","strong",null,{"children":"Button Name"}],", ",["$","strong",null,{"children":"Button Technical Name"}]," and ",["$","strong",null,{"children":"App Code"}]," — identifies the action and is fixed, so what you are maintaining here is the rate side of each action, not the action itself."]}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Use it when a classification or value for an action needs to change, or when you want to check what the platform holds for a particular action before reviewing the entries it produced. Use the row’s ",["$","strong",null,{"children":"App Code"}],", ",["$","strong",null,{"children":"Button Name"}]," and ",["$","strong",null,{"children":"Button Technical Name"}]," to identify the action; use the apps themselves to perform the work rather than reading about it here."]}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is reached through portal access plus the roles your administrator has assigned you — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],". The register applies no role restriction of its own beyond portal access, so everyone who can open the app sees the same rows and the same two editable fields. Rows cannot be added or deleted here — they come with the platform’s action register."]}],"\n",["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?","$L20"]}],"\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c"]}]
+13:["$","$L2d",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@2e"}]}]
+1d:true
+b:300
+20:["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]
+21:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["There is no lifecycle to progress. Open a row, choose the ",["$","strong",null,{"children":"Cost Provision Classification"}]," from its list, enter the ",["$","strong",null,{"children":"Cost Provision Value"}]," you want the platform to use for that action, and save. The row is edited as a draft until you save it, so a value you typed and did not save has no effect."]}]
+22:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+23:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Only two fields are editable:"}]," ",["$","strong",null,{"children":"Cost Provision Classification"}]," and ",["$","strong",null,{"children":"Cost Provision Value"}],". The code, button name, technical name and app are read-only for everyone."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Fixed value list:"}]," the classification is chosen from the platform’s classification list rather than typed in."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"No new rows:"}]," rows cannot be created or deleted in this app, so an action that has no row cannot be given a rate here."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Already-created entries:"}]," a cost provision entry stores its own copy of the classification and value, so changing a value on this page does not rewrite entries the platform has already raised."]}],"\n"]}]
+24:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Compare this page against the entries it produced: the ",["$","strong",null,{"children":"Cost Provisions"}]," app holds one entry per raised cost provision, showing the classification, the value, the ",["$","strong",null,{"children":"Provision Date/Time"}],", the ",["$","strong",null,{"children":"Username"}]," and the ",["$","strong",null,{"children":"Button Code"}]," behind it. The ",["$","strong",null,{"children":"Button Code"}]," on an entry points back to the row here, so any difference between an entry and the rate you expected is visible from either side."]}]
+26:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The list itself is also the quickest check: filter to the action you are investigating and read its classification and value without opening the record."}]
+27:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+28:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["A field will not accept input: only ",["$","strong",null,{"children":"Cost Provision Classification"}]," and ",["$","strong",null,{"children":"Cost Provision Value"}]," are editable; everything else is fixed with the action register."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"A row you expect is missing: rows come from the platform’s configuration and cannot be added in this app — note the action and its app and raise it with your platform administrator."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"An entry still shows an old value: entries keep the values they were created with; check when the entry was raised against the value set at the time."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The app itself does not open: check your access first — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"."]}],"\n"]}]
+29:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+2a:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./update-the-cost-provision-settings-for-an-action","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Update the cost provision settings for an action"}]}],"\n"]}]
+2b:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+2c:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Check the row’s ",["$","strong",null,{"children":"App Code"}]," and action name before changing its rate, and review the resulting entries in ",["$","strong",null,{"children":"Cost Provisions"}],"."]}]
+2e:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

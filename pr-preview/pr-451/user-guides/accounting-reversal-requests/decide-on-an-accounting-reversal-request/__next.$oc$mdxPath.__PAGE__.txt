@@ -1,0 +1,87 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Ta9e,---
+title: "Decide on an accounting reversal request"
+audience: [all]
+domains: [foundation]
+apps: [accounting-reversal-requests]
+entities: [AccountingReversalRequests]
+pageType: task-guide
+sourceSpec: app/accounting-reversal-requests/webapp/manifest.json
+---
+
+# Decide on an accounting reversal request
+
+Review a pending reversal request and either approve it, which creates a linked reversal journal entry, or reject it, which leaves the original journal unchanged.
+
+## Who can do this?
+
+You need access to the Accounting Reversal Requests app and the Treasury role. You must be a different user from the requester; the same person cannot approve or reject their own request.
+
+## What do I need before I start?
+
+- A saved request with **Pending** status.
+- The **Reversal Type**, **Original Journal** and **Reason** to review.
+- The accounting approval needed to decide whether the correction should proceed.
+
+## How do I complete the task?
+
+1. Open **Accounting Reversal Requests** and filter **Status** to **Pending**.
+2. Open the request. Review its reversal type, reason and **Original Journal** before deciding.
+3. Follow your accounting approval procedure. Select **Approve** to authorize the correction, or **Reject** to decline the request.
+4. Refresh or reopen the request and check the result:
+   - After approval, the request reaches **Completed** and the **Approval** section records the approver and time.
+   - After rejection, the request reaches **Rejected** and the **Approval** section records the decision-maker and time.
+
+## How do I know it worked?
+
+For an approved request, open Journal Entries and verify that a new journal entry is linked to the original and reverses its debit/credit directions. The request shows **Completed**. For a rejected request, the request shows **Rejected** and no reversal journal entry is created; the original entry remains unchanged.
+
+## What if I can’t complete it?
+
+- If **Approve** and **Reject** are unavailable, confirm that the request is saved and still **Pending**.
+- If the app says a different user must decide, you are the requester. Ask another Treasury user to review it; do not try to work around the two-person rule.
+- If approval fails because the original journal cannot be reversed, confirm that the selected journal exists and has postings. Contact accounting support before retrying, and check the request status first.
+
+## What should I do next?
+
+After approval, compare the reversal entry with the original in [Journal Entries](/user-guides/journal-entries) and follow your accounting review procedure. If the request was rejected and the correction is still needed, discuss the next step with the requester before raising another request.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Decide on an accounting reversal request","audience":["all"],"domains":["foundation"],"apps":["accounting-reversal-requests"],"entities":["AccountingReversalRequests"],"pageType":"task-guide","sourceSpec":"app/accounting-reversal-requests/webapp/manifest.json","filePath":"content/user-guides/accounting-reversal-requests/decide-on-an-accounting-reversal-request.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/accounting-reversal-requests/decide-on-an-accounting-reversal-request","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Decide on an accounting reversal request"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+25:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Decide on an accounting reversal request","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Review a pending reversal request and either approve it, which creates a linked reversal journal entry, or reject it, which leaves the original journal unchanged."}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"You need access to the Accounting Reversal Requests app and the Treasury role. You must be a different user from the requester; the same person cannot approve or reject their own request."}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["A saved request with ",["$","strong",null,{"children":"Pending"}]," status."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The ",["$","strong",null,{"children":"Reversal Type"}],", ",["$","strong",null,{"children":"Original Journal"}]," and ",["$","strong",null,{"children":"Reason"}]," to review."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"The accounting approval needed to decide whether the correction should proceed."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Accounting Reversal Requests"}]," and filter ",["$","strong",null,{"children":"Status"}]," to ",["$","strong",null,{"children":"Pending"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open the request. Review its reversal type, reason and ",["$","strong",null,{"children":"Original Journal"}]," before deciding."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Follow your accounting approval procedure. Select ",["$","strong",null,{"children":"Approve"}]," to authorize the correction, or ",["$","strong",null,{"children":"Reject"}]," to decline the request."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Refresh or reopen the request and check the result:\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["After approval, the request reaches ",["$","strong",null,{"children":"Completed"}]," and the ",["$","strong",null,{"children":"Approval"}]," section records the approver and time."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["After rejection, the request reaches ",["$","strong",null,{"children":"Rejected"}]," and the ",["$","strong",null,{"children":"Approval"}]," section records the decision-maker and time."]}],"\n"]}],"\n"]}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?","$L1f"]}],"\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24"]}]
+13:["$","$L25",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@26"}]}]
+1d:true
+27:I[22016,["$3","$4","$5","$6"],""]
+b:300
+1f:["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]
+20:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["For an approved request, open Journal Entries and verify that a new journal entry is linked to the original and reverses its debit/credit directions. The request shows ",["$","strong",null,{"children":"Completed"}],". For a rejected request, the request shows ",["$","strong",null,{"children":"Rejected"}]," and no reversal journal entry is created; the original entry remains unchanged."]}]
+21:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+22:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["If ",["$","strong",null,{"children":"Approve"}]," and ",["$","strong",null,{"children":"Reject"}]," are unavailable, confirm that the request is saved and still ",["$","strong",null,{"children":"Pending"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the app says a different user must decide, you are the requester. Ask another Treasury user to review it; do not try to work around the two-person rule."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If approval fails because the original journal cannot be reversed, confirm that the selected journal exists and has postings. Contact accounting support before retrying, and check the request status first."}],"\n"]}]
+23:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+24:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["After approval, compare the reversal entry with the original in ",["$","$L27",null,{"href":"/user-guides/journal-entries","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Journal Entries"}]," and follow your accounting review procedure. If the request was rejected and the correction is still needed, discuss the next step with the requester before raising another request."]}]
+26:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

@@ -1,0 +1,113 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T1050,---
+title: "Models Catalogue app"
+audience: [all]
+domains: [foundation]
+apps: [models-catalogue]
+entities: [ModelRegistrations]
+pageType: app-overview
+sourceSpec: app/models-catalogue/webapp/manifest.json
+---
+
+# Models Catalogue app
+
+Models Catalogue is the register of models the platform uses. Each registration records a **Model Code**, a **Model Name**, a **Version**, the **Status** the model has reached, when it was registered and who registered it.
+
+## What is this app for?
+
+The record has two sections. **General Information** holds the registration itself — code, name, version, status, registration date and registrant. **Governance** holds the audit stamps for the record: when and by whom it was created and last changed.
+
+The status list is what gives a registration its meaning:
+
+- **Development** — the model is under development and not yet approved for use.
+- **Validated** — the model has passed independent validation.
+- **Production** — the model is approved and in production use.
+- **Retired** — the model has been retired from use.
+
+## When should I use this app?
+
+Register a model when it is first adopted, add a new version when the model is reissued, and update the status when the model's stage changes. Come here to correct a registration detail such as the name or the registration date, or to check which models are registered and where each one stands.
+
+## Who can access this app?
+
+The app is reached through portal access plus the roles your administrator has assigned you — see [Roles and Access](/getting-started/roles-and-access). Registrations are readable, creatable and updatable for portal access, with no additional role restriction and no narrower launchpad audience recorded, so everyone who can open the app works with the same list.
+
+## How does work progress in this app?
+
+1. Select **Create** to open a new registration in draft. It starts with **Status** set to **Development** and **Registered At** set to today; **Registered By** is filled with you when a user record exists for your sign-in.
+2. Enter the **Model Code**, the **Model Name** and the **Version**, then choose the **Status** that describes where the model stands.
+3. Save. Correct the record later the same way — the registration date and registrant stay with the record.
+4. Move a model through its stages by changing **Status**. The app offers no approval or validation action of its own: the field records the stage, it does not run the work behind it.
+
+## What can change what I see or do?
+
+- **Model Code** is required, must be unique, and cannot be changed after the record exists — a changed code is refused and a second record with the same code is refused as well.
+- **Model Name** and **Status** are required, and **Registered At** cannot be in the future.
+- Values have fixed lengths: code 50 characters, name 255, version 20. A longer value is refused with a message naming the field and the limit.
+- All four statuses are offered at every stage of the record; nothing in the record hides or gates the others.
+
+## Where can I review the results?
+
+The list shows **Model Code**, **Model Name**, **Version**, **Status** and **Registered At** for every registration, so you can see the whole register at a glance. On the record, **General Information** holds the detail you entered and **Governance** shows who created and last changed it and when.
+
+## What should I check if I can't continue?
+
+- A message that the model code already exists: open the existing registration instead of adding a second one.
+- A message that the code cannot be changed: the code is fixed once saved; correct the name or version instead.
+- A message that a field is required or too long, or that the registration date is in the future: complete or shorten the value and save again.
+- An edit control is missing: check your roles in [Roles and Access](/getting-started/roles-and-access).
+
+## Which task guides are available?
+
+- [Register a model](./register-a-model)
+- [Update a model registration](./update-a-model-registration)
+
+## What should I do next?
+
+Read [Roles and Access](/getting-started/roles-and-access) if a control you expect is not offered.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Models Catalogue app","audience":["all"],"domains":["foundation"],"apps":["models-catalogue"],"entities":["ModelRegistrations"],"pageType":"app-overview","sourceSpec":"app/models-catalogue/webapp/manifest.json","filePath":"content/user-guides/models-catalogue/index.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/models-catalogue","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Models Catalogue app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+2c:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Models Catalogue app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Models Catalogue is the register of models the platform uses. Each registration records a ",["$","strong",null,{"children":"Model Code"}],", a ",["$","strong",null,{"children":"Model Name"}],", a ",["$","strong",null,{"children":"Version"}],", the ",["$","strong",null,{"children":"Status"}]," the model has reached, when it was registered and who registered it."]}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The record has two sections. ",["$","strong",null,{"children":"General Information"}]," holds the registration itself — code, name, version, status, registration date and registrant. ",["$","strong",null,{"children":"Governance"}]," holds the audit stamps for the record: when and by whom it was created and last changed."]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The status list is what gives a registration its meaning:"}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Development"}]," — the model is under development and not yet approved for use."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Validated"}]," — the model has passed independent validation."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Production"}]," — the model is approved and in production use."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Retired"}]," — the model has been retired from use."]}],"\n"]}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Register a model when it is first adopted, add a new version when the model is reissued, and update the status when the model’s stage changes. Come here to correct a registration detail such as the name or the registration date, or to check which models are registered and where each one stands."}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is reached through portal access plus the roles your administrator has assigned you — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],". Registrations are readable, creatable and updatable for portal access, with no additional role restriction and no narrower launchpad audience recorded, so everyone who can open the app works with the same list."]}],"\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b"]}]
+13:["$","$L2c",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@2d"}]}]
+1d:true
+b:300
+20:["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?",["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]]}]
+21:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Select ",["$","strong",null,{"children":"Create"}]," to open a new registration in draft. It starts with ",["$","strong",null,{"children":"Status"}]," set to ",["$","strong",null,{"children":"Development"}]," and ",["$","strong",null,{"children":"Registered At"}]," set to today; ",["$","strong",null,{"children":"Registered By"}]," is filled with you when a user record exists for your sign-in."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Enter the ",["$","strong",null,{"children":"Model Code"}],", the ",["$","strong",null,{"children":"Model Name"}]," and the ",["$","strong",null,{"children":"Version"}],", then choose the ",["$","strong",null,{"children":"Status"}]," that describes where the model stands."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Save. Correct the record later the same way — the registration date and registrant stay with the record."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Move a model through its stages by changing ",["$","strong",null,{"children":"Status"}],". The app offers no approval or validation action of its own: the field records the stage, it does not run the work behind it."]}],"\n"]}]
+22:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+23:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Model Code"}]," is required, must be unique, and cannot be changed after the record exists — a changed code is refused and a second record with the same code is refused as well."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Model Name"}]," and ",["$","strong",null,{"children":"Status"}]," are required, and ",["$","strong",null,{"children":"Registered At"}]," cannot be in the future."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Values have fixed lengths: code 50 characters, name 255, version 20. A longer value is refused with a message naming the field and the limit."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"All four statuses are offered at every stage of the record; nothing in the record hides or gates the others."}],"\n"]}]
+24:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The list shows ",["$","strong",null,{"children":"Model Code"}],", ",["$","strong",null,{"children":"Model Name"}],", ",["$","strong",null,{"children":"Version"}],", ",["$","strong",null,{"children":"Status"}]," and ",["$","strong",null,{"children":"Registered At"}]," for every registration, so you can see the whole register at a glance. On the record, ",["$","strong",null,{"children":"General Information"}]," holds the detail you entered and ",["$","strong",null,{"children":"Governance"}]," shows who created and last changed it and when."]}]
+26:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+27:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"A message that the model code already exists: open the existing registration instead of adding a second one."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"A message that the code cannot be changed: the code is fixed once saved; correct the name or version instead."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"A message that a field is required or too long, or that the registration date is in the future: complete or shorten the value and save again."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["An edit control is missing: check your roles in ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"."]}],"\n"]}]
+28:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+29:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./register-a-model","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Register a model"}]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./update-a-model-registration","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Update a model registration"}]}],"\n"]}]
+2a:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+2b:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Read ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}]," if a control you expect is not offered."]}]
+2d:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

@@ -1,0 +1,117 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T125b,---
+title: "Status Lists app"
+audience: [all]
+domains: [foundation]
+apps: [status-lists]
+entities: [StatusLists]
+pageType: app-overview
+sourceSpec: app/status-lists/webapp/manifest.json
+---
+
+# Status Lists app
+
+Status Lists is where the platform's status picklists are maintained. Every dropdown that carries a workflow state — settlement status, approval status, deal lifecycle status, journal status and the rest — draws its options from one of these lists, so the entries you maintain here are the values users see everywhere else.
+
+## What is this app for?
+
+The main list shows one row per status list, identified by its **Entity Name** and grouped by **Domain Group**. Opening a row shows **General Information** and, below it, **Status List Entries**: each entry's code, name, description and whether it is active.
+
+The app is deliberately narrow. The status list rows themselves cannot be created or deleted, and their **Entity Name** and **Domain Group** are read-only — they name an existing list. The work happens in the entries: adding a value, correcting a display name or description, or switching a value off.
+
+## When should I use this app?
+
+Come here to add a status value a user needs in a dropdown, to correct how a status reads, to retire a value that should no longer be offered, or to re-synchronise a list after a change made elsewhere.
+
+Choosing a status on a deal, a payment or a journal belongs in the app where that record is worked — not here.
+
+## Who can access this app?
+
+The app is reached through portal access plus the roles your administrator has assigned you — see [Roles and Access](/getting-started/roles-and-access). The status lists carry no additional role restriction beyond that portal access, so everyone who can open the app sees the same lists.
+
+## How does work progress in this app?
+
+1. Filter or browse by **Domain Group** — the list opens grouped by domain and sorted by **Entity Name**.
+2. Open the status list and work in **Status List Entries**. An entry needs a code and a name; saving it writes the change straight through to the live list that other apps read.
+3. Use **Refresh Entries** to reload the entries from the live list, replacing what this record currently shows. Use it when the live list has changed elsewhere and your view looks out of date.
+4. Use **Update Entries** to push what you see back to the live list: codes that do not exist yet are created, and existing ones are updated.
+
+Steps 3 and 4 are the two directions of the same synchronisation, so pick the direction you need: refresh pulls, update pushes.
+
+## What can change what I see or do?
+
+- **Domain Group** is the only filter on the main list and the grouping used in the table.
+- **The list row is fixed.** **Entity Name** and **Domain Group** are read-only, and status lists cannot be created or deleted here.
+- **Entries cannot be deleted.** Switch **Is Active** off instead of removing a value, so records that already reference it stay valid.
+- **An entry needs a code and a name.** Saving without one is refused with a message telling you which field is missing.
+- **Refresh replaces what you see.** It reloads the entries from the live list, so the view you were editing becomes the live list's current contents.
+
+## Where can I review the results?
+
+Reopen the status list and check **Status List Entries**: after a save or an update it shows the code, name, description and active flag you just wrote, and after a refresh it mirrors the live list.
+
+The real test is where the value is used. Open the app that offers the dropdown — for example the **Settlement Status** filter in the [Settlements app](/user-guides/settlements) — and confirm the new or corrected option is offered there, since those dropdowns read the live status list.
+
+## What should I check if I can’t continue?
+
+- **A message about a missing code or name:** complete the field and save the entry again.
+- **An entry you expected to delete:** entries are never deleted here — deactivate the entry instead.
+- **A value does not appear in a dropdown:** check the entry is active first, then check the dropdown's own app.
+- **An edit control is missing:** check your roles in [Roles and Access](/getting-started/roles-and-access).
+
+## Which task guides are available?
+
+- [Add, correct or retire a status value](./add-correct-or-retire-a-status-value)
+- [Re-synchronise a status list](./re-synchronise-a-status-list)
+
+## What should I do next?
+
+For picklists that are not statuses, contact your platform administrator about the owning reference data. You can compare the catalogue view of platform lists in the [Master Data Catalogue app](/user-guides/master-data-catalogue).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Status Lists app","audience":["all"],"domains":["foundation"],"apps":["status-lists"],"entities":["StatusLists"],"pageType":"app-overview","sourceSpec":"app/status-lists/webapp/manifest.json","filePath":"content/user-guides/status-lists/index.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/status-lists","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Status Lists app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+2e:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Status Lists app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Status Lists is where the platform’s status picklists are maintained. Every dropdown that carries a workflow state — settlement status, approval status, deal lifecycle status, journal status and the rest — draws its options from one of these lists, so the entries you maintain here are the values users see everywhere else."}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The main list shows one row per status list, identified by its ",["$","strong",null,{"children":"Entity Name"}]," and grouped by ",["$","strong",null,{"children":"Domain Group"}],". Opening a row shows ",["$","strong",null,{"children":"General Information"}]," and, below it, ",["$","strong",null,{"children":"Status List Entries"}],": each entry’s code, name, description and whether it is active."]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is deliberately narrow. The status list rows themselves cannot be created or deleted, and their ",["$","strong",null,{"children":"Entity Name"}]," and ",["$","strong",null,{"children":"Domain Group"}]," are read-only — they name an existing list. The work happens in the entries: adding a value, correcting a display name or description, or switching a value off."]}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Come here to add a status value a user needs in a dropdown, to correct how a status reads, to retire a value that should no longer be offered, or to re-synchronise a list after a change made elsewhere."}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Choosing a status on a deal, a payment or a journal belongs in the app where that record is worked — not here."}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is reached through portal access plus the roles your administrator has assigned you — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],". The status lists carry no additional role restriction beyond that portal access, so everyone who can open the app sees the same lists."]}],"\n",["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?","$L20"]}],"\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d"]}]
+13:["$","$L2e",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@2f"}]}]
+1d:true
+b:300
+20:["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]
+21:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Filter or browse by ",["$","strong",null,{"children":"Domain Group"}]," — the list opens grouped by domain and sorted by ",["$","strong",null,{"children":"Entity Name"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open the status list and work in ",["$","strong",null,{"children":"Status List Entries"}],". An entry needs a code and a name; saving it writes the change straight through to the live list that other apps read."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Use ",["$","strong",null,{"children":"Refresh Entries"}]," to reload the entries from the live list, replacing what this record currently shows. Use it when the live list has changed elsewhere and your view looks out of date."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Use ",["$","strong",null,{"children":"Update Entries"}]," to push what you see back to the live list: codes that do not exist yet are created, and existing ones are updated."]}],"\n"]}]
+22:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Steps 3 and 4 are the two directions of the same synchronisation, so pick the direction you need: refresh pulls, update pushes."}]
+23:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+24:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Domain Group"}]," is the only filter on the main list and the grouping used in the table."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"The list row is fixed."}]," ",["$","strong",null,{"children":"Entity Name"}]," and ",["$","strong",null,{"children":"Domain Group"}]," are read-only, and status lists cannot be created or deleted here."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Entries cannot be deleted."}]," Switch ",["$","strong",null,{"children":"Is Active"}]," off instead of removing a value, so records that already reference it stay valid."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"An entry needs a code and a name."}]," Saving without one is refused with a message telling you which field is missing."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Refresh replaces what you see."}]," It reloads the entries from the live list, so the view you were editing becomes the live list’s current contents."]}],"\n"]}]
+25:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+26:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Reopen the status list and check ",["$","strong",null,{"children":"Status List Entries"}],": after a save or an update it shows the code, name, description and active flag you just wrote, and after a refresh it mirrors the live list."]}]
+27:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The real test is where the value is used. Open the app that offers the dropdown — for example the ",["$","strong",null,{"children":"Settlement Status"}]," filter in the ",["$","$L1f",null,{"href":"/user-guides/settlements","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Settlements app"}]," — and confirm the new or corrected option is offered there, since those dropdowns read the live status list."]}]
+28:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+29:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"A message about a missing code or name:"}]," complete the field and save the entry again."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"An entry you expected to delete:"}]," entries are never deleted here — deactivate the entry instead."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"A value does not appear in a dropdown:"}]," check the entry is active first, then check the dropdown’s own app."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"An edit control is missing:"}]," check your roles in ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"."]}],"\n"]}]
+2a:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+2b:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./add-correct-or-retire-a-status-value","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Add, correct or retire a status value"}]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./re-synchronise-a-status-list","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Re-synchronise a status list"}]}],"\n"]}]
+2c:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+2d:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["For picklists that are not statuses, contact your platform administrator about the owning reference data. You can compare the catalogue view of platform lists in the ",["$","$L1f",null,{"href":"/user-guides/master-data-catalogue","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Master Data Catalogue app"}],"."]}]
+2f:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

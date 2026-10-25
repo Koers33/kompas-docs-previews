@@ -1,0 +1,89 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+1f:"ViewportBoundary"
+20:I[97367,["$3","$4","$5","$6"],"$1f"]
+21:"MetadataBoundary"
+22:I[97367,["$3","$4","$5","$6"],"$21"]
+23:"$Sreact.suspense"
+24:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T7b8,---
+title: "Check whether an email was delivered"
+audience: [all]
+domains: [foundation]
+apps: [sendgrid-monitoring]
+entities: [EmailActivities]
+pageType: task-guide
+sourceSpec: app/sendgrid-monitoring/webapp/manifest.json
+---
+
+# Check whether an email was delivered
+
+Find a sent message and review its provider status, engagement and event timestamps.
+
+## Who can do this?
+
+Users with portal access can read the monitoring views. The app is read-only; **Sync All** refreshes provider data but does not edit an email.
+
+## What do I need before I start?
+
+- A recipient or sender address, subject or approximate send date.
+- The correct time period for the message.
+
+## How do I complete the task?
+
+1. Open **SendGrid Monitoring** and select **Sent Emails**.
+2. Filter by recipient, sender, subject or status to find the message.
+3. Open it and review **General Information** for addresses, subject, status and timestamps.
+4. Review **Engagement** for open and click counts, and **References** for message/template identifiers.
+5. If the row may be stale, select **Sync All**, then reopen or refresh the message.
+
+## How do I know it worked?
+
+The message shows the latest synced provider status and event time. **Delivered**, **Opened** or **Clicked** indicates delivery; a bounce, block or spam status explains why delivery failed.
+
+## What if I can’t complete it?
+
+- If no message appears, check the search filters and **Synced At** before concluding that no email was sent.
+- If the status is bounced, blocked or spam, inspect the related **Bounces**, **Blocks** or **Spam Complaints** view for the provider's record.
+- If **Sync All** fails, review **Data Sync History** and ask your administrator to check the email integration.
+
+## What should I do next?
+
+If the provider reports a delivery failure, share the message reference and recipient with the notification owner. Review [Data Sync History](./find-out-why-email-data-is-not-up-to-date) if the record appears stale.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Check whether an email was delivered","audience":["all"],"domains":["foundation"],"apps":["sendgrid-monitoring"],"entities":["EmailActivities"],"pageType":"task-guide","sourceSpec":"app/sendgrid-monitoring/webapp/manifest.json","filePath":"content/user-guides/sendgrid-monitoring/check-whether-an-email-was-delivered.md","timestamp":1792963475000},"sourceCode":"$10","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Check whether an email was delivered","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Find a sent message and review its provider status, engagement and event timestamps."}],"\n","$L11","\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c"]}]]}]]}]}],null,"$L1d"]}],"p":"$@1e","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/sendgrid-monitoring/check-whether-an-email-was-delivered","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L20",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L22",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$23",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Check whether an email was delivered"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L24","3",{}]]}]}],null]}],null]}],"p":"$@25","v":null,"s":"$b"}},"a":"$@26","u":"$@27","b":"PA3r732GgoFQxPkVLUKX2"}
+28:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+29:I[22016,["$3","$4","$5","$6"],""]
+2a:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L28",null,{"id":"who-can-do-this"}]]}]
+12:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Users with portal access can read the monitoring views. The app is read-only; ",["$","strong",null,{"children":"Sync All"}]," refreshes provider data but does not edit an email."]}]
+13:["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L28",null,{"id":"what-do-i-need-before-i-start"}]]}]
+14:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"A recipient or sender address, subject or approximate send date."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"The correct time period for the message."}],"\n"]}]
+15:["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L28",null,{"id":"how-do-i-complete-the-task"}]]}]
+16:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"SendGrid Monitoring"}]," and select ",["$","strong",null,{"children":"Sent Emails"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Filter by recipient, sender, subject or status to find the message."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open it and review ",["$","strong",null,{"children":"General Information"}]," for addresses, subject, status and timestamps."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Review ",["$","strong",null,{"children":"Engagement"}]," for open and click counts, and ",["$","strong",null,{"children":"References"}]," for message/template identifiers."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If the row may be stale, select ",["$","strong",null,{"children":"Sync All"}],", then reopen or refresh the message."]}],"\n"]}]
+17:["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L28",null,{"id":"how-do-i-know-it-worked"}]]}]
+18:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The message shows the latest synced provider status and event time. ",["$","strong",null,{"children":"Delivered"}],", ",["$","strong",null,{"children":"Opened"}]," or ",["$","strong",null,{"children":"Clicked"}]," indicates delivery; a bounce, block or spam status explains why delivery failed."]}]
+19:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L28",null,{"id":"what-if-i-cant-complete-it"}]]}]
+1a:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["If no message appears, check the search filters and ",["$","strong",null,{"children":"Synced At"}]," before concluding that no email was sent."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If the status is bounced, blocked or spam, inspect the related ",["$","strong",null,{"children":"Bounces"}],", ",["$","strong",null,{"children":"Blocks"}]," or ",["$","strong",null,{"children":"Spam Complaints"}]," view for the provider’s record."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If ",["$","strong",null,{"children":"Sync All"}]," fails, review ",["$","strong",null,{"children":"Data Sync History"}]," and ask your administrator to check the email integration."]}],"\n"]}]
+1b:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L28",null,{"id":"what-should-i-do-next"}]]}]
+1c:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["If the provider reports a delivery failure, share the message reference and recipient with the notification owner. Review ",["$","$L29",null,{"href":"./find-out-why-email-data-is-not-up-to-date","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Data Sync History"}]," if the record appears stale."]}]
+1d:["$","$L2a",null,{"children":["$","$23",null,{"name":"Next.MetadataOutlet","children":"$@2b"}]}]
+27:true
+b:300
+2b:null
+b:C
+26:0
+9:"$undefined"
+25:"$undefined"
+1e:"$undefined"

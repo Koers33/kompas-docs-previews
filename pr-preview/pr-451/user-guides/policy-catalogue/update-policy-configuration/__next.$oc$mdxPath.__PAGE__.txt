@@ -1,0 +1,88 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T9e3,---
+title: "Update policy configuration from a catalogue"
+audience: [all]
+domains: [foundation, governance]
+apps: [policy-catalogue]
+entities: [PolicyCatalogueItems]
+pageType: task-guide
+sourceSpec: app/policy-catalogue/webapp/manifest.json
+---
+
+# Update policy configuration from a catalogue
+
+Edit a policy register's staged rows and explicitly push them to the configuration the platform uses.
+
+## Who can do this?
+
+The app requires portal access and grants reading and writing these records on the same basis. Follow your policy or SoD change-approval process before pushing shared configuration.
+
+## What do I need before I start?
+
+- The register to change and the approved replacement values.
+- The required code and name for each row; a row's code is fixed after it has been set.
+- Confirmation that the register is writable here. Policy-violation and SoD-violation logs are read-only.
+
+## How do I complete the task?
+
+1. Open **Policy Catalogue** and select the relevant register.
+2. Run **Refresh Entries** before editing. This replaces the staged rows with the register's current configuration, so it also discards earlier staged edits for that register.
+3. In **Catalogue Entries**, add or edit the required rows. Complete **Name** and any required **Code**; switch off an existing row that should no longer be used rather than deleting it.
+4. Save the staged rows. Saving alone does not change the live policy configuration.
+5. Review the staged values, then run **Update Entries** to apply them.
+6. Refresh the register and confirm the intended rows and values are present.
+
+## How do I know it worked?
+
+After **Update Entries**, a fresh **Refresh Entries** loads the live configuration. Confirm the changed values appear and inactive entries remain retained.
+
+## What if I can’t complete it?
+
+- If refresh removed your work, the staged copy was replaced. Re-enter the approved edits after refreshing.
+- If **Update Entries** names a missing name, duplicate code, changed code or invalid inactive-on-create row, correct the staged values and push again.
+- If the register is a read-only violation log, there is no write action for it.
+- If no staging rows exist, run **Refresh Entries** to load the current register before editing.
+
+## What should I do next?
+
+Verify the pushed settings in the register and review related **Policy Violations** or **SoD Violation Log** records when appropriate. For multiple rows, use [Import policy configuration from a spreadsheet](./import-policy-configuration-from-a-spreadsheet).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Update policy configuration from a catalogue","audience":["all"],"domains":["foundation","governance"],"apps":["policy-catalogue"],"entities":["PolicyCatalogueItems"],"pageType":"task-guide","sourceSpec":"app/policy-catalogue/webapp/manifest.json","filePath":"content/user-guides/policy-catalogue/update-policy-configuration.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/policy-catalogue/update-policy-configuration","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Update policy configuration from a catalogue"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+25:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Update policy configuration from a catalogue","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Edit a policy register’s staged rows and explicitly push them to the configuration the platform uses."}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The app requires portal access and grants reading and writing these records on the same basis. Follow your policy or SoD change-approval process before pushing shared configuration."}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"The register to change and the approved replacement values."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"The required code and name for each row; a row’s code is fixed after it has been set."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Confirmation that the register is writable here. Policy-violation and SoD-violation logs are read-only."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Policy Catalogue"}]," and select the relevant register."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Run ",["$","strong",null,{"children":"Refresh Entries"}]," before editing. This replaces the staged rows with the register’s current configuration, so it also discards earlier staged edits for that register."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["In ",["$","strong",null,{"children":"Catalogue Entries"}],", add or edit the required rows. Complete ",["$","strong",null,{"children":"Name"}]," and any required ",["$","strong",null,{"children":"Code"}],"; switch off an existing row that should no longer be used rather than deleting it."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Save the staged rows. Saving alone does not change the live policy configuration."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Review the staged values, then run ",["$","strong",null,{"children":"Update Entries"}]," to apply them."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Refresh the register and confirm the intended rows and values are present."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["After ","$L1f",", a fresh ","$L20"," loads the live configuration. Confirm the changed values appear and inactive entries remain retained."]}],"\n","$L21","\n","$L22","\n","$L23","\n","$L24"]}]
+13:["$","$L25",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@26"}]}]
+1d:true
+27:I[22016,["$3","$4","$5","$6"],""]
+b:300
+1f:["$","strong",null,{"children":"Update Entries"}]
+20:["$","strong",null,{"children":"Refresh Entries"}]
+21:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+22:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"If refresh removed your work, the staged copy was replaced. Re-enter the approved edits after refreshing."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If ",["$","strong",null,{"children":"Update Entries"}]," names a missing name, duplicate code, changed code or invalid inactive-on-create row, correct the staged values and push again."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the register is a read-only violation log, there is no write action for it."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If no staging rows exist, run ",["$","strong",null,{"children":"Refresh Entries"}]," to load the current register before editing."]}],"\n"]}]
+23:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+24:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Verify the pushed settings in the register and review related ",["$","strong",null,{"children":"Policy Violations"}]," or ",["$","strong",null,{"children":"SoD Violation Log"}]," records when appropriate. For multiple rows, use ",["$","$L27",null,{"href":"./import-policy-configuration-from-a-spreadsheet","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Import policy configuration from a spreadsheet"}],"."]}]
+26:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

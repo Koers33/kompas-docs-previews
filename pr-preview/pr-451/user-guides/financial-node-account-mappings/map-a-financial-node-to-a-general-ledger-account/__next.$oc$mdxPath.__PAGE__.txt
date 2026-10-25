@@ -1,0 +1,86 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T9e2,---
+title: "Map a financial node to a general ledger account"
+audience: [all]
+domains: [foundation, accounting]
+apps: [financial-node-account-mappings]
+entities: [CompanyFinancialNodeAccountMappings]
+pageType: task-guide
+sourceSpec: app/financial-node-account-mappings/webapp/manifest.json
+---
+
+# Map a financial node to a general ledger account
+
+Link a company’s active financial node and accounting path to the treasury and general ledger accounts that should receive its postings.
+
+## Who can do this?
+
+Users with portal access and the assigned roles can create or update mappings. **Approve GL Mapping** is limited to the Treasury role; the other mapping actions have their own status and account-type conditions.
+
+## What do I need before I start?
+
+- An active **Company Financial Node** for the company.
+- The **Accounting Path** and **Leg Role** for the posting you are mapping.
+- The matching **Treasury Account** and **General Ledger Account**, with an account type compatible with the node category.
+
+## How do I complete the task?
+
+1. Open **Financial Node Account Mappings** and select **Create**.
+2. Choose the **Company**, **Company Financial Node**, **Accounting Path** and **Leg Role**.
+3. Choose the **Treasury Account** and compatible **General Ledger Account**.
+4. Set the effective dates and any required mapping details, then save the mapping.
+5. Review **Mapping Status** and **Active** on the saved record. If you change the account on an existing mapping, the old mapping is superseded and a new effective-dated mapping is created.
+
+## How do I know it worked?
+
+The mapping shows the intended company node, path, leg role and accounts. **Mapping Status** and **Chain Preview** show whether the mapping is linked and how the account chain resolves.
+
+## What if I can’t complete it?
+
+- If the node already has an active mapping, open and update that record rather than creating a second active mapping.
+- If the account is inactive or its type does not fit the node category, select an active compatible general ledger account.
+- If the same account is mapped to another node, review the duplicate warning before proceeding.
+- Mapping rows cannot be deleted; correct the mapping or follow its status workflow instead.
+
+## What should I do next?
+
+Run [Validate mapping coverage before go-live](./check-mapping-coverage-before-go-live) for the company. For a balance-sheet account that requires approval, follow [Request approval for a balance-sheet mapping](./request-and-approve-a-balance-sheet-mapping).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Map a financial node to a general ledger account","audience":["all"],"domains":["foundation","accounting"],"apps":["financial-node-account-mappings"],"entities":["CompanyFinancialNodeAccountMappings"],"pageType":"task-guide","sourceSpec":"app/financial-node-account-mappings/webapp/manifest.json","filePath":"content/user-guides/financial-node-account-mappings/map-a-financial-node-to-a-general-ledger-account.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/financial-node-account-mappings/map-a-financial-node-to-a-general-ledger-account","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Map a financial node to a general ledger account"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+24:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Map a financial node to a general ledger account","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Link a company’s active financial node and accounting path to the treasury and general ledger accounts that should receive its postings."}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Users with portal access and the assigned roles can create or update mappings. ",["$","strong",null,{"children":"Approve GL Mapping"}]," is limited to the Treasury role; the other mapping actions have their own status and account-type conditions."]}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["An active ",["$","strong",null,{"children":"Company Financial Node"}]," for the company."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The ",["$","strong",null,{"children":"Accounting Path"}]," and ",["$","strong",null,{"children":"Leg Role"}]," for the posting you are mapping."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The matching ",["$","strong",null,{"children":"Treasury Account"}]," and ",["$","strong",null,{"children":"General Ledger Account"}],", with an account type compatible with the node category."]}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Financial Node Account Mappings"}]," and select ",["$","strong",null,{"children":"Create"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Choose the ",["$","strong",null,{"children":"Company"}],", ",["$","strong",null,{"children":"Company Financial Node"}],", ",["$","strong",null,{"children":"Accounting Path"}]," and ",["$","strong",null,{"children":"Leg Role"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Choose the ",["$","strong",null,{"children":"Treasury Account"}]," and compatible ",["$","strong",null,{"children":"General Ledger Account"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Set the effective dates and any required mapping details, then save the mapping."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Review ",["$","strong",null,{"children":"Mapping Status"}]," and ",["$","strong",null,{"children":"Active"}]," on the saved record. If you change the account on an existing mapping, the old mapping is superseded and a new effective-dated mapping is created."]}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]]}],"\n","$L1f","\n","$L20","\n","$L21","\n","$L22","\n","$L23"]}]
+13:["$","$L24",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@25"}]}]
+1d:true
+26:I[22016,["$3","$4","$5","$6"],""]
+b:300
+1f:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The mapping shows the intended company node, path, leg role and accounts. ",["$","strong",null,{"children":"Mapping Status"}]," and ",["$","strong",null,{"children":"Chain Preview"}]," show whether the mapping is linked and how the account chain resolves."]}]
+20:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+21:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the node already has an active mapping, open and update that record rather than creating a second active mapping."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the account is inactive or its type does not fit the node category, select an active compatible general ledger account."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the same account is mapped to another node, review the duplicate warning before proceeding."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Mapping rows cannot be deleted; correct the mapping or follow its status workflow instead."}],"\n"]}]
+22:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+23:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Run ",["$","$L26",null,{"href":"./check-mapping-coverage-before-go-live","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Validate mapping coverage before go-live"}]," for the company. For a balance-sheet account that requires approval, follow ",["$","$L26",null,{"href":"./request-and-approve-a-balance-sheet-mapping","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Request approval for a balance-sheet mapping"}],"."]}]
+25:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

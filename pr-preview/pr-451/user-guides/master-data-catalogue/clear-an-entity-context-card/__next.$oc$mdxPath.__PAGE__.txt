@@ -1,0 +1,88 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+1f:"ViewportBoundary"
+20:I[97367,["$3","$4","$5","$6"],"$1f"]
+21:"MetadataBoundary"
+22:I[97367,["$3","$4","$5","$6"],"$21"]
+23:"$Sreact.suspense"
+24:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T7bd,---
+title: "Clear an entity context card"
+audience: [all]
+domains: [foundation]
+apps: [master-data-catalogue]
+entities: [MasterDataCatalogue]
+pageType: task-guide
+sourceSpec: app/master-data-catalogue/webapp/manifest.json
+---
+
+# Clear an entity context card
+
+Remove the saved governance context from an entity's card while keeping the entity and its platform registry details intact.
+
+## Who can do this?
+
+The app requires portal access and the roles assigned by your administrator. Clearing removes every context-card value, so confirm the reset with the data steward before proceeding.
+
+## What do I need before I start?
+
+- The catalogue entity whose card should be reset.
+- Confirmation that its current context-card details are no longer needed or have been recorded elsewhere.
+
+## How do I complete the task?
+
+1. Open **Master Data Catalogue**, find the entity by **Entity Name** and open its record.
+2. Review the existing **Context Card** and confirm the reset is intended.
+3. Select **Clear Card** and complete the action.
+4. Reopen or refresh the record. Confirm the context-card fields are empty and the entity is still listed.
+
+## How do I know it worked?
+
+The card's purpose, entity type, steward, governance, related entities, seed/lifecycle fields, key fields, tenant flag, phase, specification reference and status glossary are cleared. The entity name and registry row remain unchanged.
+
+## What if I can’t complete it?
+
+- If **Clear Card** is unavailable, confirm you are on an existing catalogue entity and check your access.
+- If the registry row or entity name appears missing, do not try to recreate it here; the catalogue entries are platform-maintained.
+- Clearing affects the card fields on the selected record; review the target entity carefully before running the action.
+
+## What should I do next?
+
+If the entity still needs governance context, follow [Fill in an entity context card](./fill-in-an-entity-context-card) and restore the approved details.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Clear an entity context card","audience":["all"],"domains":["foundation"],"apps":["master-data-catalogue"],"entities":["MasterDataCatalogue"],"pageType":"task-guide","sourceSpec":"app/master-data-catalogue/webapp/manifest.json","filePath":"content/user-guides/master-data-catalogue/clear-an-entity-context-card.md","timestamp":1792963475000},"sourceCode":"$10","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Clear an entity context card","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Remove the saved governance context from an entity’s card while keeping the entity and its platform registry details intact."}],"\n","$L11","\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c"]}]]}]]}]}],null,"$L1d"]}],"p":"$@1e","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/master-data-catalogue/clear-an-entity-context-card","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L20",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L22",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$23",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Clear an entity context card"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L24","3",{}]]}]}],null]}],null]}],"p":"$@25","v":null,"s":"$b"}},"a":"$@26","u":"$@27","b":"PA3r732GgoFQxPkVLUKX2"}
+28:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+29:I[22016,["$3","$4","$5","$6"],""]
+2a:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L28",null,{"id":"who-can-do-this"}]]}]
+12:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The app requires portal access and the roles assigned by your administrator. Clearing removes every context-card value, so confirm the reset with the data steward before proceeding."}]
+13:["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L28",null,{"id":"what-do-i-need-before-i-start"}]]}]
+14:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"The catalogue entity whose card should be reset."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Confirmation that its current context-card details are no longer needed or have been recorded elsewhere."}],"\n"]}]
+15:["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L28",null,{"id":"how-do-i-complete-the-task"}]]}]
+16:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Master Data Catalogue"}],", find the entity by ",["$","strong",null,{"children":"Entity Name"}]," and open its record."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Review the existing ",["$","strong",null,{"children":"Context Card"}]," and confirm the reset is intended."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Select ",["$","strong",null,{"children":"Clear Card"}]," and complete the action."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Reopen or refresh the record. Confirm the context-card fields are empty and the entity is still listed."}],"\n"]}]
+17:["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L28",null,{"id":"how-do-i-know-it-worked"}]]}]
+18:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The card’s purpose, entity type, steward, governance, related entities, seed/lifecycle fields, key fields, tenant flag, phase, specification reference and status glossary are cleared. The entity name and registry row remain unchanged."}]
+19:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L28",null,{"id":"what-if-i-cant-complete-it"}]]}]
+1a:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["If ",["$","strong",null,{"children":"Clear Card"}]," is unavailable, confirm you are on an existing catalogue entity and check your access."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the registry row or entity name appears missing, do not try to recreate it here; the catalogue entries are platform-maintained."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Clearing affects the card fields on the selected record; review the target entity carefully before running the action."}],"\n"]}]
+1b:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L28",null,{"id":"what-should-i-do-next"}]]}]
+1c:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["If the entity still needs governance context, follow ",["$","$L29",null,{"href":"./fill-in-an-entity-context-card","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Fill in an entity context card"}]," and restore the approved details."]}]
+1d:["$","$L2a",null,{"children":["$","$23",null,{"name":"Next.MetadataOutlet","children":"$@2b"}]}]
+27:true
+b:300
+2b:null
+b:C
+26:0
+9:"$undefined"
+25:"$undefined"
+1e:"$undefined"

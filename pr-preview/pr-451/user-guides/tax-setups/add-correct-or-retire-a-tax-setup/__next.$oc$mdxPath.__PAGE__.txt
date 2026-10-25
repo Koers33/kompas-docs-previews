@@ -1,0 +1,87 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T95b,---
+title: "Add, correct or retire a tax setup"
+audience: [all]
+domains: [foundation, accounting]
+apps: [tax-setups]
+entities: [TaxSetups]
+pageType: task-guide
+sourceSpec: app/tax-setups/webapp/manifest.json
+---
+
+# Add, correct or retire a tax setup
+
+Maintain a dated tax rule by adding or correcting a tax setup, or ending a setup that should no longer be active.
+
+## Who can do this?
+
+The app requires portal access and has no additional service-level role restriction. Follow your tax and accounting change-control procedure before changing a shared rate.
+
+## What do I need before I start?
+
+- The **Code**, **Description**, **Country**, **Tax Group** and **Tax Type**.
+- The **Tax Rate Type**, **Rate Percentage** and **Tax Deductibility**.
+- The **Valid From Date** and **Valid To Date** for the period the setup applies; **Tax Event** is optional.
+- The approved rate and validity dates from the tax-policy owner.
+
+## How do I complete the task?
+
+1. Open **Tax Setups** and select **Create**, or open the existing setup to correct it.
+2. Complete **General** with the code, description, country, tax group/type, rate type, rate percentage, deductibility and validity dates. Add a tax event if it applies.
+3. Save the draft. A new record starts inactive; switch **Active** on only when it is approved and ready to be used.
+4. For a rate change, create a separate setup for the new validity window rather than overwriting the earlier historical rate.
+5. To retire a setup, end its validity window as approved and switch **Active** off. Save and verify the list row.
+
+## How do I know it worked?
+
+The list shows the code, tax group, country, description, validity window, rate and active state. The record is available for use only when it is active and its effective dates apply.
+
+## What if I can’t complete it?
+
+- If a required value is missing, complete the code, tax group, country, both validity dates, tax type, rate type, rate percentage and deductibility.
+- If a tax list value is unavailable, it must be configured by the owner of that platform reference list.
+- Rates must be between 0 and 100.
+- Tax setups cannot be deleted. Retire the old record by date and active state instead.
+
+## What should I do next?
+
+Verify the tax code where a transaction action uses it. If the tax setup is a shared rule change, notify the owning accounting or tax-policy team of its effective date.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Add, correct or retire a tax setup","audience":["all"],"domains":["foundation","accounting"],"apps":["tax-setups"],"entities":["TaxSetups"],"pageType":"task-guide","sourceSpec":"app/tax-setups/webapp/manifest.json","filePath":"content/user-guides/tax-setups/add-correct-or-retire-a-tax-setup.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/tax-setups/add-correct-or-retire-a-tax-setup","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Add, correct or retire a tax setup"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+25:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Add, correct or retire a tax setup","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Maintain a dated tax rule by adding or correcting a tax setup, or ending a setup that should no longer be active."}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The app requires portal access and has no additional service-level role restriction. Follow your tax and accounting change-control procedure before changing a shared rate."}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["The ",["$","strong",null,{"children":"Code"}],", ",["$","strong",null,{"children":"Description"}],", ",["$","strong",null,{"children":"Country"}],", ",["$","strong",null,{"children":"Tax Group"}]," and ",["$","strong",null,{"children":"Tax Type"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The ",["$","strong",null,{"children":"Tax Rate Type"}],", ",["$","strong",null,{"children":"Rate Percentage"}]," and ",["$","strong",null,{"children":"Tax Deductibility"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The ",["$","strong",null,{"children":"Valid From Date"}]," and ",["$","strong",null,{"children":"Valid To Date"}]," for the period the setup applies; ",["$","strong",null,{"children":"Tax Event"}]," is optional."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"The approved rate and validity dates from the tax-policy owner."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Tax Setups"}]," and select ",["$","strong",null,{"children":"Create"}],", or open the existing setup to correct it."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Complete ",["$","strong",null,{"children":"General"}]," with the code, description, country, tax group/type, rate type, rate percentage, deductibility and validity dates. Add a tax event if it applies."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Save the draft. A new record starts inactive; switch ",["$","strong",null,{"children":"Active"}]," on only when it is approved and ready to be used."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"For a rate change, create a separate setup for the new validity window rather than overwriting the earlier historical rate."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["To retire a setup, end its validity window as approved and switch ",["$","strong",null,{"children":"Active"}]," off. Save and verify the list row."]}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?","$L1f"]}],"\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24"]}]
+13:["$","$L25",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@26"}]}]
+1d:true
+b:300
+1f:["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]
+20:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The list shows the code, tax group, country, description, validity window, rate and active state. The record is available for use only when it is active and its effective dates apply."}]
+21:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+22:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"If a required value is missing, complete the code, tax group, country, both validity dates, tax type, rate type, rate percentage and deductibility."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If a tax list value is unavailable, it must be configured by the owner of that platform reference list."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Rates must be between 0 and 100."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Tax setups cannot be deleted. Retire the old record by date and active state instead."}],"\n"]}]
+23:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+24:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Verify the tax code where a transaction action uses it. If the tax setup is a shared rule change, notify the owning accounting or tax-policy team of its effective date."}]
+26:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

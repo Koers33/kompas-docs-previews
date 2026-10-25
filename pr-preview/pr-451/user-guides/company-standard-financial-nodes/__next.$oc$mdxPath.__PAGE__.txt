@@ -1,0 +1,120 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T1812,---
+title: "Company Standard Financial Nodes app"
+audience: [all]
+domains: [foundation]
+apps: [company-standard-financial-nodes]
+entities: [CompanyStandardFinancialNodes]
+pageType: app-overview
+sourceSpec: app/company-standard-financial-nodes/webapp/manifest.json
+---
+
+# Company Standard Financial Nodes app
+
+Company Standard Financial Nodes is where a company claims its own place in the platform's standard financial node structure. Each record maps one **Company Node Code** to a **Global Financial Node** for one company, states which accounting paths that node permits, and records when it takes effect and who approved it. These company nodes are what accounting mapping, treasury accounts and client ledger overlays are built on, so a node is only useful once it is active.
+
+## What is this app for?
+
+A node record answers three questions for one company: which standard node does this company use (**Global Financial Node**), what is it called locally (**Company Node Code**), and what may post through it (**Permitted Paths**, **Effective From**, **Override Mapping**). The **Node Activation** section holds that configuration; the **Approval Record** section holds the outcome of the decision — **Approved By** and the **Approval Record** link.
+
+Activation is the decision the app exists for. An inactive node is a proposal; an active node is one the platform treats as approved for that company.
+
+## When should I use this app?
+
+Use it when a company needs a financial node added or corrected, when an existing node must be switched off, or when you need to confirm that a node is active and who approved it. The node codes themselves are shared across the platform — the global structure is maintained elsewhere in bold **Global Standard Financial Nodes** — while this app is only about one company's use of it. Day-to-day postings are not entered here.
+
+## Who can access this app?
+
+The app is reached through portal access plus the roles your administrator has assigned you — see [Roles and Access](/getting-started/roles-and-access). These records carry no additional role grant of their own, so everyone who can open the app sees the same records and the same **Approve** and **Reject** controls. Records cannot be deleted; switch **Active** off instead. Treat approval as an authorization step and follow your own approval procedure before activating a node.
+
+## How does work progress in this app?
+
+1. Select **Create** to add a node in draft, or open an existing record to correct its configuration.
+2. Choose the **Company** and **Global Financial Node**, enter the **Company Node Code**, and set **Permitted Paths**, **Effective From** and **Override Mapping** as needed, then save.
+3. With the record saved and not yet active, select **Approve**. Approval switches the record on and stamps **Approved By** with your user, and the platform confirms the node is active and its accounting routing is enabled.
+4. To take a node out of use, open an active record and select **Reject**. **Reject** is only offered while the record is active, and it asks for a rejection reason; the reason is required. Rejecting switches the record off and clears the approval details.
+5. Approving a node that is already active, or rejecting one that is already inactive, changes nothing: the message tells you the node is already active or already rejected.
+
+Treat this as an orientation to the flow and follow your approval procedure before activating a node.
+
+## What can change what I see or do?
+
+- **Active:** this is the state that decides which action is offered. **Approve** appears only while the record is inactive, **Reject** only while it is active, and the header chip shows **Active** green when on and red when off.
+- **The record's own state:** approving a node that is already active, or rejecting one that is already inactive, is refused with a message rather than changing anything.
+- **Approval details:** **Approved By** and **Approval Record** are set by the actions, not typed in; they show who activated the node and the approval entry behind it.
+- **Value lists:** **Global Financial Node** and **Company** are chosen from fixed lists, so only the nodes and companies your configuration offers are selectable.
+- **Deleting:** records cannot be deleted from this app. Reject the node to take it out of use.
+
+## Where can I review the results?
+
+The list shows **Company**, **Company Node Code**, **Global Financial Node**, **Effective From**, **Permitted Paths** and **Active** for every node, so you can see at a glance which nodes a company has and which are live. On the record, **Node Activation** holds the configuration and **Approval Record** holds who approved it and the linked approval entry.
+
+Downstream, the records that consume a node show which one they used: account mappings, treasury accounts and client ledger overlays all point at a company financial node, and the **Preview Posting** action in **Company Instrument Effects** reports the company node it resolves before it reaches an account. Do not assume a record exists for every node — that depends on how far each company's accounting setup has progressed.
+
+## What should I check if I can't continue?
+
+- **Approve** or **Reject** is not offered: the action is gated by **Active** — **Approve** is for inactive records, **Reject** for active ones.
+- **Reject** is refused: a rejection reason is required, and the message also tells you if the record is already inactive.
+- You are told the node is already active: there is nothing to approve; use **Reject** if the node should come out of use.
+- A delete command is refused: node records are retained by design.
+- An edit control is missing: check your roles in [Roles and Access](/getting-started/roles-and-access).
+
+## Which task guides are available?
+
+- [Activate a company financial node](./activate-a-company-financial-node)
+- [Take a company financial node out of use](./take-a-company-financial-node-out-of-use)
+
+## What should I do next?
+
+Set the company up first if it does not exist — see the [Companies app](/user-guides/companies) — then map the node to accounts so postings can resolve.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Company Standard Financial Nodes app","audience":["all"],"domains":["foundation"],"apps":["company-standard-financial-nodes"],"entities":["CompanyStandardFinancialNodes"],"pageType":"app-overview","sourceSpec":"app/company-standard-financial-nodes/webapp/manifest.json","filePath":"content/user-guides/company-standard-financial-nodes/index.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/company-standard-financial-nodes","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Company Standard Financial Nodes app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+31:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Company Standard Financial Nodes app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Company Standard Financial Nodes is where a company claims its own place in the platform’s standard financial node structure. Each record maps one ",["$","strong",null,{"children":"Company Node Code"}]," to a ",["$","strong",null,{"children":"Global Financial Node"}]," for one company, states which accounting paths that node permits, and records when it takes effect and who approved it. These company nodes are what accounting mapping, treasury accounts and client ledger overlays are built on, so a node is only useful once it is active."]}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["A node record answers three questions for one company: which standard node does this company use (",["$","strong",null,{"children":"Global Financial Node"}],"), what is it called locally (",["$","strong",null,{"children":"Company Node Code"}],"), and what may post through it (",["$","strong",null,{"children":"Permitted Paths"}],", ",["$","strong",null,{"children":"Effective From"}],", ",["$","strong",null,{"children":"Override Mapping"}],"). The ",["$","strong",null,{"children":"Node Activation"}]," section holds that configuration; the ",["$","strong",null,{"children":"Approval Record"}]," section holds the outcome of the decision — ",["$","strong",null,{"children":"Approved By"}]," and the ",["$","strong",null,{"children":"Approval Record"}]," link."]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Activation is the decision the app exists for. An inactive node is a proposal; an active node is one the platform treats as approved for that company."}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Use it when a company needs a financial node added or corrected, when an existing node must be switched off, or when you need to confirm that a node is active and who approved it. The node codes themselves are shared across the platform — the global structure is maintained elsewhere in bold ",["$","strong",null,{"children":"Global Standard Financial Nodes"}]," — while this app is only about one company’s use of it. Day-to-day postings are not entered here."]}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is reached through portal access plus the roles your administrator has assigned you — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],". These records carry no additional role grant of their own, so everyone who can open the app sees the same records and the same ","$L20"," and ","$L21"," controls. Records cannot be deleted; switch ","$L22"," off instead. Treat approval as an authorization step and follow your own approval procedure before activating a node."]}],"\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d","\n","$L2e","\n","$L2f","\n","$L30"]}]
+13:["$","$L31",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@32"}]}]
+1d:true
+b:300
+20:["$","strong",null,{"children":"Approve"}]
+21:["$","strong",null,{"children":"Reject"}]
+22:["$","strong",null,{"children":"Active"}]
+23:["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?",["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]]}]
+24:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Select ",["$","strong",null,{"children":"Create"}]," to add a node in draft, or open an existing record to correct its configuration."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Choose the ",["$","strong",null,{"children":"Company"}]," and ",["$","strong",null,{"children":"Global Financial Node"}],", enter the ",["$","strong",null,{"children":"Company Node Code"}],", and set ",["$","strong",null,{"children":"Permitted Paths"}],", ",["$","strong",null,{"children":"Effective From"}]," and ",["$","strong",null,{"children":"Override Mapping"}]," as needed, then save."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["With the record saved and not yet active, select ",["$","strong",null,{"children":"Approve"}],". Approval switches the record on and stamps ",["$","strong",null,{"children":"Approved By"}]," with your user, and the platform confirms the node is active and its accounting routing is enabled."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["To take a node out of use, open an active record and select ",["$","strong",null,{"children":"Reject"}],". ",["$","strong",null,{"children":"Reject"}]," is only offered while the record is active, and it asks for a rejection reason; the reason is required. Rejecting switches the record off and clears the approval details."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Approving a node that is already active, or rejecting one that is already inactive, changes nothing: the message tells you the node is already active or already rejected."}],"\n"]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Treat this as an orientation to the flow and follow your approval procedure before activating a node."}]
+26:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+27:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Active:"}]," this is the state that decides which action is offered. ",["$","strong",null,{"children":"Approve"}]," appears only while the record is inactive, ",["$","strong",null,{"children":"Reject"}]," only while it is active, and the header chip shows ",["$","strong",null,{"children":"Active"}]," green when on and red when off."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"The record’s own state:"}]," approving a node that is already active, or rejecting one that is already inactive, is refused with a message rather than changing anything."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Approval details:"}]," ",["$","strong",null,{"children":"Approved By"}]," and ",["$","strong",null,{"children":"Approval Record"}]," are set by the actions, not typed in; they show who activated the node and the approval entry behind it."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Value lists:"}]," ",["$","strong",null,{"children":"Global Financial Node"}]," and ",["$","strong",null,{"children":"Company"}]," are chosen from fixed lists, so only the nodes and companies your configuration offers are selectable."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Deleting:"}]," records cannot be deleted from this app. Reject the node to take it out of use."]}],"\n"]}]
+28:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+29:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The list shows ",["$","strong",null,{"children":"Company"}],", ",["$","strong",null,{"children":"Company Node Code"}],", ",["$","strong",null,{"children":"Global Financial Node"}],", ",["$","strong",null,{"children":"Effective From"}],", ",["$","strong",null,{"children":"Permitted Paths"}]," and ",["$","strong",null,{"children":"Active"}]," for every node, so you can see at a glance which nodes a company has and which are live. On the record, ",["$","strong",null,{"children":"Node Activation"}]," holds the configuration and ",["$","strong",null,{"children":"Approval Record"}]," holds who approved it and the linked approval entry."]}]
+2a:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Downstream, the records that consume a node show which one they used: account mappings, treasury accounts and client ledger overlays all point at a company financial node, and the ",["$","strong",null,{"children":"Preview Posting"}]," action in ",["$","strong",null,{"children":"Company Instrument Effects"}]," reports the company node it resolves before it reaches an account. Do not assume a record exists for every node — that depends on how far each company’s accounting setup has progressed."]}]
+2b:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+2c:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Approve"}]," or ",["$","strong",null,{"children":"Reject"}]," is not offered: the action is gated by ",["$","strong",null,{"children":"Active"}]," — ",["$","strong",null,{"children":"Approve"}]," is for inactive records, ",["$","strong",null,{"children":"Reject"}]," for active ones."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Reject"}]," is refused: a rejection reason is required, and the message also tells you if the record is already inactive."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["You are told the node is already active: there is nothing to approve; use ",["$","strong",null,{"children":"Reject"}]," if the node should come out of use."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"A delete command is refused: node records are retained by design."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["An edit control is missing: check your roles in ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"."]}],"\n"]}]
+2d:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+2e:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./activate-a-company-financial-node","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Activate a company financial node"}]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./take-a-company-financial-node-out-of-use","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Take a company financial node out of use"}]}],"\n"]}]
+2f:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+30:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Set the company up first if it does not exist — see the ",["$","$L1f",null,{"href":"/user-guides/companies","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Companies app"}]," — then map the node to accounts so postings can resolve."]}]
+32:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

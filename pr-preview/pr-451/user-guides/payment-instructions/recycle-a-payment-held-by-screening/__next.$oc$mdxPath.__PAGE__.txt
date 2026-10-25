@@ -1,0 +1,87 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2ftbsq4ye4ouy.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/11qpzt4dfdi4g.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3vkuwb85t4whl.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3hkgvideoq6h1.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T990,---
+title: "Recycle a payment held by screening"
+audience: [treasury-manager]
+domains: [settlement, compliance]
+apps: [payment-instructions]
+entities: [PaymentInstructions]
+pageType: task-guide
+sourceSpec: app/payment-instructions/webapp/manifest.json
+---
+
+# Recycle a payment held by screening
+
+After the screening case is resolved, return a held payment to authorisation and let it pass through screening again.
+
+## Who can do this?
+
+The **Treasury** role is required to work with payment instructions. Follow the applicable sanctions and AML case procedure; do not recycle a payment while its blocking case remains unresolved.
+
+## What do I need before I start?
+
+- A payment instruction with **Payment Status** **Held**.
+- Confirmation that the **Blocking Reason** has been investigated and the related case has been resolved.
+- The payment reference and relevant case record for your review.
+
+## How do I complete the task?
+
+1. Open **Payment Instructions** and filter **Payment Status** to **Held**.
+2. Open the payment and review its **Screening Status**, **Blocking Reason**, deal and payment details.
+3. Confirm through your AML/sanctions process that the hold is resolved.
+4. Select **Recycle Held Payment**.
+5. Refresh the record. Confirm **Payment Status** returns to **Awaiting Authorisation**, **Screening Status** is **Pending Screening**, and the blocking reason is cleared.
+6. Continue with **Authorise Payment** only after the screening result no longer reports a **Hit**.
+
+## How do I know it worked?
+
+The payment returns to the authorisation queue and screening is pending again. The platform records the recycling decision in its payment-recycling audit ledger.
+
+## What if I can’t complete it?
+
+- If **Recycle Held Payment** is unavailable, confirm the payment is still **Held**; the action is only offered in that state.
+- If the hold is not resolved, stop and follow the AML/sanctions escalation process. Recycling is not a way to override a screening hit.
+- If the payment is no longer held, review its current status before taking another action.
+- Payment details are read-only in this app. Do not edit the amount, beneficiary or screening fields to clear a hold.
+
+## What should I do next?
+
+Once screening is clear, continue payment authorisation and bank confirmation in [Payment Instructions](/user-guides/payment-instructions). If the payment remains held, follow the compliance case rather than retrying the action.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Recycle a payment held by screening","audience":["treasury-manager"],"domains":["settlement","compliance"],"apps":["payment-instructions"],"entities":["PaymentInstructions"],"pageType":"task-guide","sourceSpec":"app/payment-instructions/webapp/manifest.json","filePath":"content/user-guides/payment-instructions/recycle-a-payment-held-by-screening.md","timestamp":1792963475000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/payment-instructions/recycle-a-payment-held-by-screening","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Recycle a payment held by screening"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"PA3r732GgoFQxPkVLUKX2"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+24:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Recycle a payment held by screening","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"After the screening case is resolved, return a held payment to authorisation and let it pass through screening again."}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The ",["$","strong",null,{"children":"Treasury"}]," role is required to work with payment instructions. Follow the applicable sanctions and AML case procedure; do not recycle a payment while its blocking case remains unresolved."]}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["A payment instruction with ",["$","strong",null,{"children":"Payment Status"}]," ",["$","strong",null,{"children":"Held"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Confirmation that the ",["$","strong",null,{"children":"Blocking Reason"}]," has been investigated and the related case has been resolved."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"The payment reference and relevant case record for your review."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Payment Instructions"}]," and filter ",["$","strong",null,{"children":"Payment Status"}]," to ",["$","strong",null,{"children":"Held"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open the payment and review its ",["$","strong",null,{"children":"Screening Status"}],", ",["$","strong",null,{"children":"Blocking Reason"}],", deal and payment details."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Confirm through your AML/sanctions process that the hold is resolved."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Select ",["$","strong",null,{"children":"Recycle Held Payment"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Refresh the record. Confirm ",["$","strong",null,{"children":"Payment Status"}]," returns to ",["$","strong",null,{"children":"Awaiting Authorisation"}],", ",["$","strong",null,{"children":"Screening Status"}]," is ",["$","strong",null,{"children":"Pending Screening"}],", and the blocking reason is cleared."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Continue with ",["$","strong",null,{"children":"Authorise Payment"}]," only after the screening result no longer reports a ",["$","strong",null,{"children":"Hit"}],"."]}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]]}],"\n","$L1f","\n","$L20","\n","$L21","\n","$L22","\n","$L23"]}]
+13:["$","$L24",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@25"}]}]
+1d:true
+26:I[22016,["$3","$4","$5","$6"],""]
+b:300
+1f:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The payment returns to the authorisation queue and screening is pending again. The platform records the recycling decision in its payment-recycling audit ledger."}]
+20:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+21:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["If ",["$","strong",null,{"children":"Recycle Held Payment"}]," is unavailable, confirm the payment is still ",["$","strong",null,{"children":"Held"}],"; the action is only offered in that state."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the hold is not resolved, stop and follow the AML/sanctions escalation process. Recycling is not a way to override a screening hit."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the payment is no longer held, review its current status before taking another action."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Payment details are read-only in this app. Do not edit the amount, beneficiary or screening fields to clear a hold."}],"\n"]}]
+22:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+23:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Once screening is clear, continue payment authorisation and bank confirmation in ",["$","$L26",null,{"href":"/user-guides/payment-instructions","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Payment Instructions"}],". If the payment remains held, follow the compliance case rather than retrying the action."]}]
+25:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"
