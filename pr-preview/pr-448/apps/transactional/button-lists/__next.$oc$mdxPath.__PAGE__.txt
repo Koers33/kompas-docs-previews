@@ -1,0 +1,99 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/3tu3evk21cikw.js"
+5:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Tdfb,---
+title: "Button Lists app"
+audience: [all]
+domains: [foundation]
+apps: [button-lists]
+entities: [ButtonLists]
+pageType: app-overview
+reviewStatus: draft
+sourceSpec: app/button-lists/webapp/manifest.json
+---
+
+# Button Lists app
+
+Button Lists is a read-only register of the buttons — the platform's named actions — that appear across its apps. Each row shows the button's **Code**, its **Button Name**, the **Button Technical Name** it maps to, the **App** it belongs to, and the **Cost Provision Classification** and **Cost Provision Value** held against it.
+
+## What is this app for?
+
+The register lets you see, in one place, which actions the platform exposes and which app each one belongs to: period close and reopen, deal confirmation and rollover, approvals and rejections, sync and refresh actions, and the informational buttons that open supporting content. The cost-provision fields on each row are the classification and value the platform associates with that action, so the register is the reference point when you are reconciling those settings against the cost provision entries they appear on.
+
+## When should I use this app?
+
+Use Button Lists when you need to check what a button is called or which app owns it, or when you want to verify the cost-provision classification and value held for an action. Use the apps themselves to perform the work — this register describes the buttons rather than running them, and it holds no transactions of its own.
+
+## Who can access this app?
+
+The register applies no role restriction of its own beyond portal access: whether the app appears in your launchpad is a question for your platform administrator (see [Roles and Access](/getting-started/roles-and-access)). Everyone who can open the app sees the same thing: the register is read-only for all users, so nothing is created, changed or deleted here.
+
+## How does work progress in this app?
+
+There is no lifecycle to progress. Open the app, filter the list to the **App** you are investigating, and read the rows. Each row is a reference entry maintained with the platform's configuration data rather than something you maintain yourself.
+
+## What can change what I see or do?
+
+- **The app filter:** narrowing the list to one app is the only thing that changes what you see; clearing it shows the full register again.
+- **Read-only everywhere:** the button details and the **Cost Provision Classification** and **Cost Provision Value** fields are not editable, for any user.
+- **A row you expect is missing:** rows come from the platform's configuration, so a missing entry cannot be added in this app.
+
+## Where can I review the results?
+
+For any action you can see in an app, find its row here and compare the app it is assigned to. When you are reviewing a cost provision entry, the classification and value on the entry should match the row for the button behind that action; if they differ, the register shows which value the platform holds for the button.
+
+## What should I check if I can't continue?
+
+If a row seems to be missing for an action you can see in an app, note the button and the app and raise it with your platform administrator — this app cannot add entries. If the app itself does not open, check your access first (see [Roles and Access](/getting-started/roles-and-access)).
+
+## Which task guides are available?
+
+No task guide is published for this app yet; it is a reference view rather than a task-based workflow.
+
+## What should I do next?
+
+New to the platform's apps? Start with [Using Fiori apps](/getting-started/using-fiori-apps).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Button Lists app","audience":["all"],"domains":["foundation"],"apps":["button-lists"],"entities":["ButtonLists"],"pageType":"app-overview","reviewStatus":"draft","sourceSpec":"app/button-lists/webapp/manifest.json","filePath":"content/apps/transactional/button-lists/index.md","timestamp":1792898221000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/button-lists","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Button Lists app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-448/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"Ld4bx5GWO2zHvsj4Xqdzi"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+2c:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Button Lists app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Button Lists is a read-only register of the buttons — the platform’s named actions — that appear across its apps. Each row shows the button’s ",["$","strong",null,{"children":"Code"}],", its ",["$","strong",null,{"children":"Button Name"}],", the ",["$","strong",null,{"children":"Button Technical Name"}]," it maps to, the ",["$","strong",null,{"children":"App"}]," it belongs to, and the ",["$","strong",null,{"children":"Cost Provision Classification"}]," and ",["$","strong",null,{"children":"Cost Provision Value"}]," held against it."]}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The register lets you see, in one place, which actions the platform exposes and which app each one belongs to: period close and reopen, deal confirmation and rollover, approvals and rejections, sync and refresh actions, and the informational buttons that open supporting content. The cost-provision fields on each row are the classification and value the platform associates with that action, so the register is the reference point when you are reconciling those settings against the cost provision entries they appear on."}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Use Button Lists when you need to check what a button is called or which app owns it, or when you want to verify the cost-provision classification and value held for an action. Use the apps themselves to perform the work — this register describes the buttons rather than running them, and it holds no transactions of its own."}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The register applies no role restriction of its own beyond portal access: whether the app appears in your launchpad is a question for your platform administrator (see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"). Everyone who can open the app sees the same thing: the register is read-only for all users, so nothing is created, changed or deleted here."]}],"\n",["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?","$L20"]}],"\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b"]}]
+13:["$","$L2c",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@2d"}]}]
+1d:true
+b:300
+20:["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]
+21:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["There is no lifecycle to progress. Open the app, filter the list to the ",["$","strong",null,{"children":"App"}]," you are investigating, and read the rows. Each row is a reference entry maintained with the platform’s configuration data rather than something you maintain yourself."]}]
+22:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+23:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"The app filter:"}]," narrowing the list to one app is the only thing that changes what you see; clearing it shows the full register again."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Read-only everywhere:"}]," the button details and the ",["$","strong",null,{"children":"Cost Provision Classification"}]," and ",["$","strong",null,{"children":"Cost Provision Value"}]," fields are not editable, for any user."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"A row you expect is missing:"}]," rows come from the platform’s configuration, so a missing entry cannot be added in this app."]}],"\n"]}]
+24:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"For any action you can see in an app, find its row here and compare the app it is assigned to. When you are reviewing a cost provision entry, the classification and value on the entry should match the row for the button behind that action; if they differ, the register shows which value the platform holds for the button."}]
+26:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+27:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["If a row seems to be missing for an action you can see in an app, note the button and the app and raise it with your platform administrator — this app cannot add entries. If the app itself does not open, check your access first (see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],")."]}]
+28:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+29:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"No task guide is published for this app yet; it is a reference view rather than a task-based workflow."}]
+2a:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+2b:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["New to the platform’s apps? Start with ",["$","$L1f",null,{"href":"/getting-started/using-fiori-apps","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Using Fiori apps"}],"."]}]
+2d:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

@@ -1,0 +1,106 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/3tu3evk21cikw.js"
+5:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T1035,---
+title: "Fee Lines app"
+audience: [all]
+domains: [foundation]
+apps: [fee-lines]
+entities: [FeeLines]
+pageType: app-overview
+reviewStatus: draft
+sourceSpec: app/fee-lines/webapp/manifest.json
+---
+
+# Fee Lines app
+
+Fee Lines is where the fee terms recorded against a business partner are maintained. One line covers one fee for one partner: what is charged, how it may be topped up, over which dates it applies, and whether it is currently in force.
+
+## What is this app for?
+
+Each line names the **Business Partner** the terms belong to and classifies them through **Fee Main Category**, **Fee Group** and **Fee Type** — for example the category **Bank Fee**, the groups **Forex** and **Accounts**, and the platform's list of charge types such as an outgoing international payment or a cross-border card fee. Around that, the line carries the terms themselves: **Fixed Amount**, **Additional Percentage**, **Minimum Amount**, **Maximum Amount**, **Markup Amount**, **Markup Percentage**, a validity window (**From Date** / **To Date**), a **Comment** and the **Is Active** flag.
+
+## When should I use this app?
+
+Use it when a partner's fee arrangement changes — a new negotiated amount, a new percentage, a new validity period, or a fee that should stop applying. Use it in read mode when you want to see what terms are recorded for a partner and which of them are current.
+
+## Who can access this app?
+
+The app is reached through portal access plus the roles your administrator has assigned you — see [Roles and Access](/getting-started/roles-and-access). The register applies no role restriction of its own beyond portal access, so everyone who can open it sees the same rows, and what you can change still depends on the roles you hold.
+
+## How does work progress in this app?
+
+1. Create a line in draft. **Fee Main Category**, **Fee Group**, **Fee Type** and **Business Partner** are all mandatory, so choose them first, then enter the amounts, percentages and dates you want to record.
+2. Save. The line is edited as a draft until you save, so values you have typed but not saved have no effect.
+3. Keep it current: adjust the amounts or the **From Date** / **To Date** window when terms change, and switch **Is Active** off when a line should no longer be treated as current. Lines are not deleted from this app.
+
+## What can change what I see or do?
+
+- **Mandatory choices:** a line cannot be saved without a category, group, type and business partner.
+- **Percentages:** **Additional Percentage** and **Markup Percentage** must be between 0 and 100.
+- **Filters:** **Business Partner**, **Fee Group** and **Fee Main Category** decide which rows appear, and the list opens sorted by partner and then fee group.
+- **No deletion:** lines cannot be removed here — switch **Is Active** off instead.
+- **Fixed value lists:** the category, group and type are chosen from the platform's lists rather than typed in.
+
+## Where can I review the results?
+
+Open the line and read the **General Information** section to confirm the partner, classification, amounts, dates, comment and **Is Active** flag exactly as they were saved. Filtering to one partner is the quickest way to see every fee line recorded for them side by side.
+
+## What should I check if I can't continue?
+
+- A line will not save: check that a category, group, type and partner have been chosen.
+- A percentage is rejected: **Additional Percentage** and **Markup Percentage** must fall between 0 and 100.
+- You want to remove a line: records cannot be deleted in this app — set **Is Active** off instead.
+- The app itself does not open: check your access first — see [Roles and Access](/getting-started/roles-and-access).
+
+## Which task guides are available?
+
+No task guide is published for this app yet; creating a line, updating terms and checking what is current are covered on this page.
+
+## What should I do next?
+
+Check the partner these terms belong to in the [Business Partners app](/apps/transactional/business-partners), and follow the [Business Partners for Treasury guide](/user-guides/treasury/business-partners-for-treasury) for maintaining partner records.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Fee Lines app","audience":["all"],"domains":["foundation"],"apps":["fee-lines"],"entities":["FeeLines"],"pageType":"app-overview","reviewStatus":"draft","sourceSpec":"app/fee-lines/webapp/manifest.json","filePath":"content/apps/transactional/fee-lines/index.md","timestamp":1792898221000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/fee-lines","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Fee Lines app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-448/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"Ld4bx5GWO2zHvsj4Xqdzi"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+2c:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Fee Lines app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Fee Lines is where the fee terms recorded against a business partner are maintained. One line covers one fee for one partner: what is charged, how it may be topped up, over which dates it applies, and whether it is currently in force."}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Each line names the ",["$","strong",null,{"children":"Business Partner"}]," the terms belong to and classifies them through ",["$","strong",null,{"children":"Fee Main Category"}],", ",["$","strong",null,{"children":"Fee Group"}]," and ",["$","strong",null,{"children":"Fee Type"}]," — for example the category ",["$","strong",null,{"children":"Bank Fee"}],", the groups ",["$","strong",null,{"children":"Forex"}]," and ",["$","strong",null,{"children":"Accounts"}],", and the platform’s list of charge types such as an outgoing international payment or a cross-border card fee. Around that, the line carries the terms themselves: ",["$","strong",null,{"children":"Fixed Amount"}],", ",["$","strong",null,{"children":"Additional Percentage"}],", ",["$","strong",null,{"children":"Minimum Amount"}],", ",["$","strong",null,{"children":"Maximum Amount"}],", ",["$","strong",null,{"children":"Markup Amount"}],", ",["$","strong",null,{"children":"Markup Percentage"}],", a validity window (",["$","strong",null,{"children":"From Date"}]," / ",["$","strong",null,{"children":"To Date"}],"), a ",["$","strong",null,{"children":"Comment"}]," and the ",["$","strong",null,{"children":"Is Active"}]," flag."]}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Use it when a partner’s fee arrangement changes — a new negotiated amount, a new percentage, a new validity period, or a fee that should stop applying. Use it in read mode when you want to see what terms are recorded for a partner and which of them are current."}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is reached through portal access plus the roles your administrator has assigned you — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],". The register applies no role restriction of its own beyond portal access, so everyone who can open it sees the same rows, and what you can change still depends on the roles you hold."]}],"\n",["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?","$L20"]}],"\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b"]}]
+13:["$","$L2c",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@2d"}]}]
+1d:true
+b:300
+20:["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]
+21:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Create a line in draft. ",["$","strong",null,{"children":"Fee Main Category"}],", ",["$","strong",null,{"children":"Fee Group"}],", ",["$","strong",null,{"children":"Fee Type"}]," and ",["$","strong",null,{"children":"Business Partner"}]," are all mandatory, so choose them first, then enter the amounts, percentages and dates you want to record."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Save. The line is edited as a draft until you save, so values you have typed but not saved have no effect."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Keep it current: adjust the amounts or the ",["$","strong",null,{"children":"From Date"}]," / ",["$","strong",null,{"children":"To Date"}]," window when terms change, and switch ",["$","strong",null,{"children":"Is Active"}]," off when a line should no longer be treated as current. Lines are not deleted from this app."]}],"\n"]}]
+22:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+23:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Mandatory choices:"}]," a line cannot be saved without a category, group, type and business partner."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Percentages:"}]," ",["$","strong",null,{"children":"Additional Percentage"}]," and ",["$","strong",null,{"children":"Markup Percentage"}]," must be between 0 and 100."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Filters:"}]," ",["$","strong",null,{"children":"Business Partner"}],", ",["$","strong",null,{"children":"Fee Group"}]," and ",["$","strong",null,{"children":"Fee Main Category"}]," decide which rows appear, and the list opens sorted by partner and then fee group."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"No deletion:"}]," lines cannot be removed here — switch ",["$","strong",null,{"children":"Is Active"}]," off instead."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Fixed value lists:"}]," the category, group and type are chosen from the platform’s lists rather than typed in."]}],"\n"]}]
+24:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Open the line and read the ",["$","strong",null,{"children":"General Information"}]," section to confirm the partner, classification, amounts, dates, comment and ",["$","strong",null,{"children":"Is Active"}]," flag exactly as they were saved. Filtering to one partner is the quickest way to see every fee line recorded for them side by side."]}]
+26:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+27:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"A line will not save: check that a category, group, type and partner have been chosen."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["A percentage is rejected: ",["$","strong",null,{"children":"Additional Percentage"}]," and ",["$","strong",null,{"children":"Markup Percentage"}]," must fall between 0 and 100."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["You want to remove a line: records cannot be deleted in this app — set ",["$","strong",null,{"children":"Is Active"}]," off instead."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The app itself does not open: check your access first — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"."]}],"\n"]}]
+28:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+29:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"No task guide is published for this app yet; creating a line, updating terms and checking what is current are covered on this page."}]
+2a:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+2b:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Check the partner these terms belong to in the ",["$","$L1f",null,{"href":"/apps/transactional/business-partners","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Business Partners app"}],", and follow the ",["$","$L1f",null,{"href":"/user-guides/treasury/business-partners-for-treasury","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Business Partners for Treasury guide"}]," for maintaining partner records."]}]
+2d:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

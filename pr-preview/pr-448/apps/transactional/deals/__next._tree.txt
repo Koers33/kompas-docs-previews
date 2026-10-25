@@ -1,4 +1,4 @@
 :HL["/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/2xdxvesoqq_er.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/deals","s":[]},"h":64,"c":"$Q2"}]]
-0:{"b":"s2_Ce5o3o5gzNjtMhF8E_","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"Ld4bx5GWO2zHvsj4Xqdzi","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

@@ -1,0 +1,110 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/3tu3evk21cikw.js"
+5:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-448/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T106c,---
+title: "Non Trading Dates app"
+audience: [all]
+domains: [foundation]
+apps: [non-trading-dates]
+entities: [NonTradingDates]
+pageType: app-overview
+reviewStatus: draft
+sourceSpec: app/non-trading-dates/webapp/manifest.json
+---
+
+# Non Trading Dates app
+
+Non Trading Dates is the platform's trading calendar. Each row is a day that is not available for trading, identified by its **Holiday Name** and, where it applies, the **Country** and **Currency** it belongs to.
+
+## What is this app for?
+
+Entries come in two kinds, and the kind decides which dates the record carries:
+
+- **Fixed** entries repeat every year. They store a **Month** and a **Day**, such as a public holiday that always falls on the same date.
+- Entries that are not fixed are one-off. They store a full date, such as Good Friday in a particular year.
+
+Business-day counting on the platform skips weekends and the holidays recorded here, so a calendar that is missing a holiday produces dates the business would not expect.
+
+## When should I use this app?
+
+Add an entry when a new public holiday or market closure has to be recognised, when a one-off closure for a coming year is announced, or when a holiday was recorded wrongly. Come here to check the calendar before you rely on a date that has to land on a business day.
+
+## Who can access this app?
+
+The app is reached through portal access plus the roles your administrator has assigned you — see [Roles and Access](/getting-started/roles-and-access). The calendar records no additional role restriction and no narrower launchpad audience, so everyone who can open it sees the same dates.
+
+## How does work progress in this app?
+
+1. Filter by **Holiday Name**, **Country** or **Currency**, and switch between the **Fixed Dates** view for recurring holidays and the **Non Fixed Dates** view for dated ones.
+2. Select **Create** and enter the **Holiday Name**. Add a **Country** and **Currency** when the holiday applies to one market; some entries carry both, others are left open.
+3. Set the kind: turn **Fixed** on and enter the **Month** and **Day** for a holiday that repeats, or leave it off and enter the date for a one-off holiday.
+4. Save. The record then shows only the fields its kind needs — **Month** and **Day** for a fixed entry, the date for a one-off entry.
+
+## What can change what I see or do?
+
+- **Fixed** cannot be changed once the record is created, so decide the kind when you create the entry.
+- The **Country** and **Currency** value helps offer configured countries and currencies only, so an entry you expect may not be selectable until it is configured.
+- Dates cannot be deleted from this app: an entry is corrected by editing it rather than by removing it.
+- The list views group the entries by kind, so an entry can appear in one view and not the other.
+
+## Where can I review the results?
+
+The list shows **Holiday Name**, **Currency**, **Country**, **Month**, **Day** and **Fixed** for every entry, and the two views split recurring from dated holidays. Opening the record shows **General Information** with exactly the fields its kind uses. The same calendar also appears as a read-only view inside the [Master Data Catalogue app](/apps/transactional/master-data-catalogue).
+
+## What should I check if I can't continue?
+
+- The wrong kind of entry: **Fixed** is fixed at creation, and entries cannot be deleted here, so check the record carefully before saving a new one.
+- A value help offers no choice: only configured countries and currencies are available.
+- An edit control is missing: check your roles in [Roles and Access](/getting-started/roles-and-access).
+
+## Which task guides are available?
+
+No task guide is published for this app yet; adding a recurring holiday, adding a dated one and checking the calendar are covered on this page. Read [Using the Fiori Apps](/getting-started/using-fiori-apps) once for how drafts, value helps and save behaviour work across the platform.
+
+## What should I do next?
+
+Read [Using the Fiori Apps](/getting-started/using-fiori-apps) for draft and value-help behaviour, and compare the calendar with its read-only copy in the [Master Data Catalogue app](/apps/transactional/master-data-catalogue).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Non Trading Dates app","audience":["all"],"domains":["foundation"],"apps":["non-trading-dates"],"entities":["NonTradingDates"],"pageType":"app-overview","reviewStatus":"draft","sourceSpec":"app/non-trading-dates/webapp/manifest.json","filePath":"content/apps/transactional/non-trading-dates/index.md","timestamp":1792898221000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/non-trading-dates","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Non Trading Dates app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-448/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"Ld4bx5GWO2zHvsj4Xqdzi"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+2c:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Non Trading Dates app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Non Trading Dates is the platform’s trading calendar. Each row is a day that is not available for trading, identified by its ",["$","strong",null,{"children":"Holiday Name"}]," and, where it applies, the ",["$","strong",null,{"children":"Country"}]," and ",["$","strong",null,{"children":"Currency"}]," it belongs to."]}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Entries come in two kinds, and the kind decides which dates the record carries:"}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Fixed"}]," entries repeat every year. They store a ",["$","strong",null,{"children":"Month"}]," and a ",["$","strong",null,{"children":"Day"}],", such as a public holiday that always falls on the same date."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Entries that are not fixed are one-off. They store a full date, such as Good Friday in a particular year."}],"\n"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Business-day counting on the platform skips weekends and the holidays recorded here, so a calendar that is missing a holiday produces dates the business would not expect."}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Add an entry when a new public holiday or market closure has to be recognised, when a one-off closure for a coming year is announced, or when a holiday was recorded wrongly. Come here to check the calendar before you rely on a date that has to land on a business day."}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is reached through portal access plus the roles your administrator has assigned you — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],". The calendar records no additional role restriction and no narrower launchpad audience, so everyone who can open it sees the same dates."]}],"\n",["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?","$L20"]}],"\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b"]}]
+13:["$","$L2c",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@2d"}]}]
+1d:true
+b:300
+20:["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]
+21:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Filter by ",["$","strong",null,{"children":"Holiday Name"}],", ",["$","strong",null,{"children":"Country"}]," or ",["$","strong",null,{"children":"Currency"}],", and switch between the ",["$","strong",null,{"children":"Fixed Dates"}]," view for recurring holidays and the ",["$","strong",null,{"children":"Non Fixed Dates"}]," view for dated ones."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Select ",["$","strong",null,{"children":"Create"}]," and enter the ",["$","strong",null,{"children":"Holiday Name"}],". Add a ",["$","strong",null,{"children":"Country"}]," and ",["$","strong",null,{"children":"Currency"}]," when the holiday applies to one market; some entries carry both, others are left open."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Set the kind: turn ",["$","strong",null,{"children":"Fixed"}]," on and enter the ",["$","strong",null,{"children":"Month"}]," and ",["$","strong",null,{"children":"Day"}]," for a holiday that repeats, or leave it off and enter the date for a one-off holiday."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Save. The record then shows only the fields its kind needs — ",["$","strong",null,{"children":"Month"}]," and ",["$","strong",null,{"children":"Day"}]," for a fixed entry, the date for a one-off entry."]}],"\n"]}]
+22:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+23:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Fixed"}]," cannot be changed once the record is created, so decide the kind when you create the entry."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The ",["$","strong",null,{"children":"Country"}]," and ",["$","strong",null,{"children":"Currency"}]," value helps offer configured countries and currencies only, so an entry you expect may not be selectable until it is configured."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Dates cannot be deleted from this app: an entry is corrected by editing it rather than by removing it."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"The list views group the entries by kind, so an entry can appear in one view and not the other."}],"\n"]}]
+24:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The list shows ",["$","strong",null,{"children":"Holiday Name"}],", ",["$","strong",null,{"children":"Currency"}],", ",["$","strong",null,{"children":"Country"}],", ",["$","strong",null,{"children":"Month"}],", ",["$","strong",null,{"children":"Day"}]," and ",["$","strong",null,{"children":"Fixed"}]," for every entry, and the two views split recurring from dated holidays. Opening the record shows ",["$","strong",null,{"children":"General Information"}]," with exactly the fields its kind uses. The same calendar also appears as a read-only view inside the ",["$","$L1f",null,{"href":"/apps/transactional/master-data-catalogue","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Master Data Catalogue app"}],"."]}]
+26:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+27:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["The wrong kind of entry: ",["$","strong",null,{"children":"Fixed"}]," is fixed at creation, and entries cannot be deleted here, so check the record carefully before saving a new one."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"A value help offers no choice: only configured countries and currencies are available."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["An edit control is missing: check your roles in ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"."]}],"\n"]}]
+28:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+29:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["No task guide is published for this app yet; adding a recurring holiday, adding a dated one and checking the calendar are covered on this page. Read ",["$","$L1f",null,{"href":"/getting-started/using-fiori-apps","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Using the Fiori Apps"}]," once for how drafts, value helps and save behaviour work across the platform."]}]
+2a:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+2b:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Read ",["$","$L1f",null,{"href":"/getting-started/using-fiori-apps","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Using the Fiori Apps"}]," for draft and value-help behaviour, and compare the calendar with its read-only copy in the ",["$","$L1f",null,{"href":"/apps/transactional/master-data-catalogue","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Master Data Catalogue app"}],"."]}]
+2d:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"
