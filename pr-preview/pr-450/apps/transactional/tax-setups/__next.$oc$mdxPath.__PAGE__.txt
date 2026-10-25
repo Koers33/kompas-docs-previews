@@ -1,0 +1,113 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/3kudvgz-e6k_d.js"
+5:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T122a,---
+title: "Tax Setups app"
+audience: [all]
+domains: [foundation]
+apps: [tax-setups]
+entities: [TaxSetups]
+pageType: app-overview
+sourceSpec: app/tax-setups/webapp/manifest.json
+---
+
+# Tax Setups app
+
+Tax Setups is the register of tax configurations. Each record is one tax code: the country it applies in, the tax group and tax type it belongs to, the rate that applies, how the tax is treated for deductibility, and the period the setup is valid for. The list shows those facts per row, with an **Active** flag alongside them.
+
+## What is this app for?
+
+The app keeps tax treatment as data rather than something built into the platform. A rate, the dates it applies between, and whether it is currently on offer all live on the record, so a change is made here instead of in code.
+
+Because every record carries a **Valid From Date** and a **Valid To Date**, a change of rate can be recorded as its own row covering the new period, leaving the earlier row with its own window intact. The list then shows which setup is current at a glance.
+
+## When should I use this app?
+
+Use it when a rate changes, when a new country or tax combination needs a setup, when a setup should stop being offered, and when you need to check what tax treatment a code carries before relying on it.
+
+The picklists this record chooses from — tax type, tax group, rate type, deductibility and tax event — are maintained in platform reference data. If a required value is missing, ask your platform administrator to have it added.
+
+## Who can access this app?
+
+The app is reached through portal access plus the roles your administrator has assigned you — see [Roles and Access](/getting-started/roles-and-access). The tax setup records carry no narrower launchpad audience and no additional role restriction beyond that portal access, so everyone who can open the app sees the same records.
+
+## How does work progress in this app?
+
+1. Filter by **Country**, **Tax Type** or **Valid From Date** and open the record you need, or create a new one.
+2. Complete **General**: the code, a description, the tax group, country, validity window, tax type, rate type, rate percentage and deductibility, plus the tax event where one applies.
+3. Save. A new record is created with **Active** off by default, so remember to switch it on.
+4. There is no delete command. Retire a setup by ending its validity window and switching **Active** off, which keeps the record and its history.
+
+## What can change what I see or do?
+
+- **Filters** are **Country**, **Tax Type** and **Valid From Date**.
+- **Every classification is a fixed choice.** Country, tax group, tax type, rate type, deductibility and tax event are selected from lists, so only those values are offered.
+- **Most fields are required.** The record cannot be saved without a code, a tax group, a country, both validity dates, a tax type, a rate type, a rate percentage and a deductibility value. The tax event is optional.
+- **The rate must be a percentage.** A rate outside 0 to 100 is refused when you save.
+- **A record is never deleted.** Retire it by date and by the **Active** flag instead.
+
+## Where can I review the results?
+
+Reopen the record and check **General** against what you intended: the validity window and the **Active** flag together tell you whether the setup is current. The list gives the wider view — code, group, country, description, validity, rate and active flag per row — which is the quickest way to scan what is in force.
+
+Tax setups are also referenced by tax code elsewhere: each transaction action definition carries one, so the code maintained here is what those actions resolve to.
+
+## What should I check if I can't continue?
+
+- **A save is refused because a field is empty:** complete the field named in the message — most commonly the code, country, validity dates or rate.
+- **A rate is refused:** enter a percentage between 0 and 100.
+- **No delete command appears:** records are retained; end the validity window and switch **Active** off instead.
+- **An edit control is missing:** check your roles in [Roles and Access](/getting-started/roles-and-access).
+
+## Which task guides are available?
+
+No task guide is published for this app yet; finding a setup, creating one and retiring one are covered on this page. Read [Using the Fiori Apps](/getting-started/using-fiori-apps) once for how drafts, value helps and save behaviour work across the platform.
+
+## What should I do next?
+
+For missing tax picklist values, contact your platform administrator; read [Using the Fiori Apps](/getting-started/using-fiori-apps) for draft and value-help behaviour that applies everywhere.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Tax Setups app","audience":["all"],"domains":["foundation"],"apps":["tax-setups"],"entities":["TaxSetups"],"pageType":"app-overview","sourceSpec":"app/tax-setups/webapp/manifest.json","filePath":"content/apps/transactional/tax-setups/index.md","timestamp":1792934856000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/tax-setups","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Tax Setups app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-450/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"6SEvKdX-NpoidCXTed-Mk"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+2d:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Tax Setups app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Tax Setups is the register of tax configurations. Each record is one tax code: the country it applies in, the tax group and tax type it belongs to, the rate that applies, how the tax is treated for deductibility, and the period the setup is valid for. The list shows those facts per row, with an ",["$","strong",null,{"children":"Active"}]," flag alongside them."]}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The app keeps tax treatment as data rather than something built into the platform. A rate, the dates it applies between, and whether it is currently on offer all live on the record, so a change is made here instead of in code."}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Because every record carries a ",["$","strong",null,{"children":"Valid From Date"}]," and a ",["$","strong",null,{"children":"Valid To Date"}],", a change of rate can be recorded as its own row covering the new period, leaving the earlier row with its own window intact. The list then shows which setup is current at a glance."]}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Use it when a rate changes, when a new country or tax combination needs a setup, when a setup should stop being offered, and when you need to check what tax treatment a code carries before relying on it."}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The picklists this record chooses from — tax type, tax group, rate type, deductibility and tax event — are maintained in platform reference data. If a required value is missing, ask your platform administrator to have it added."}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is reached through portal access plus the roles your administrator has assigned you — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],". The tax setup records carry no narrower launchpad audience and no additional role restriction beyond that portal access, so everyone who can open the app sees the same records."]}],"\n",["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?","$L20"]}],"\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c"]}]
+13:["$","$L2d",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@2e"}]}]
+1d:true
+b:300
+20:["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]
+21:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Filter by ",["$","strong",null,{"children":"Country"}],", ",["$","strong",null,{"children":"Tax Type"}]," or ",["$","strong",null,{"children":"Valid From Date"}]," and open the record you need, or create a new one."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Complete ",["$","strong",null,{"children":"General"}],": the code, a description, the tax group, country, validity window, tax type, rate type, rate percentage and deductibility, plus the tax event where one applies."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Save. A new record is created with ",["$","strong",null,{"children":"Active"}]," off by default, so remember to switch it on."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["There is no delete command. Retire a setup by ending its validity window and switching ",["$","strong",null,{"children":"Active"}]," off, which keeps the record and its history."]}],"\n"]}]
+22:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+23:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Filters"}]," are ",["$","strong",null,{"children":"Country"}],", ",["$","strong",null,{"children":"Tax Type"}]," and ",["$","strong",null,{"children":"Valid From Date"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Every classification is a fixed choice."}]," Country, tax group, tax type, rate type, deductibility and tax event are selected from lists, so only those values are offered."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Most fields are required."}]," The record cannot be saved without a code, a tax group, a country, both validity dates, a tax type, a rate type, a rate percentage and a deductibility value. The tax event is optional."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"The rate must be a percentage."}]," A rate outside 0 to 100 is refused when you save."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"A record is never deleted."}]," Retire it by date and by the ",["$","strong",null,{"children":"Active"}]," flag instead."]}],"\n"]}]
+24:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Reopen the record and check ",["$","strong",null,{"children":"General"}]," against what you intended: the validity window and the ",["$","strong",null,{"children":"Active"}]," flag together tell you whether the setup is current. The list gives the wider view — code, group, country, description, validity, rate and active flag per row — which is the quickest way to scan what is in force."]}]
+26:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Tax setups are also referenced by tax code elsewhere: each transaction action definition carries one, so the code maintained here is what those actions resolve to."}]
+27:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+28:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"A save is refused because a field is empty:"}]," complete the field named in the message — most commonly the code, country, validity dates or rate."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"A rate is refused:"}]," enter a percentage between 0 and 100."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"No delete command appears:"}]," records are retained; end the validity window and switch ",["$","strong",null,{"children":"Active"}]," off instead."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"An edit control is missing:"}]," check your roles in ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"."]}],"\n"]}]
+29:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+2a:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["No task guide is published for this app yet; finding a setup, creating one and retiring one are covered on this page. Read ",["$","$L1f",null,{"href":"/getting-started/using-fiori-apps","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Using the Fiori Apps"}]," once for how drafts, value helps and save behaviour work across the platform."]}]
+2b:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+2c:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["For missing tax picklist values, contact your platform administrator; read ",["$","$L1f",null,{"href":"/getting-started/using-fiori-apps","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Using the Fiori Apps"}]," for draft and value-help behaviour that applies everywhere."]}]
+2e:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

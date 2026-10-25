@@ -1,0 +1,243 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/3kudvgz-e6k_d.js"
+5:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T11da,---
+title: Settlement and Cashflow Guide
+audience: [back-office]
+domains: [settlement, cashflow]
+sourceSpec: docs/user-guides/SETTLEMENT_AND_CASHFLOW_GUIDE.md
+---
+# Settlement and Cashflow Guide
+
+> **Goal**: Process the settlement of a confirmed deal through payment instructions, bank confirmations, and cashflow matching.
+>
+> **Prerequisites**: Phase 3 complete (Deal confirmed, cashflow items and journal entries generated).
+
+---
+
+## Step 4.1 — View the Payment Instruction
+
+**App**: Payment Instructions
+**Action**: View the auto-generated payment instruction
+
+After deal confirmation, the system generates payment instructions for settlement.
+
+| Field | Description |
+|-------|-------------|
+| Payment Reference | Unique payment identifier |
+| Deal | Link to the confirmed deal |
+| Amount | Payment amount |
+| Currency | Payment currency |
+| Value Date | When payment is due |
+| Status | `Pending` |
+| Payment Channel | `SAMOS`, `SWIFT`, etc. |
+
+---
+
+## Step 4.2 — Authorise the Payment
+
+**App**: Payment Instructions
+**Action**: Click "Authorise Payment"
+
+Before payment can be processed, it must be authorised.
+
+1. Open the Payment Instruction record
+2. Review the payment details
+3. Click "Authorise Payment"
+4. Sanctions screening runs automatically
+5. Status changes from `Pending` to `Authorised`
+
+**What happens**:
+- Sanctions screening checks the counterparty
+- If screening passes, payment is authorised
+- If screening fails, payment is held for review
+
+---
+
+## Step 4.3 — Process Bank Confirmation
+
+**App**: Payment Instructions
+**Action**: Click "Process Bank Confirmation"
+
+After the bank processes the payment, confirm receipt.
+
+1. Open the Payment Instruction record
+2. Click "Process Bank Confirmation"
+3. Enter the bank confirmation reference
+4. Status changes to `Confirmed`
+
+---
+
+## Step 4.4 — View the Settlement
+
+**App**: Settlements
+**Action**: View the settlement record
+
+The settlement tracks the final exchange of funds.
+
+| Field | Description |
+|-------|-------------|
+| Settlement Reference | Unique settlement identifier |
+| Deal | Link to the confirmed deal |
+| Payment Instruction | Link to the payment |
+| Settlement Amount | Amount settled |
+| Settlement Currency | Currency settled |
+| Nostro Account | Which bank account was used |
+| Settlement Date | When settlement occurred |
+| Status | `Settled` |
+
+---
+
+## Step 4.5 — View Cashflow Matching
+
+**App**: Settlements (Confirmation Matches section)
+**Action**: View the matching between projected and actual cashflows
+
+The system matches projected cashflows against actual bank confirmations.
+
+| Field | Description |
+|-------|-------------|
+| Projected Cashflow | Expected cashflow from the deal |
+| Actual Cashflow | What the bank confirmed |
+| Projected Amount | Expected amount |
+| Actual Amount | Actual amount received/paid |
+| Difference | Variance between projected and actual |
+| Match Status | `Matched`, `Unmatched`, `Tolerance` |
+| Match Method | `Exact`, `Tolerance`, `Manual` |
+
+---
+
+## Step 4.6 — View Cash Account Balances
+
+**App**: Cash Account Balances
+**Action**: View the nostro account balance after settlement
+
+Track the running balance on each nostro account.
+
+| Field | Description |
+|-------|-------------|
+| Nostro Account | Bank account |
+| Currency | Account currency |
+| Period | Current period (YYYY-MM) |
+| Opening Balance | Balance at start of period |
+| Closing Balance | Current balance |
+| Total Inflows | Money received |
+| Total Outflows | Money paid |
+| Reconciliation Status | `Reconciled`, `Unreconciled` |
+
+---
+
+## Step 4.7 — Settle the Deal
+
+**App**: Deals
+**Action**: Click "Settle Deal"
+
+Once settlement is confirmed, mark the deal as settled.
+
+1. Open the Deal record
+2. Click "Settle Deal"
+3. Status changes from `CONFIRMED` to `SETTLED`
+4. Position closes automatically
+
+**After Phase 4**: The deal is fully settled. Cashflows are matched, journals are posted, and the position is closed.
+
+---
+
+## Phase 4 Checklist
+
+| # | Step | App | Status |
+|---|------|-----|--------|
+| 4.1 | View Payment Instruction | Payment Instructions | [ ] |
+| 4.2 | Authorise Payment | Payment Instructions | [ ] |
+| 4.3 | Process Bank Confirmation | Payment Instructions | [ ] |
+| 4.4 | View Settlement | Settlements | [ ] |
+| 4.5 | View Cashflow Matching | Settlements | [ ] |
+| 4.6 | View Cash Account Balances | Cash Account Balances | [ ] |
+| 4.7 | Settle Deal | Deals | [ ] |
+
+---
+
+## UUID Reference Table
+
+| Record | UUID |
+|--------|------|
+| Payment Instruction | |
+| Settlement | |
+| Confirmation Match | |
+| Cash Account Balance | |c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Step 4.1 — View the Payment Instruction","id":"step-41--view-the-payment-instruction","depth":2},{"value":"Step 4.2 — Authorise the Payment","id":"step-42--authorise-the-payment","depth":2},{"value":"Step 4.3 — Process Bank Confirmation","id":"step-43--process-bank-confirmation","depth":2},{"value":"Step 4.4 — View the Settlement","id":"step-44--view-the-settlement","depth":2},{"value":"Step 4.5 — View Cashflow Matching","id":"step-45--view-cashflow-matching","depth":2},{"value":"Step 4.6 — View Cash Account Balances","id":"step-46--view-cash-account-balances","depth":2},{"value":"Step 4.7 — Settle the Deal","id":"step-47--settle-the-deal","depth":2},{"value":"Phase 4 Checklist","id":"phase-4-checklist","depth":2},{"value":"UUID Reference Table","id":"uuid-reference-table","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Settlement and Cashflow Guide","audience":["back-office"],"domains":["settlement","cashflow"],"sourceSpec":"docs/user-guides/SETTLEMENT_AND_CASHFLOW_GUIDE.md","filePath":"content/user-guides/back-office/settlement-and-cashflow.md","timestamp":1792934856000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/back-office/settlement-and-cashflow","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Settlement and Cashflow Guide"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-450/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"6SEvKdX-NpoidCXTed-Mk"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+49:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Settlement and Cashflow Guide","$undefined"]}],"\n",["$","blockquote",null,{"className":"x:not-first:mt-[1.25em] x:border-gray-300 x:italic x:text-gray-700 x:dark:border-gray-700 x:dark:text-gray-400 x:border-s-2 x:ps-[1.5em]","children":["\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"Goal"}],": Process the settlement of a confirmed deal through payment instructions, bank confirmations, and cashflow matching."]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"Prerequisites"}],": Phase 3 complete (Deal confirmed, cashflow items and journal entries generated)."]}],"\n"]}],"\n",["$","hr",null,{"className":"x:my-[2em] nextra-border"}],"\n",["$","h2",null,{"id":"step-41--view-the-payment-instruction","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Step 4.1 — View the Payment Instruction",["$","$L1e",null,{"id":"step-41--view-the-payment-instruction"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"App"}],": Payment Instructions\n",["$","strong",null,{"children":"Action"}],": View the auto-generated payment instruction"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"After deal confirmation, the system generates payment instructions for settlement."}],"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",["$","table",null,{"className":"x:block x:overflow-x-auto nextra-scrollbar x:not-first:mt-[1.25em] x:p-0","children":[["$","thead",null,{"children":["$","tr",null,{"children":[["$","th",null,{"children":"Field","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Description","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]}],["$","tbody",null,{"children":[["$","tr",null,{"children":[["$","td",null,{"children":"Payment Reference","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Unique payment identifier","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Deal","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Link to the confirmed deal","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Amount","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Payment amount","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Currency","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Payment currency","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],"$L1f","$L20","$L21"]}]]}],"\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d","\n","$L2e","\n","$L2f","\n","$L30","\n","$L31","\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n","$L32","\n","$L33","\n","$L34","\n","$L35","\n","$L36","\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n","$L37","\n","$L38","\n","$L39","\n","$L3a","\n","$L3b","\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n","$L3c","\n","$L3d","\n","$L3e","\n","$L3f","\n","$L40","\n","$L41","\n","$L42","\n","$L43","\n","$L44","\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n","$L45","\n","$L46","\n","$L47","\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n","$L48"]}]
+13:["$","$L49",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@4a"}]}]
+1d:true
+b:300
+1f:["$","tr",null,{"children":[["$","td",null,{"children":"Value Date","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"When payment is due","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]
+20:["$","tr",null,{"children":[["$","td",null,{"children":"Status","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Pending"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]
+21:["$","tr",null,{"children":[["$","td",null,{"children":"Payment Channel","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"SAMOS"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"SWIFT"}],", etc."],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]
+22:["$","hr",null,{"className":"x:my-[2em] nextra-border"}]
+23:["$","h2",null,{"id":"step-42--authorise-the-payment","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Step 4.2 — Authorise the Payment",["$","$L1e",null,{"id":"step-42--authorise-the-payment"}]]}]
+24:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"App"}],": Payment Instructions\n",["$","strong",null,{"children":"Action"}],": Click “Authorise Payment”"]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Before payment can be processed, it must be authorised."}]
+26:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"Open the Payment Instruction record"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Review the payment details"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Click “Authorise Payment”"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Sanctions screening runs automatically"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Status changes from ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Pending"}]," to ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Authorised"}]]}],"\n"]}]
+27:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"What happens"}],":"]}]
+28:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"Sanctions screening checks the counterparty"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If screening passes, payment is authorised"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If screening fails, payment is held for review"}],"\n"]}]
+29:["$","hr",null,{"className":"x:my-[2em] nextra-border"}]
+2a:["$","h2",null,{"id":"step-43--process-bank-confirmation","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Step 4.3 — Process Bank Confirmation",["$","$L1e",null,{"id":"step-43--process-bank-confirmation"}]]}]
+2b:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"App"}],": Payment Instructions\n",["$","strong",null,{"children":"Action"}],": Click “Process Bank Confirmation”"]}]
+2c:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"After the bank processes the payment, confirm receipt."}]
+2d:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"Open the Payment Instruction record"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Click “Process Bank Confirmation”"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Enter the bank confirmation reference"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Status changes to ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Confirmed"}]]}],"\n"]}]
+2e:["$","hr",null,{"className":"x:my-[2em] nextra-border"}]
+2f:["$","h2",null,{"id":"step-44--view-the-settlement","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Step 4.4 — View the Settlement",["$","$L1e",null,{"id":"step-44--view-the-settlement"}]]}]
+30:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"App"}],": Settlements\n",["$","strong",null,{"children":"Action"}],": View the settlement record"]}]
+31:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The settlement tracks the final exchange of funds."}]
+32:["$","table",null,{"className":"x:block x:overflow-x-auto nextra-scrollbar x:not-first:mt-[1.25em] x:p-0","children":[["$","thead",null,{"children":["$","tr",null,{"children":[["$","th",null,{"children":"Field","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Description","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]}],["$","tbody",null,{"children":[["$","tr",null,{"children":[["$","td",null,{"children":"Settlement Reference","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Unique settlement identifier","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Deal","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Link to the confirmed deal","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Payment Instruction","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Link to the payment","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Settlement Amount","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Amount settled","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Settlement Currency","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Currency settled","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Nostro Account","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Which bank account was used","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Settlement Date","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"When settlement occurred","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Status","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Settled"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]]}]]}]
+33:["$","hr",null,{"className":"x:my-[2em] nextra-border"}]
+34:["$","h2",null,{"id":"step-45--view-cashflow-matching","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Step 4.5 — View Cashflow Matching",["$","$L1e",null,{"id":"step-45--view-cashflow-matching"}]]}]
+35:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"App"}],": Settlements (Confirmation Matches section)\n",["$","strong",null,{"children":"Action"}],": View the matching between projected and actual cashflows"]}]
+36:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The system matches projected cashflows against actual bank confirmations."}]
+37:["$","table",null,{"className":"x:block x:overflow-x-auto nextra-scrollbar x:not-first:mt-[1.25em] x:p-0","children":[["$","thead",null,{"children":["$","tr",null,{"children":[["$","th",null,{"children":"Field","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Description","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]}],["$","tbody",null,{"children":[["$","tr",null,{"children":[["$","td",null,{"children":"Projected Cashflow","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Expected cashflow from the deal","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Actual Cashflow","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"What the bank confirmed","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Projected Amount","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Expected amount","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Actual Amount","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Actual amount received/paid","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Difference","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Variance between projected and actual","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Match Status","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Matched"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Unmatched"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Tolerance"}]],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Match Method","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Exact"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Tolerance"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Manual"}]],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]]}]]}]
+38:["$","hr",null,{"className":"x:my-[2em] nextra-border"}]
+39:["$","h2",null,{"id":"step-46--view-cash-account-balances","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Step 4.6 — View Cash Account Balances",["$","$L1e",null,{"id":"step-46--view-cash-account-balances"}]]}]
+3a:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"App"}],": Cash Account Balances\n",["$","strong",null,{"children":"Action"}],": View the nostro account balance after settlement"]}]
+3b:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Track the running balance on each nostro account."}]
+3c:["$","table",null,{"className":"x:block x:overflow-x-auto nextra-scrollbar x:not-first:mt-[1.25em] x:p-0","children":[["$","thead",null,{"children":["$","tr",null,{"children":[["$","th",null,{"children":"Field","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Description","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]}],["$","tbody",null,{"children":[["$","tr",null,{"children":[["$","td",null,{"children":"Nostro Account","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Bank account","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Currency","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Account currency","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Period","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Current period (YYYY-MM)","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Opening Balance","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Balance at start of period","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Closing Balance","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Current balance","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Total Inflows","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Money received","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Total Outflows","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Money paid","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Reconciliation Status","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Reconciled"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Unreconciled"}]],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]]}]]}]
+3d:["$","hr",null,{"className":"x:my-[2em] nextra-border"}]
+3e:["$","h2",null,{"id":"step-47--settle-the-deal","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Step 4.7 — Settle the Deal",["$","$L1e",null,{"id":"step-47--settle-the-deal"}]]}]
+3f:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"App"}],": Deals\n",["$","strong",null,{"children":"Action"}],": Click “Settle Deal”"]}]
+40:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Once settlement is confirmed, mark the deal as settled."}]
+41:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"Open the Deal record"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Click “Settle Deal”"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Status changes from ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"CONFIRMED"}]," to ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"SETTLED"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Position closes automatically"}],"\n"]}]
+42:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"After Phase 4"}],": The deal is fully settled. Cashflows are matched, journals are posted, and the position is closed."]}]
+43:["$","hr",null,{"className":"x:my-[2em] nextra-border"}]
+44:["$","h2",null,{"id":"phase-4-checklist","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Phase 4 Checklist",["$","$L1e",null,{"id":"phase-4-checklist"}]]}]
+45:["$","table",null,{"className":"x:block x:overflow-x-auto nextra-scrollbar x:not-first:mt-[1.25em] x:p-0","children":[["$","thead",null,{"children":["$","tr",null,{"children":[["$","th",null,{"children":"#","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Step","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"App","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Status","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]}],["$","tbody",null,{"children":[["$","tr",null,{"children":[["$","td",null,{"children":"4.1","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"View Payment Instruction","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Payment Instructions","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"[ ]","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"4.2","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Authorise Payment","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Payment Instructions","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"[ ]","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"4.3","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Process Bank Confirmation","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Payment Instructions","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"[ ]","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"4.4","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"View Settlement","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Settlements","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"[ ]","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"4.5","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"View Cashflow Matching","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Settlements","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],"$L4b"],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],"$L4c","$L4d"]}]]}]
+46:["$","hr",null,{"className":"x:my-[2em] nextra-border"}]
+47:["$","h2",null,{"id":"uuid-reference-table","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["UUID Reference Table",["$","$L1e",null,{"id":"uuid-reference-table"}]]}]
+48:["$","table",null,{"className":"x:block x:overflow-x-auto nextra-scrollbar x:not-first:mt-[1.25em] x:p-0","children":[["$","thead",null,{"children":["$","tr",null,{"children":[["$","th",null,{"children":"Record","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"UUID","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]}],["$","tbody",null,{"children":[["$","tr",null,{"children":[["$","td",null,{"children":"Payment Instruction","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Settlement","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Confirmation Match","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":"Cash Account Balance","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]]}]]}]
+4a:null
+b:C
+4b:["$","td",null,{"children":"[ ]","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]
+4c:["$","tr",null,{"children":[["$","td",null,{"children":"4.6","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"View Cash Account Balances","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Cash Account Balances","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"[ ]","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]
+4d:["$","tr",null,{"children":[["$","td",null,{"children":"4.7","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Settle Deal","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Deals","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"[ ]","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

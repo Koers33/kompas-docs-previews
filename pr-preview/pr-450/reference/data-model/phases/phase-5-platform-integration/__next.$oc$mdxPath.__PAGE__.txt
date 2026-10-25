@@ -1,0 +1,402 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/3kudvgz-e6k_d.js"
+5:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T2b84,---
+title: Phase 5 — Platform Integration
+audience: [all]
+domains: [integration-events, platform-resilience]
+sourceSpec: docs/erds/phases/phase-5-platform-integration.mmd
+---
+
+# Phase 5 — Platform Integration
+
+```mermaid
+erDiagram
+%% ============================================================
+%% PHASE 5 — PLATFORM INTEGRATION
+%% Generates: 2026-06-11
+%% Source: planned/notifications-tasks.mmd
+%%         planned/scheduler.mmd
+%%         planned/integration-events.mmd
+%%         planned/platform-resilience.mmd
+%%         planned/knowledge-graph.mmd
+%%         planned/workspaces-ui.mmd
+%% ============================================================
+
+%% ============================================================
+%% NOTIFICATIONS & TASKS
+%% ============================================================
+
+    Notifications {
+        uuid id PK
+        uuid companyId FK
+        uuid recipientUserId FK
+        string notificationType "OPERATIONAL | LIQUIDITY | SETTLEMENT | RISK | COMPLIANCE | REPLAY"
+        string severity "INFO | WARNING | CRITICAL"
+        string title
+        json payload
+        string status "SENT | DELIVERED | OPENED | ACKNOWLEDGED | FAILED | EXPIRED"
+        date sentAt
+    }
+    Tasks {
+        uuid id PK
+        uuid companyId FK
+        uuid assignedUserId FK
+        string taskType "APPROVAL | RECONCILIATION | REMEDIATION | REVIEW | CERTIFICATION"
+        string status "PENDING | IN_PROGRESS | COMPLETED | ESCALATED"
+        date slaDeadline
+        uuid escalationId FK
+        uuid workflowId FK
+    }
+    Communications {
+        uuid id PK
+        uuid companyId FK
+        string communicationType "CRISIS_BROADCAST | REGULATORY | ESCALATION | OPERATIONAL"
+        json recipientList
+        string deliveryChannel "IN_APP | EMAIL | SMS | SWIFT"
+        string status "SENT | DELIVERED | ACKNOWLEDGED"
+        boolean requiresAcknowledgement
+        date acknowledgedAt
+    }
+    DeliveryTrackings {
+        uuid id PK
+        uuid communicationId FK
+        uuid recipientId FK
+        string deliveryStatus
+        date sentAt
+        date deliveredAt
+        date openedAt
+        date acknowledgedAt
+    }
+    EscalationRecords {
+        uuid id PK
+        uuid sourceItemId FK
+        string sourceType "TASK | BREACH | ALERT | EXCEPTION | QUEUE_ITEM"
+        string escalationLevel "TIER1 | TIER2 | TIER3 | EXECUTIVE | REGULATOR"
+        uuid escalatedToUserId FK
+        date escalatedAt
+        string reason
+    }
+
+%% --- Internal Relationships ---
+    Tasks ||--o{ EscalationRecords : "escalates"
+    Communications ||--o{ DeliveryTrackings : "tracked by"
+
+%% ============================================================
+%% SCHEDULER
+%% ============================================================
+
+    SchedulerJobs {
+        uuid id PK
+        string jobCode UK
+        string domainCode
+        string cronExpression
+        json upstreamDependencies
+        json downstreamDependencies
+        boolean isBlocking
+        int maxRetries
+        string escalationThreshold
+        string status "ACTIVE | PAUSED | DISABLED"
+    }
+    SchedulerRuns {
+        uuid id PK
+        uuid jobId FK
+        date scheduledAt
+        date startedAt
+        date completedAt
+        string status "SUCCESS | FAILED | SKIPPED | OVERRUN"
+        string errorDetail
+    }
+    CutoffTimes {
+        uuid id PK
+        uuid companyId FK
+        string paymentRail
+        string currencyCode FK
+        time localCutoff
+        string timezone
+    }
+
+%% --- Internal Relationships ---
+    SchedulerJobs ||--o{ SchedulerRuns : "executes as"
+
+%% ============================================================
+%% INTEGRATION EVENTS
+%% ============================================================
+
+    IntegrationContracts {
+        uuid id PK
+        string contractCode UK
+        string direction "INBOUND | OUTBOUND | BIDIRECTIONAL"
+        string protocol "REST | SOAP | SWIFT | ISO20022 | FILE | MESSAGING"
+        string targetSystemType "BANK | CUSTODIAN | EXCHANGE | REGULATOR | ERP"
+        string version
+        boolean isActive
+        json schemaDefinition
+    }
+    ExternalSystems {
+        uuid id PK
+        string systemCode UK
+        string systemName
+        string systemType
+        string connectivityType
+        boolean isMonitored
+    }
+    EventSchemas {
+        uuid id PK
+        string eventCode UK
+        string eventFamily "EXECUTION | ACCOUNTING | CASH | HEDGE | RISK | SETTLEMENT | REGULATORY"
+        json payloadSchema
+        string deliveryModel "AT_MOST_ONCE | AT_LEAST_ONCE | EFFECTIVELY_ONCE"
+        boolean orderedDelivery
+    }
+    DeadLetterItems {
+        uuid id PK
+        string eventId
+        string failureReason
+        json originalEvent
+        json retryHistory
+        int retryCount
+        uuid evidencePackId FK
+        string status "UNRESOLVED | REPROCESSED | ESCALATED"
+    }
+    RetryQueues {
+        uuid id PK
+        string sourceId
+        int retryAttempt
+        date nextRetryAt
+        int maxRetries
+    }
+
+%% --- Internal Relationships ---
+    IntegrationContracts ||--|| ExternalSystems : "connects to"
+    DeadLetterItems ||--|| EventSchemas : "from"
+
+%% ============================================================
+%% PLATFORM RESILIENCE
+%% ============================================================
+
+    IncidentRecords {
+        uuid id PK
+        uuid companyId FK
+        string incidentType "OUTAGE | INTEGRATION | LIQUIDITY | CYBER | SETTLEMENT | CRISIS"
+        string severity "LOW | MEDIUM | HIGH | CRITICAL | CRISIS"
+        string status "DETECTED | CLASSIFIED | RESPONDING | RECOVERED | CLOSED"
+        date detectedAt
+        date resolvedAt
+        json rootCause
+        uuid evidencePackId FK
+    }
+    RunbookDefinitions {
+        uuid id PK
+        string runbookCode
+        string incidentType
+        json steps
+        string status "ACTIVE | DRAFT | ARCHIVED"
+    }
+    RunbookExecutions {
+        uuid id PK
+        uuid incidentId FK
+        uuid runbookId FK
+        int currentStep
+        string status "IN_PROGRESS | COMPLETE | FAILED"
+        json stepResults
+    }
+    ServiceLevelAgreements {
+        uuid id PK
+        string slaType "RESPONSE | RESOLUTION | UPTIME | RECOVERY"
+        int targetMinutes
+        string severity
+    }
+    HealthMetrics {
+        uuid id PK
+        string metricCode
+        decimal currentValue
+        decimal warningThreshold
+        decimal criticalThreshold
+        string status "HEALTHY | WARNING | CRITICAL"
+        date measuredAt
+    }
+    FailoverExecutions {
+        uuid id PK
+        uuid engineId FK
+        uuid incidentId FK
+        string failoverType "AUTOMATIC | MANUAL"
+        date failoverAt
+        date recoveryAt
+        string status "COMPLETED | FAILED"
+        boolean replayIntegrityValidated
+    }
+
+%% --- Internal Relationships ---
+    IncidentRecords ||--o{ RunbookExecutions : "uses"
+    RunbookExecutions ||--|| RunbookDefinitions : "follows"
+
+%% ============================================================
+%% KNOWLEDGE GRAPH
+%% ============================================================
+
+    GraphNodes {
+        uuid id PK
+        string nodeType
+        string nodeLabel
+        uuid entityId FK
+        json metadata
+        date validFrom
+        date validTo
+    }
+    GraphEdges {
+        uuid id PK
+        uuid sourceNodeId FK
+        uuid targetNodeId FK
+        string relationshipType "OWNS | CONTROLS | FUNDS | HEDGES | CAUSES | GOVERNS | DEPENDS_ON"
+        json metadata
+    }
+    InstitutionalMemoryRecords {
+        uuid id PK
+        string recordType "DECISION | RESOLUTION | REGULATOR_INTERACTION | LESSON | POLICY"
+        string content
+        uuid relatedEntityId FK
+        uuid authorId FK
+        date recordedAt
+    }
+    LearningFeedbacks {
+        uuid id PK
+        uuid workflowId FK
+        string feedbackType "OPTIMIZATION | ANOMALY | PATTERN"
+        json observedData
+        json recommendation
+        string status "PENDING | REVIEWED | APPLIED"
+    }
+
+%% --- Internal Relationships ---
+    GraphNodes ||--o{ GraphEdges : "source"
+    GraphEdges ||--|| GraphNodes : "target"
+
+%% ============================================================
+%% WORKSPACES UI
+%% ============================================================
+
+    WorkspaceDefinitions {
+        uuid id PK
+        string workspaceCode UK
+        uuid roleId FK
+        string title
+        json tiles
+        json navigationPaths
+        boolean isReadOnly
+    }
+    CockpitDefinitions {
+        uuid id PK
+        string cockpitCode UK
+        uuid roleId FK
+        string title
+        json charts
+        json kpis
+        json quickActions
+    }
+    TileDefinitions {
+        uuid id PK
+        uuid workspaceId FK
+        string tileCode
+        string metricLabel
+        string metricValueExpression
+        string semanticColorRule
+        string sparklineDataExpression
+        uuid actionButtonId FK
+    }
+    ScreenDefinitions {
+        uuid id PK
+        string screenCode UK
+        string screenType "LP | OP | OVERVIEW | WIZARD | COCKPIT"
+        uuid entitySetId FK
+        json annotations
+        string helpContentRef
+        boolean isActive
+    }
+    ScreenNavigations {
+        uuid id PK
+        uuid sourceScreenId FK
+        uuid targetScreenId FK
+        string navigationIntent
+        string allowedRoles
+        boolean preserveContext
+    }
+    HelpContents {
+        uuid id PK
+        string contentCode UK
+        string contentType "FIELD_HELP | GLOSSARY | PROCESS_GUIDE | REGULATORY_NOTE"
+        string content
+        string status "ACTIVE | PENDING_APPROVAL | DRAFT"
+    }
+    GlossaryEntries {
+        uuid id PK
+        string term UK
+        string definition
+        string aiGeneratedStatus "DRAFT | PENDING_APPROVAL | APPROVED | REJECTED"
+        date reviewedByDeadline
+        uuid approvedByUserId FK
+    }
+    ByteManifests {
+        uuid id PK
+        string appCode UK
+        uuid companyId FK
+        string appName
+        json buttonInventory
+        json authorityLayers
+        json evidenceProduced
+        string helpContentRef
+    }
+
+%% --- Internal Relationships ---
+    WorkspaceDefinitions ||--o{ TileDefinitions : "contains"
+    ScreenNavigations ||--|| ScreenDefinitions : "navigates between"
+    HelpContents ||--|| ScreenDefinitions : "helps"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to Phase 0 entities and other phases)
+%% ============================================================
+
+%% >>> Connected to: Phase 0 — Foundation (Companies, ApplicationUsers, Roles) <<<
+%%   Notifications ||--|| ApplicationUsers : "sent to"
+%%   Tasks ||--|| ApplicationUsers : "assigned to"
+%%   CutoffTimes ||--|| Companies : "configured by"
+%%   HealthMetrics ||--|| Companies : "monitored for"
+%%   InstitutionalMemoryRecords ||--|| ApplicationUsers : "recorded by"
+%%   WorkspaceDefinitions ||--|| Roles : "for"
+%%   ByteManifests ||--|| Companies : "audits"
+
+%% >>> Connected to: Phase 3 — Model Governance <<<
+%%   FailoverExecutions ||--|| EngineRegistrations : "fails over"
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Phase 5 — Platform Integration","audience":["all"],"domains":["integration-events","platform-resilience"],"sourceSpec":"docs/erds/phases/phase-5-platform-integration.mmd","filePath":"content/reference/data-model/phases/phase-5-platform-integration.md","timestamp":1792934856000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/phases/phase-5-platform-integration","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Phase 5 — Platform Integration"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-450/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"6SEvKdX-NpoidCXTed-Mk"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:T2c03,erDiagram\n%% ============================================================\n%% PHASE 5 — PLATFORM INTEGRATION\n%% Generates: 2026-06-11\n%% Source: planned/notifications-tasks.mmd\n%%         planned/scheduler.mmd\n%%         planned/integration-events.mmd\n%%         planned/platform-resilience.mmd\n%%         planned/knowledge-graph.mmd\n%%         planned/workspaces-ui.mmd\n%% ============================================================\n\n%% ============================================================\n%% NOTIFICATIONS & TASKS\n%% ============================================================\n\n    Notifications {\n        uuid id PK\n        uuid companyId FK\n        uuid recipientUserId FK\n        string notificationType "OPERATIONAL | LIQUIDITY | SETTLEMENT | RISK | COMPLIANCE | REPLAY"\n        string severity "INFO | WARNING | CRITICAL"\n        string title\n        json payload\n        string status "SENT | DELIVERED | OPENED | ACKNOWLEDGED | FAILED | EXPIRED"\n        date sentAt\n    }\n    Tasks {\n        uuid id PK\n        uuid companyId FK\n        uuid assignedUserId FK\n        string taskType "APPROVAL | RECONCILIATION | REMEDIATION | REVIEW | CERTIFICATION"\n        string status "PENDING | IN_PROGRESS | COMPLETED | ESCALATED"\n        date slaDeadline\n        uuid escalationId FK\n        uuid workflowId FK\n    }\n    Communications {\n        uuid id PK\n        uuid companyId FK\n        string communicationType "CRISIS_BROADCAST | REGULATORY | ESCALATION | OPERATIONAL"\n        json recipientList\n        string deliveryChannel "IN_APP | EMAIL | SMS | SWIFT"\n        string status "SENT | DELIVERED | ACKNOWLEDGED"\n        boolean requiresAcknowledgement\n        date acknowledgedAt\n    }\n    DeliveryTrackings {\n        uuid id PK\n        uuid communicationId FK\n        uuid recipientId FK\n        string deliveryStatus\n        date sentAt\n        date deliveredAt\n        date openedAt\n        date acknowledgedAt\n    }\n    EscalationRecords {\n        uuid id PK\n        uuid sourceItemId FK\n        string sourceType "TASK | BREACH | ALERT | EXCEPTION | QUEUE_ITEM"\n        string escalationLevel "TIER1 | TIER2 | TIER3 | EXECUTIVE | REGULATOR"\n        uuid escalatedToUserId FK\n        date escalatedAt\n        string reason\n    }\n\n%% --- Internal Relationships ---\n    Tasks ||--o{ EscalationRecords : "escalates"\n    Communications ||--o{ DeliveryTrackings : "tracked by"\n\n%% ============================================================\n%% SCHEDULER\n%% ============================================================\n\n    SchedulerJobs {\n        uuid id PK\n        string jobCode UK\n        string domainCode\n        string cronExpression\n        json upstreamDependencies\n        json downstreamDependencies\n        boolean isBlocking\n        int maxRetries\n        string escalationThreshold\n        string status "ACTIVE | PAUSED | DISABLED"\n    }\n    SchedulerRuns {\n        uuid id PK\n        uuid jobId FK\n        date scheduledAt\n        date startedAt\n        date completedAt\n        string status "SUCCESS | FAILED | SKIPPED | OVERRUN"\n        string errorDetail\n    }\n    CutoffTimes {\n        uuid id PK\n        uuid companyId FK\n        string paymentRail\n        string currencyCode FK\n        time localCutoff\n        string timezone\n    }\n\n%% --- Internal Relationships ---\n    SchedulerJobs ||--o{ SchedulerRuns : "executes as"\n\n%% ============================================================\n%% INTEGRATION EVENTS\n%% ============================================================\n\n    IntegrationContracts {\n        uuid id PK\n        string contractCode UK\n        string direction "INBOUND | OUTBOUND | BIDIRECTIONAL"\n        string protocol "REST | SOAP | SWIFT | ISO20022 | FILE | MESSAGING"\n        string targetSystemType "BANK | CUSTODIAN | EXCHANGE | REGULATOR | ERP"\n        string version\n        boolean isActive\n        json schemaDefinition\n    }\n    ExternalSystems {\n        uuid id PK\n        string systemCode UK\n        string systemName\n        string systemType\n        string connectivityType\n        boolean isMonitored\n    }\n    EventSchemas {\n        uuid id PK\n        string eventCode UK\n        string eventFamily "EXECUTION | ACCOUNTING | CASH | HEDGE | RISK | SETTLEMENT | REGULATORY"\n        json payloadSchema\n        string deliveryModel "AT_MOST_ONCE | AT_LEAST_ONCE | EFFECTIVELY_ONCE"\n        boolean orderedDelivery\n    }\n    DeadLetterItems {\n        uuid id PK\n        string eventId\n        string failureReason\n        json originalEvent\n        json retryHistory\n        int retryCount\n        uuid evidencePackId FK\n        string status "UNRESOLVED | REPROCESSED | ESCALATED"\n    }\n    RetryQueues {\n        uuid id PK\n        string sourceId\n        int retryAttempt\n        date nextRetryAt\n        int maxRetries\n    }\n\n%% --- Internal Relationships ---\n    IntegrationContracts ||--|| ExternalSystems : "connects to"\n    DeadLetterItems ||--|| EventSchemas : "from"\n\n%% ============================================================\n%% PLATFORM RESILIENCE\n%% ============================================================\n\n    IncidentRecords {\n        uuid id PK\n        uuid companyId FK\n        string incidentType "OUTAGE | INTEGRATION | LIQUIDITY | CYBER | SETTLEMENT | CRISIS"\n        string severity "LOW | MEDIUM | HIGH | CRITICAL | CRISIS"\n        string status "DETECTED | CLASSIFIED | RESPONDING | RECOVERED | CLOSED"\n        date detectedAt\n        date resolvedAt\n        json rootCause\n        uuid evidencePackId FK\n    }\n    RunbookDefinitions {\n        uuid id PK\n        string runbookCode\n        string incidentType\n        json steps\n        string status "ACTIVE | DRAFT | ARCHIVED"\n    }\n    RunbookExecutions {\n        uuid id PK\n        uuid incidentId FK\n        uuid runbookId FK\n        int currentStep\n        string status "IN_PROGRESS | COMPLETE | FAILED"\n        json stepResults\n    }\n    ServiceLevelAgreements {\n        uuid id PK\n        string slaType "RESPONSE | RESOLUTION | UPTIME | RECOVERY"\n        int targetMinutes\n        string severity\n    }\n    HealthMetrics {\n        uuid id PK\n        string metricCode\n        decimal currentValue\n        decimal warningThreshold\n        decimal criticalThreshold\n        string status "HEALTHY | WARNING | CRITICAL"\n        date measuredAt\n    }\n    FailoverExecutions {\n        uuid id PK\n        uuid engineId FK\n        uuid incidentId FK\n        string failoverType "AUTOMATIC | MANUAL"\n        date failoverAt\n        date recoveryAt\n        string status "COMPLETED | FAILED"\n        boolean replayIntegrityValidated\n    }\n\n%% --- Internal Relationships ---\n    IncidentRecords ||--o{ RunbookExecutions : "uses"\n    RunbookExecutions ||--|| RunbookDefinitions : "follows"\n\n%% ============================================================\n%% KNOWLEDGE GRAPH\n%% ============================================================\n\n    GraphNodes {\n        uuid id PK\n        string nodeType\n        string nodeLabel\n        uuid entityId FK\n        json metadata\n        date validFrom\n        date validTo\n    }\n    GraphEdges {\n        uuid id PK\n        uuid sourceNodeId FK\n        uuid targetNodeId FK\n        string relationshipType "OWNS | CONTROLS | FUNDS | HEDGES | CAUSES | GOVERNS | DEPENDS_ON"\n        json metadata\n    }\n    InstitutionalMemoryRecords {\n        uuid id PK\n        string recordType "DECISION | RESOLUTION | REGULATOR_INTERACTION | LESSON | POLICY"\n        string content\n        uuid relatedEntityId FK\n        uuid authorId FK\n        date recordedAt\n    }\n    LearningFeedbacks {\n        uuid id PK\n        uuid workflowId FK\n        string feedbackType "OPTIMIZATION | ANOMALY | PATTERN"\n        json observedData\n        json recommendation\n        string status "PENDING | REVIEWED | APPLIED"\n    }\n\n%% --- Internal Relationships ---\n    GraphNodes ||--o{ GraphEdges : "source"\n    GraphEdges ||--|| GraphNodes : "target"\n\n%% ============================================================\n%% WORKSPACES UI\n%% ============================================================\n\n    WorkspaceDefinitions {\n        uuid id PK\n        string workspaceCode UK\n        uuid roleId FK\n        string title\n        json tiles\n        json navigationPaths\n        boolean isReadOnly\n    }\n    CockpitDefinitions {\n        uuid id PK\n        string cockpitCode UK\n        uuid roleId FK\n        string title\n        json charts\n        json kpis\n        json quickActions\n    }\n    TileDefinitions {\n        uuid id PK\n        uuid workspaceId FK\n        string tileCode\n        string metricLabel\n        string metricValueExpression\n        string semanticColorRule\n        string sparklineDataExpression\n        uuid actionButtonId FK\n    }\n    ScreenDefinitions {\n        uuid id PK\n        string screenCode UK\n        string screenType "LP | OP | OVERVIEW | WIZARD | COCKPIT"\n        uuid entitySetId FK\n        json annotations\n        string helpContentRef\n        boolean isActive\n    }\n    ScreenNavigations {\n        uuid id PK\n        uuid sourceScreenId FK\n        uuid targetScreenId FK\n        string navigationIntent\n        string allowedRoles\n        boolean preserveContext\n    }\n    HelpContents {\n        uuid id PK\n        string contentCode UK\n        string contentType "FIELD_HELP | GLOSSARY | PROCESS_GUIDE | REGULATORY_NOTE"\n        string content\n        string status "ACTIVE | PENDING_APPROVAL | DRAFT"\n    }\n    GlossaryEntries {\n        uuid id PK\n        string term UK\n        string definition\n        string aiGeneratedStatus "DRAFT | PENDING_APPROVAL | APPROVED | REJECTED"\n        date reviewedByDeadline\n        uuid approvedByUserId FK\n    }\n    ByteManifests {\n        uuid id PK\n        string appCode UK\n        uuid companyId FK\n        string appName\n        json buttonInventory\n        json authorityLayers\n        json evidenceProduced\n        string helpContentRef\n    }\n\n%% --- Internal Relationships ---\n    WorkspaceDefinitions ||--o{ TileDefinitions : "contains"\n    ScreenNavigations ||--|| ScreenDefinitions : "navigates between"\n    HelpContents ||--|| ScreenDefinitions : "helps"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to Phase 0 entities and other phases)\n%% ============================================================\n\n%% >>> Connected to: Phase 0 — Foundation (Companies, ApplicationUsers, Roles) <<<\n%%   Notifications ||--|| ApplicationUsers : "sent to"\n%%   Tasks ||--|| ApplicationUsers : "assigned to"\n%%   CutoffTimes ||--|| Companies : "configured by"\n%%   HealthMetrics ||--|| Companies : "monitored for"\n%%   InstitutionalMemoryRecords ||--|| ApplicationUsers : "recorded by"\n%%   WorkspaceDefinitions ||--|| Roles : "for"\n%%   ByteManifests ||--|| Companies : "audits"\n\n%% >>> Connected to: Phase 3 — Model Governance <<<\n%%   FailoverExecutions ||--|| EngineRegistrations : "fails over"12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Phase 5 — Platform Integration","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

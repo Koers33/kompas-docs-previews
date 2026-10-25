@@ -1,0 +1,134 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/2_jdo6n871keu.js"
+4:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/3kudvgz-e6k_d.js"
+5:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-450/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Tcb2,---
+title: Legal Contracts — Planned Entity Relationship Diagram
+audience: [all]
+domains: [legal-contracts]
+sourceSpec: docs/erds/planned/legal-contracts.mmd
+---
+
+# Legal Contracts — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% LEGAL CONTRACTS
+
+    LegalAgreement {
+        uuid id PK
+        uuid counterpartyId FK
+        string agreementType "ISDA | CSA | GMRA | GMSLA | CREDIT_AGREEMENT | CLIENT_MANDATE"
+        string status "NEGOTIATION | ACTIVE | SUSPENDED | TERMINATED"
+        date signedDate
+        date effectiveDate
+        date expiryDate
+        string governingLaw
+        uuid evidencePackId FK
+    }
+    LegalClause {
+        uuid id PK
+        uuid legalAgreementId FK
+        string clauseType "NETTING | COLLATERAL | CLOSE_OUT | COVENANT | REPRESENTATION"
+        string clauseContent
+        boolean isOperationallyEnforced
+    }
+    Covenant {
+        uuid id PK
+        uuid legalAgreementId FK
+        string covenantType "FINANCIAL | OPERATIONAL | REGULATORY | COMPLIANCE"
+        decimal thresholdValue
+        string metricDefinition
+        string status "COMPLIANT | BREACHED | WAIVED"
+    }
+    LegalObligation {
+        uuid id PK
+        uuid legalAgreementId FK
+        string obligationType "PAYMENT | SETTLEMENT | REPORTING | COLLATERAL | NOTIFICATION"
+        date dueDate
+        string status "PENDING | FULFILLED | OVERDUE | BREACHED"
+    }
+    CreditEventRecord {
+        uuid id PK
+        uuid counterpartyId FK
+        string creditEventType "FAILURE_TO_PAY | BANKRUPTCY | RESTRUCTURING | RATING_DOWNGRADE"
+        date eventDate
+        date detectedAt
+        string status "DETECTED | FROZEN | CLOSE_OUT_INITIATED | CLOSE_OUT_COMPLETED"
+        uuid legalNoticeId FK
+    }
+    CloseOutNotice {
+        uuid id PK
+        uuid creditEventRecordId FK
+        string noticeType "ISDA_DEFAULT_NOTICE | TERMINATION_NOTICE | CLOSE_OUT_NOTICE"
+        uuid approvedByLegalId FK
+        uuid approvedByManagerId FK
+        uuid boardApprovalId FK
+        date sentAt
+        uuid evidencePackId FK
+    }
+    DisputeRecord {
+        uuid id PK
+        uuid relatedEntityId FK
+        string disputeType "MARGIN | VALUATION | SETTLEMENT | TRADE | TERMINATION"
+        string status "OPEN | NEGOTIATING | ESCALATED | RESOLVED"
+        uuid evidencePackId FK
+    }
+    RepresentationAuthority {
+        uuid id PK
+        uuid clientId FK
+        uuid counterpartyId FK
+        string authorityType "TRADING | SETTLEMENT | MARGIN | REPORTING"
+        string scope
+        date validFrom
+        date validTo
+        boolean isActive
+    }
+
+%% --- Internal Relationships ---
+    LegalAgreement ||--o{ LegalClause : "contains"
+    LegalAgreement ||--o{ Covenant : "includes"
+    LegalObligation ||--|| LegalAgreement : "derives from"
+    CreditEventRecord ||--o{ CloseOutNotice : "triggers"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: counterparty-client <<<
+%%   LegalAgreement ||--|| Counterparty : "governs"
+%%   CreditEventRecord ||--|| Counterparty : "for"
+%%   RepresentationAuthority ||--|| Client : "empowers"
+
+```c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Legal Contracts — Planned Entity Relationship Diagram","audience":["all"],"domains":["legal-contracts"],"sourceSpec":"docs/erds/planned/legal-contracts.mmd","filePath":"content/reference/data-model/planned/legal-contracts.md","timestamp":1792934856000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/legal-contracts","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Legal Contracts — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-450/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"6SEvKdX-NpoidCXTed-Mk"}
+1e:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+20:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+1f:Tc1b,erDiagram\n%% LEGAL CONTRACTS\n\n    LegalAgreement {\n        uuid id PK\n        uuid counterpartyId FK\n        string agreementType "ISDA | CSA | GMRA | GMSLA | CREDIT_AGREEMENT | CLIENT_MANDATE"\n        string status "NEGOTIATION | ACTIVE | SUSPENDED | TERMINATED"\n        date signedDate\n        date effectiveDate\n        date expiryDate\n        string governingLaw\n        uuid evidencePackId FK\n    }\n    LegalClause {\n        uuid id PK\n        uuid legalAgreementId FK\n        string clauseType "NETTING | COLLATERAL | CLOSE_OUT | COVENANT | REPRESENTATION"\n        string clauseContent\n        boolean isOperationallyEnforced\n    }\n    Covenant {\n        uuid id PK\n        uuid legalAgreementId FK\n        string covenantType "FINANCIAL | OPERATIONAL | REGULATORY | COMPLIANCE"\n        decimal thresholdValue\n        string metricDefinition\n        string status "COMPLIANT | BREACHED | WAIVED"\n    }\n    LegalObligation {\n        uuid id PK\n        uuid legalAgreementId FK\n        string obligationType "PAYMENT | SETTLEMENT | REPORTING | COLLATERAL | NOTIFICATION"\n        date dueDate\n        string status "PENDING | FULFILLED | OVERDUE | BREACHED"\n    }\n    CreditEventRecord {\n        uuid id PK\n        uuid counterpartyId FK\n        string creditEventType "FAILURE_TO_PAY | BANKRUPTCY | RESTRUCTURING | RATING_DOWNGRADE"\n        date eventDate\n        date detectedAt\n        string status "DETECTED | FROZEN | CLOSE_OUT_INITIATED | CLOSE_OUT_COMPLETED"\n        uuid legalNoticeId FK\n    }\n    CloseOutNotice {\n        uuid id PK\n        uuid creditEventRecordId FK\n        string noticeType "ISDA_DEFAULT_NOTICE | TERMINATION_NOTICE | CLOSE_OUT_NOTICE"\n        uuid approvedByLegalId FK\n        uuid approvedByManagerId FK\n        uuid boardApprovalId FK\n        date sentAt\n        uuid evidencePackId FK\n    }\n    DisputeRecord {\n        uuid id PK\n        uuid relatedEntityId FK\n        string disputeType "MARGIN | VALUATION | SETTLEMENT | TRADE | TERMINATION"\n        string status "OPEN | NEGOTIATING | ESCALATED | RESOLVED"\n        uuid evidencePackId FK\n    }\n    RepresentationAuthority {\n        uuid id PK\n        uuid clientId FK\n        uuid counterpartyId FK\n        string authorityType "TRADING | SETTLEMENT | MARGIN | REPORTING"\n        string scope\n        date validFrom\n        date validTo\n        boolean isActive\n    }\n\n%% --- Internal Relationships ---\n    LegalAgreement ||--o{ LegalClause : "contains"\n    LegalAgreement ||--o{ Covenant : "includes"\n    LegalObligation ||--|| LegalAgreement : "derives from"\n    CreditEventRecord ||--o{ CloseOutNotice : "triggers"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: counterparty-client <<<\n%%   LegalAgreement ||--|| Counterparty : "governs"\n%%   CreditEventRecord ||--|| Counterparty : "for"\n%%   RepresentationAuthority ||--|| Client : "empowers"\n12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Legal Contracts — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L1e",null,{"chart":"$1f"}]]}]
+13:["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1d:true
+b:300
+21:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"
