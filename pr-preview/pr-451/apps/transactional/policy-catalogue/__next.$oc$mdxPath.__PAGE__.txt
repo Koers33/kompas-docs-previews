@@ -1,0 +1,114 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3pt4nbmewdjti.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/0-_b7o3xuon5c.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T15ba,---
+title: "Policy Catalogue app"
+audience: [all]
+domains: [foundation]
+apps: [policy-catalogue]
+entities: [PolicyCatalogueItems]
+pageType: app-overview
+sourceSpec: app/policy-catalogue/webapp/manifest.json
+---
+
+# Policy Catalogue app
+
+Policy Catalogue is where the platform's policy configuration is maintained in one place. The list holds one row per register — the policy rules a company works to, the parameters and exceptions set against them, the segregation-of-duties rules and their exceptions, and the two registers that record policy and segregation-of-duties violations. Each row is identified by its **Entity Name** and grouped by **Domain Group**, and every register in this app belongs to the policy domain group. Opening a register shows its rows in the **Catalogue Entries** section.
+
+## What is this app for?
+
+The app works in two steps: you edit a working copy of a register's rows in **Catalogue Entries**, then push those rows to the configuration the platform actually uses. Saving an edit on its own changes only the working copy — **Update Entries** is what makes an edit part of the configuration.
+
+The two violation registers are different in kind: they carry recorded violations rather than settings, so they are read-only in this app.
+
+## When should I use this app?
+
+Use it when a policy rule, a company parameter or exception, or a segregation-of-duties rule or exception has to change, and when you want to see exactly what is configured before a review or a discussion about how the platform behaves.
+
+Picklist values behind the platform's dropdowns are maintained separately from these policy records. The platform's record of what each entity holds is in the [Master Data Catalogue app](/apps/transactional/master-data-catalogue). Neither is maintained here.
+
+## Who can access this app?
+
+The app is reached through portal access plus the roles your administrator has assigned you — see [Roles and Access](/getting-started/roles-and-access). No narrower launchpad audience is recorded for it, so it is treated as available to anyone with portal access. The service behind the screen grants reading and writing these records on the same basis and sets no additional role gate of its own.
+
+## How does work progress in this app?
+
+1. Open a register from the list, narrowing by **Domain Group** first if you want.
+2. Run **Refresh Entries**. It loads the register's current rows into **Catalogue Entries** and replaces any rows you had staged for that register.
+3. Add or edit rows in **Catalogue Entries**. **Name** is required; where the register uses a code, enter it once, because it cannot be changed after it has been set; a row cannot be created already switched off.
+4. Save. Saving keeps the rows staged — the configuration is still untouched.
+5. Run **Update Entries**. Every staged row is validated first and only then written, so one bad row stops the push rather than leaving the register half-updated.
+6. For a bulk change, use **Import Spreadsheet** on the list: choose the register, **Download Template** for the layout, **Upload** your file, read the staged and skipped counts, then **Push Now**.
+
+## What can change what I see or do?
+
+- **Refresh replaces staged rows.** Run it before you start editing, not after — rows staged earlier for that register are discarded when it runs.
+- **Validation decides whether a push lands.** A duplicate code, a missing name, a code you tried to change, or a row created switched off is refused, and nothing is written until it is corrected.
+- **Some registers are read-only.** **Update Entries** is refused outright for the two violation registers, and the import dialog does not offer every register either.
+- **Nothing is deleted here.** Neither a register nor its rows has a delete command; a row you no longer want is switched off instead.
+- **A saved row is not yet live.** Rows you saved but did not push exist only in the staged copy.
+
+## Where can I review the results?
+
+Reopen the register and read **Catalogue Entries** — it shows the rows as they now stand. To be sure you are looking at live values, run **Refresh Entries** again: it reloads straight from the configuration, so anything that did not take effect is missing from the list. The list itself gives the wider view across registers, with **Entity Name** and **Domain Group** per row.
+
+## What should I check if I can’t continue?
+
+- **Update Entries refuses a row:** the message names the register and the code — a duplicate, a missing name, a code you tried to change, or a row created switched off. Correct the staged row and push again.
+- **Update Entries refuses the register:** that register is read-only in this app, so there is nothing to push.
+- **Update Entries appears to do nothing:** there are no staged rows for the register — run **Refresh Entries** first.
+- **A register is missing from the import dialog:** only the registers the import supports are offered there.
+- **A permission message:** your roles do not cover the record — see [Roles and Access](/getting-started/roles-and-access).
+
+## Which task guides are available?
+
+- [Update policy configuration from a catalogue](./update-policy-configuration)
+- [Import policy configuration from a spreadsheet](./import-policy-configuration-from-a-spreadsheet)
+
+## What should I do next?
+
+Check the platform's map of its own entities in the [Master Data Catalogue app](/apps/transactional/master-data-catalogue) when you need to know what a register holds. For missing dropdown values, contact your platform administrator.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Policy Catalogue app","audience":["all"],"domains":["foundation"],"apps":["policy-catalogue"],"entities":["PolicyCatalogueItems"],"pageType":"app-overview","sourceSpec":"app/policy-catalogue/webapp/manifest.json","filePath":"content/apps/transactional/policy-catalogue/index.md","timestamp":1792961111000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/policy-catalogue","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Policy Catalogue app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"4yPSKCuHXHYqSwbxtwiuU"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+2c:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Policy Catalogue app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Policy Catalogue is where the platform’s policy configuration is maintained in one place. The list holds one row per register — the policy rules a company works to, the parameters and exceptions set against them, the segregation-of-duties rules and their exceptions, and the two registers that record policy and segregation-of-duties violations. Each row is identified by its ",["$","strong",null,{"children":"Entity Name"}]," and grouped by ",["$","strong",null,{"children":"Domain Group"}],", and every register in this app belongs to the policy domain group. Opening a register shows its rows in the ",["$","strong",null,{"children":"Catalogue Entries"}]," section."]}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app works in two steps: you edit a working copy of a register’s rows in ",["$","strong",null,{"children":"Catalogue Entries"}],", then push those rows to the configuration the platform actually uses. Saving an edit on its own changes only the working copy — ",["$","strong",null,{"children":"Update Entries"}]," is what makes an edit part of the configuration."]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The two violation registers are different in kind: they carry recorded violations rather than settings, so they are read-only in this app."}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Use it when a policy rule, a company parameter or exception, or a segregation-of-duties rule or exception has to change, and when you want to see exactly what is configured before a review or a discussion about how the platform behaves."}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Picklist values behind the platform’s dropdowns are maintained separately from these policy records. The platform’s record of what each entity holds is in the ",["$","$L1f",null,{"href":"/apps/transactional/master-data-catalogue","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Master Data Catalogue app"}],". Neither is maintained here."]}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is reached through portal access plus the roles your administrator has assigned you — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],". No narrower launchpad audience is recorded for it, so it is treated as available to anyone with portal access. The service behind the screen grants reading and writing these records on the same basis and sets no additional role gate of its own."]}],"\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b"]}]
+13:["$","$L2c",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@2d"}]}]
+1d:true
+b:300
+20:["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?",["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]]}]
+21:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open a register from the list, narrowing by ",["$","strong",null,{"children":"Domain Group"}]," first if you want."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Run ",["$","strong",null,{"children":"Refresh Entries"}],". It loads the register’s current rows into ",["$","strong",null,{"children":"Catalogue Entries"}]," and replaces any rows you had staged for that register."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Add or edit rows in ",["$","strong",null,{"children":"Catalogue Entries"}],". ",["$","strong",null,{"children":"Name"}]," is required; where the register uses a code, enter it once, because it cannot be changed after it has been set; a row cannot be created already switched off."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Save. Saving keeps the rows staged — the configuration is still untouched."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Run ",["$","strong",null,{"children":"Update Entries"}],". Every staged row is validated first and only then written, so one bad row stops the push rather than leaving the register half-updated."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["For a bulk change, use ",["$","strong",null,{"children":"Import Spreadsheet"}]," on the list: choose the register, ",["$","strong",null,{"children":"Download Template"}]," for the layout, ",["$","strong",null,{"children":"Upload"}]," your file, read the staged and skipped counts, then ",["$","strong",null,{"children":"Push Now"}],"."]}],"\n"]}]
+22:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+23:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Refresh replaces staged rows."}]," Run it before you start editing, not after — rows staged earlier for that register are discarded when it runs."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Validation decides whether a push lands."}]," A duplicate code, a missing name, a code you tried to change, or a row created switched off is refused, and nothing is written until it is corrected."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Some registers are read-only."}]," ",["$","strong",null,{"children":"Update Entries"}]," is refused outright for the two violation registers, and the import dialog does not offer every register either."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Nothing is deleted here."}]," Neither a register nor its rows has a delete command; a row you no longer want is switched off instead."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"A saved row is not yet live."}]," Rows you saved but did not push exist only in the staged copy."]}],"\n"]}]
+24:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Reopen the register and read ",["$","strong",null,{"children":"Catalogue Entries"}]," — it shows the rows as they now stand. To be sure you are looking at live values, run ",["$","strong",null,{"children":"Refresh Entries"}]," again: it reloads straight from the configuration, so anything that did not take effect is missing from the list. The list itself gives the wider view across registers, with ",["$","strong",null,{"children":"Entity Name"}]," and ",["$","strong",null,{"children":"Domain Group"}]," per row."]}]
+26:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+27:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Update Entries refuses a row:"}]," the message names the register and the code — a duplicate, a missing name, a code you tried to change, or a row created switched off. Correct the staged row and push again."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Update Entries refuses the register:"}]," that register is read-only in this app, so there is nothing to push."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Update Entries appears to do nothing:"}]," there are no staged rows for the register — run ",["$","strong",null,{"children":"Refresh Entries"}]," first."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"A register is missing from the import dialog:"}]," only the registers the import supports are offered there."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"A permission message:"}]," your roles do not cover the record — see ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"."]}],"\n"]}]
+28:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+29:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./update-policy-configuration","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Update policy configuration from a catalogue"}]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./import-policy-configuration-from-a-spreadsheet","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Import policy configuration from a spreadsheet"}]}],"\n"]}]
+2a:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+2b:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Check the platform’s map of its own entities in the ",["$","$L1f",null,{"href":"/apps/transactional/master-data-catalogue","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Master Data Catalogue app"}]," when you need to know what a register holds. For missing dropdown values, contact your platform administrator."]}]
+2d:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

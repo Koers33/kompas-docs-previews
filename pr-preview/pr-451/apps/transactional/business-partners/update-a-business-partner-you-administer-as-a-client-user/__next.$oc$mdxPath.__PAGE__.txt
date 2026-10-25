@@ -1,0 +1,84 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3pt4nbmewdjti.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/0-_b7o3xuon5c.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Ta05,---
+title: "Update a business partner you administer as a client user"
+audience: [client]
+domains: [business-partners, client-onboarding]
+apps: [business-partners]
+entities: [BusinessPartners]
+pageType: task-guide
+sourceSpec: app/business-partners/webapp/manifest.json
+---
+
+# Update a business partner you administer as a client user
+
+Update the editable profile of a linked business partner when you hold an active **Client Admin** relationship to it.
+
+## Who can do this?
+
+You must be signed in with the **Client** role and have an active **Client Admin** relationship to the partner you want to update. A **Partner Manager** relationship allows read access, not updates. You cannot edit your own profile; Treasury manages your identity fields.
+
+## What do I need before I start?
+
+- The Business Partners app and your client account.
+- An active **Client Admin** relationship to the organization you need to update. The partner must appear as linked to your account.
+- The corrected information and any supporting details needed for the fields you are allowed to maintain.
+
+## How do I complete the task?
+
+1. Open **Business Partners** and find the linked organization you need to maintain.
+2. Open its record and select **Edit**.
+3. Update the profile fields that are editable for your account. Treasury-managed client and trading configuration fields are not available to client users.
+4. Review your changes and select **Save**.
+5. Reopen the record and verify that the changes appear in the relevant section.
+
+## How do I know it worked?
+
+The partner record displays the values you saved. If you changed a field in a related section, confirm the updated row appears under that section on the partner record.
+
+## What if I can’t complete it?
+
+- If the partner is not visible, ask your administrator to verify that your client account is linked to it by an active **Client Admin** relationship.
+- If the record is visible but **Edit** is unavailable, check that you have **Client Admin** rather than **Partner Manager** access. Your own profile is managed by Treasury and cannot be edited by you.
+- If a client or trading configuration field is hidden, that field is Treasury-managed. Contact your Treasury administrator rather than trying to change your role.
+
+## What should I do next?
+
+For client onboarding and relationship setup, see the [Client Onboarding Guide](/user-guides/admin/client-onboarding). For Treasury-managed setup and broader partner maintenance, see [Business Partners for Treasury](/user-guides/treasury/business-partners-for-treasury).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Update a business partner you administer as a client user","audience":["client"],"domains":["business-partners","client-onboarding"],"apps":["business-partners"],"entities":["BusinessPartners"],"pageType":"task-guide","sourceSpec":"app/business-partners/webapp/manifest.json","filePath":"content/apps/transactional/business-partners/update-a-business-partner-you-administer-as-a-client-user.md","timestamp":1792961111000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/business-partners/update-a-business-partner-you-administer-as-a-client-user","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Update a business partner you administer as a client user"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"4yPSKCuHXHYqSwbxtwiuU"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+23:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Update a business partner you administer as a client user","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Update the editable profile of a linked business partner when you hold an active ",["$","strong",null,{"children":"Client Admin"}]," relationship to it."]}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["You must be signed in with the ",["$","strong",null,{"children":"Client"}]," role and have an active ",["$","strong",null,{"children":"Client Admin"}]," relationship to the partner you want to update. A ",["$","strong",null,{"children":"Partner Manager"}]," relationship allows read access, not updates. You cannot edit your own profile; Treasury manages your identity fields."]}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"The Business Partners app and your client account."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["An active ",["$","strong",null,{"children":"Client Admin"}]," relationship to the organization you need to update. The partner must appear as linked to your account."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"The corrected information and any supporting details needed for the fields you are allowed to maintain."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Business Partners"}]," and find the linked organization you need to maintain."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open its record and select ",["$","strong",null,{"children":"Edit"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Update the profile fields that are editable for your account. Treasury-managed client and trading configuration fields are not available to client users."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Review your changes and select ",["$","strong",null,{"children":"Save"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Reopen the record and verify that the changes appear in the relevant section."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The partner record displays the values you saved. If you changed a field in a related section, confirm the updated row appears under that section on the partner record."}],"\n","$L1f","\n","$L20","\n","$L21","\n","$L22"]}]
+13:["$","$L23",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@24"}]}]
+1d:true
+25:I[22016,["$3","$4","$5","$6"],""]
+b:300
+1f:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+20:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["If the partner is not visible, ask your administrator to verify that your client account is linked to it by an active ",["$","strong",null,{"children":"Client Admin"}]," relationship."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If the record is visible but ",["$","strong",null,{"children":"Edit"}]," is unavailable, check that you have ",["$","strong",null,{"children":"Client Admin"}]," rather than ",["$","strong",null,{"children":"Partner Manager"}]," access. Your own profile is managed by Treasury and cannot be edited by you."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If a client or trading configuration field is hidden, that field is Treasury-managed. Contact your Treasury administrator rather than trying to change your role."}],"\n"]}]
+21:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+22:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["For client onboarding and relationship setup, see the ",["$","$L25",null,{"href":"/user-guides/admin/client-onboarding","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Client Onboarding Guide"}],". For Treasury-managed setup and broader partner maintenance, see ",["$","$L25",null,{"href":"/user-guides/treasury/business-partners-for-treasury","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Business Partners for Treasury"}],"."]}]
+24:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

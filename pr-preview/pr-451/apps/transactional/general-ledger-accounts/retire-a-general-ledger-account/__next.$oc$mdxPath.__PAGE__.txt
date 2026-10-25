@@ -1,0 +1,90 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3pt4nbmewdjti.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/0-_b7o3xuon5c.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+20:"ViewportBoundary"
+21:I[97367,["$3","$4","$5","$6"],"$20"]
+22:"MetadataBoundary"
+23:I[97367,["$3","$4","$5","$6"],"$22"]
+24:"$Sreact.suspense"
+25:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T812,---
+title: "Retire a general ledger account"
+audience: [all]
+domains: [foundation, accounting]
+apps: [general-ledger-accounts]
+entities: [GeneralLedgerAccounts]
+pageType: task-guide
+sourceSpec: app/general-ledger-accounts/webapp/manifest.json
+---
+
+# Retire a general ledger account
+
+Switch off an account that should no longer be selected for new work while retaining its record and accounting history.
+
+## Who can do this?
+
+The app requires portal access and the roles assigned by your administrator. Follow your accounting change-control procedure before retiring an account used by mappings or postings.
+
+## What do I need before I start?
+
+- The company and **GL Code** of the account to retire.
+- Confirmation that the account is no longer required for new mappings and that its existing references have been reviewed.
+
+## How do I complete the task?
+
+1. Open **General Ledger Accounts** and find the account by company and **GL Code**.
+2. Open it and review its account classification and the downstream mappings that refer to it.
+3. Edit the account and switch **Active** off.
+4. Save and activate the draft using the app's normal save flow.
+5. Return to the list and confirm the account's **Active** indicator is off.
+
+## How do I know it worked?
+
+The account remains in the register with **Active** switched off. It is retained for records and history, but should not be treated as an active account for new configuration.
+
+## What if I can’t complete it?
+
+- If the account is still used by a financial node, treasury account, nostro account or client overlay, coordinate a replacement mapping before retirement.
+- If delete is refused, that is expected: accounts are not deleted from this app. Switch **Active** off instead.
+- If the edit control is unavailable, check your assigned roles and portal access.
+
+## What should I do next?
+
+Review the account references in [Financial Node Account Mappings](/apps/transactional/financial-node-account-mappings) and other dependent account setup apps to confirm they point to an active replacement where needed.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Retire a general ledger account","audience":["all"],"domains":["foundation","accounting"],"apps":["general-ledger-accounts"],"entities":["GeneralLedgerAccounts"],"pageType":"task-guide","sourceSpec":"app/general-ledger-accounts/webapp/manifest.json","filePath":"content/apps/transactional/general-ledger-accounts/retire-a-general-ledger-account.md","timestamp":1792961111000},"sourceCode":"$10","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Retire a general ledger account","$undefined"]}],"\n","$L11","\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d"]}]]}]]}]}],null,"$L1e"]}],"p":"$@1f","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/general-ledger-accounts/retire-a-general-ledger-account","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L21",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L23",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$24",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Retire a general ledger account"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L25","3",{}]]}]}],null]}],null]}],"p":"$@26","v":null,"s":"$b"}},"a":"$@27","u":"$@28","b":"4yPSKCuHXHYqSwbxtwiuU"}
+29:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+2a:I[22016,["$3","$4","$5","$6"],""]
+2b:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Switch off an account that should no longer be selected for new work while retaining its record and accounting history."}]
+12:["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L29",null,{"id":"who-can-do-this"}]]}]
+13:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The app requires portal access and the roles assigned by your administrator. Follow your accounting change-control procedure before retiring an account used by mappings or postings."}]
+14:["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L29",null,{"id":"what-do-i-need-before-i-start"}]]}]
+15:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["The company and ",["$","strong",null,{"children":"GL Code"}]," of the account to retire."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Confirmation that the account is no longer required for new mappings and that its existing references have been reviewed."}],"\n"]}]
+16:["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L29",null,{"id":"how-do-i-complete-the-task"}]]}]
+17:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"General Ledger Accounts"}]," and find the account by company and ",["$","strong",null,{"children":"GL Code"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Open it and review its account classification and the downstream mappings that refer to it."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Edit the account and switch ",["$","strong",null,{"children":"Active"}]," off."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Save and activate the draft using the app’s normal save flow."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Return to the list and confirm the account’s ",["$","strong",null,{"children":"Active"}]," indicator is off."]}],"\n"]}]
+18:["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L29",null,{"id":"how-do-i-know-it-worked"}]]}]
+19:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The account remains in the register with ",["$","strong",null,{"children":"Active"}]," switched off. It is retained for records and history, but should not be treated as an active account for new configuration."]}]
+1a:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L29",null,{"id":"what-if-i-cant-complete-it"}]]}]
+1b:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the account is still used by a financial node, treasury account, nostro account or client overlay, coordinate a replacement mapping before retirement."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If delete is refused, that is expected: accounts are not deleted from this app. Switch ",["$","strong",null,{"children":"Active"}]," off instead."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the edit control is unavailable, check your assigned roles and portal access."}],"\n"]}]
+1c:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L29",null,{"id":"what-should-i-do-next"}]]}]
+1d:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Review the account references in ",["$","$L2a",null,{"href":"/apps/transactional/financial-node-account-mappings","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Financial Node Account Mappings"}]," and other dependent account setup apps to confirm they point to an active replacement where needed."]}]
+1e:["$","$L2b",null,{"children":["$","$24",null,{"name":"Next.MetadataOutlet","children":"$@2c"}]}]
+28:true
+b:300
+2c:null
+b:C
+27:0
+9:"$undefined"
+26:"$undefined"
+1f:"$undefined"

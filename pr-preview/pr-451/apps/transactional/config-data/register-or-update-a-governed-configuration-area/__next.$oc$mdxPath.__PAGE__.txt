@@ -1,0 +1,90 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3pt4nbmewdjti.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/0-_b7o3xuon5c.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+20:"ViewportBoundary"
+21:I[97367,["$3","$4","$5","$6"],"$20"]
+22:"MetadataBoundary"
+23:I[97367,["$3","$4","$5","$6"],"$22"]
+24:"$Sreact.suspense"
+25:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T840,---
+title: "Register or update a governed configuration area"
+audience: [all]
+domains: [foundation]
+apps: [config-data]
+entities: [ConfigurationRegisterCatalog]
+pageType: task-guide
+sourceSpec: app/config-data/webapp/manifest.json
+---
+
+# Register or update a governed configuration area
+
+Add or maintain the catalog record that describes how a company’s configuration area is governed.
+
+## Who can do this?
+
+The app requires portal access and has no additional service-level role restriction. Follow your organization’s governance process when changing the approval level for a register.
+
+## What do I need before I start?
+
+- The configuration area the register represents and its unique **Register Code**.
+- The **Register Category**, required **Approval Level** and review interval.
+- The description users need to identify what the register governs.
+
+## How do I complete the task?
+
+1. Open **Config Data**. Select **Create** for a new register, or open an existing register to update it.
+2. Enter **Register Code** and **Register Name**. Choose **Register Category** and **Approval Level** from their lists.
+3. Add or update the description and **Review Cycle (Days)**. Leave **Is Active** on while the register remains in use.
+4. Save the register. Its code must be unique for the company.
+5. To retire a register, switch **Is Active** off and save it; do not try to delete the record.
+
+## How do I know it worked?
+
+The register appears in the catalog with the intended category, approval level, review cycle and active state. Open it to confirm the description and governance details.
+
+## What if I can’t complete it?
+
+- If saving reports a missing field, complete **Register Code**, **Register Name**, **Register Category** and **Approval Level**.
+- If the register code is already in use, choose another unique code.
+- If deletion is refused, retire the register by turning **Is Active** off.
+
+## What should I do next?
+
+Use the app that owns the configuration itself to maintain its values. The **Approval Level** describes governance elsewhere; it does not trigger an approval inside Config Data.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Register or update a governed configuration area","audience":["all"],"domains":["foundation"],"apps":["config-data"],"entities":["ConfigurationRegisterCatalog"],"pageType":"task-guide","sourceSpec":"app/config-data/webapp/manifest.json","filePath":"content/apps/transactional/config-data/register-or-update-a-governed-configuration-area.md","timestamp":1792961111000},"sourceCode":"$10","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Register or update a governed configuration area","$undefined"]}],"\n","$L11","\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d"]}]]}]]}]}],null,"$L1e"]}],"p":"$@1f","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/config-data/register-or-update-a-governed-configuration-area","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L21",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L23",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$24",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Register or update a governed configuration area"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L25","3",{}]]}]}],null]}],null]}],"p":"$@26","v":null,"s":"$b"}},"a":"$@27","u":"$@28","b":"4yPSKCuHXHYqSwbxtwiuU"}
+29:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+2a:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Add or maintain the catalog record that describes how a company’s configuration area is governed."}]
+12:["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L29",null,{"id":"who-can-do-this"}]]}]
+13:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The app requires portal access and has no additional service-level role restriction. Follow your organization’s governance process when changing the approval level for a register."}]
+14:["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L29",null,{"id":"what-do-i-need-before-i-start"}]]}]
+15:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["The configuration area the register represents and its unique ",["$","strong",null,{"children":"Register Code"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The ",["$","strong",null,{"children":"Register Category"}],", required ",["$","strong",null,{"children":"Approval Level"}]," and review interval."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"The description users need to identify what the register governs."}],"\n"]}]
+16:["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L29",null,{"id":"how-do-i-complete-the-task"}]]}]
+17:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Config Data"}],". Select ",["$","strong",null,{"children":"Create"}]," for a new register, or open an existing register to update it."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Enter ",["$","strong",null,{"children":"Register Code"}]," and ",["$","strong",null,{"children":"Register Name"}],". Choose ",["$","strong",null,{"children":"Register Category"}]," and ",["$","strong",null,{"children":"Approval Level"}]," from their lists."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Add or update the description and ",["$","strong",null,{"children":"Review Cycle (Days)"}],". Leave ",["$","strong",null,{"children":"Is Active"}]," on while the register remains in use."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Save the register. Its code must be unique for the company."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["To retire a register, switch ",["$","strong",null,{"children":"Is Active"}]," off and save it; do not try to delete the record."]}],"\n"]}]
+18:["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L29",null,{"id":"how-do-i-know-it-worked"}]]}]
+19:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The register appears in the catalog with the intended category, approval level, review cycle and active state. Open it to confirm the description and governance details."}]
+1a:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L29",null,{"id":"what-if-i-cant-complete-it"}]]}]
+1b:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["If saving reports a missing field, complete ",["$","strong",null,{"children":"Register Code"}],", ",["$","strong",null,{"children":"Register Name"}],", ",["$","strong",null,{"children":"Register Category"}]," and ",["$","strong",null,{"children":"Approval Level"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the register code is already in use, choose another unique code."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If deletion is refused, retire the register by turning ",["$","strong",null,{"children":"Is Active"}]," off."]}],"\n"]}]
+1c:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L29",null,{"id":"what-should-i-do-next"}]]}]
+1d:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Use the app that owns the configuration itself to maintain its values. The ",["$","strong",null,{"children":"Approval Level"}]," describes governance elsewhere; it does not trigger an approval inside Config Data."]}]
+1e:["$","$L2a",null,{"children":["$","$24",null,{"name":"Next.MetadataOutlet","children":"$@2b"}]}]
+28:true
+b:300
+2b:null
+b:C
+27:0
+9:"$undefined"
+26:"$undefined"
+1f:"$undefined"

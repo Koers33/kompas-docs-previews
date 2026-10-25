@@ -1,0 +1,86 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3pt4nbmewdjti.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/0-_b7o3xuon5c.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T8eb,---
+title: "Review a cash account balance and reconciliation status"
+audience: [all]
+domains: [foundation]
+apps: [cash-account-balances]
+entities: [CashAccountBalances]
+pageType: task-guide
+sourceSpec: app/cash-account-balances/webapp/manifest.json
+---
+
+# Review a cash account balance and reconciliation status
+
+Find the balance for a company’s nostro account and value period, then see whether reconciliation has matched the book balance to an external statement.
+
+## Who can do this?
+
+Users who can open the Cash Account Balances app can review its records. The app is read-only for everyone; it has no create, edit or delete actions.
+
+## What do I need before I start?
+
+- The company and **Nostro Account** you want to review.
+- The **Currency** and **Value Period** to inspect. You can also filter by **Reconciliation Status**.
+
+## How do I complete the task?
+
+1. Open **Cash Account Balances**.
+2. Filter by **Company**, **Nostro Account**, **Currency** and **Value Period**. Add **Reconciliation Status** if you are looking for a particular outcome.
+3. Open the matching row.
+4. In **General Information**, check the reconciliation result and the **Last Settled At**, **Last Movement At** and **Last Reconciled At** values.
+5. In **Balances**, review the **Opening Balance**, **Closing Balance**, **Confirmed Settled Balance**, **Total Inflows** and **Total Outflows** for the period.
+
+## How do I know it worked?
+
+You have the balance record for the selected company, account, currency and period. **Matched** means the book balance agrees with the external statement. **Pending** means reconciliation has not run yet; a **Break** or variance indicates a difference that needs follow-up.
+
+## What if I can’t complete it?
+
+- If the list is empty, clear the filters and check whether a balance record exists for that period.
+- If the status is **Pending**, **Break**, **Book SAMOS Variance**, **Book CBS Variance** or **Full Variance**, investigate through the cash and reconciliation process. This app does not correct balances.
+- If the app does not open, ask your administrator to check your portal access.
+
+## What should I do next?
+
+For settlement and reconciliation follow-up, use the [Settlement and Cashflow guide](/user-guides/back-office/settlement-and-cashflow).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Review a cash account balance and reconciliation status","audience":["all"],"domains":["foundation"],"apps":["cash-account-balances"],"entities":["CashAccountBalances"],"pageType":"task-guide","sourceSpec":"app/cash-account-balances/webapp/manifest.json","filePath":"content/apps/transactional/cash-account-balances/review-a-cash-account-balance-and-reconciliation-status.md","timestamp":1792961111000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/cash-account-balances/review-a-cash-account-balance-and-reconciliation-status","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Review a cash account balance and reconciliation status"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"4yPSKCuHXHYqSwbxtwiuU"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+26:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Review a cash account balance and reconciliation status","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Find the balance for a company’s nostro account and value period, then see whether reconciliation has matched the book balance to an external statement."}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Users who can open the Cash Account Balances app can review its records. The app is read-only for everyone; it has no create, edit or delete actions."}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["The company and ",["$","strong",null,{"children":"Nostro Account"}]," you want to review."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The ",["$","strong",null,{"children":"Currency"}]," and ",["$","strong",null,{"children":"Value Period"}]," to inspect. You can also filter by ",["$","strong",null,{"children":"Reconciliation Status"}],"."]}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Cash Account Balances"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Filter by ",["$","strong",null,{"children":"Company"}],", ",["$","strong",null,{"children":"Nostro Account"}],", ",["$","strong",null,{"children":"Currency"}]," and ",["$","strong",null,{"children":"Value Period"}],". Add ",["$","strong",null,{"children":"Reconciliation Status"}]," if you are looking for a particular outcome."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Open the matching row."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["In ",["$","strong",null,{"children":"General Information"}],", check the reconciliation result and the ",["$","strong",null,{"children":"Last Settled At"}],", ",["$","strong",null,{"children":"Last Movement At"}]," and ",["$","strong",null,{"children":"Last Reconciled At"}]," values."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["In ",["$","strong",null,{"children":"Balances"}],", review the ",["$","strong",null,{"children":"Opening Balance"}],", ",["$","strong",null,{"children":"Closing Balance"}],", ",["$","strong",null,{"children":"Confirmed Settled Balance"}],", ",["$","strong",null,{"children":"Total Inflows"}]," and ",["$","strong",null,{"children":"Total Outflows"}]," for the period."]}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["You have the balance record for the selected company, account, currency and period. ","$L1f"," means the book balance agrees with the external statement. ","$L20"," means reconciliation has not run yet; a ","$L21"," or variance indicates a difference that needs follow-up."]}],"\n","$L22","\n","$L23","\n","$L24","\n","$L25"]}]
+13:["$","$L26",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@27"}]}]
+1d:true
+28:I[22016,["$3","$4","$5","$6"],""]
+b:300
+1f:["$","strong",null,{"children":"Matched"}]
+20:["$","strong",null,{"children":"Pending"}]
+21:["$","strong",null,{"children":"Break"}]
+22:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+23:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the list is empty, clear the filters and check whether a balance record exists for that period."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If the status is ",["$","strong",null,{"children":"Pending"}],", ",["$","strong",null,{"children":"Break"}],", ",["$","strong",null,{"children":"Book SAMOS Variance"}],", ",["$","strong",null,{"children":"Book CBS Variance"}]," or ",["$","strong",null,{"children":"Full Variance"}],", investigate through the cash and reconciliation process. This app does not correct balances."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the app does not open, ask your administrator to check your portal access."}],"\n"]}]
+24:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["For settlement and reconciliation follow-up, use the ",["$","$L28",null,{"href":"/user-guides/back-office/settlement-and-cashflow","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Settlement and Cashflow guide"}],"."]}]
+27:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

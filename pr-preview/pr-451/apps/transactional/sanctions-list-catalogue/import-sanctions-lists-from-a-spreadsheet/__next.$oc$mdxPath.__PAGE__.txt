@@ -1,0 +1,89 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3pt4nbmewdjti.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/0-_b7o3xuon5c.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Ta42,---
+title: "Import sanctions lists from a spreadsheet"
+audience: [all]
+domains: [foundation, compliance]
+apps: [sanctions-list-catalogue]
+entities: [SanctionsListCatalogs]
+pageType: task-guide
+sourceSpec: app/sanctions-list-catalogue/webapp/manifest.json
+---
+
+# Import sanctions lists from a spreadsheet
+
+Stage multiple sanctions-list entries from an Excel workbook and explicitly apply the staged rows to the catalogue.
+
+## Who can do this?
+
+Users with portal access can import and update catalogue entries. Review the source authority and effective date before applying a list change.
+
+## What do I need before I start?
+
+- The approved list codes, names, authorities, effective dates and active states.
+- A non-empty **.xlsx**, **.xlsm** or **.xls** workbook using the catalogue template.
+- Confirmation that this is the spreadsheet you intend to stage; a new upload replaces the previous staged import.
+
+## How do I complete the task?
+
+1. Open **Sanctions List Catalogue** and select **Import Spreadsheet**.
+2. Select **Download Template** and fill the expected columns: **List Code**, **List Name**, **Source Authority**, **Effective Date** and **is Active**.
+3. Choose the completed workbook and select **Upload**.
+4. Review the **Staged** and **Skipped** counts. Rows without a list code are skipped; existing list codes are matched for update rather than duplicated.
+5. After reviewing the spreadsheet and counts, select **Push Now** to apply the staged entries. Alternatively, use **Update Entries** from an open record to apply the staged set.
+6. Review the created/updated counts and reopen the catalogue rows to confirm the result.
+
+## How do I know it worked?
+
+The push reports how many rows were created and updated. The catalogue shows the resulting values; the **List Code** remains unchanged on existing rows.
+
+## What if I can’t complete it?
+
+- If the file is rejected, select a non-empty Excel workbook with one of the supported extensions.
+- If rows are skipped, check the staged count and workbook for blank **List Code** values.
+- If an existing code needs a correction, edit the existing entry's name, authority or date; importing does not overwrite its code.
+- If the master-data catalogue entry is missing, contact the platform administrator; this app cannot create its own catalogue registration.
+- If the push reports errors, inspect the counts and correct the source workbook before staging it again.
+
+## What should I do next?
+
+Verify the updated catalogue rows and check actual screening outcomes on the relevant records, such as [Payment Instructions](/apps/transactional/payment-instructions).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Import sanctions lists from a spreadsheet","audience":["all"],"domains":["foundation","compliance"],"apps":["sanctions-list-catalogue"],"entities":["SanctionsListCatalogs"],"pageType":"task-guide","sourceSpec":"app/sanctions-list-catalogue/webapp/manifest.json","filePath":"content/apps/transactional/sanctions-list-catalogue/import-sanctions-lists-from-a-spreadsheet.md","timestamp":1792961111000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/sanctions-list-catalogue/import-sanctions-lists-from-a-spreadsheet","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Import sanctions lists from a spreadsheet"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"4yPSKCuHXHYqSwbxtwiuU"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+25:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Import sanctions lists from a spreadsheet","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Stage multiple sanctions-list entries from an Excel workbook and explicitly apply the staged rows to the catalogue."}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Users with portal access can import and update catalogue entries. Review the source authority and effective date before applying a list change."}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"The approved list codes, names, authorities, effective dates and active states."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["A non-empty ",["$","strong",null,{"children":".xlsx"}],", ",["$","strong",null,{"children":".xlsm"}]," or ",["$","strong",null,{"children":".xls"}]," workbook using the catalogue template."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Confirmation that this is the spreadsheet you intend to stage; a new upload replaces the previous staged import."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Sanctions List Catalogue"}]," and select ",["$","strong",null,{"children":"Import Spreadsheet"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Select ",["$","strong",null,{"children":"Download Template"}]," and fill the expected columns: ",["$","strong",null,{"children":"List Code"}],", ",["$","strong",null,{"children":"List Name"}],", ",["$","strong",null,{"children":"Source Authority"}],", ",["$","strong",null,{"children":"Effective Date"}]," and ",["$","strong",null,{"children":"is Active"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Choose the completed workbook and select ",["$","strong",null,{"children":"Upload"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Review the ",["$","strong",null,{"children":"Staged"}]," and ",["$","strong",null,{"children":"Skipped"}]," counts. Rows without a list code are skipped; existing list codes are matched for update rather than duplicated."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["After reviewing the spreadsheet and counts, select ",["$","strong",null,{"children":"Push Now"}]," to apply the staged entries. Alternatively, use ",["$","strong",null,{"children":"Update Entries"}]," from an open record to apply the staged set."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Review the created/updated counts and reopen the catalogue rows to confirm the result."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?","$L1f"]}],"\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24"]}]
+13:["$","$L25",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@26"}]}]
+1d:true
+27:I[22016,["$3","$4","$5","$6"],""]
+b:300
+1f:["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]
+20:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The push reports how many rows were created and updated. The catalogue shows the resulting values; the ",["$","strong",null,{"children":"List Code"}]," remains unchanged on existing rows."]}]
+21:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+22:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the file is rejected, select a non-empty Excel workbook with one of the supported extensions."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If rows are skipped, check the staged count and workbook for blank ",["$","strong",null,{"children":"List Code"}]," values."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If an existing code needs a correction, edit the existing entry’s name, authority or date; importing does not overwrite its code."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the master-data catalogue entry is missing, contact the platform administrator; this app cannot create its own catalogue registration."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If the push reports errors, inspect the counts and correct the source workbook before staging it again."}],"\n"]}]
+23:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+24:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Verify the updated catalogue rows and check actual screening outcomes on the relevant records, such as ",["$","$L27",null,{"href":"/apps/transactional/payment-instructions","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Payment Instructions"}],"."]}]
+26:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

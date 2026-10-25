@@ -1,0 +1,88 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3pt4nbmewdjti.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/0-_b7o3xuon5c.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:Taf1,---
+title: "Manage temporary company gate bypasses"
+audience: [all]
+domains: [foundation]
+apps: [company-feature-enablements]
+entities: [CompanyFeatureEnablements]
+pageType: task-guide
+sourceSpec: app/company-feature-enablements/webapp/manifest.json
+---
+
+# Manage temporary company gate bypasses
+
+Temporarily bypass selected gates for a non-production company, then clear the bypasses when their purpose or expiry period ends.
+
+## Who can do this?
+
+You need the **Treasury** role to update bypass flags or run either deactivation action.
+
+## What do I need before I start?
+
+- The company’s existing enablement record and a documented reason for each exception under your operating procedure.
+- A company in **UAT** or **Development**. Bypass flags cannot be activated for a **Production** company.
+- An expiry date within 30 days for every flag you turn on.
+
+## How do I complete the task?
+
+1. Open **Company Feature Enablements** and open the record for the company. Confirm its environment before changing a flag.
+2. In **Bypass Flags**, switch on only the required flags: **Bypass Readiness Gates**, **Bypass Policy Gates**, **Bypass Know Your Customer Gate**, **Bypass Business Window** or **Bypass Market Data**.
+3. Set an expiry date within 30 days for each enabled flag, then save.
+4. When the exception is no longer needed, either switch off the relevant flags on this record or select **Deactivate All Bypasses** to clear every bypass on this record.
+5. To clean up expired bypasses across enablement records, select **Deactivate Expired Bypasses**. This action checks all records, not only the one currently open.
+6. Refresh the affected records and confirm the bypass switches are off and their expiry dates are cleared.
+
+## How do I know it worked?
+
+Enabled flags show an expiry date and are honored only in UAT or Development. After you turn a flag off or use a deactivation action, its expiry date is cleared. **Deactivate Expired Bypasses** clears only flags whose expiry date has passed.
+
+## What if I can’t complete it?
+
+- If the company is in **Production**, bypass activation is refused by design. Production ignores bypass flags.
+- If a flag cannot be saved, set its expiry date to today or within the next 30 days.
+- If you turn a flag off but an expiry remains, save and refresh the record; disabling a flag clears its expiry date.
+- If you cannot update the record or run the actions, check that you have the Treasury role. See the [Company Feature Enablements error reference](/reference/error-codes/block-12xx-cfe).
+
+## What should I do next?
+
+When the exception ends, verify the bypass flags are cleared and return **Gate Enforcement** to the approved setting if it was changed. See [Change a company’s gate enforcement mode](./change-a-companys-gate-enforcement-mode).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Manage temporary company gate bypasses","audience":["all"],"domains":["foundation"],"apps":["company-feature-enablements"],"entities":["CompanyFeatureEnablements"],"pageType":"task-guide","sourceSpec":"app/company-feature-enablements/webapp/manifest.json","filePath":"content/apps/transactional/company-feature-enablements/manage-temporary-company-gate-bypasses.md","timestamp":1792961111000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/company-feature-enablements/manage-temporary-company-gate-bypasses","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Manage temporary company gate bypasses"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"4yPSKCuHXHYqSwbxtwiuU"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+25:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Manage temporary company gate bypasses","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Temporarily bypass selected gates for a non-production company, then clear the bypasses when their purpose or expiry period ends."}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["You need the ",["$","strong",null,{"children":"Treasury"}]," role to update bypass flags or run either deactivation action."]}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"The company’s existing enablement record and a documented reason for each exception under your operating procedure."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["A company in ",["$","strong",null,{"children":"UAT"}]," or ",["$","strong",null,{"children":"Development"}],". Bypass flags cannot be activated for a ",["$","strong",null,{"children":"Production"}]," company."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"An expiry date within 30 days for every flag you turn on."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Company Feature Enablements"}]," and open the record for the company. Confirm its environment before changing a flag."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["In ",["$","strong",null,{"children":"Bypass Flags"}],", switch on only the required flags: ",["$","strong",null,{"children":"Bypass Readiness Gates"}],", ",["$","strong",null,{"children":"Bypass Policy Gates"}],", ",["$","strong",null,{"children":"Bypass Know Your Customer Gate"}],", ",["$","strong",null,{"children":"Bypass Business Window"}]," or ",["$","strong",null,{"children":"Bypass Market Data"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Set an expiry date within 30 days for each enabled flag, then save."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["When the exception is no longer needed, either switch off the relevant flags on this record or select ",["$","strong",null,{"children":"Deactivate All Bypasses"}]," to clear every bypass on this record."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["To clean up expired bypasses across enablement records, select ",["$","strong",null,{"children":"Deactivate Expired Bypasses"}],". This action checks all records, not only the one currently open."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Refresh the affected records and confirm the bypass switches are off and their expiry dates are cleared."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?","$L1f"]}],"\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24"]}]
+13:["$","$L25",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@26"}]}]
+1d:true
+27:I[22016,["$3","$4","$5","$6"],""]
+b:300
+1f:["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]
+20:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Enabled flags show an expiry date and are honored only in UAT or Development. After you turn a flag off or use a deactivation action, its expiry date is cleared. ",["$","strong",null,{"children":"Deactivate Expired Bypasses"}]," clears only flags whose expiry date has passed."]}]
+21:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+22:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["If the company is in ",["$","strong",null,{"children":"Production"}],", bypass activation is refused by design. Production ignores bypass flags."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If a flag cannot be saved, set its expiry date to today or within the next 30 days."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"If you turn a flag off but an expiry remains, save and refresh the record; disabling a flag clears its expiry date."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If you cannot update the record or run the actions, check that you have the Treasury role. See the ",["$","$L27",null,{"href":"/reference/error-codes/block-12xx-cfe","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Company Feature Enablements error reference"}],"."]}],"\n"]}]
+23:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+24:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["When the exception ends, verify the bypass flags are cleared and return ",["$","strong",null,{"children":"Gate Enforcement"}]," to the approved setting if it was changed. See ",["$","$L27",null,{"href":"./change-a-companys-gate-enforcement-mode","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Change a company’s gate enforcement mode"}],"."]}]
+26:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

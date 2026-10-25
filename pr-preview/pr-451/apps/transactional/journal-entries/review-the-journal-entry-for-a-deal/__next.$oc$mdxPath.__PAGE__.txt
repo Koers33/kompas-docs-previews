@@ -1,0 +1,84 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3pt4nbmewdjti.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/0-_b7o3xuon5c.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T93a,---
+title: "Review a journal entry for a deal"
+audience: [all]
+domains: [accounting, deal-lifecycle]
+apps: [journal-entries]
+entities: [JournalEntries]
+pageType: task-guide
+sourceSpec: app/journal-entries/webapp/manifest.json
+---
+
+# Review a journal entry for a deal
+
+Find the accounting entry produced for a deal occasion and trace its postings, hash chain and any reversal link.
+
+## Who can do this?
+
+Users with portal access can read entries; the app is read-only and has no create, edit or delete controls.
+
+## What do I need before I start?
+
+- The deal number or deal record.
+- The occasion you want to review, such as **Deal Confirmed**, **Periodic Revaluation**, **Maturity Settlement**, **Deal Rolled**, **Deal Cancelled** or **Deal Drawdown**.
+- The ledger if you need a specific reporting view.
+
+## How do I complete the task?
+
+1. Open **Journal Entries** and filter by **Deal**, **Occasion Type**, **Processed At** or **Ledger Code**.
+2. Open the matching entry and review **General Information** for the deal, occasion, ledger, processing time, creator, **Entry Hash** and **Previous Hash**.
+3. In **Postings**, review each sequence, general ledger account, debit/credit indicator, amount, currency and category.
+4. If **Reversal Of** is populated, follow it to identify the entry being reversed and compare the original and reversing postings.
+
+## How do I know it worked?
+
+You can identify the entry's deal and occasion and see the complete debit/credit lines behind it. A reversal entry links to the original entry through **Reversal Of**; the hash fields show its position in the entry chain.
+
+## What if I can’t complete it?
+
+- If an expected entry is missing, confirm the deal occasion was processed and clear or broaden the filters. Entries are created by platform processing, not in this app.
+- If processing was blocked, check the user-readable message and the [accounting error references](/reference/error-codes/block-6xx-acc).
+- If you need to correct an entry, do not edit it here. Request a correction through [Accounting Reversal Requests](/apps/transactional/accounting-reversal-requests).
+
+## What should I do next?
+
+Review the accounts used in [General Ledger Accounts](/apps/transactional/general-ledger-accounts), or raise a correction request in [Accounting Reversal Requests](/apps/transactional/accounting-reversal-requests).c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"Who can do this?","id":"who-can-do-this","depth":2},{"value":"What do I need before I start?","id":"what-do-i-need-before-i-start","depth":2},{"value":"How do I complete the task?","id":"how-do-i-complete-the-task","depth":2},{"value":"How do I know it worked?","id":"how-do-i-know-it-worked","depth":2},{"value":"What if I can’t complete it?","id":"what-if-i-cant-complete-it","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Review a journal entry for a deal","audience":["all"],"domains":["accounting","deal-lifecycle"],"apps":["journal-entries"],"entities":["JournalEntries"],"pageType":"task-guide","sourceSpec":"app/journal-entries/webapp/manifest.json","filePath":"content/apps/transactional/journal-entries/review-the-journal-entry-for-a-deal.md","timestamp":1792961111000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/journal-entries/review-the-journal-entry-for-a-deal","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Review a journal entry for a deal"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"4yPSKCuHXHYqSwbxtwiuU"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+24:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Review a journal entry for a deal","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Find the accounting entry produced for a deal occasion and trace its postings, hash chain and any reversal link."}],"\n",["$","h2",null,{"id":"who-can-do-this","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can do this?",["$","$L1e",null,{"id":"who-can-do-this"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Users with portal access can read entries; the app is read-only and has no create, edit or delete controls."}],"\n",["$","h2",null,{"id":"what-do-i-need-before-i-start","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What do I need before I start?",["$","$L1e",null,{"id":"what-do-i-need-before-i-start"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"The deal number or deal record."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["The occasion you want to review, such as ",["$","strong",null,{"children":"Deal Confirmed"}],", ",["$","strong",null,{"children":"Periodic Revaluation"}],", ",["$","strong",null,{"children":"Maturity Settlement"}],", ",["$","strong",null,{"children":"Deal Rolled"}],", ",["$","strong",null,{"children":"Deal Cancelled"}]," or ",["$","strong",null,{"children":"Deal Drawdown"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"The ledger if you need a specific reporting view."}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-complete-the-task","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I complete the task?",["$","$L1e",null,{"id":"how-do-i-complete-the-task"}]]}],"\n",["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open ",["$","strong",null,{"children":"Journal Entries"}]," and filter by ",["$","strong",null,{"children":"Deal"}],", ",["$","strong",null,{"children":"Occasion Type"}],", ",["$","strong",null,{"children":"Processed At"}]," or ",["$","strong",null,{"children":"Ledger Code"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Open the matching entry and review ",["$","strong",null,{"children":"General Information"}]," for the deal, occasion, ledger, processing time, creator, ",["$","strong",null,{"children":"Entry Hash"}]," and ",["$","strong",null,{"children":"Previous Hash"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["In ",["$","strong",null,{"children":"Postings"}],", review each sequence, general ledger account, debit/credit indicator, amount, currency and category."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If ",["$","strong",null,{"children":"Reversal Of"}]," is populated, follow it to identify the entry being reversed and compare the original and reversing postings."]}],"\n"]}],"\n",["$","h2",null,{"id":"how-do-i-know-it-worked","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How do I know it worked?",["$","$L1e",null,{"id":"how-do-i-know-it-worked"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["You can identify the entry’s deal and occasion and see the complete debit/credit lines behind it. A reversal entry links to the original entry through ","$L1f","; the hash fields show its position in the entry chain."]}],"\n","$L20","\n","$L21","\n","$L22","\n","$L23"]}]
+13:["$","$L24",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@25"}]}]
+1d:true
+26:I[22016,["$3","$4","$5","$6"],""]
+b:300
+1f:["$","strong",null,{"children":"Reversal Of"}]
+20:["$","h2",null,{"id":"what-if-i-cant-complete-it","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What if I can’t complete it?",["$","$L1e",null,{"id":"what-if-i-cant-complete-it"}]]}]
+21:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"If an expected entry is missing, confirm the deal occasion was processed and clear or broaden the filters. Entries are created by platform processing, not in this app."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If processing was blocked, check the user-readable message and the ",["$","$L26",null,{"href":"/reference/error-codes/block-6xx-acc","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"accounting error references"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["If you need to correct an entry, do not edit it here. Request a correction through ",["$","$L26",null,{"href":"/apps/transactional/accounting-reversal-requests","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Accounting Reversal Requests"}],"."]}],"\n"]}]
+22:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+23:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Review the accounts used in ",["$","$L26",null,{"href":"/apps/transactional/general-ledger-accounts","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"General Ledger Accounts"}],", or raise a correction request in ",["$","$L26",null,{"href":"/apps/transactional/accounting-reversal-requests","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Accounting Reversal Requests"}],"."]}]
+25:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

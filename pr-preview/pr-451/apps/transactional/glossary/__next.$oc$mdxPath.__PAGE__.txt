@@ -1,0 +1,115 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3pt4nbmewdjti.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/0-_b7o3xuon5c.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T13e2,---
+title: "Glossary app"
+audience: [all]
+domains: [foundation]
+apps: [glossary]
+entities: [GlossaryTerms]
+pageType: app-overview
+sourceSpec: app/glossary/webapp/manifest.json
+---
+
+# Glossary app
+
+Glossary is where the platform's shared vocabulary is maintained. Each record is one term, built around its **Term** and optional **Abbreviation**, classified by **Category**, **Scope** and **Audience Level**, and defined in a **Short Definition** plus an **Extended Definition**.
+
+## What is this app for?
+
+The glossary exists so that a term means the same thing everywhere it appears. Alongside the two definitions, a term can carry a **Formula or Example**, a **Regulatory Reference**, **Related Terms**, a **Where Used** note naming the apps and pages where the term appears, and **Tags**.
+
+**Category** says which subject area the term belongs to — FX and treasury trading, accounting and IFRS, risk management, South African or international regulation, cash and liquidity, compliance, platform architecture, loans and credit, or market data. **Scope** says which framework the definition comes from — global, South Africa, Kompas platform, IFRS or Basel. **Audience Level** says who it is written for — executive, treasury, accounting, technology, regulatory, or universal.
+
+## When should I use this app?
+
+Use it when a term is missing, wrong or out of date, when a new abbreviation needs recording, when a definition should be retargeted at a different audience, or when a term has been replaced and the successor should be named.
+
+If you are unsure what a word means while you work, the published [Glossary](/glossary) is the quicker place to look it up — this app is where those entries are maintained.
+
+## Who can access this app?
+
+The app is reached through portal access plus the roles your administrator has assigned you — see [Roles and Access](/getting-started/roles-and-access). The app's own metadata records no additional role restriction and no narrower launchpad audience, so everyone who can open it sees the same terms.
+
+## How does work progress in this app?
+
+1. Find the term — the list shows **Term**, **Abbreviation**, **Category**, **Scope**, **Audience Level** and the two definitions side by side.
+2. Select **Create** to add a term in draft, or open an existing one to correct it.
+3. Classify it: choose **Category**, **Scope** and **Audience Level** from their lists.
+4. Write the **Short Definition** first — the one-line explanation shown in lists and in the published glossary — then the **Extended Definition**, and add a **Formula or Example** or a **Regulatory Reference** where the term needs one.
+5. Point the term at its context with **Where Used** and **Related Terms**. When a term is being replaced, name the replacement in **Superseded By** and set **Effective From**.
+6. Save. To retire a term without losing it, switch **Active** off.
+
+## What can change what I see or do?
+
+- **Fixed value lists:** **Category**, **Scope** and **Audience Level** come from the platform's lists, so only the values your configuration offers are selectable. If one is missing, it is not something this page can add.
+- **Active:** a retired term stays in the register and can still be read and corrected; only the flag changes.
+- **Where Used and Related Terms are notes, not links:** they are free text that tells a reader where to look and which terms sit alongside this one. They do not create navigation, so they need to be kept current by hand.
+- **Local language fields:** **Term Local Language**, **Definition Local** and the local language code and name are available for a translated version of the term, and are optional — a term does not need one.
+- **Superseded By** names the replacement as text, so the replacement term must already be written before the reference makes sense.
+
+## Where can I review the results?
+
+The object page's **General Information** section holds every field of a term in one place, which is the best place to read a definition end to end with its example and regulatory reference.
+
+The documentation site publishes a [Glossary](/glossary) built from this same term set, showing each term with its short definition — a useful check that your wording still reads well as a single line. **Where Used** also names the apps and pages where the term appears, so you can judge where a wording change will be noticed.
+
+## What should I check if I can’t continue?
+
+- A category, scope or audience level you expect is not offered: those choices come from the platform's fixed lists, not from this app.
+- An edit control is missing: check your roles in [Roles and Access](/getting-started/roles-and-access).
+
+## Which task guides are available?
+
+- [Add or update a glossary term](./add-or-update-a-glossary-term)
+- [Import glossary terms from a spreadsheet](./import-glossary-terms-from-a-spreadsheet)
+
+## What should I do next?
+
+Read the published [Glossary](/glossary) to see how terms are presented, then check [Roles and Access](/getting-started/roles-and-access) if an edit control you expect is not available.c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[{"value":"What is this app for?","id":"what-is-this-app-for","depth":2},{"value":"When should I use this app?","id":"when-should-i-use-this-app","depth":2},{"value":"Who can access this app?","id":"who-can-access-this-app","depth":2},{"value":"How does work progress in this app?","id":"how-does-work-progress-in-this-app","depth":2},{"value":"What can change what I see or do?","id":"what-can-change-what-i-see-or-do","depth":2},{"value":"Where can I review the results?","id":"where-can-i-review-the-results","depth":2},{"value":"What should I check if I can’t continue?","id":"what-should-i-check-if-i-cant-continue","depth":2},{"value":"Which task guides are available?","id":"which-task-guides-are-available","depth":2},{"value":"What should I do next?","id":"what-should-i-do-next","depth":2}],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Glossary app","audience":["all"],"domains":["foundation"],"apps":["glossary"],"entities":["GlossaryTerms"],"pageType":"app-overview","sourceSpec":"app/glossary/webapp/manifest.json","filePath":"content/apps/transactional/glossary/index.md","timestamp":1792961111000},"sourceCode":"$10","children":["$L11","$L12"]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"apps/transactional/glossary","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Glossary app"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"4yPSKCuHXHYqSwbxtwiuU"}
+1e:I[66157,["$3","$4","$5","$6"],"HeadingAnchor"]
+1f:I[22016,["$3","$4","$5","$6"],""]
+2e:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+11:["$","div",null,{"id":"nextra-skip-nav"}]
+12:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Glossary app","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Glossary is where the platform’s shared vocabulary is maintained. Each record is one term, built around its ",["$","strong",null,{"children":"Term"}]," and optional ",["$","strong",null,{"children":"Abbreviation"}],", classified by ",["$","strong",null,{"children":"Category"}],", ",["$","strong",null,{"children":"Scope"}]," and ",["$","strong",null,{"children":"Audience Level"}],", and defined in a ",["$","strong",null,{"children":"Short Definition"}]," plus an ",["$","strong",null,{"children":"Extended Definition"}],"."]}],"\n",["$","h2",null,{"id":"what-is-this-app-for","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What is this app for?",["$","$L1e",null,{"id":"what-is-this-app-for"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The glossary exists so that a term means the same thing everywhere it appears. Alongside the two definitions, a term can carry a ",["$","strong",null,{"children":"Formula or Example"}],", a ",["$","strong",null,{"children":"Regulatory Reference"}],", ",["$","strong",null,{"children":"Related Terms"}],", a ",["$","strong",null,{"children":"Where Used"}]," note naming the apps and pages where the term appears, and ",["$","strong",null,{"children":"Tags"}],"."]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"Category"}]," says which subject area the term belongs to — FX and treasury trading, accounting and IFRS, risk management, South African or international regulation, cash and liquidity, compliance, platform architecture, loans and credit, or market data. ",["$","strong",null,{"children":"Scope"}]," says which framework the definition comes from — global, South Africa, Kompas platform, IFRS or Basel. ",["$","strong",null,{"children":"Audience Level"}]," says who it is written for — executive, treasury, accounting, technology, regulatory, or universal."]}],"\n",["$","h2",null,{"id":"when-should-i-use-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["When should I use this app?",["$","$L1e",null,{"id":"when-should-i-use-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Use it when a term is missing, wrong or out of date, when a new abbreviation needs recording, when a definition should be retargeted at a different audience, or when a term has been replaced and the successor should be named."}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["If you are unsure what a word means while you work, the published ",["$","$L1f",null,{"href":"/glossary","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Glossary"}]," is the quicker place to look it up — this app is where those entries are maintained."]}],"\n",["$","h2",null,{"id":"who-can-access-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Who can access this app?",["$","$L1e",null,{"id":"who-can-access-this-app"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The app is reached through portal access plus the roles your administrator has assigned you — see ","$L20",". The app’s own metadata records no additional role restriction and no narrower launchpad audience, so everyone who can open it sees the same terms."]}],"\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d"]}]
+13:["$","$L2e",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@2f"}]}]
+1d:true
+b:300
+20:["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}]
+21:["$","h2",null,{"id":"how-does-work-progress-in-this-app","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["How does work progress in this app?",["$","$L1e",null,{"id":"how-does-work-progress-in-this-app"}]]}]
+22:["$","ol",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-decimal x:ms-6","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Find the term — the list shows ",["$","strong",null,{"children":"Term"}],", ",["$","strong",null,{"children":"Abbreviation"}],", ",["$","strong",null,{"children":"Category"}],", ",["$","strong",null,{"children":"Scope"}],", ",["$","strong",null,{"children":"Audience Level"}]," and the two definitions side by side."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Select ",["$","strong",null,{"children":"Create"}]," to add a term in draft, or open an existing one to correct it."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Classify it: choose ",["$","strong",null,{"children":"Category"}],", ",["$","strong",null,{"children":"Scope"}]," and ",["$","strong",null,{"children":"Audience Level"}]," from their lists."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Write the ",["$","strong",null,{"children":"Short Definition"}]," first — the one-line explanation shown in lists and in the published glossary — then the ",["$","strong",null,{"children":"Extended Definition"}],", and add a ",["$","strong",null,{"children":"Formula or Example"}]," or a ",["$","strong",null,{"children":"Regulatory Reference"}]," where the term needs one."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Point the term at its context with ",["$","strong",null,{"children":"Where Used"}]," and ",["$","strong",null,{"children":"Related Terms"}],". When a term is being replaced, name the replacement in ",["$","strong",null,{"children":"Superseded By"}]," and set ",["$","strong",null,{"children":"Effective From"}],"."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Save. To retire a term without losing it, switch ",["$","strong",null,{"children":"Active"}]," off."]}],"\n"]}]
+23:["$","h2",null,{"id":"what-can-change-what-i-see-or-do","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What can change what I see or do?",["$","$L1e",null,{"id":"what-can-change-what-i-see-or-do"}]]}]
+24:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Fixed value lists:"}]," ",["$","strong",null,{"children":"Category"}],", ",["$","strong",null,{"children":"Scope"}]," and ",["$","strong",null,{"children":"Audience Level"}]," come from the platform’s lists, so only the values your configuration offers are selectable. If one is missing, it is not something this page can add."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Active:"}]," a retired term stays in the register and can still be read and corrected; only the flag changes."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Where Used and Related Terms are notes, not links:"}]," they are free text that tells a reader where to look and which terms sit alongside this one. They do not create navigation, so they need to be kept current by hand."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Local language fields:"}]," ",["$","strong",null,{"children":"Term Local Language"}],", ",["$","strong",null,{"children":"Definition Local"}]," and the local language code and name are available for a translated version of the term, and are optional — a term does not need one."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Superseded By"}]," names the replacement as text, so the replacement term must already be written before the reference makes sense."]}],"\n"]}]
+25:["$","h2",null,{"id":"where-can-i-review-the-results","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Where can I review the results?",["$","$L1e",null,{"id":"where-can-i-review-the-results"}]]}]
+26:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The object page’s ",["$","strong",null,{"children":"General Information"}]," section holds every field of a term in one place, which is the best place to read a definition end to end with its example and regulatory reference."]}]
+27:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The documentation site publishes a ",["$","$L1f",null,{"href":"/glossary","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Glossary"}]," built from this same term set, showing each term with its short definition — a useful check that your wording still reads well as a single line. ",["$","strong",null,{"children":"Where Used"}]," also names the apps and pages where the term appears, so you can judge where a wording change will be noticed."]}]
+28:["$","h2",null,{"id":"what-should-i-check-if-i-cant-continue","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I check if I can’t continue?",["$","$L1e",null,{"id":"what-should-i-check-if-i-cant-continue"}]]}]
+29:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"A category, scope or audience level you expect is not offered: those choices come from the platform’s fixed lists, not from this app."}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["An edit control is missing: check your roles in ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}],"."]}],"\n"]}]
+2a:["$","h2",null,{"id":"which-task-guides-are-available","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Which task guides are available?",["$","$L1e",null,{"id":"which-task-guides-are-available"}]]}]
+2b:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./add-or-update-a-glossary-term","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Add or update a glossary term"}]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["$","$L1f",null,{"href":"./import-glossary-terms-from-a-spreadsheet","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Import glossary terms from a spreadsheet"}]}],"\n"]}]
+2c:["$","h2",null,{"id":"what-should-i-do-next","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["What should I do next?",["$","$L1e",null,{"id":"what-should-i-do-next"}]]}]
+2d:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["Read the published ",["$","$L1f",null,{"href":"/glossary","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Glossary"}]," to see how terms are presented, then check ",["$","$L1f",null,{"href":"/getting-started/roles-and-access","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Roles and Access"}]," if an edit control you expect is not available."]}]
+2f:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"

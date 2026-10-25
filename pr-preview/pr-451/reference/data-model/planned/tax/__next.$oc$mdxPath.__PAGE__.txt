@@ -1,0 +1,123 @@
+2:"$Sreact.fragment"
+3:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/3pt4nbmewdjti.js"
+4:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/0-_b7o3xuon5c.js"
+5:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/1cx0h5cwl4qoa.js"
+6:"/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/14fwyw5njamp2.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[86265,["$3","$4","$5","$6"],"TOCProvider"]
+e:I[37655,["$3","$4","$5","$6"],"Sidebar"]
+f:I[29394,["$3","$4","$5","$6"],"ClientWrapper"]
+11:I[82214,["$3","$4","$5","$6"],"Mermaid"]
+15:"ViewportBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"$Sreact.suspense"
+1a:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+10:T9a7,---
+title: Tax — Planned Entity Relationship Diagram
+audience: [all]
+domains: [tax]
+sourceSpec: docs/erds/planned/tax.mmd
+---
+
+# Tax — Planned Entity Relationship Diagram
+
+```mermaid
+erDiagram
+%% TAX
+
+    TaxCalculation {
+        uuid id PK
+        uuid dealId FK
+        uuid companyId FK
+        string taxType "WITHHOLDING | VAT | GST | CORPORATE | TRANSFER"
+        uuid jurisdictionId FK
+        uuid taxTreatyId FK
+        decimal grossAmount
+        decimal taxRate
+        decimal taxAmount
+        string taxTreatment "TAXABLE | EXEMPT | DEFERRED | RECOVERABLE | NON_RECOVERABLE"
+        uuid accountingImpactId FK
+    }
+    TaxJurisdiction {
+        uuid id PK
+        string countryCode FK
+        string regionCode
+        string taxAuthority
+        json taxRates
+        boolean hasTreatyNetwork
+    }
+    TaxTreaty {
+        uuid id PK
+        uuid jurisdictionAId FK
+        uuid jurisdictionBId FK
+        decimal withholdingRate
+        date effectiveDate
+        string treatyArticle
+        boolean isApproved
+    }
+    WithholdingTaxRecord {
+        uuid id PK
+        uuid taxCalculationId FK
+        uuid paymentInstructionId FK
+        decimal grossPayment
+        decimal taxWithheld
+        decimal netPayment
+        string currencyCode FK
+        date remittanceDate
+        uuid treatyValidationId FK
+    }
+    DeferredTaxPosition {
+        uuid id PK
+        uuid companyId FK
+        string positionType "ASSET | LIABILITY"
+        decimal amount
+        string currencyCode FK
+        string reversalSchedule
+        string status "ACTIVE | REVERSED"
+    }
+    VATCalculation {
+        uuid id PK
+        uuid dealId FK
+        string serviceType "FEE | COMMISSION | INTERCOMPANY | ADVISORY"
+        decimal netAmount
+        decimal vatRate
+        decimal vatAmount
+        string recoverability "FULL | PARTIAL | NON_RECOVERABLE"
+        uuid jurisdictionId FK
+    }
+
+%% --- Internal Relationships ---
+    TaxCalculation ||--|| TaxJurisdiction : "under"
+    TaxCalculation ||--o{ TaxTreaty : "applies"
+    WithholdingTaxRecord ||--|| TaxCalculation : "withholds"
+
+%% ============================================================
+%% CROSS-DOMAIN FOOTNOTES
+%% (Relationships to/from other domains)
+%% ============================================================
+
+%% >>> Connected to: deal-execution <<<
+%%   TaxCalculation ||--|| Deal : "on"
+
+%% >>> Connected to: foundation <<<
+%%   DeferredTaxPosition ||--|| Company : "held by"
+
+```12:T937,erDiagram\n%% TAX\n\n    TaxCalculation {\n        uuid id PK\n        uuid dealId FK\n        uuid companyId FK\n        string taxType "WITHHOLDING | VAT | GST | CORPORATE | TRANSFER"\n        uuid jurisdictionId FK\n        uuid taxTreatyId FK\n        decimal grossAmount\n        decimal taxRate\n        decimal taxAmount\n        string taxTreatment "TAXABLE | EXEMPT | DEFERRED | RECOVERABLE | NON_RECOVERABLE"\n        uuid accountingImpactId FK\n    }\n    TaxJurisdiction {\n        uuid id PK\n        string countryCode FK\n        string regionCode\n        string taxAuthority\n        json taxRates\n        boolean hasTreatyNetwork\n    }\n    TaxTreaty {\n        uuid id PK\n        uuid jurisdictionAId FK\n        uuid jurisdictionBId FK\n        decimal withholdingRate\n        date effectiveDate\n        string treatyArticle\n        boolean isApproved\n    }\n    WithholdingTaxRecord {\n        uuid id PK\n        uuid taxCalculationId FK\n        uuid paymentInstructionId FK\n        decimal grossPayment\n        decimal taxWithheld\n        decimal netPayment\n        string currencyCode FK\n        date remittanceDate\n        uuid treatyValidationId FK\n    }\n    DeferredTaxPosition {\n        uuid id PK\n        uuid companyId FK\n        string positionType "ASSET | LIABILITY"\n        decimal amount\n        string currencyCode FK\n        string reversalSchedule\n        string status "ACTIVE | REVERSED"\n    }\n    VATCalculation {\n        uuid id PK\n        uuid dealId FK\n        string serviceType "FEE | COMMISSION | INTERCOMPANY | ADVISORY"\n        decimal netAmount\n        decimal vatRate\n        decimal vatAmount\n        string recoverability "FULL | PARTIAL | NON_RECOVERABLE"\n        uuid jurisdictionId FK\n    }\n\n%% --- Internal Relationships ---\n    TaxCalculation ||--|| TaxJurisdiction : "under"\n    TaxCalculation ||--o{ TaxTreaty : "applies"\n    WithholdingTaxRecord ||--|| TaxCalculation : "withholds"\n\n%% ============================================================\n%% CROSS-DOMAIN FOOTNOTES\n%% (Relationships to/from other domains)\n%% ============================================================\n\n%% >>> Connected to: deal-execution <<<\n%%   TaxCalculation ||--|| Deal : "on"\n\n%% >>> Connected to: foundation <<<\n%%   DeferredTaxPosition ||--|| Company : "held by"\nc:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$Ld",null,{"value":[],"children":[["$","$Le",null,{}],["$","$Lf",null,{"metadata":{"title":"Tax — Planned Entity Relationship Diagram","audience":["all"],"domains":["tax"],"sourceSpec":"docs/erds/planned/tax.mmd","filePath":"content/reference/data-model/planned/tax.md","timestamp":1792961111000},"sourceCode":"$10","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Tax — Planned Entity Relationship Diagram","$undefined"]}],"\n",["$","$L11",null,{"chart":"$12"}]]}]]}]]}]}],null,"$L13"]}],"p":"$@14","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"reference/data-model/planned/tax","s":[]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Tax — Planned Entity Relationship Diagram"}],["$","meta","1",{"name":"description","content":"User documentation for the Kompas treasury and banking platform."}],["$","link","2",{"rel":"icon","href":"/kompas-docs-previews/pr-preview/pr-451/icon.svg?icon.22cp1313hfa-c.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","3",{}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"4yPSKCuHXHYqSwbxtwiuU"}
+1e:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+13:["$","$L1e",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@1f"}]}]
+1d:true
+b:300
+1f:null
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+14:"$undefined"
