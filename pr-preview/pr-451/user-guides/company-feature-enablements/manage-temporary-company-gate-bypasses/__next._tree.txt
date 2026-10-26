@@ -1,4 +1,0 @@
-:HL["/kompas-docs-previews/pr-preview/pr-451/_next/static/chunks/2xdxvesoqq_er.css","style"]
-2:[["children",{"s":"__PAGE__","h":160}]]
-1:[["children",{"s":{"n":"mdxPath","t":"oc","k":"user-guides/company-feature-enablements/manage-temporary-company-gate-bypasses","s":[]},"h":64,"c":"$Q2"}]]
-0:{"b":"PA3r732GgoFQxPkVLUKX2","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
